@@ -82,13 +82,27 @@
     </ApplicationDefinition>
     <Compile Include="Commands\DeleteCommand.cs" />
     <Compile Include="Commands\DownloadCommand.cs" />
-    <Compile Include="Commands\ICanRefresh.cs" />
-    <Compile Include="Commands\ICanSetStatus.cs" />
-    <Compile Include="Commands\ISelectedNodeListener.cs" />
+    <Compile Include="Commands\LoginCommand.cs" />
+    <Compile Include="Commands\LogoutCommand.cs" />
     <Compile Include="Commands\UploadCommand.cs" />
+    <Compile Include="IManageTransfers.cs" />
     <Compile Include="ITodo.cs" />
+    <Compile Include="Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\ApiManager.cs" />
+    <Compile Include="Services\ICanRefresh.cs" />
+    <Compile Include="Services\ICanSetStatus.cs" />
+    <Compile Include="Services\ICanSetTitle.cs" />
     <Compile Include="Services\IDispatcher.cs" />
     <Compile Include="Services\Dispatcher.cs" />
+    <Compile Include="Services\IHaveTheApi.cs" />
+    <Compile Include="Services\ISelectedNodeListener.cs" />
+    <Compile Include="Services\IUserManagement.cs" />
+    <Compile Include="Services\Status.cs" />
+    <Compile Include="Services\UserAccount.cs" />
     <Compile Include="TermsOfServiceWindow.xaml.cs">
       <DependentUpon>TermsOfServiceWindow.xaml</DependentUpon>
     </Compile>
@@ -138,6 +152,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="Properties\Settings.settings">

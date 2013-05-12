@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Input;
 using MegaApi;
+using MegaDesktop.Services;
 using MegaDesktop.ViewModels;
 
 namespace MegaDesktop.Commands
@@ -37,7 +38,7 @@ namespace MegaDesktop.Commands
             var text = String.Format("Are you sure to delete the {0} {1}?", type, node.Attributes.Name);
             if (MessageBox.Show(text, "Deleting " + type, MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
-                _api.RemoveNode(node.Id, () => _refresh.Refresh(), err => _status.Error(err));
+                _api.RemoveNode(node.Id, () => _refresh.RefreshCurrentNode(), err => _status.Error(err));
             }
         }
 

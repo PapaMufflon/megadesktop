@@ -170,10 +170,10 @@
             <Button Height="50" Command="{Binding DeleteCommand}" CommandParameter="{Binding SelectedNode}" Width="50" HorizontalAlignment="Left" Margin="10,0,0,0" ToolTip="Delete">
                 <Image Source="pack://application:,,,/MegaDesktop;component/resources/remove.png" Height="26" />
             </Button>
-            <Button Height="50" Name="buttonLogin" Width="50" Visibility="Collapsed" Margin="10,0,0,0" IsEnabled="False" ToolTip="Login" Click="buttonLogin_Click" >
+            <Button Height="50" Command="{Binding LoginCommand}" Width="50" Visibility="Collapsed" Margin="10,0,0,0" ToolTip="Login">
                 <Image Source="pack://application:,,,/MegaDesktop;component/resources/login.png"  Height="36"/>
             </Button>
-            <Button Height="50" Name="buttonLogout" Width="50" Visibility="Collapsed" Margin="10,0,0,0" IsEnabled="False" ToolTip="Logout" Click="buttonLogout_Click" >
+            <Button Height="50" Command="{Binding LogoutCommand}" Width="50" Visibility="Collapsed" Margin="10,0,0,0" ToolTip="Logout">
                 <Image Source="pack://application:,,,/MegaDesktop;component/resources/logout.png" Height="20" />
             </Button>
             <Button Height="50" Name="buttonRefresh" Width="50" HorizontalAlignment="Left" Click="buttonRefresh_Click" IsEnabled="False" ToolTip="Refresh" Margin="10,0,0,0" >
@@ -200,7 +200,9 @@
                      ItemTemplate="{StaticResource NodeViewTemplate}"
                      MouseDoubleClick="listBoxNodes_MouseDoubleClick" />
         </DockPanel>
-        <ListBox Height="100" HorizontalAlignment="Stretch" Margin="0,0,0,25" Name="listBoxDownloads" VerticalAlignment="Bottom" ItemTemplate="{StaticResource TransferViewTemplate}"/>
+        <ListBox Height="100" HorizontalAlignment="Stretch" Margin="0,0,0,25" VerticalAlignment="Bottom"
+                 ItemsSource="{Binding Transfers}"
+                 ItemTemplate="{StaticResource TransferViewTemplate}"/>
         <DockPanel Height="25" VerticalAlignment="Bottom">
             <TextBox Padding="3" HorizontalAlignment="Left" Text="{Binding Status.Message}" FontSize="14" IsReadOnly="True" BorderThickness="0"/>
             <Button x:Name="HomeLink" Content="http://megadesktop.com/" HorizontalAlignment="Right" Click="Button_Click_1" FontSize="12" Margin="0,0,5,0">

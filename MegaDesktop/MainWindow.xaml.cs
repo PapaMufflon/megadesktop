@@ -6,43 +6,35 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.IO;
 using MegaApi;
-using MegaApi.Utility;
-using MegaDesktop.Commands;
 using MegaDesktop.Services;
 using MegaDesktop.ViewModels;
 using Microsoft.Win32;
-using System.Collections.ObjectModel;
-using MegaApi.DataTypes;
 using MegaDesktop;
 using System.Diagnostics;
 using System.Reflection;
-using MegaApi.Comms;
 
 namespace MegaWpf
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window, ITodo, ICanRefresh
+    public partial class MainWindow : Window, ITodo, ICanRefresh, ICanSetTitle
     {
         Mega api;
-        ObservableCollection<TransferHandle> transfers = new ObservableCollection<TransferHandle>();
         MegaNode currentNode;
-        static string title = "Mega Desktop (beta)";
         private readonly MainViewModel _mainViewModel;
 
         public MainWindow()
         {
-            var viewService = new Dispatcher(Dispatcher);
-            _mainViewModel = new MainViewModel(this, this, viewService);
+            InitializeComponent();
+
+            var dispatcher = new Dispatcher(Dispatcher);
+            _mainViewModel = new MainViewModel(this, this, dispatcher, this);
             DataContext = _mainViewModel;
 
             CheckTos();
 
             System.Net.ServicePointManager.DefaultConnectionLimit = 50;
-            var save = false;
-            var userAccountFile = GetUserKeyFilePath();
-            Login(save, userAccountFile);
         }
 
         public Mega Api { get { return api; } }
@@ -66,74 +58,22 @@ namespace MegaWpf
             }
         }
 
-        private MegaUser Login(bool save, string userAccountFile)
+        public void RefreshCurrentNode()
         {
-            MegaUser u;
-            if ((u = Mega.LoadAccount(userAccountFile)) == null) { save = true; }
-            _mainViewModel.Status.SetStatus(Status.LoggingIn);
-            Mega.Init(u, (m) =>
-            {
-                api = m;
-                if (save) { SaveAccount(userAccountFile, "user.anon.dat"); }
-                InitializeComponent();
-                InitialLoadNodes();
-                _mainViewModel.Status.SetStatus(Status.Loaded);
-                if (api.User.Status == MegaUserStatus.Anonymous)
-                {
-                    Invoke(() =>
-                        {
-                            buttonLogin.Visibility = System.Windows.Visibility.Visible;
-                            buttonLogout.Visibility = System.Windows.Visibility.Collapsed;
-                            Title = title + " - anonymous account";
-                        });
-                }
-                else
-                {
-                    Invoke(() =>
-                        {
-                            Title = title + " - " + m.User.Email;
-                            buttonLogin.Visibility = System.Windows.Visibility.Collapsed;
-                            buttonLogout.Visibility = System.Windows.Visibility.Visible;
-                        });
-                }
-            }, (e) => { MessageBox.Show("Error while loading account: " + e); Application.Current.Shutdown(); });
-            return u;
+            ShowFiles(currentNode, true);
         }
 
-        private void SaveAccount(string userAccountFile, string backupFileName)
+        public void Reload()
         {
-            if (File.Exists(userAccountFile))
-            {
-                var backupFile = System.IO.Path.GetDirectoryName(userAccountFile) +
-                                System.IO.Path.DirectorySeparatorChar +
-                                backupFileName;
-                File.Copy(userAccountFile, backupFile, true);
-            }
-            api.SaveAccount(GetUserKeyFilePath());
-        }
-
-        private void InitialLoadNodes()
-        {
-            Invoke(() => listBoxDownloads.ItemsSource = transfers);
             _mainViewModel.Status.SetStatus(Status.Communicating);
             api.GetNodes((list) =>
             {
-                Invoke(() =>
-                {
-                    buttonRefresh.IsEnabled = true;
-                    buttonLogout.IsEnabled = true;
-                    buttonLogin.IsEnabled = true;
-                });
                 _mainViewModel.Status.SetStatus(Status.Loaded);
                 _mainViewModel.RootNode.Update(list);
-                currentNode = list.Where(n => n.Type == MegaNodeType.RootFolder).FirstOrDefault();
+
+                currentNode = _mainViewModel.RootNode.Children.Single(n => n.HideMe.Type == MegaNodeType.RootFolder).HideMe;
                 ShowFiles();
             }, e => _mainViewModel.Status.Error(e));
-        }
-
-        public void Refresh()
-        {
-            ShowFiles(currentNode, true);
         }
 
         private void ShowFiles(MegaNode parent = null, bool refresh = false)
@@ -158,16 +98,6 @@ namespace MegaWpf
         void Invoke(Action fn)
         {
             Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority.Normal, (Delegate)fn);
-        }
-
-        string GetUserKeyFilePath()
-        {
-            string userDir = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-
-            userDir += System.IO.Path.DirectorySeparatorChar + "MegaDesktop";
-            if (!Directory.Exists(userDir)) { Directory.CreateDirectory(userDir); }
-            userDir += System.IO.Path.DirectorySeparatorChar;
-            return userDir + "user.dat";
         }
 
         private void listBoxNodes_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -199,58 +129,11 @@ namespace MegaWpf
             }
         }
 
-        private void buttonLogin_Click(object sender, RoutedEventArgs e)
-        {
-            var w = new WindowLogin();
-            w.OnLoggedIn += (s, args) =>
-            {
-                api = args.Api;
-                SaveAccount(GetUserKeyFilePath(), "user.anon.dat");
-                Invoke(() =>
-                    {
-                        CancelTransfers();
-                        w.Close();
-                        buttonLogin.Visibility = System.Windows.Visibility.Collapsed;
-                        buttonLogout.Visibility = System.Windows.Visibility.Visible;
-                        Title = title + " - " + api.User.Email;
-                    });
-                InitialLoadNodes();
-            };
-            w.ShowDialog();
-        }
-
-        private void CancelTransfers()
-        {
-            lock (transfers)
-            {
-                foreach (var transfer in transfers)
-                {
-                    transfer.CancelTransfer();
-                }
-            }
-        }
-
         private void buttonRefresh_Click(object sender, RoutedEventArgs e)
         {
             ShowFiles(currentNode, true);
         }
-        private void buttonLogout_Click(object sender, RoutedEventArgs e)
-        {
-            CancelTransfers();
-            Invoke(() =>
-                {
-                    transfers.Clear();
 
-                    while (_mainViewModel.RootNode.Children.Any())
-                        _mainViewModel.RootNode.Children.RemoveAt(_mainViewModel.RootNode.Children.Count - 1);
-                });
-            var userAccount = GetUserKeyFilePath();
-            // to restore previous anon account
-            //File.Move(System.IO.Path.Combine(System.IO.Path.GetDirectoryName(userAccount), "user.anon.dat"), userAccount);
-            // or simply drop logged in account
-            File.Delete(userAccount);
-            Login(false, userAccount);
-        }
         void CancelTransfer(TransferHandle handle, bool warn = true)
         {
             if (warn && (handle.Status == TransferHandleStatus.Downloading || handle.Status == TransferHandleStatus.Uploading))
@@ -275,7 +158,7 @@ namespace MegaWpf
         {
             var button = sender as Button;
             var handle = button.DataContext as TransferHandle;
-            transfers.Remove(handle);
+            _mainViewModel.Transfers.Remove(handle);
         }
 
         private void buttonFeedback_Click(object sender, RoutedEventArgs e)
@@ -391,7 +274,7 @@ namespace MegaWpf
 
         public void AddUploadHandle(TransferHandle h)
         {
-            Invoke(() => transfers.Add(h));
+            Invoke(() => _mainViewModel.Transfers.Add(h));
             h.PropertyChanged += (s, ev) =>
             {
                 h.TransferEnded += (s1, e1) => ShowFiles(currentNode, true);
@@ -401,7 +284,7 @@ namespace MegaWpf
         }
         void AddDownloadHandle(TransferHandle h)
         {
-            Invoke(() => transfers.Add(h));
+            Invoke(() => _mainViewModel.Transfers.Add(h));
             _mainViewModel.Status.SetStatus(Status.Loaded);
         }
     }

@@ -1,6 +1,6 @@
-﻿using System;
+using System;
 
-namespace MegaDesktop.Commands
+namespace MegaDesktop.Services
 {
     internal interface ISelectedNodeListener
     {

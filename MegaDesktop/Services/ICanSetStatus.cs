@@ -1,6 +1,7 @@
-﻿using System;
+using System;
+using MegaDesktop.Commands;
 
-namespace MegaDesktop.Commands
+namespace MegaDesktop.Services
 {
     internal interface ICanSetStatus
     {
@@ -10,13 +11,5 @@ namespace MegaDesktop.Commands
         void Error(int errorNumber);
 
         Status CurrentStatus { get; }
-    }
-
-    internal enum Status
-    {
-        LoggingIn,
-        Communicating,
-        Loaded,
-        Processing
     }
 }

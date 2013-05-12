@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using MegaDesktop.Commands;
+using MegaDesktop.Services;
 
 namespace MegaDesktop.ViewModels
 {
