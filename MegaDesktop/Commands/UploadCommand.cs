@@ -2,6 +2,7 @@
 using System.Windows.Input;
 using MegaApi;
 using MegaDesktop.Services;
+using MegaDesktop.ViewModels;
 using MegaWpf;
 using Microsoft.Win32;
 
@@ -9,12 +10,14 @@ namespace MegaDesktop.Commands
 {
     internal class UploadCommand : ICommand
     {
+        public event EventHandler CanExecuteChanged;
+
         private readonly Mega _api;
         private readonly ICanSetStatus _status;
         private readonly ITodo _todo;
         private readonly IDispatcher _dispatcher;
 
-        public UploadCommand(Mega api, ICanSetStatus status, ITodo todo, IDispatcher dispatcher)
+        public UploadCommand(Mega api, ICanSetStatus status, ISelectedNodeListener selectedNodeListener, ITodo todo, IDispatcher dispatcher)
         {
             _api = api;
             _status = status;
@@ -22,11 +25,12 @@ namespace MegaDesktop.Commands
             _dispatcher = dispatcher;
 
             _status.CurrentStatusChanged += (s, e) => _dispatcher.InvokeOnUiThread(OnCanExecuteChanged);
+            selectedNodeListener.SelectedNodeChanged += (s, e) => dispatcher.InvokeOnUiThread(OnCanExecuteChanged);
         }
 
         public void Execute(object parameter)
         {
-            var currentNode = parameter as MegaNode;
+            var currentNode = parameter as NodeViewModel;
 
             if (currentNode == null)
                 return;
@@ -42,10 +46,12 @@ namespace MegaDesktop.Commands
 
         public bool CanExecute(object parameter)
         {
-            return _status.CurrentStatus == Status.Loaded;
-        }
+            var node = parameter as NodeViewModel;
 
-        public event EventHandler CanExecuteChanged;
+            return node != null &&
+                   node.HideMe.Type != MegaNodeType.File &&
+                   _status.CurrentStatus == Status.Loaded;
+        }
 
         protected virtual void OnCanExecuteChanged()
         {

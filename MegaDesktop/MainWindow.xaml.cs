@@ -201,29 +201,16 @@ namespace MegaWpf
                 var node = _mainViewModel.SelectedListNode.HideMe;
                 if (node.Type == MegaNodeType.File)
                 {
-                    buttonDownload.IsEnabled = true;
                     buttonDelete.IsEnabled = true;
                 }
                 else
                 {
                     buttonDelete.IsEnabled = node.Type == MegaNodeType.Folder;
-                    buttonDownload.IsEnabled = false;
                 }
             }
             else
             {
-                buttonDownload.IsEnabled = false;
                 buttonDelete.IsEnabled = false;
-            }
-        }
-
-        private void buttonUpload_Click(object sender, RoutedEventArgs e)
-        {
-            var d = new OpenFileDialog();
-            if (d.ShowDialog() == true)
-            {
-                _mainViewModel.Status.SetStatus(Status.Communicating);
-                api.UploadFile(currentNode.Id, d.FileName, AddUploadHandle, err => _mainViewModel.Status.Error(err));
             }
         }
 
@@ -267,21 +254,6 @@ namespace MegaWpf
                     transfer.CancelTransfer();
                 }
             }
-        }
-
-        private void buttonDownload_Click(object sender, RoutedEventArgs e)
-        {
-            var node = _mainViewModel.SelectedListNode.HideMe;
-            if (node.Type == MegaNodeType.File)
-            {
-                DownloadFile(node);
-            }
-            else
-            {
-                // todo
-            }
-
-            // todo if multiselect
         }
 
         private void buttonRefresh_Click(object sender, RoutedEventArgs e)
