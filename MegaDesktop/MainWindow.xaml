@@ -183,6 +183,13 @@
             </Button>
         </DockPanel>
         <DockPanel  HorizontalAlignment="Stretch" Margin="0,100,0,130" Name="dockPanel2" VerticalAlignment="Stretch">
+            <TreeView DockPanel.Dock="Left" ItemsSource="{Binding RootNode.Children}">
+                <TreeView.ItemTemplate>
+                    <HierarchicalDataTemplate ItemsSource="{Binding Children}">
+                        <TextBlock Text="{Binding Name}" />
+                    </HierarchicalDataTemplate>
+                </TreeView.ItemTemplate>
+            </TreeView>
             <ListBox Name="listBoxNodes" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ItemTemplate="{StaticResource NodeViewTemplate}" MouseDoubleClick="listBoxNodes_MouseDoubleClick" SelectionChanged="listBoxNodes_SelectionChanged" />
         </DockPanel>
         <ListBox Height="100" HorizontalAlignment="Stretch" Margin="0,0,0,25" Name="listBoxDownloads" VerticalAlignment="Bottom" ItemTemplate="{StaticResource TransferViewTemplate}"/>

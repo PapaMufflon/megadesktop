@@ -26,15 +26,14 @@ namespace MegaWpf
     public partial class MainWindow : Window, ITodo
     {
         Mega api;
-        List<MegaNode> nodes;
         ObservableCollection<TransferHandle> transfers = new ObservableCollection<TransferHandle>();
         MegaNode currentNode;
         static string title = "Mega Desktop (beta)";
-        private MainViewModel _mainViewModel;
+        private readonly MainViewModel _mainViewModel;
 
         public MainWindow()
         {
-            var viewService = new ViewService(Dispatcher);
+            var viewService = new Dispatcher(Dispatcher);
             _mainViewModel = new MainViewModel(this, viewService);
             DataContext = _mainViewModel;
 
@@ -126,7 +125,7 @@ namespace MegaWpf
                     buttonLogin.IsEnabled = true;
                 });
                 _mainViewModel.Status.SetStatus(Status.Loaded);
-                nodes = list;
+                _mainViewModel.RootNode.Update(list);
                 currentNode = list.Where(n => n.Type == MegaNodeType.RootFolder).FirstOrDefault();
                 ShowFiles();
             }, e => _mainViewModel.Status.Error(e));
@@ -141,18 +140,19 @@ namespace MegaWpf
                 api.GetNodes((l) =>
                 {
                     _mainViewModel.Status.SetStatus(Status.Loaded);
-                    nodes = l;
+                    _mainViewModel.RootNode.Update(l);
                     ShowFiles(parent);
                 }, e => _mainViewModel.Status.Error(e));
                 return;
             }
 
-            var list = nodes.Where(n => n.ParentId == parent.Id).ToList<MegaNode>();
+            var parentViewModel = _mainViewModel.RootNode.Descendant(parent.Id);
+            var list = parentViewModel.Children.Select(x => x.HideMe).ToList();
             currentNode = parent.Type == MegaNodeType.Dummy ?
-                nodes.Where(n => n.Id == parent.Id).FirstOrDefault() : parent;
+                parentViewModel.HideMe : parent;
             if (currentNode.Type != MegaNodeType.RootFolder)
             {
-                var p = nodes.Where(n => n.Id == currentNode.ParentId).FirstOrDefault();
+                var p = parentViewModel.Parent.HideMe;
                 list.Insert(0, new MegaNode
                 {
                     Id = p.Id,
@@ -382,65 +382,66 @@ namespace MegaWpf
 
                     if (files.Length > 0)
                     {
-                        MegaNode target = null;
-                        lock (nodes)
-                        {
-                            target = nodes.Where(n => n.Id == currentNode.Id).First();
-                        }
-                        Util.StartThread(() => ScheduleUpload(files, target), "drag_drop_upload_start");
+                        // todo: enable dragdtop again
+                        //MegaNode target = null;
+                        //lock (nodes)
+                        //{
+                        //    target = nodes.Where(n => n.Id == currentNode.Id).First();
+                        //}
+                        //Util.StartThread(() => ScheduleUpload(files, target), "drag_drop_upload_start");
                     }
                 }
             }
         }
 
-        private void ScheduleUpload(string[] files, MegaNode target)
-        {
-            _mainViewModel.Status.SetStatus(Status.Processing);
-            var list = new List<MegaApi.Utility.Tuple<string, string>>();
-            foreach (var file in files)
-            {
-                var root = Path.GetDirectoryName(file);
-                list.Add(new MegaApi.Utility.Tuple<string, string>(file, root));
-                if ((new FileInfo(file).Attributes & FileAttributes.Directory) == FileAttributes.Directory)
-                {
-                    AddDirectoryContent(file, list, root);
-                }
-            }
-            foreach (var file in list)
-            {
-                var filename = file.Item1.Replace(file.Item2, "").TrimStart(Path.DirectorySeparatorChar);
-                var folder = Path.GetDirectoryName(filename);
-                try
-                {
-                    var d = api.CreateFolderSync(target, nodes, folder, Path.DirectorySeparatorChar);
-                    var fi = new FileInfo(file.Item1);
-                    if ((fi.Attributes & FileAttributes.Directory) == FileAttributes.Directory)
-                    {
-                        try
-                        {
-                            nodes.Add(api.CreateFolderSync(d.Id, Path.GetFileName(filename)));
-                        }
-                        catch (MegaApiException e)
-                        {
-                            _mainViewModel.Status.Error(e.ErrorNumber);
-                        }
-                    }
-                    else
-                    {
-                        if (fi.Length > 0)
-                        {
-                            api.UploadFile(d.Id, file.Item1, AddUploadHandle, e => _mainViewModel.Status.Error(e));
-                        }
-                    }
-                }
-                catch (MegaApiException e)
-                {
-                    _mainViewModel.Status.Error(e.ErrorNumber);
-                }
-            }
+        //private void ScheduleUpload(string[] files, MegaNode target)
+        //{
+        //    _mainViewModel.Status.SetStatus(Status.Processing);
+        //    var list = new List<MegaApi.Utility.Tuple<string, string>>();
+        //    foreach (var file in files)
+        //    {
+        //        var root = Path.GetDirectoryName(file);
+        //        list.Add(new MegaApi.Utility.Tuple<string, string>(file, root));
+        //        if ((new FileInfo(file).Attributes & FileAttributes.Directory) == FileAttributes.Directory)
+        //        {
+        //            AddDirectoryContent(file, list, root);
+        //        }
+        //    }
+        //    foreach (var file in list)
+        //    {
+        //        var filename = file.Item1.Replace(file.Item2, "").TrimStart(Path.DirectorySeparatorChar);
+        //        var folder = Path.GetDirectoryName(filename);
+        //        try
+        //        {
+        //            var d = api.CreateFolderSync(target, nodes, folder, Path.DirectorySeparatorChar);
+        //            var fi = new FileInfo(file.Item1);
+        //            if ((fi.Attributes & FileAttributes.Directory) == FileAttributes.Directory)
+        //            {
+        //                try
+        //                {
+        //                    nodes.Add(api.CreateFolderSync(d.Id, Path.GetFileName(filename)));
+        //                }
+        //                catch (MegaApiException e)
+        //                {
+        //                    _mainViewModel.Status.Error(e.ErrorNumber);
+        //                }
+        //            }
+        //            else
+        //            {
+        //                if (fi.Length > 0)
+        //                {
+        //                    api.UploadFile(d.Id, file.Item1, AddUploadHandle, e => _mainViewModel.Status.Error(e));
+        //                }
+        //            }
+        //        }
+        //        catch (MegaApiException e)
+        //        {
+        //            _mainViewModel.Status.Error(e.ErrorNumber);
+        //        }
+        //    }
             
-            _mainViewModel.Status.SetStatus(Status.Loaded);
-        }
+        //    _mainViewModel.Status.SetStatus(Status.Loaded);
+        //}
 
         private void AddDirectoryContent(string path, List<MegaApi.Utility.Tuple<string, string>> list, string root)
         {

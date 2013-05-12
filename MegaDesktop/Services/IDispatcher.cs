@@ -2,7 +2,7 @@
 
 namespace MegaDesktop.Services
 {
-    internal interface IViewService
+    internal interface IDispatcher
     {
         void InvokeOnUiThread(Action action);
     }

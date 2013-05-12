@@ -12,16 +12,16 @@ namespace MegaDesktop.Commands
         private readonly Mega _api;
         private readonly ICanSetStatus _status;
         private readonly ITodo _todo;
-        private readonly IViewService _viewService;
+        private readonly IDispatcher _dispatcher;
 
-        public UploadCommand(Mega api, ICanSetStatus status, ITodo todo, IViewService viewService)
+        public UploadCommand(Mega api, ICanSetStatus status, ITodo todo, IDispatcher dispatcher)
         {
             _api = api;
             _status = status;
             _todo = todo;
-            _viewService = viewService;
+            _dispatcher = dispatcher;
 
-            _status.CurrentStatusChanged += (s, e) => _viewService.InvokeOnUiThread(OnCanExecuteChanged);
+            _status.CurrentStatusChanged += (s, e) => _dispatcher.InvokeOnUiThread(OnCanExecuteChanged);
         }
 
         public void Execute(object parameter)

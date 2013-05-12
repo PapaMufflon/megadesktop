@@ -3,11 +3,11 @@ using System.Windows.Threading;
 
 namespace MegaDesktop.Services
 {
-    internal class ViewService : IViewService
+    internal class Dispatcher : IDispatcher
     {
-        private readonly Dispatcher _dispatcher;
+        private readonly System.Windows.Threading.Dispatcher _dispatcher;
 
-        public ViewService(Dispatcher dispatcher)
+        public Dispatcher(System.Windows.Threading.Dispatcher dispatcher)
         {
             _dispatcher = dispatcher;
         }
