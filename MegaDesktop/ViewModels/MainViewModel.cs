@@ -1,4 +1,5 @@
-﻿using System.Windows.Input;
+﻿using System.Collections.ObjectModel;
+using System.Windows.Input;
 using MegaDesktop.Commands;
 using MegaDesktop.Services;
 using MegaWpf;
@@ -17,5 +18,7 @@ namespace MegaDesktop.ViewModels
         public ICanSetStatus Status { get; set; }
         public ICommand UploadCommand { get; set; }
         public NodeViewModel RootNode { get; private set; }
+        public NodeViewModel SelectedTreeNode { get; set; }
+        public NodeViewModel SelectedListNode { get; set; }
     }
 }

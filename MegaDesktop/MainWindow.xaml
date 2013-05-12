@@ -2,6 +2,8 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:MegaApi;assembly=MegaApi"
+        xmlns:e="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:behaviours="clr-namespace:MegaDesktop.Ui"
         Title="Mega Desktop (v0.75 beta)" Height="500" Width="500" MinHeight="500" MinWidth="500" Icon="pack://application:,,,/m.ico" AllowDrop="True" DragEnter="Window_DragEnter_1" Drop="Window_Drop_1">
     <Window.Resources>
         <DataTemplate x:Key="NodeViewTemplate">
@@ -10,10 +12,10 @@
                     <Label.Style>
                         <Style TargetType="Label">
                             <Setter Property="Visibility" Value="Hidden"/>
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding Path=Type}"  Value="1">
-                                        <Setter Property="Visibility" Value="Visible"/>
-                                    </DataTrigger>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Path=Type}"  Value="1">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </DataTrigger>
                                 <DataTrigger Binding="{Binding Path=Type}"  Value="-1">
                                     <Setter Property="Visibility" Value="Visible"/>
                                 </DataTrigger>
@@ -21,9 +23,9 @@
                         </Style>
                     </Label.Style>
                 </Label>
-            <Label>
-                <Binding Path="Attributes.Name"/>
-            </Label>
+                <Label>
+                    <Binding Path="Name"/>
+                </Label>
             </StackPanel>
         </DataTemplate>
         <DataTemplate x:Key="TransferViewTemplate">
@@ -79,7 +81,7 @@
                     </Label.Style>
                 </Label>
                 <Label ContentStringFormat="{}{0:F2} MB/s" Content="{Binding Path=Speed}"/>
-                    
+
                 <Button Content="Cancel" Click="ButtonCancelTransfer_Click">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -183,14 +185,20 @@
             </Button>
         </DockPanel>
         <DockPanel  HorizontalAlignment="Stretch" Margin="0,100,0,130" Name="dockPanel2" VerticalAlignment="Stretch">
-            <TreeView DockPanel.Dock="Left" ItemsSource="{Binding RootNode.Children}">
+            <TreeView DockPanel.Dock="Left" ItemsSource="{Binding RootNode.ChildNodes}">
+                <e:Interaction.Behaviors>
+                    <behaviours:BindableSelectedItemBehavior SelectedItem="{Binding SelectedTreeNode, Mode=OneWayToSource}" />
+                </e:Interaction.Behaviors>
                 <TreeView.ItemTemplate>
-                    <HierarchicalDataTemplate ItemsSource="{Binding Children}">
+                    <HierarchicalDataTemplate ItemsSource="{Binding ChildNodes}">
                         <TextBlock Text="{Binding Name}" />
                     </HierarchicalDataTemplate>
                 </TreeView.ItemTemplate>
             </TreeView>
-            <ListBox Name="listBoxNodes" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ItemTemplate="{StaticResource NodeViewTemplate}" MouseDoubleClick="listBoxNodes_MouseDoubleClick" SelectionChanged="listBoxNodes_SelectionChanged" />
+            <ListBox ItemsSource="{Binding SelectedTreeNode.Children}"
+                     SelectedItem="{Binding SelectedListNode, Mode=OneWayToSource}"
+                     ItemTemplate="{StaticResource NodeViewTemplate}"
+                     MouseDoubleClick="listBoxNodes_MouseDoubleClick" SelectionChanged="listBoxNodes_SelectionChanged" />
         </DockPanel>
         <ListBox Height="100" HorizontalAlignment="Stretch" Margin="0,0,0,25" Name="listBoxDownloads" VerticalAlignment="Bottom" ItemTemplate="{StaticResource TransferViewTemplate}"/>
         <DockPanel Height="25" VerticalAlignment="Bottom">

@@ -17,6 +17,7 @@ namespace MegaDesktop.ViewModels
             _parent = parent;
             _dispatcher = dispatcher;
             Children = new ObservableCollection<NodeViewModel>();
+            ChildNodes = new ObservableCollection<NodeViewModel>();
         }
 
         public NodeViewModel(NodeViewModel parent, IDispatcher dispatcher, MegaNode node) : this(parent, dispatcher)
@@ -25,6 +26,7 @@ namespace MegaDesktop.ViewModels
         }
 
         public ObservableCollection<NodeViewModel> Children { get; private set; }
+        public ObservableCollection<NodeViewModel> ChildNodes { get; private set; }
         public NodeViewModel Parent { get { return _parent; } }
         public string Id { get { return _node != null ? _node.Id : string.Empty; } }
         public string Name { get { return _node != null ? _node.Attributes.Name : string.Empty; } }
@@ -57,7 +59,13 @@ namespace MegaDesktop.ViewModels
             {
                 childViewModel = new NodeViewModel(nodeViewModel, _dispatcher, child);
 
-                _dispatcher.InvokeOnUiThread(() => nodeViewModel.Children.Add(childViewModel));
+                _dispatcher.InvokeOnUiThread(() =>
+                {
+                    nodeViewModel.Children.Add(childViewModel);
+
+                    if (child.Type != MegaNodeType.File)
+                        nodeViewModel.ChildNodes.Add(childViewModel);
+                });
             }
 
             return childViewModel;

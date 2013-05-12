@@ -147,22 +147,8 @@ namespace MegaWpf
             }
 
             var parentViewModel = _mainViewModel.RootNode.Descendant(parent.Id);
-            var list = parentViewModel.Children.Select(x => x.HideMe).ToList();
             currentNode = parent.Type == MegaNodeType.Dummy ?
                 parentViewModel.HideMe : parent;
-            if (currentNode.Type != MegaNodeType.RootFolder)
-            {
-                var p = parentViewModel.Parent.HideMe;
-                list.Insert(0, new MegaNode
-                {
-                    Id = p.Id,
-                    Attributes = new NodeAttributes { Name = ".." },
-                    Type = MegaNodeType.Dummy
-
-                });
-            }
-
-            Invoke(() => listBoxNodes.ItemsSource = list);
         }
         void Invoke(Action fn)
         {
@@ -183,10 +169,10 @@ namespace MegaWpf
         {
             try
             {
-                var clickedNode = (MegaNode)listBoxNodes.SelectedItem;
+                var clickedNode = _mainViewModel.SelectedListNode.HideMe;
                 if (clickedNode.Type == MegaNodeType.Dummy || clickedNode.Type == MegaNodeType.Folder)
                 {
-                    ShowFiles((MegaNode)listBoxNodes.SelectedItem);
+                    ShowFiles(clickedNode);
                 }
                 if (clickedNode.Type == MegaNodeType.File)
                 {
@@ -210,9 +196,9 @@ namespace MegaWpf
 
         private void listBoxNodes_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (listBoxNodes.SelectedItem != null)
+            if (_mainViewModel.SelectedListNode != null)
             {
-                var node = (MegaNode)listBoxNodes.SelectedItem;
+                var node = _mainViewModel.SelectedListNode.HideMe;
                 if (node.Type == MegaNodeType.File)
                 {
                     buttonDownload.IsEnabled = true;
@@ -220,7 +206,6 @@ namespace MegaWpf
                 }
                 else
                 {
-
                     buttonDelete.IsEnabled = node.Type == MegaNodeType.Folder;
                     buttonDownload.IsEnabled = false;
                 }
@@ -244,7 +229,7 @@ namespace MegaWpf
 
         private void buttonDelete_Click(object sender, RoutedEventArgs e)
         {
-            var node = (MegaNode)listBoxNodes.SelectedItem;
+            var node = _mainViewModel.SelectedListNode.HideMe;
             var type = (node.Type == MegaNodeType.Folder ? "folder" : "file");
             var text = String.Format("Are you sure to delete the {0} {1}?", type, node.Attributes.Name);
             if (MessageBox.Show(text, "Deleting " + type, MessageBoxButton.YesNo) == MessageBoxResult.Yes)
@@ -286,7 +271,7 @@ namespace MegaWpf
 
         private void buttonDownload_Click(object sender, RoutedEventArgs e)
         {
-            var node = (MegaNode)listBoxNodes.SelectedItem;
+            var node = _mainViewModel.SelectedListNode.HideMe;
             if (node.Type == MegaNodeType.File)
             {
                 DownloadFile(node);
@@ -309,7 +294,9 @@ namespace MegaWpf
             Invoke(() =>
                 {
                     transfers.Clear();
-                    listBoxNodes.ItemsSource = null;
+
+                    while (_mainViewModel.RootNode.Children.Any())
+                        _mainViewModel.RootNode.Children.RemoveAt(_mainViewModel.RootNode.Children.Count - 1);
                 });
             var userAccount = GetUserKeyFilePath();
             // to restore previous anon account
