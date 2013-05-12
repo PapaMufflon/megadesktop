@@ -32,15 +32,15 @@ namespace MegaWpf
 
         public MainWindow()
         {
+            _mainViewModel = new MainViewModel(this);
+            DataContext = _mainViewModel;
+
             CheckTos();
 
             System.Net.ServicePointManager.DefaultConnectionLimit = 50;
             var save = false;
             var userAccountFile = GetUserKeyFilePath();
             Login(save, userAccountFile);
-
-            _mainViewModel = new MainViewModel(this);
-            DataContext = _mainViewModel;
         }
 
         public Mega Api { get { return api; } }
@@ -398,11 +398,11 @@ namespace MegaWpf
         private void ScheduleUpload(string[] files, MegaNode target)
         {
             SetStatus("Adding files and folders...");
-            var list = new List<System.Tuple<string, string>>();
+            var list = new List<Tuple<string, string>>();
             foreach (var file in files)
             {
                 var root = Path.GetDirectoryName(file);
-                list.Add(new System.Tuple<string, string>(file, root));
+                list.Add(new Tuple<string, string>(file, root));
                 if ((new FileInfo(file).Attributes & FileAttributes.Directory) == FileAttributes.Directory)
                 {
                     AddDirectoryContent(file, list, root);
@@ -445,15 +445,15 @@ namespace MegaWpf
             _mainViewModel.Status.Done();
         }
 
-        private void AddDirectoryContent(string path, List<System.Tuple<string, string>> list, string root)
+        private void AddDirectoryContent(string path, List<Tuple<string, string>> list, string root)
         {
             foreach (var file in Directory.GetFiles(path))
             {
-                list.Add(new System.Tuple<string, string>(file, root));
+                list.Add(new Tuple<string, string>(file, root));
             }
             foreach (var subdir in Directory.GetDirectories(path))
             {
-                list.Add(new System.Tuple<string, string>(subdir, root));
+                list.Add(new Tuple<string, string>(subdir, root));
                 AddDirectoryContent(subdir, list, root);
             }
         }
