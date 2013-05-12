@@ -23,7 +23,7 @@ namespace MegaWpf
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window, ITodo
+    public partial class MainWindow : Window, ITodo, ICanRefresh
     {
         Mega api;
         ObservableCollection<TransferHandle> transfers = new ObservableCollection<TransferHandle>();
@@ -34,7 +34,7 @@ namespace MegaWpf
         public MainWindow()
         {
             var viewService = new Dispatcher(Dispatcher);
-            _mainViewModel = new MainViewModel(this, viewService);
+            _mainViewModel = new MainViewModel(this, this, viewService);
             DataContext = _mainViewModel;
 
             CheckTos();
@@ -131,6 +131,11 @@ namespace MegaWpf
             }, e => _mainViewModel.Status.Error(e));
         }
 
+        public void Refresh()
+        {
+            ShowFiles(currentNode, true);
+        }
+
         private void ShowFiles(MegaNode parent = null, bool refresh = false)
         {
             if (parent == null) { parent = currentNode; }
@@ -191,37 +196,6 @@ namespace MegaWpf
             {
                 _mainViewModel.Status.SetStatus(Status.Communicating);
                 api.DownloadFile(clickedNode, d.FileName, AddDownloadHandle, e => _mainViewModel.Status.Error(e));
-            }
-        }
-
-        private void listBoxNodes_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (_mainViewModel.SelectedListNode != null)
-            {
-                var node = _mainViewModel.SelectedListNode.HideMe;
-                if (node.Type == MegaNodeType.File)
-                {
-                    buttonDelete.IsEnabled = true;
-                }
-                else
-                {
-                    buttonDelete.IsEnabled = node.Type == MegaNodeType.Folder;
-                }
-            }
-            else
-            {
-                buttonDelete.IsEnabled = false;
-            }
-        }
-
-        private void buttonDelete_Click(object sender, RoutedEventArgs e)
-        {
-            var node = _mainViewModel.SelectedListNode.HideMe;
-            var type = (node.Type == MegaNodeType.Folder ? "folder" : "file");
-            var text = String.Format("Are you sure to delete the {0} {1}?", type, node.Attributes.Name);
-            if (MessageBox.Show(text, "Deleting " + type, MessageBoxButton.YesNo) == MessageBoxResult.Yes)
-            {
-                api.RemoveNode(node.Id, () => ShowFiles(currentNode, true), err => _mainViewModel.Status.Error(err));
             }
         }
 

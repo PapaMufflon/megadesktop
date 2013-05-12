@@ -80,7 +80,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\DeleteCommand.cs" />
     <Compile Include="Commands\DownloadCommand.cs" />
+    <Compile Include="Commands\ICanRefresh.cs" />
     <Compile Include="Commands\ICanSetStatus.cs" />
     <Compile Include="Commands\ISelectedNodeListener.cs" />
     <Compile Include="Commands\UploadCommand.cs" />

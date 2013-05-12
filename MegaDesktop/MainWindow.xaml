@@ -167,7 +167,7 @@
             <Button Height="50" Command="{Binding DownloadCommand}" CommandParameter="{Binding SelectedNode}" Width="50" HorizontalAlignment="Left" ToolTip="Download">
                 <Image Source="pack://application:,,,/MegaDesktop;component/resources/download.png" />
             </Button>
-            <Button Height="50" Name="buttonDelete" Width="50" HorizontalAlignment="Left" Margin="10,0,0,0" IsEnabled="False" ToolTip="Delete" Click="buttonDelete_Click" >
+            <Button Height="50" Command="{Binding DeleteCommand}" CommandParameter="{Binding SelectedNode}" Width="50" HorizontalAlignment="Left" Margin="10,0,0,0" ToolTip="Delete">
                 <Image Source="pack://application:,,,/MegaDesktop;component/resources/remove.png" Height="26" />
             </Button>
             <Button Height="50" Name="buttonLogin" Width="50" Visibility="Collapsed" Margin="10,0,0,0" IsEnabled="False" ToolTip="Login" Click="buttonLogin_Click" >
@@ -198,7 +198,7 @@
             <ListBox ItemsSource="{Binding SelectedTreeNode.Children}"
                      SelectedItem="{Binding SelectedListNode, Mode=OneWayToSource}"
                      ItemTemplate="{StaticResource NodeViewTemplate}"
-                     MouseDoubleClick="listBoxNodes_MouseDoubleClick" SelectionChanged="listBoxNodes_SelectionChanged" />
+                     MouseDoubleClick="listBoxNodes_MouseDoubleClick" />
         </DockPanel>
         <ListBox Height="100" HorizontalAlignment="Stretch" Margin="0,0,0,25" Name="listBoxDownloads" VerticalAlignment="Bottom" ItemTemplate="{StaticResource TransferViewTemplate}"/>
         <DockPanel Height="25" VerticalAlignment="Bottom">

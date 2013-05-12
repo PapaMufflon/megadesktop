@@ -13,17 +13,19 @@ namespace MegaDesktop.ViewModels
         private NodeViewModel _selectedTreeNode;
         private NodeViewModel _selectedListNode;
 
-        public MainViewModel(ITodo todo, IDispatcher dispatcher)
+        public MainViewModel(ITodo todo, ICanRefresh refresh, IDispatcher dispatcher)
         {
             Status = new StatusViewModel { Message = "Retrieving the list of files..." };
             UploadCommand = new UploadCommand(todo.Api, Status, this, todo, dispatcher);
             DownloadCommand = new DownloadCommand(todo.Api, Status, todo, this, dispatcher);
+            DeleteCommand = new DeleteCommand(todo.Api, Status, refresh);
             RootNode = new NodeViewModel(null, dispatcher);
         }
 
         public ICanSetStatus Status { get; set; }
         public ICommand UploadCommand { get; set; }
         public ICommand DownloadCommand { get; set; }
+        public ICommand DeleteCommand { get; set; }
         public NodeViewModel RootNode { get; private set; }
         public NodeViewModel SelectedNode { get; set; }
 
