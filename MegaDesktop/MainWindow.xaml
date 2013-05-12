@@ -187,7 +187,7 @@
         </DockPanel>
         <ListBox Height="100" HorizontalAlignment="Stretch" Margin="0,0,0,25" Name="listBoxDownloads" VerticalAlignment="Bottom" ItemTemplate="{StaticResource TransferViewTemplate}"/>
         <DockPanel Height="25" VerticalAlignment="Bottom">
-            <TextBox Padding="3" HorizontalAlignment="Left" Text="{Binding Message}" FontSize="14" IsReadOnly="True" BorderThickness="0"/>
+            <TextBox Padding="3" HorizontalAlignment="Left" Text="{Binding Status.Message}" FontSize="14" IsReadOnly="True" BorderThickness="0"/>
             <Button x:Name="HomeLink" Content="http://megadesktop.com/" HorizontalAlignment="Right" Click="Button_Click_1" FontSize="12" Margin="0,0,5,0">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
