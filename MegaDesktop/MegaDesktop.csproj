@@ -82,6 +82,8 @@
     <Compile Include="Commands\ICanSetStatus.cs" />
     <Compile Include="Commands\UploadCommand.cs" />
     <Compile Include="ITodo.cs" />
+    <Compile Include="Services\IViewService.cs" />
+    <Compile Include="Services\ViewService.cs" />
     <Compile Include="TermsOfServiceWindow.xaml.cs">
       <DependentUpon>TermsOfServiceWindow.xaml</DependentUpon>
     </Compile>

@@ -7,6 +7,8 @@ using System.Windows.Input;
 using System.IO;
 using MegaApi;
 using MegaApi.Utility;
+using MegaDesktop.Commands;
+using MegaDesktop.Services;
 using MegaDesktop.ViewModels;
 using Microsoft.Win32;
 using System.Collections.ObjectModel;
@@ -32,7 +34,8 @@ namespace MegaWpf
 
         public MainWindow()
         {
-            _mainViewModel = new MainViewModel(this);
+            var viewService = new ViewService(Dispatcher);
+            _mainViewModel = new MainViewModel(this, viewService);
             DataContext = _mainViewModel;
 
             CheckTos();
@@ -68,14 +71,14 @@ namespace MegaWpf
         {
             MegaUser u;
             if ((u = Mega.LoadAccount(userAccountFile)) == null) { save = true; }
-            SetStatus("Logging in...");
+            _mainViewModel.Status.SetStatus(Status.LoggingIn);
             Mega.Init(u, (m) =>
             {
                 api = m;
                 if (save) { SaveAccount(userAccountFile, "user.anon.dat"); }
                 InitializeComponent();
                 InitialLoadNodes();
-                _mainViewModel.Status.Done();
+                _mainViewModel.Status.SetStatus(Status.Loaded);
                 if (api.User.Status == MegaUserStatus.Anonymous)
                 {
                     Invoke(() =>
@@ -113,17 +116,16 @@ namespace MegaWpf
         private void InitialLoadNodes()
         {
             Invoke(() => listBoxDownloads.ItemsSource = transfers);
-            SetStatus("Retrieving the list of files...");
+            _mainViewModel.Status.SetStatus(Status.Communicating);
             api.GetNodes((list) =>
             {
                 Invoke(() =>
                 {
-                    buttonUpload.IsEnabled = true;
                     buttonRefresh.IsEnabled = true;
                     buttonLogout.IsEnabled = true;
                     buttonLogin.IsEnabled = true;
                 });
-                _mainViewModel.Status.Done();
+                _mainViewModel.Status.SetStatus(Status.Loaded);
                 nodes = list;
                 currentNode = list.Where(n => n.Type == MegaNodeType.RootFolder).FirstOrDefault();
                 ShowFiles();
@@ -135,10 +137,10 @@ namespace MegaWpf
             if (parent == null) { parent = currentNode; }
             if (refresh)
             {
-                SetStatus("Refreshing file info...");
+                _mainViewModel.Status.SetStatus(Status.Communicating);
                 api.GetNodes((l) =>
                 {
-                    _mainViewModel.Status.Done();
+                    _mainViewModel.Status.SetStatus(Status.Loaded);
                     nodes = l;
                     ShowFiles(parent);
                 }, e => _mainViewModel.Status.Error(e));
@@ -165,10 +167,6 @@ namespace MegaWpf
         void Invoke(Action fn)
         {
             Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority.Normal, (Delegate)fn);
-        }
-        void SetStatus(string text, params object[] args)
-        {
-            _mainViewModel.Status.Set(String.Format(text, args));
         }
 
         string GetUserKeyFilePath()
@@ -205,7 +203,7 @@ namespace MegaWpf
             d.FileName = clickedNode.Attributes.Name;
             if (d.ShowDialog() == true)
             {
-                SetStatus("Starting download...");
+                _mainViewModel.Status.SetStatus(Status.Communicating);
                 api.DownloadFile(clickedNode, d.FileName, AddDownloadHandle, e => _mainViewModel.Status.Error(e));
             }
         }
@@ -239,7 +237,7 @@ namespace MegaWpf
             var d = new OpenFileDialog();
             if (d.ShowDialog() == true)
             {
-                SetStatus("Starting upload...");
+                _mainViewModel.Status.SetStatus(Status.Communicating);
                 api.UploadFile(currentNode.Id, d.FileName, AddUploadHandle, err => _mainViewModel.Status.Error(err));
             }
         }
@@ -397,7 +395,7 @@ namespace MegaWpf
 
         private void ScheduleUpload(string[] files, MegaNode target)
         {
-            SetStatus("Adding files and folders...");
+            _mainViewModel.Status.SetStatus(Status.Processing);
             var list = new List<MegaApi.Utility.Tuple<string, string>>();
             foreach (var file in files)
             {
@@ -408,7 +406,6 @@ namespace MegaWpf
                     AddDirectoryContent(file, list, root);
                 }
             }
-            SetStatus("Preparing MEGA folders...");
             foreach (var file in list)
             {
                 var filename = file.Item1.Replace(file.Item2, "").TrimStart(Path.DirectorySeparatorChar);
@@ -442,7 +439,7 @@ namespace MegaWpf
                 }
             }
             
-            _mainViewModel.Status.Done();
+            _mainViewModel.Status.SetStatus(Status.Loaded);
         }
 
         private void AddDirectoryContent(string path, List<MegaApi.Utility.Tuple<string, string>> list, string root)
@@ -466,12 +463,12 @@ namespace MegaWpf
                 h.TransferEnded += (s1, e1) => ShowFiles(currentNode, true);
             };
 
-            _mainViewModel.Status.Done();
+            _mainViewModel.Status.SetStatus(Status.Loaded);
         }
         void AddDownloadHandle(TransferHandle h)
         {
             Invoke(() => transfers.Add(h));
-            _mainViewModel.Status.Done();
+            _mainViewModel.Status.SetStatus(Status.Loaded);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 using MegaApi;
+using MegaDesktop.Services;
 using MegaWpf;
 using Microsoft.Win32;
 
@@ -11,12 +12,16 @@ namespace MegaDesktop.Commands
         private readonly Mega _api;
         private readonly ICanSetStatus _status;
         private readonly ITodo _todo;
+        private readonly IViewService _viewService;
 
-        public UploadCommand(Mega api, ICanSetStatus status, ITodo todo)
+        public UploadCommand(Mega api, ICanSetStatus status, ITodo todo, IViewService viewService)
         {
             _api = api;
             _status = status;
             _todo = todo;
+            _viewService = viewService;
+
+            _status.CurrentStatusChanged += (s, e) => _viewService.InvokeOnUiThread(OnCanExecuteChanged);
         }
 
         public void Execute(object parameter)
@@ -31,15 +36,21 @@ namespace MegaDesktop.Commands
             if (d.ShowDialog() != true)
                 return;
 
-            _status.Set("Starting upload...");
+            _status.SetStatus(Status.Communicating);
             _api.UploadFile(currentNode.Id, d.FileName, _todo.AddUploadHandle, err => _status.Error(err));
         }
 
         public bool CanExecute(object parameter)
         {
-            return true;
+            return _status.CurrentStatus == Status.Loaded;
         }
 
         public event EventHandler CanExecuteChanged;
+
+        protected virtual void OnCanExecuteChanged()
+        {
+            var handler = CanExecuteChanged;
+            if (handler != null) handler(this, EventArgs.Empty);
+        }
     }
 }

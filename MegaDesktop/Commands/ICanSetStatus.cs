@@ -1,9 +1,22 @@
-﻿namespace MegaDesktop.Commands
+﻿using System;
+
+namespace MegaDesktop.Commands
 {
     internal interface ICanSetStatus
     {
-        void Set(string newStatus);
-        void Done();
+        event EventHandler<EventArgs> CurrentStatusChanged;
+
+        void SetStatus(Status newStatus);
         void Error(int errorNumber);
+
+        Status CurrentStatus { get; }
+    }
+
+    internal enum Status
+    {
+        LoggingIn,
+        Communicating,
+        Loaded,
+        Processing
     }
 }
