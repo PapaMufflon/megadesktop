@@ -82,7 +82,7 @@ namespace MegaWpf
             if (refresh)
             {
                 _mainViewModel.Status.SetStatus(Status.Communicating);
-                api.GetNodes((l) =>
+                api.GetNodes(l =>
                 {
                     _mainViewModel.Status.SetStatus(Status.Loaded);
                     _mainViewModel.RootNode.Update(l);
@@ -161,19 +161,9 @@ namespace MegaWpf
             _mainViewModel.Transfers.Remove(handle);
         }
 
-        private void buttonFeedback_Click(object sender, RoutedEventArgs e)
-        {
-            Process.Start("http://megadesktop.uservoice.com/forums/191321-general");
-        }
-
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             Process.Start("http://megadesktop.com/");
-        }
-
-        private void buttonTrySync_Click(object sender, RoutedEventArgs e)
-        {
-            Process.Start(Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), "MegaSync.exe"));
         }
 
         private void Window_DragEnter_1(object sender, DragEventArgs e)
@@ -259,18 +249,18 @@ namespace MegaWpf
         //    _mainViewModel.Status.SetStatus(Status.Loaded);
         //}
 
-        private void AddDirectoryContent(string path, List<MegaApi.Utility.Tuple<string, string>> list, string root)
-        {
-            foreach (var file in Directory.GetFiles(path))
-            {
-                list.Add(new MegaApi.Utility.Tuple<string, string>(file, root));
-            }
-            foreach (var subdir in Directory.GetDirectories(path))
-            {
-                list.Add(new MegaApi.Utility.Tuple<string, string>(subdir, root));
-                AddDirectoryContent(subdir, list, root);
-            }
-        }
+        //private void AddDirectoryContent(string path, List<MegaApi.Utility.Tuple<string, string>> list, string root)
+        //{
+        //    foreach (var file in Directory.GetFiles(path))
+        //    {
+        //        list.Add(new MegaApi.Utility.Tuple<string, string>(file, root));
+        //    }
+        //    foreach (var subdir in Directory.GetDirectories(path))
+        //    {
+        //        list.Add(new MegaApi.Utility.Tuple<string, string>(subdir, root));
+        //        AddDirectoryContent(subdir, list, root);
+        //    }
+        //}
 
         public void AddUploadHandle(TransferHandle h)
         {
@@ -282,6 +272,7 @@ namespace MegaWpf
 
             _mainViewModel.Status.SetStatus(Status.Loaded);
         }
+
         void AddDownloadHandle(TransferHandle h)
         {
             Invoke(() => _mainViewModel.Transfers.Add(h));

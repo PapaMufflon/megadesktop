@@ -179,10 +179,6 @@
             <Button Height="50" Name="buttonRefresh" Width="50" HorizontalAlignment="Left" Click="buttonRefresh_Click" IsEnabled="False" ToolTip="Refresh" Margin="10,0,0,0" >
                 <Image Source="pack://application:,,,/MegaDesktop;component/resources/refresh.png" Height="40"/>
             </Button>
-            <Button Height="50" Content="Sync" Name="buttonTrySync" Width="50" HorizontalAlignment="Left" IsEnabled="True" ToolTip="Refresh" Margin="10,0,0,0" Click="buttonTrySync_Click" />
-            <Button Height="50" Name="buttonFeedback" Width="50" HorizontalAlignment="Right" Click="buttonFeedback_Click" IsEnabled="true" ToolTip="Send feedback" Margin="0,0,10,0" >
-                <Image Source="pack://application:,,,/MegaDesktop;component/resources/bug.png" Height="20"/>
-            </Button>
         </DockPanel>
         <DockPanel  HorizontalAlignment="Stretch" Margin="0,100,0,130" Name="dockPanel2" VerticalAlignment="Stretch">
             <TreeView DockPanel.Dock="Left" ItemsSource="{Binding RootNode.ChildNodes}">
