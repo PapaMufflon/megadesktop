@@ -99,6 +99,7 @@
     <Compile Include="Services\IDispatcher.cs" />
     <Compile Include="Services\Dispatcher.cs" />
     <Compile Include="Services\IHaveTheApi.cs" />
+    <Compile Include="Services\IHaveTheRootNode.cs" />
     <Compile Include="Services\ISelectedNodeListener.cs" />
     <Compile Include="Services\IUserManagement.cs" />
     <Compile Include="Services\Status.cs" />

@@ -48,7 +48,16 @@ namespace MegaDesktop.Services
             }, e => { MessageBox.Show("Error while loading account: " + e); Application.Current.Shutdown(); });
         }
 
-        public void SaveAccount()
+        public void DeleteCurrentAccount()
+        {
+            var userAccount = GetUserKeyFilePath();
+            // to restore previous anon account
+            //File.Move(System.IO.Path.Combine(System.IO.Path.GetDirectoryName(userAccount), "user.anon.dat"), userAccount);
+            // or simply drop logged in account
+            File.Delete(userAccount);
+        }
+
+        public void SaveCurrentAccount()
         {
             SaveAccount(GetUserKeyFilePath(), "user.anon.dat");
         }

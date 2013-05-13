@@ -2,7 +2,8 @@
 {
     internal interface IUserManagement
     {
-        void SaveAccount();
+        void SaveCurrentAccount();
+        void DeleteCurrentAccount();
         void AutoLoginLastUser();
     }
 }

@@ -8,7 +8,7 @@ using MegaWpf;
 
 namespace MegaDesktop.ViewModels
 {
-    internal class MainViewModel : ISelectedNodeListener, IManageTransfers
+    internal class MainViewModel : ISelectedNodeListener, IManageTransfers, IHaveTheRootNode
     {
         public event EventHandler<EventArgs> SelectedNodeChanged;
 
@@ -27,7 +27,7 @@ namespace MegaDesktop.ViewModels
             DownloadCommand = new DownloadCommand(todo.Api, Status, todo, this, dispatcher);
             DeleteCommand = new DeleteCommand(todo.Api, Status, refresh);
             LoginCommand = new LoginCommand(apiManager, userAccount, this, title, refresh);
-            LogoutCommand = new LogoutCommand();
+            LogoutCommand = new LogoutCommand(this, this, userAccount);
             RootNode = new NodeViewModel(null, dispatcher);
             Transfers = new ObservableCollection<TransferHandle>();
         }

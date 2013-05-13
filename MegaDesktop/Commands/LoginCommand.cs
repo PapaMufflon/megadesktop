@@ -35,7 +35,7 @@ namespace MegaDesktop.Commands
             w.OnLoggedIn += (s, args) =>
             {
                 _apiManager.Set(args.Api);
-                _userAccount.SaveAccount();
+                _userAccount.SaveCurrentAccount();
                 _transfers.CancelAllTransfers();
                 w.Close();
                 _title.Title = Resource.Title + " - " + _apiManager.Api.User.Email;
