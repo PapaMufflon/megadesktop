@@ -161,11 +161,6 @@ namespace MegaWpf
             _mainViewModel.Transfers.Remove(handle);
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            Process.Start("http://megadesktop.com/");
-        }
-
         private void Window_DragEnter_1(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
