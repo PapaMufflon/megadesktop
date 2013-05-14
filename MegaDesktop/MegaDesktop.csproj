@@ -84,6 +84,7 @@
     <Compile Include="Commands\DownloadCommand.cs" />
     <Compile Include="Commands\LoginCommand.cs" />
     <Compile Include="Commands\LogoutCommand.cs" />
+    <Compile Include="Commands\SelectedListNodeActionCommand.cs" />
     <Compile Include="Commands\UploadCommand.cs" />
     <Compile Include="IManageTransfers.cs" />
     <Compile Include="ITodo.cs" />

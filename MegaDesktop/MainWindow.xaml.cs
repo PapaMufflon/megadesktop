@@ -1,17 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Input;
-using System.IO;
 using MegaApi;
 using MegaDesktop.Services;
 using MegaDesktop.ViewModels;
-using Microsoft.Win32;
 using MegaDesktop;
 using System.Diagnostics;
-using System.Reflection;
 
 namespace MegaWpf
 {
@@ -21,7 +16,6 @@ namespace MegaWpf
     public partial class MainWindow : Window, ITodo, ICanRefresh, ICanSetTitle
     {
         Mega api;
-        MegaNode currentNode;
         private readonly MainViewModel _mainViewModel;
 
         public MainWindow()
@@ -60,78 +54,37 @@ namespace MegaWpf
 
         public void RefreshCurrentNode()
         {
-            ShowFiles(currentNode, true);
+            Refresh(_mainViewModel.SelectedListNode);
         }
 
         public void Reload()
         {
+            Refresh();
+        }
+
+        private void Refresh(NodeViewModel node = null)
+        {
             _mainViewModel.Status.SetStatus(Status.Communicating);
-            api.GetNodes((list) =>
+
+            api.GetNodes(nodes =>
             {
                 _mainViewModel.Status.SetStatus(Status.Loaded);
-                _mainViewModel.RootNode.Update(list);
+                _mainViewModel.RootNode.Update(nodes);
 
-                currentNode = _mainViewModel.RootNode.Children.Single(n => n.HideMe.Type == MegaNodeType.RootFolder).HideMe;
-                ShowFiles();
+                _mainViewModel.SelectedListNode = node == null
+                                                      ? _mainViewModel.RootNode.Children.Single(n => n.HideMe.Type == MegaNodeType.RootFolder)
+                                                      : _mainViewModel.RootNode.Descendant(node.Id);
             }, e => _mainViewModel.Status.Error(e));
         }
 
-        private void ShowFiles(MegaNode parent = null, bool refresh = false)
-        {
-            if (parent == null) { parent = currentNode; }
-            if (refresh)
-            {
-                _mainViewModel.Status.SetStatus(Status.Communicating);
-                api.GetNodes(l =>
-                {
-                    _mainViewModel.Status.SetStatus(Status.Loaded);
-                    _mainViewModel.RootNode.Update(l);
-                    ShowFiles(parent);
-                }, e => _mainViewModel.Status.Error(e));
-                return;
-            }
-
-            var parentViewModel = _mainViewModel.RootNode.Descendant(parent.Id);
-            currentNode = parent.Type == MegaNodeType.Dummy ?
-                parentViewModel.HideMe : parent;
-        }
         void Invoke(Action fn)
         {
             Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority.Normal, (Delegate)fn);
         }
 
-        private void listBoxNodes_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            try
-            {
-                var clickedNode = _mainViewModel.SelectedListNode.HideMe;
-                if (clickedNode.Type == MegaNodeType.Dummy || clickedNode.Type == MegaNodeType.Folder)
-                {
-                    ShowFiles(clickedNode);
-                }
-                if (clickedNode.Type == MegaNodeType.File)
-                {
-                    DownloadFile(clickedNode);
-                }
-            }
-            catch (InvalidCastException) { return; }
-
-        }
-
-        private void DownloadFile(MegaNode clickedNode)
-        {
-            var d = new SaveFileDialog();
-            d.FileName = clickedNode.Attributes.Name;
-            if (d.ShowDialog() == true)
-            {
-                _mainViewModel.Status.SetStatus(Status.Communicating);
-                api.DownloadFile(clickedNode, d.FileName, AddDownloadHandle, e => _mainViewModel.Status.Error(e));
-            }
-        }
-
         private void buttonRefresh_Click(object sender, RoutedEventArgs e)
         {
-            ShowFiles(currentNode, true);
+            RefreshCurrentNode();
         }
 
         void CancelTransfer(TransferHandle handle, bool warn = true)
@@ -147,6 +100,7 @@ namespace MegaWpf
             }
             handle.CancelTransfer();
         }
+
         private void ButtonCancelTransfer_Click(object sender, RoutedEventArgs e)
         {
             var button = sender as Button;
@@ -240,7 +194,7 @@ namespace MegaWpf
         //            _mainViewModel.Status.Error(e.ErrorNumber);
         //        }
         //    }
-            
+
         //    _mainViewModel.Status.SetStatus(Status.Loaded);
         //}
 
@@ -262,15 +216,9 @@ namespace MegaWpf
             Invoke(() => _mainViewModel.Transfers.Add(h));
             h.PropertyChanged += (s, ev) =>
             {
-                h.TransferEnded += (s1, e1) => ShowFiles(currentNode, true);
+                h.TransferEnded += (s1, e1) => RefreshCurrentNode();
             };
 
-            _mainViewModel.Status.SetStatus(Status.Loaded);
-        }
-
-        void AddDownloadHandle(TransferHandle h)
-        {
-            Invoke(() => _mainViewModel.Transfers.Add(h));
             _mainViewModel.Status.SetStatus(Status.Loaded);
         }
     }

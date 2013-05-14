@@ -28,6 +28,7 @@ namespace MegaDesktop.ViewModels
             DeleteCommand = new DeleteCommand(todo.Api, Status, refresh);
             LoginCommand = new LoginCommand(apiManager, userAccount, this, title, refresh);
             LogoutCommand = new LogoutCommand(this, this, userAccount);
+            SelectedListNodeActionCommand = new SelectedListNodeActionCommand(DownloadCommand as DownloadCommand, refresh);
             RootNode = new NodeViewModel(null, dispatcher);
             Transfers = new ObservableCollection<TransferHandle>();
         }
@@ -38,6 +39,7 @@ namespace MegaDesktop.ViewModels
         public ICommand DeleteCommand { get; private set; }
         public ICommand LoginCommand { get; private set; }
         public ICommand LogoutCommand { get; private set; }
+        public ICommand SelectedListNodeActionCommand { get; private set; }
         public NodeViewModel RootNode { get; private set; }
         public NodeViewModel SelectedNode { get; set; }
         public ObservableCollection<TransferHandle> Transfers { get; private set; }
