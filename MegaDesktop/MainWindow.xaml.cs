@@ -44,11 +44,6 @@ namespace MegaDesktop
             }
         }
 
-        void Invoke(Action fn)
-        {
-            Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority.Normal, (Delegate)fn);
-        }
-
         void CancelTransfer(TransferHandle handle, bool warn = true)
         {
             if (warn && (handle.Status == TransferHandleStatus.Downloading || handle.Status == TransferHandleStatus.Uploading))
