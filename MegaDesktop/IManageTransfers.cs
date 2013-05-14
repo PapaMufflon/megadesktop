@@ -1,7 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using MegaApi;
 
-namespace MegaWpf
+namespace MegaDesktop
 {
     public interface IManageTransfers
     {

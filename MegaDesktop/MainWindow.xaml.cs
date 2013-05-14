@@ -5,15 +5,11 @@ using System.Windows.Controls;
 using MegaApi;
 using MegaDesktop.Services;
 using MegaDesktop.ViewModels;
-using MegaDesktop;
 using System.Diagnostics;
 
-namespace MegaWpf
+namespace MegaDesktop
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window, ITodo, ICanRefresh, ICanSetTitle
+    public partial class MainWindow : ITodo, ICanRefresh, ICanSetTitle
     {
         Mega api;
         private readonly MainViewModel _mainViewModel;

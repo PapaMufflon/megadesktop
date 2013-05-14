@@ -4,7 +4,6 @@ using System.Windows.Input;
 using MegaApi;
 using MegaDesktop.Commands;
 using MegaDesktop.Services;
-using MegaWpf;
 
 namespace MegaDesktop.ViewModels
 {

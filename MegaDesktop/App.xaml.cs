@@ -1,4 +1,4 @@
-﻿namespace MegaWpf
+﻿namespace MegaDesktop
 {
     public partial class App
     {

@@ -1,6 +1,6 @@
 ﻿using MegaApi;
 
-namespace MegaWpf
+namespace MegaDesktop
 {
     public interface ITodo
     {

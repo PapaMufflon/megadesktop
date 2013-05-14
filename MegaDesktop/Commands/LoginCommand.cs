@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows.Input;
 using MegaDesktop.Services;
-using MegaWpf;
 
 namespace MegaDesktop.Commands
 {

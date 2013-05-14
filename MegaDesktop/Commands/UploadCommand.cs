@@ -3,7 +3,6 @@ using System.Windows.Input;
 using MegaApi;
 using MegaDesktop.Services;
 using MegaDesktop.ViewModels;
-using MegaWpf;
 using Microsoft.Win32;
 
 namespace MegaDesktop.Commands
