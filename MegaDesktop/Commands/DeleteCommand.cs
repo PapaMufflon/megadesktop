@@ -10,12 +10,12 @@ namespace MegaDesktop.Commands
     internal class DeleteCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;
-        
-        private readonly Mega _api;
+
+        private readonly IHaveTheApi _api;
         private readonly ICanSetStatus _status;
         private readonly ICanRefresh _refresh;
 
-        public DeleteCommand(Mega api, ICanSetStatus status, ICanRefresh refresh)
+        public DeleteCommand(IHaveTheApi api, ICanSetStatus status, ICanRefresh refresh)
         {
             _api = api;
             _status = status;
@@ -38,7 +38,7 @@ namespace MegaDesktop.Commands
             var text = String.Format("Are you sure to delete the {0} {1}?", type, node.Attributes.Name);
             if (MessageBox.Show(text, "Deleting " + type, MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
-                _api.RemoveNode(node.Id, () => _refresh.RefreshCurrentNode(), err => _status.Error(err));
+                _api.Api.RemoveNode(node.Id, () => _refresh.RefreshCurrentNode(), err => _status.Error(err));
             }
         }
 

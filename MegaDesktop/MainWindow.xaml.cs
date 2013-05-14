@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using MegaApi;
@@ -9,9 +8,8 @@ using System.Diagnostics;
 
 namespace MegaDesktop
 {
-    public partial class MainWindow : ITodo, ICanRefresh, ICanSetTitle
+    public partial class MainWindow : ICanSetTitle
     {
-        Mega api;
         private readonly MainViewModel _mainViewModel;
 
         public MainWindow()
@@ -19,7 +17,7 @@ namespace MegaDesktop
             InitializeComponent();
 
             var dispatcher = new Dispatcher(Dispatcher);
-            _mainViewModel = new MainViewModel(this, this, dispatcher, this);
+            _mainViewModel = new MainViewModel(dispatcher, this);
             DataContext = _mainViewModel;
 
             CheckTos();
@@ -27,11 +25,9 @@ namespace MegaDesktop
             System.Net.ServicePointManager.DefaultConnectionLimit = 50;
         }
 
-        public Mega Api { get { return api; } }
-
         private static void CheckTos()
         {
-            if (MegaDesktop.Properties.Settings.Default.TosAccepted) { return; }
+            if (Properties.Settings.Default.TosAccepted) { return; }
             else
             {
                 TermsOfServiceWindow tos = new TermsOfServiceWindow();
@@ -42,45 +38,15 @@ namespace MegaDesktop
                 }
                 else
                 {
-                    MegaDesktop.Properties.Settings.Default.TosAccepted = true;
-                    MegaDesktop.Properties.Settings.Default.Save();
+                    Properties.Settings.Default.TosAccepted = true;
+                    Properties.Settings.Default.Save();
                 }
             }
-        }
-
-        public void RefreshCurrentNode()
-        {
-            Refresh(_mainViewModel.SelectedListNode);
-        }
-
-        public void Reload()
-        {
-            Refresh();
-        }
-
-        private void Refresh(NodeViewModel node = null)
-        {
-            _mainViewModel.Status.SetStatus(Status.Communicating);
-
-            api.GetNodes(nodes =>
-            {
-                _mainViewModel.Status.SetStatus(Status.Loaded);
-                _mainViewModel.RootNode.Update(nodes);
-
-                _mainViewModel.SelectedListNode = node == null
-                                                      ? _mainViewModel.RootNode.Children.Single(n => n.HideMe.Type == MegaNodeType.RootFolder)
-                                                      : _mainViewModel.RootNode.Descendant(node.Id);
-            }, e => _mainViewModel.Status.Error(e));
         }
 
         void Invoke(Action fn)
         {
             Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority.Normal, (Delegate)fn);
-        }
-
-        private void buttonRefresh_Click(object sender, RoutedEventArgs e)
-        {
-            RefreshCurrentNode();
         }
 
         void CancelTransfer(TransferHandle handle, bool warn = true)
@@ -206,16 +172,5 @@ namespace MegaDesktop
         //        AddDirectoryContent(subdir, list, root);
         //    }
         //}
-
-        public void AddUploadHandle(TransferHandle h)
-        {
-            Invoke(() => _mainViewModel.Transfers.Add(h));
-            h.PropertyChanged += (s, ev) =>
-            {
-                h.TransferEnded += (s1, e1) => RefreshCurrentNode();
-            };
-
-            _mainViewModel.Status.SetStatus(Status.Loaded);
-        }
     }
 }

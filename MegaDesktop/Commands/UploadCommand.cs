@@ -11,17 +11,19 @@ namespace MegaDesktop.Commands
     {
         public event EventHandler CanExecuteChanged;
 
-        private readonly Mega _api;
+        private readonly IHaveTheApi _api;
         private readonly ICanSetStatus _status;
-        private readonly ITodo _todo;
         private readonly IDispatcher _dispatcher;
+        private readonly IManageTransfers _transfers;
+        private readonly ICanRefresh _refresh;
 
-        public UploadCommand(Mega api, ICanSetStatus status, ISelectedNodeListener selectedNodeListener, ITodo todo, IDispatcher dispatcher)
+        public UploadCommand(IHaveTheApi api, ICanSetStatus status, ISelectedNodeListener selectedNodeListener, IDispatcher dispatcher, IManageTransfers transfers, ICanRefresh refresh)
         {
             _api = api;
             _status = status;
-            _todo = todo;
             _dispatcher = dispatcher;
+            _transfers = transfers;
+            _refresh = refresh;
 
             _status.CurrentStatusChanged += (s, e) => _dispatcher.InvokeOnUiThread(OnCanExecuteChanged);
             selectedNodeListener.SelectedNodeChanged += (s, e) => dispatcher.InvokeOnUiThread(OnCanExecuteChanged);
@@ -40,7 +42,15 @@ namespace MegaDesktop.Commands
                 return;
 
             _status.SetStatus(Status.Communicating);
-            _api.UploadFile(currentNode.Id, d.FileName, _todo.AddUploadHandle, err => _status.Error(err));
+            _api.Api.UploadFile(currentNode.Id, d.FileName, OnHandleReady, err => _status.Error(err));
+        }
+
+        private void OnHandleReady(TransferHandle transfer)
+        {
+            transfer.TransferEnded += (s, e) => _refresh.RefreshCurrentNode();
+            _transfers.Transfers.Add(transfer);
+
+            _status.SetStatus(Status.Loaded);
         }
 
         public bool CanExecute(object parameter)

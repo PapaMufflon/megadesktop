@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows.Input;
 using MegaApi;
 using MegaDesktop.Commands;
@@ -7,27 +8,29 @@ using MegaDesktop.Services;
 
 namespace MegaDesktop.ViewModels
 {
-    internal class MainViewModel : ISelectedNodeListener, IManageTransfers, IHaveTheRootNode
+    internal class MainViewModel : ISelectedNodeListener, IManageTransfers, IHaveTheRootNode, ICanRefresh
     {
         public event EventHandler<EventArgs> SelectedNodeChanged;
 
         private NodeViewModel _selectedTreeNode;
         private NodeViewModel _selectedListNode;
+        private readonly ApiManager _apiManager;
 
-        public MainViewModel(ITodo todo, ICanRefresh refresh, IDispatcher dispatcher, ICanSetTitle title)
+        public MainViewModel(IDispatcher dispatcher, ICanSetTitle title)
         {
             Status = new StatusViewModel { Message = "Retrieving the list of files..." };
 
-            var apiManager = new ApiManager();
-            var userAccount = new UserAccount(apiManager, Status, refresh, title);
+            _apiManager = new ApiManager();
+            var userAccount = new UserAccount(_apiManager, Status, this, title);
             userAccount.AutoLoginLastUser();
 
-            UploadCommand = new UploadCommand(todo.Api, Status, this, todo, dispatcher);
-            DownloadCommand = new DownloadCommand(todo.Api, Status, todo, this, dispatcher);
-            DeleteCommand = new DeleteCommand(todo.Api, Status, refresh);
-            LoginCommand = new LoginCommand(apiManager, userAccount, this, title, refresh);
+            UploadCommand = new UploadCommand(_apiManager, Status, this, dispatcher, this, this);
+            DownloadCommand = new DownloadCommand(_apiManager, Status, this, dispatcher, this, this);
+            DeleteCommand = new DeleteCommand(_apiManager, Status, this);
+            LoginCommand = new LoginCommand(_apiManager, userAccount, this, title, this);
             LogoutCommand = new LogoutCommand(this, this, userAccount);
-            SelectedListNodeActionCommand = new SelectedListNodeActionCommand(DownloadCommand as DownloadCommand, refresh);
+            RefreshCommand = new RefreshCommand(this);
+            SelectedListNodeActionCommand = new SelectedListNodeActionCommand(DownloadCommand as DownloadCommand, this);
             RootNode = new NodeViewModel(null, dispatcher);
             Transfers = new ObservableCollection<TransferHandle>();
         }
@@ -38,6 +41,7 @@ namespace MegaDesktop.ViewModels
         public ICommand DeleteCommand { get; private set; }
         public ICommand LoginCommand { get; private set; }
         public ICommand LogoutCommand { get; private set; }
+        public ICommand RefreshCommand { get; private set; }
         public ICommand SelectedListNodeActionCommand { get; private set; }
         public NodeViewModel RootNode { get; private set; }
         public NodeViewModel SelectedNode { get; set; }
@@ -77,6 +81,31 @@ namespace MegaDesktop.ViewModels
             {
                 transfer.CancelTransfer();
             }
+        }
+
+        public void RefreshCurrentNode()
+        {
+            Refresh(SelectedListNode);
+        }
+
+        public void Reload()
+        {
+            Refresh();
+        }
+
+        private void Refresh(NodeViewModel node = null)
+        {
+            Status.SetStatus(Services.Status.Communicating);
+
+            _apiManager.Api.GetNodes(nodes =>
+            {
+                Status.SetStatus(Services.Status.Loaded);
+                RootNode.Update(nodes);
+
+                SelectedListNode = node == null
+                                       ? RootNode.Children.Single(n => n.HideMe.Type == MegaNodeType.RootFolder)
+                                       : RootNode.Descendant(node.Id);
+            }, e => Status.Error(e));
         }
     }
 }

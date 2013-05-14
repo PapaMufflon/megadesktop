@@ -9,15 +9,19 @@ namespace MegaDesktop.Commands
 {
     internal class DownloadCommand : ICommand
     {
-        private readonly Mega _api;
-        private readonly ICanSetStatus _status;
-        private readonly ITodo _todo;
+        public event EventHandler CanExecuteChanged;
 
-        public DownloadCommand(Mega api, ICanSetStatus status, ITodo todo, ISelectedNodeListener selectedNodeListener, IDispatcher dispatcher)
+        private readonly IHaveTheApi _api;
+        private readonly ICanSetStatus _status;
+        private readonly IManageTransfers _transfers;
+        private readonly ICanRefresh _refresh;
+
+        public DownloadCommand(IHaveTheApi api, ICanSetStatus status, ISelectedNodeListener selectedNodeListener, IDispatcher dispatcher, IManageTransfers transfers, ICanRefresh refresh)
         {
             _api = api;
             _status = status;
-            _todo = todo;
+            _transfers = transfers;
+            _refresh = refresh;
 
             selectedNodeListener.SelectedNodeChanged += (s, e) => dispatcher.InvokeOnUiThread(OnCanExecuteChanged);
         }
@@ -53,12 +57,18 @@ namespace MegaDesktop.Commands
             if (d.ShowDialog() == true)
             {
                 _status.SetStatus(Status.Communicating);
-                _api.DownloadFile(clickedNode, d.FileName, _todo.AddUploadHandle, e => _status.Error(e));
+                _api.Api.DownloadFile(clickedNode, d.FileName, OnHandleReady, e => _status.Error(e));
             }
         }
 
-        public event EventHandler CanExecuteChanged;
+        private void OnHandleReady(TransferHandle transfer)
+        {
+            transfer.TransferEnded += (s, e) => _refresh.RefreshCurrentNode();
+            _transfers.Transfers.Add(transfer);
 
+            _status.SetStatus(Status.Loaded);
+        }
+        
         protected virtual void OnCanExecuteChanged()
         {
             var handler = CanExecuteChanged;
