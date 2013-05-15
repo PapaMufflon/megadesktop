@@ -50,27 +50,6 @@ namespace MegaDesktop
             _dispatcher.InvokeOnUiThread(() => Title = newTitle);
         }
 
-        void CancelTransfer(TransferHandle handle, bool warn = true)
-        {
-            if (warn && (handle.Status == TransferHandleStatus.Downloading || handle.Status == TransferHandleStatus.Uploading))
-            {
-                var type = (handle.Status == TransferHandleStatus.Downloading ? "download" : "upload");
-                var text = String.Format("Are you sure to cancel the {0} process for {1}?", type, handle.Node.Attributes.Name);
-                if (MessageBox.Show(text, "Cancel " + type, MessageBoxButton.YesNo) == MessageBoxResult.No)
-                {
-                    return;
-                }
-            }
-            handle.CancelTransfer();
-        }
-
-        private void ButtonCancelTransfer_Click(object sender, RoutedEventArgs e)
-        {
-            var button = sender as Button;
-            var handle = button.DataContext as TransferHandle;
-            CancelTransfer(handle);
-        }
-
         private void Window_DragEnter_1(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))

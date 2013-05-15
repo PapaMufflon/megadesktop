@@ -82,7 +82,7 @@
                 </Label>
                 <Label ContentStringFormat="{}{0:F2} MB/s" Content="{Binding Path=Speed}"/>
 
-                <Button Content="Cancel" Click="ButtonCancelTransfer_Click">
+                <Button Content="Cancel" Command="{Binding CancelCommand}" CommandParameter="{Binding}">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <TextBlock TextDecorations="Underline" VerticalAlignment="Center">
@@ -119,7 +119,7 @@
                         </Style>
                     </Button.Style>
                 </Button>
-                <Button Content="Remove" Command="{Binding RemoveCommand}">
+                <Button Content="Remove" Command="{Binding RemoveCommand}" CommandParameter="{Binding}">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <TextBlock TextDecorations="Underline" VerticalAlignment="Center">
