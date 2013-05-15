@@ -32,7 +32,7 @@ namespace MegaDesktop.ViewModels
             RefreshCommand = new RefreshCommand(this);
             SelectedListNodeActionCommand = new SelectedListNodeActionCommand(DownloadCommand as DownloadCommand, this);
             RootNode = new NodeViewModel(null, dispatcher);
-            Transfers = new ObservableCollection<TransferHandle>();
+            Transfers = new ObservableCollection<TransferHandleViewModel>();
         }
 
         public ICanSetStatus Status { get; private set; }
@@ -45,7 +45,7 @@ namespace MegaDesktop.ViewModels
         public ICommand SelectedListNodeActionCommand { get; private set; }
         public NodeViewModel RootNode { get; private set; }
         public NodeViewModel SelectedNode { get; set; }
-        public ObservableCollection<TransferHandle> Transfers { get; private set; }
+        public ObservableCollection<TransferHandleViewModel> Transfers { get; private set; }
         
         public NodeViewModel SelectedTreeNode
         {
@@ -81,6 +81,16 @@ namespace MegaDesktop.ViewModels
             {
                 transfer.CancelTransfer();
             }
+        }
+
+        public void Remove(TransferHandleViewModel transfer)
+        {
+            Transfers.Remove(transfer);
+        }
+
+        public void AddNewTransfer(TransferHandle transfer)
+        {
+            Transfers.Add(new TransferHandleViewModel(transfer, this));
         }
 
         public void RefreshCurrentNode()

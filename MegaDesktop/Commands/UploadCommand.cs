@@ -48,7 +48,7 @@ namespace MegaDesktop.Commands
         private void OnHandleReady(TransferHandle transfer)
         {
             transfer.TransferEnded += (s, e) => _refresh.RefreshCurrentNode();
-            _transfers.Transfers.Add(transfer);
+            _transfers.AddNewTransfer(transfer);
 
             _status.SetStatus(Status.Loaded);
         }

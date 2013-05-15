@@ -42,9 +42,9 @@ namespace MegaDesktop.Services
                 _status.SetStatus(Status.Loaded);
 
                 if (_apiManager.Api.User.Status == MegaUserStatus.Anonymous)
-                    _title.Title = Resource.Title + " - anonymous account";
+                    _title.SetTitle(Resource.Title + " - anonymous account");
                 else
-                    _title.Title = Resource.Title + " - " + api.User.Email;
+                    _title.SetTitle(Resource.Title + " - " + api.User.Email);
             }, e => { MessageBox.Show("Error while loading account: " + e); Application.Current.Shutdown(); });
         }
 

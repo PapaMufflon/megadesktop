@@ -25,7 +25,7 @@ namespace MegaDesktop.Commands
 
         public bool CanExecute(object parameter)
         {
-            return _apiManager.Api.User == null;
+            return _apiManager.Api != null && _apiManager.Api.User == null;
         }
 
         public void Execute(object parameter)
@@ -37,7 +37,7 @@ namespace MegaDesktop.Commands
                 _userAccount.SaveCurrentAccount();
                 _transfers.CancelAllTransfers();
                 w.Close();
-                _title.Title = Resource.Title + " - " + _apiManager.Api.User.Email;
+                _title.SetTitle(Resource.Title + " - " + _apiManager.Api.User.Email);
                 _refresh.Reload();
             };
             w.ShowDialog();

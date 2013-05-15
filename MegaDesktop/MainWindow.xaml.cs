@@ -11,13 +11,14 @@ namespace MegaDesktop
     public partial class MainWindow : ICanSetTitle
     {
         private readonly MainViewModel _mainViewModel;
+        private readonly Dispatcher _dispatcher;
 
         public MainWindow()
         {
             InitializeComponent();
 
-            var dispatcher = new Dispatcher(Dispatcher);
-            _mainViewModel = new MainViewModel(dispatcher, this);
+            _dispatcher = new Dispatcher(Dispatcher);
+            _mainViewModel = new MainViewModel(_dispatcher, this);
             DataContext = _mainViewModel;
 
             CheckTos();
@@ -44,6 +45,11 @@ namespace MegaDesktop
             }
         }
 
+        public void SetTitle(string newTitle)
+        {
+            _dispatcher.InvokeOnUiThread(() => Title = newTitle);
+        }
+
         void CancelTransfer(TransferHandle handle, bool warn = true)
         {
             if (warn && (handle.Status == TransferHandleStatus.Downloading || handle.Status == TransferHandleStatus.Uploading))
@@ -63,13 +69,6 @@ namespace MegaDesktop
             var button = sender as Button;
             var handle = button.DataContext as TransferHandle;
             CancelTransfer(handle);
-        }
-
-        private void ButtonRemoveTransfer_Click(object sender, RoutedEventArgs e)
-        {
-            var button = sender as Button;
-            var handle = button.DataContext as TransferHandle;
-            _mainViewModel.Transfers.Remove(handle);
         }
 
         private void Window_DragEnter_1(object sender, DragEventArgs e)
