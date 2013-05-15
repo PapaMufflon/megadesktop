@@ -30,7 +30,7 @@ namespace MegaDesktop.ViewModels
 
             UploadCommand = new UploadCommand(_apiManager, Status, this, dispatcher, this, this);
             DownloadCommand = new DownloadCommand(_apiManager, Status, this, dispatcher, this, this);
-            DeleteCommand = new DeleteCommand(_apiManager, Status, this);
+            DeleteCommand = new DeleteCommand(_apiManager, Status, this, this, dispatcher);
             LoginCommand = new LoginCommand(_apiManager, userAccount, this, title, this);
             LogoutCommand = new LogoutCommand(this, this, userAccount);
             RefreshCommand = new RefreshCommand(this);
@@ -101,7 +101,7 @@ namespace MegaDesktop.ViewModels
         public void AddNewTransfer(TransferHandle transfer)
         {
             _dispatcher.InvokeOnUiThread(() =>
-                Transfers.Add(new TransferHandleViewModel(transfer, this, _dispatcher)));
+                Transfers.Add(new TransferHandleViewModel(transfer, this, _dispatcher, this)));
         }
 
         public void RefreshCurrentNode()

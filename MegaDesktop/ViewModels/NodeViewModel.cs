@@ -39,6 +39,7 @@ namespace MegaDesktop.ViewModels
 
         private void SetChildrenRecursive(NodeViewModel nodeViewModel, List<MegaNode> nodes)
         {
+            hier können die nodes durcheinander kommen --> klappt dann net mit dem Aufbau...
             foreach (var node in nodes)
             {
                 if (node.ParentId == nodeViewModel.Id)
@@ -47,6 +48,10 @@ namespace MegaDesktop.ViewModels
                     SetChildrenRecursive(childViewModel, nodes);
                 }
             }
+
+            foreach (var node in nodeViewModel.Children.Reverse().Where(x => nodes.All(y => x.Id != y.Id)))
+                _dispatcher.InvokeOnUiThread(() =>
+                    nodeViewModel.Children.Remove(node));
         }
 
         private NodeViewModel SetAsChild(NodeViewModel nodeViewModel, MegaNode child)

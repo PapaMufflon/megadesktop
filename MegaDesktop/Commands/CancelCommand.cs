@@ -12,7 +12,7 @@ namespace MegaDesktop.Commands
         
         public bool CanExecute(object parameter)
         {
-            throw new NotImplementedException();
+            return parameter as TransferHandleViewModel != null;
         }
 
         public void Execute(object parameter)

@@ -15,11 +15,13 @@ namespace MegaDesktop.Commands
         private readonly ICanSetStatus _status;
         private readonly ICanRefresh _refresh;
 
-        public DeleteCommand(IHaveTheApi api, ICanSetStatus status, ICanRefresh refresh)
+        public DeleteCommand(IHaveTheApi api, ICanSetStatus status, ICanRefresh refresh, ISelectedNodeListener listener, IDispatcher dispatcher)
         {
             _api = api;
             _status = status;
             _refresh = refresh;
+
+            listener.SelectedNodeChanged += (s, e) => dispatcher.InvokeOnUiThread(OnCanExecuteChanged);
         }
 
         public bool CanExecute(object parameter)

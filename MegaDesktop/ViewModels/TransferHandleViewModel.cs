@@ -13,7 +13,7 @@ namespace MegaDesktop.ViewModels
 
         private readonly TransferHandle _transferHandle;
         
-        public TransferHandleViewModel(TransferHandle transferHandle, IManageTransfers transfers, IDispatcher dispatcher)
+        public TransferHandleViewModel(TransferHandle transferHandle, IManageTransfers transfers, IDispatcher dispatcher, ISelectedNodeListener listener)
         {
             _transferHandle = transferHandle;
             _transferHandle.PropertyChanged += (s, e) =>
@@ -24,9 +24,11 @@ namespace MegaDesktop.ViewModels
             };
 
             RemoveCommand = new RemoveCommand(transfers, dispatcher);
+            CancelCommand = new CancelCommand();
         }
 
         public ICommand RemoveCommand { get; private set; }
+        public ICommand CancelCommand { get; private set; }
 
         public string Name { get { return _transferHandle.Node.Attributes.Name; } }
         public double Progress { get { return _transferHandle.Progress; } }
