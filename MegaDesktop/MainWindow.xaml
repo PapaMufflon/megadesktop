@@ -161,19 +161,19 @@
     </Window.Resources>
     <Grid>
         <DockPanel Height="100" HorizontalAlignment="Stretch" Name="dockPanel1" VerticalAlignment="Top">
-            <Button Height="50" Command="{Binding UploadCommand}" CommandParameter="{Binding SelectedNode}" Width="50" HorizontalAlignment="Left" ToolTip="Upload" Margin="10,0,0,0">
+            <Button Height="50" Command="{Binding UploadCommand}" CommandParameter="{Binding SelectedNode, Mode=OneWay}" Width="50" HorizontalAlignment="Left" ToolTip="Upload" Margin="10,0,0,0">
                 <Image Source="pack://application:,,,/MegaDesktop;component/resources/upload.png" />
             </Button>
-            <Button Height="50" Command="{Binding DownloadCommand}" CommandParameter="{Binding SelectedNode}" Width="50" HorizontalAlignment="Left" ToolTip="Download">
+            <Button Height="50" Command="{Binding DownloadCommand}" CommandParameter="{Binding SelectedNode, Mode=OneWay}" Width="50" HorizontalAlignment="Left" ToolTip="Download">
                 <Image Source="pack://application:,,,/MegaDesktop;component/resources/download.png" />
             </Button>
-            <Button Height="50" Command="{Binding DeleteCommand}" CommandParameter="{Binding SelectedNode}" Width="50" HorizontalAlignment="Left" Margin="10,0,0,0" ToolTip="Delete">
+            <Button Height="50" Command="{Binding DeleteCommand}" CommandParameter="{Binding SelectedNode, Mode=OneWay}" Width="50" HorizontalAlignment="Left" Margin="10,0,0,0" ToolTip="Delete">
                 <Image Source="pack://application:,,,/MegaDesktop;component/resources/remove.png" Height="26" />
             </Button>
-            <Button Height="50" Command="{Binding LoginCommand}" Width="50" Visibility="Collapsed" Margin="10,0,0,0" ToolTip="Login">
+            <Button Height="50" Command="{Binding LoginCommand}" Width="50" Margin="10,0,0,0" ToolTip="Login">
                 <Image Source="pack://application:,,,/MegaDesktop;component/resources/login.png"  Height="36"/>
             </Button>
-            <Button Height="50" Command="{Binding LogoutCommand}" Width="50" Visibility="Collapsed" Margin="10,0,0,0" ToolTip="Logout">
+            <Button Height="50" Command="{Binding LogoutCommand}" Width="50" Margin="10,0,0,0" ToolTip="Logout">
                 <Image Source="pack://application:,,,/MegaDesktop;component/resources/logout.png" Height="20" />
             </Button>
             <Button Height="50" Command="{Binding RefreshCommand}" Width="50" HorizontalAlignment="Left" ToolTip="Refresh" Margin="10,0,0,0" >

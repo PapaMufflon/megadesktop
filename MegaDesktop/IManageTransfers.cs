@@ -4,7 +4,7 @@ using MegaDesktop.ViewModels;
 
 namespace MegaDesktop
 {
-    public interface IManageTransfers
+    internal interface IManageTransfers
     {
         ObservableCollection<TransferHandleViewModel> Transfers { get; }
         void CancelAllTransfers();

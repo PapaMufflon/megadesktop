@@ -4,7 +4,7 @@ using MegaDesktop.Services;
 
 namespace MegaDesktop.Commands
 {
-    class RefreshCommand : ICommand
+    internal class RefreshCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;
 

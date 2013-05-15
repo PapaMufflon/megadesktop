@@ -1,30 +1,32 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Windows.Input;
 using MegaApi;
 using MegaDesktop.Commands;
+using MegaDesktop.Services;
 
 namespace MegaDesktop.ViewModels
 {
-    public class TransferHandleViewModel : INotifyPropertyChanged
+    internal class TransferHandleViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
         private readonly TransferHandle _transferHandle;
         
-        public TransferHandleViewModel(TransferHandle transferHandle, IManageTransfers transfers)
+        public TransferHandleViewModel(TransferHandle transferHandle, IManageTransfers transfers, IDispatcher dispatcher)
         {
             _transferHandle = transferHandle;
             _transferHandle.PropertyChanged += (s, e) =>
             {
-                RemoveCommand.OnCanExecuteChanged();
+                ((RemoveCommand)RemoveCommand).RaiseCanExecuteChanged();
 
                 OnPropertyChanged(e.PropertyName);
             };
 
-            RemoveCommand = new RemoveCommand(transfers);
+            RemoveCommand = new RemoveCommand(transfers, dispatcher);
         }
 
-        public RemoveCommand RemoveCommand { get; private set; }
+        public ICommand RemoveCommand { get; private set; }
 
         public string Name { get { return _transferHandle.Node.Attributes.Name; } }
         public double Progress { get { return _transferHandle.Progress; } }
