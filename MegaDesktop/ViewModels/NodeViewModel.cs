@@ -9,25 +9,23 @@ namespace MegaDesktop.ViewModels
     internal class NodeViewModel
     {
         private MegaNode _node;
-        private readonly NodeViewModel _parent;
         private readonly IDispatcher _dispatcher;
 
-        public NodeViewModel(NodeViewModel parent, IDispatcher dispatcher)
+        public NodeViewModel(IDispatcher dispatcher)
         {
-            _parent = parent;
-            _dispatcher = dispatcher;
+            _dispatcher = dispatcher.AssertIsNotNull("dispatcher");
+
             Children = new ObservableCollection<NodeViewModel>();
             ChildNodes = new ObservableCollection<NodeViewModel>();
         }
 
-        public NodeViewModel(NodeViewModel parent, IDispatcher dispatcher, MegaNode node) : this(parent, dispatcher)
+        public NodeViewModel(IDispatcher dispatcher, MegaNode node) : this(dispatcher)
         {
-            _node = node;
+            _node = node.AssertIsNotNull("node");
         }
 
         public ObservableCollection<NodeViewModel> Children { get; private set; }
         public ObservableCollection<NodeViewModel> ChildNodes { get; private set; }
-        public NodeViewModel Parent { get { return _parent; } }
         public string Id { get { return _node != null ? _node.Id : string.Empty; } }
         public string Name { get { return _node != null ? _node.Attributes.Name : string.Empty; } }
         public MegaNode HideMe { get { return _node; } }
@@ -39,7 +37,7 @@ namespace MegaDesktop.ViewModels
 
         private void SetChildrenRecursive(NodeViewModel nodeViewModel, List<MegaNode> nodes)
         {
-            hier können die nodes durcheinander kommen --> klappt dann net mit dem Aufbau...
+            //hier können die nodes durcheinander kommen --> klappt dann net mit dem Aufbau...
             foreach (var node in nodes)
             {
                 if (node.ParentId == nodeViewModel.Id)
@@ -62,7 +60,7 @@ namespace MegaDesktop.ViewModels
                 childViewModel.SetNode(child);
             else
             {
-                childViewModel = new NodeViewModel(nodeViewModel, _dispatcher, child);
+                childViewModel = new NodeViewModel(_dispatcher, child);
 
                 _dispatcher.InvokeOnUiThread(() =>
                 {

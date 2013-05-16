@@ -35,7 +35,7 @@ namespace MegaDesktop.ViewModels
             LogoutCommand = new LogoutCommand(this, this, userAccount);
             RefreshCommand = new RefreshCommand(this);
             SelectedListNodeActionCommand = new SelectedListNodeActionCommand(DownloadCommand as DownloadCommand, this);
-            RootNode = new NodeViewModel(null, dispatcher);
+            RootNode = new NodeViewModel(dispatcher);
             Transfers = new ObservableCollection<TransferHandleViewModel>();
         }
 
