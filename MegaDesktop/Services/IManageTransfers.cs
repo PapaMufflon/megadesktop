@@ -2,7 +2,7 @@
 using MegaApi;
 using MegaDesktop.ViewModels;
 
-namespace MegaDesktop
+namespace MegaDesktop.Services
 {
     internal interface IManageTransfers
     {

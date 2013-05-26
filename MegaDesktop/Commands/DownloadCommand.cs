@@ -31,12 +31,12 @@ namespace MegaDesktop.Commands
             var node = parameter as NodeViewModel;
 
             return node != null &&
-                   node.HideMe.Type == MegaNodeType.File;
+                   node.Type == NodeType.File;
         }
 
         public void Execute(object parameter)
         {
-            var node = (parameter as NodeViewModel).HideMe;
+            var node = (parameter as NodeViewModel).MegaNode;
 
             if (node.Type == MegaNodeType.File)
             {

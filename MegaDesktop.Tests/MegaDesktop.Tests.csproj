@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="NodeViewModelTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestDispatcher.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

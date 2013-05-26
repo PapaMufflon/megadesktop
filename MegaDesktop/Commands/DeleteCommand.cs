@@ -29,15 +29,14 @@ namespace MegaDesktop.Commands
             var node = parameter as NodeViewModel;
 
             return node != null &&
-                   node.HideMe != null &&
-                   (node.HideMe.Type == MegaNodeType.File || node.HideMe.Type == MegaNodeType.Folder);
+                   (node.Type == NodeType.File || node.Type == NodeType.Folder);
         }
 
         public void Execute(object parameter)
         {
-            var node = (parameter as NodeViewModel).HideMe;
-            var type = (node.Type == MegaNodeType.Folder ? "folder" : "file");
-            var text = String.Format("Are you sure to delete the {0} {1}?", type, node.Attributes.Name);
+            var node = (parameter as NodeViewModel);
+            var type = (node.Type == NodeType.Folder ? "folder" : "file");
+            var text = String.Format("Are you sure to delete the {0} {1}?", type, node.Name);
             if (MessageBox.Show(text, "Deleting " + type, MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
                 _api.Api.RemoveNode(node.Id, () => _refresh.RefreshCurrentNode(), err => _status.Error(err));

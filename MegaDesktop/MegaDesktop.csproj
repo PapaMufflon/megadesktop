@@ -89,7 +89,6 @@
     <Compile Include="Commands\RemoveCommand.cs" />
     <Compile Include="Commands\SelectedListNodeActionCommand.cs" />
     <Compile Include="Commands\UploadCommand.cs" />
-    <Compile Include="IManageTransfers.cs" />
     <Compile Include="AssertObjectIsNotNull.cs" />
     <Compile Include="Resource.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -104,15 +103,18 @@
     <Compile Include="Services\Dispatcher.cs" />
     <Compile Include="Services\IHaveTheApi.cs" />
     <Compile Include="Services\IHaveTheRootNode.cs" />
+    <Compile Include="Services\IManageTransfers.cs" />
     <Compile Include="Services\ISelectedNodeListener.cs" />
     <Compile Include="Services\IUserManagement.cs" />
     <Compile Include="Services\Status.cs" />
+    <Compile Include="Services\TransferManager.cs" />
     <Compile Include="Services\UserAccount.cs" />
     <Compile Include="TermsOfServiceWindow.xaml.cs">
       <DependentUpon>TermsOfServiceWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Ui\BindableSelectedItemBehavior.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\NodeType.cs" />
     <Compile Include="ViewModels\NodeViewModel.cs" />
     <Compile Include="ViewModels\StatusViewModel.cs" />
     <Compile Include="ViewModels\TransferHandleViewModel.cs" />

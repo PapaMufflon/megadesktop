@@ -24,15 +24,15 @@ namespace MegaDesktop.Commands
 
         public void Execute(object parameter)
         {
-            var selectedNode = (parameter as NodeViewModel).HideMe;
+            var selectedNode = parameter as NodeViewModel;
 
-            if (selectedNode.Type == MegaNodeType.Dummy ||
-                selectedNode.Type == MegaNodeType.Folder)
+            if (selectedNode.Type == NodeType.Dummy ||
+                selectedNode.Type == NodeType.Folder)
             {
                 _refresh.RefreshCurrentNode();
             }
 
-            if (selectedNode.Type == MegaNodeType.File)
+            if (selectedNode.Type == NodeType.File)
             {
                 _downloadCommand.Execute(parameter);
             }

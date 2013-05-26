@@ -10,33 +10,33 @@ using MegaDesktop.Services;
 
 namespace MegaDesktop.ViewModels
 {
-    internal class MainViewModel : ISelectedNodeListener, IManageTransfers, IHaveTheRootNode, ICanRefresh, INotifyPropertyChanged
+    internal class MainViewModel : ISelectedNodeListener, IHaveTheRootNode, ICanRefresh, INotifyPropertyChanged
     {
         public event EventHandler<EventArgs> SelectedNodeChanged;
 
         private NodeViewModel _selectedTreeNode;
         private NodeViewModel _selectedListNode;
         private readonly ApiManager _apiManager;
-        private readonly IDispatcher _dispatcher;
 
         public MainViewModel(IDispatcher dispatcher, ICanSetTitle title)
         {
-            _dispatcher = dispatcher;
             Status = new StatusViewModel { Message = "Retrieving the list of files..." };
 
             _apiManager = new ApiManager();
             var userAccount = new UserAccount(_apiManager, Status, this, title);
             userAccount.AutoLoginLastUser();
 
-            UploadCommand = new UploadCommand(_apiManager, Status, this, dispatcher, this, this);
-            DownloadCommand = new DownloadCommand(_apiManager, Status, this, dispatcher, this, this);
+            Transfers = new ObservableCollection<TransferHandleViewModel>();
+            var transferManager = new TransferManager(Transfers);
+
+            UploadCommand = new UploadCommand(_apiManager, Status, this, dispatcher, transferManager, this);
+            DownloadCommand = new DownloadCommand(_apiManager, Status, this, dispatcher, transferManager, this);
             DeleteCommand = new DeleteCommand(_apiManager, Status, this, this, dispatcher);
-            LoginCommand = new LoginCommand(_apiManager, userAccount, this, title, this);
-            LogoutCommand = new LogoutCommand(this, this, userAccount);
+            LoginCommand = new LoginCommand(_apiManager, userAccount, transferManager, title, this);
+            LogoutCommand = new LogoutCommand(transferManager, this, userAccount);
             RefreshCommand = new RefreshCommand(this);
             SelectedListNodeActionCommand = new SelectedListNodeActionCommand(DownloadCommand as DownloadCommand, this);
             RootNode = new NodeViewModel(dispatcher);
-            Transfers = new ObservableCollection<TransferHandleViewModel>();
         }
 
         public ICanSetStatus Status { get; private set; }
@@ -84,26 +84,6 @@ namespace MegaDesktop.ViewModels
             if (handler != null) handler(this, EventArgs.Empty);
         }
 
-        public void CancelAllTransfers()
-        {
-            foreach (var transfer in Transfers)
-            {
-                transfer.CancelTransfer();
-            }
-        }
-
-        public void Remove(TransferHandleViewModel transfer)
-        {
-            _dispatcher.InvokeOnUiThread(() =>
-                Transfers.Remove(transfer));
-        }
-
-        public void AddNewTransfer(TransferHandle transfer)
-        {
-            _dispatcher.InvokeOnUiThread(() =>
-                Transfers.Add(new TransferHandleViewModel(transfer, this, _dispatcher, this)));
-        }
-
         public void RefreshCurrentNode()
         {
             Refresh(SelectedListNode);
@@ -124,7 +104,7 @@ namespace MegaDesktop.ViewModels
                 RootNode.Update(nodes);
 
                 SelectedListNode = node == null
-                                       ? RootNode.Children.Single(n => n.HideMe.Type == MegaNodeType.RootFolder)
+                                       ? RootNode.Children.Single(n => n.Type == NodeType.RootFolder)
                                        : RootNode.Descendant(node.Id);
             }, e => Status.Error(e));
         }

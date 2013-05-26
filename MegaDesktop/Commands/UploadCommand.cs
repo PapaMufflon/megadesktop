@@ -58,7 +58,7 @@ namespace MegaDesktop.Commands
             var node = parameter as NodeViewModel;
 
             return node != null &&
-                   node.HideMe.Type != MegaNodeType.File &&
+                   node.Type != NodeType.File &&
                    _status.CurrentStatus == Status.Loaded;
         }
 

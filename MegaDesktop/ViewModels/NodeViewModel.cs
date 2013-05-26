@@ -19,7 +19,8 @@ namespace MegaDesktop.ViewModels
             ChildNodes = new ObservableCollection<NodeViewModel>();
         }
 
-        public NodeViewModel(IDispatcher dispatcher, MegaNode node) : this(dispatcher)
+        public NodeViewModel(IDispatcher dispatcher, MegaNode node)
+            : this(dispatcher)
         {
             _node = node.AssertIsNotNull("node");
         }
@@ -28,7 +29,8 @@ namespace MegaDesktop.ViewModels
         public ObservableCollection<NodeViewModel> ChildNodes { get; private set; }
         public string Id { get { return _node != null ? _node.Id : string.Empty; } }
         public string Name { get { return _node != null ? _node.Attributes.Name : string.Empty; } }
-        public MegaNode HideMe { get { return _node; } }
+        public NodeType Type { get { return (NodeType)_node.Type; } }
+        public MegaNode MegaNode { get { return _node; } }
 
         public void Update(List<MegaNode> nodes)
         {
@@ -37,7 +39,6 @@ namespace MegaDesktop.ViewModels
 
         private void SetChildrenRecursive(NodeViewModel nodeViewModel, List<MegaNode> nodes)
         {
-            //hier können die nodes durcheinander kommen --> klappt dann net mit dem Aufbau...
             foreach (var node in nodes)
             {
                 if (node.ParentId == nodeViewModel.Id)
