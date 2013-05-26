@@ -1,39 +1,26 @@
 ﻿using System;
 using System.ComponentModel;
-using MegaDesktop.Commands;
+using System.Runtime.CompilerServices;
 using MegaDesktop.Services;
 
 namespace MegaDesktop.ViewModels
 {
     internal class StatusViewModel : INotifyPropertyChanged, ICanSetStatus
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+        public event EventHandler<EventArgs> CurrentStatusChanged;
+
         private string _message;
         private Status _currentStatus;
 
         public string Message
         {
             get { return _message; }
-            set
+            private set
             {
                 _message = value;
-                OnPropertyChanged("Message");
+                OnPropertyChanged();
             }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            var handler = PropertyChanged;
-            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        public event EventHandler<EventArgs> CurrentStatusChanged;
-
-        protected virtual void OnCurrentStatusChanged()
-        {
-            var handler = CurrentStatusChanged;
-            if (handler != null) handler(this, EventArgs.Empty);
         }
 
         public void SetStatus(Status newStatus)
@@ -70,6 +57,18 @@ namespace MegaDesktop.ViewModels
         {
             Message = String.Format("Error: {0}", errorNumber);
             CurrentStatus = Status.Loaded;
+        }
+
+        protected virtual void OnPropertyChanged(string propertyName = null)
+        {
+            var handler = PropertyChanged;
+            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        protected virtual void OnCurrentStatusChanged()
+        {
+            var handler = CurrentStatusChanged;
+            if (handler != null) handler(this, EventArgs.Empty);
         }
     }
 }

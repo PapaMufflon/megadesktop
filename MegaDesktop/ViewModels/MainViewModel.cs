@@ -21,9 +21,10 @@ namespace MegaDesktop.ViewModels
             dispatcher.AssertIsNotNull("dispatcher");
             title.AssertIsNotNull("title");
 
-            Status = new StatusViewModel { Message = "Retrieving the list of files..." };
+            Status = new StatusViewModel();
+            Status.SetStatus(Services.Status.Communicating);
+
             RootNode = new NodeViewModel(dispatcher);
-            
             var apiManager = new ApiManager();
             var refreshService = new RefreshService(Status, apiManager, this);
 
