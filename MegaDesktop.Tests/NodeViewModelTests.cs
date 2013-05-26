@@ -51,7 +51,7 @@ namespace MegaDesktop.Tests
             var child = _target.Children[0];
 
             _target.Update(new List<MegaNode> { new MegaNode { ParentId = "foo", Attributes = new NodeAttributes { Name = "foo" } } });
-            
+
             Assert.That(child, Is.EqualTo(_target.Children[0]));
             Assert.That(_target.Children[0].Name, Is.EqualTo("foo"));
         }
@@ -68,6 +68,35 @@ namespace MegaDesktop.Tests
 
             Assert.That(_target.Children[0].Id, Is.EqualTo("bar"));
             Assert.That(_target.Children[0].Children[0].Id, Is.EqualTo("baz"));
+        }
+
+        [Test]
+        public void Update_with_a_child_which_is_a_file_does_not_set_it_as_a_ChildNode()
+        {
+            _node.Id = "foo";
+            _target.Update(new List<MegaNode> { new MegaNode { ParentId = "foo", Type = MegaNodeType.File } });
+
+            Assert.That(_target.ChildNodes.Count, Is.EqualTo(0));
+        }
+
+        [Test]
+        public void Update_with_a_child_which_is_a_folder_sets_it_as_a_ChildNode()
+        {
+            _node.Id = "foo";
+            _target.Update(new List<MegaNode> { new MegaNode { ParentId = "foo", Type = MegaNodeType.Folder } });
+
+            Assert.That(_target.ChildNodes.Count, Is.EqualTo(1));
+        }
+
+        [Test]
+        public void Update_with_no_children_removes_already_present_children()
+        {
+            _node.Id = "foo";
+            _target.Update(new List<MegaNode> { new MegaNode { ParentId = "foo" } });
+            _target.Update(new List<MegaNode>());
+
+
+            Assert.That(_target.Children.Count, Is.EqualTo(0));
         }
     }
 }
