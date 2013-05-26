@@ -8,15 +8,15 @@ namespace MegaDesktop.Commands
     {
         public event EventHandler CanExecuteChanged;
 
-        private readonly IHaveTheApi _apiManager;
+        private readonly IMegaApi _megaApi;
         private readonly IUserManagement _userAccount;
         private readonly IManageTransfers _transfers;
         private readonly ICanSetTitle _title;
         private readonly ICanRefresh _refresh;
 
-        public LoginCommand(IHaveTheApi apiManager, IUserManagement userAccount, IManageTransfers transfers, ICanSetTitle title, ICanRefresh refresh)
+        public LoginCommand(IMegaApi megaApi, IUserManagement userAccount, IManageTransfers transfers, ICanSetTitle title, ICanRefresh refresh)
         {
-            _apiManager = apiManager;
+            _megaApi = megaApi;
             _userAccount = userAccount;
             _transfers = transfers;
             _title = title;
@@ -25,7 +25,7 @@ namespace MegaDesktop.Commands
 
         public bool CanExecute(object parameter)
         {
-            return _apiManager.Api != null && _apiManager.Api.User == null;
+            return _megaApi.User == null;
         }
 
         public void Execute(object parameter)
@@ -33,11 +33,11 @@ namespace MegaDesktop.Commands
             var w = new WindowLogin();
             w.OnLoggedIn += (s, args) =>
             {
-                _apiManager.Set(args.Api);
+                _megaApi.Use(args.Api);
                 _userAccount.SaveCurrentAccount();
                 _transfers.CancelAllTransfers();
                 w.Close();
-                _title.SetTitle(Resource.Title + " - " + _apiManager.Api.User.Email);
+                _title.SetTitle(Resource.Title + " - " + _megaApi.User.Email);
                 _refresh.Reload();
             };
             w.ShowDialog();

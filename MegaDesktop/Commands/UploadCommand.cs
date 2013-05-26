@@ -11,15 +11,15 @@ namespace MegaDesktop.Commands
     {
         public event EventHandler CanExecuteChanged;
 
-        private readonly IHaveTheApi _api;
+        private readonly IMegaApi _megaApi;
         private readonly ICanSetStatus _status;
         private readonly IDispatcher _dispatcher;
         private readonly IManageTransfers _transfers;
         private readonly ICanRefresh _refresh;
 
-        public UploadCommand(IHaveTheApi api, ICanSetStatus status, ISelectedNodeListener selectedNodeListener, IDispatcher dispatcher, IManageTransfers transfers, ICanRefresh refresh)
+        public UploadCommand(IMegaApi megaApi, ICanSetStatus status, ISelectedNodeListener selectedNodeListener, IDispatcher dispatcher, IManageTransfers transfers, ICanRefresh refresh)
         {
-            _api = api;
+            _megaApi = megaApi;
             _status = status;
             _dispatcher = dispatcher;
             _transfers = transfers;
@@ -42,7 +42,7 @@ namespace MegaDesktop.Commands
                 return;
 
             _status.SetStatus(Status.Communicating);
-            _api.Api.UploadFile(currentNode.Id, d.FileName, OnHandleReady, err => _status.Error(err));
+            _megaApi.UploadFile(currentNode.Id, d.FileName, OnHandleReady, err => _status.Error(err));
         }
 
         private void OnHandleReady(TransferHandle transfer)

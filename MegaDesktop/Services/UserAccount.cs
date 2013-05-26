@@ -7,14 +7,14 @@ namespace MegaDesktop.Services
 {
     internal class UserAccount : IUserManagement
     {
-        private readonly IHaveTheApi _apiManager;
+        private readonly IMegaApi _megaApi;
         private readonly ICanSetStatus _status;
         private readonly ICanRefresh _refresh;
         private readonly ICanSetTitle _title;
 
-        public UserAccount(IHaveTheApi apiManager, ICanSetStatus status, ICanRefresh refresh, ICanSetTitle title)
+        public UserAccount(IMegaApi megaApi, ICanSetStatus status, ICanRefresh refresh, ICanSetTitle title)
         {
-            _apiManager = apiManager;
+            _megaApi = megaApi;
             _status = status;
             _refresh = refresh;
             _title = title;
@@ -33,7 +33,7 @@ namespace MegaDesktop.Services
 
             Mega.Init(user, api =>
             {
-                _apiManager.Set(api);
+                _megaApi.Use(api);
 
                 if (save)
                     SaveAccount(userAccountFile, "user.anon.dat");
@@ -41,7 +41,7 @@ namespace MegaDesktop.Services
                 _refresh.Reload();
                 _status.SetStatus(Status.Loaded);
 
-                if (_apiManager.Api.User.Status == MegaUserStatus.Anonymous)
+                if (_megaApi.User.Status == MegaUserStatus.Anonymous)
                     _title.SetTitle(Resource.Title + " - anonymous account");
                 else
                     _title.SetTitle(Resource.Title + " - " + api.User.Email);
@@ -72,7 +72,7 @@ namespace MegaDesktop.Services
                 File.Copy(userAccountFile, backupFile, true);
             }
 
-            _apiManager.Api.SaveAccount(GetUserKeyFilePath());
+            _megaApi.SaveAccount(GetUserKeyFilePath());
         }
 
         private string GetUserKeyFilePath()

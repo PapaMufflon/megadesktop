@@ -95,17 +95,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
-    <Compile Include="Services\ApiManager.cs" />
     <Compile Include="Services\ICanRefresh.cs" />
     <Compile Include="Services\ICanSetStatus.cs" />
     <Compile Include="Services\ICanSetTitle.cs" />
     <Compile Include="Services\IDispatcher.cs" />
     <Compile Include="Services\Dispatcher.cs" />
-    <Compile Include="Services\IHaveTheApi.cs" />
     <Compile Include="Services\IHaveNodes.cs" />
     <Compile Include="Services\IManageTransfers.cs" />
+    <Compile Include="Services\IMegaApi.cs" />
     <Compile Include="Services\ISelectedNodeListener.cs" />
     <Compile Include="Services\IUserManagement.cs" />
+    <Compile Include="Services\MegaApiWrapper.cs" />
     <Compile Include="Services\RefreshService.cs" />
     <Compile Include="Services\Status.cs" />
     <Compile Include="Services\TransferManager.cs" />

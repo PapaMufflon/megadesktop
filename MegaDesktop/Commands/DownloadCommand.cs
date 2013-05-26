@@ -11,14 +11,14 @@ namespace MegaDesktop.Commands
     {
         public event EventHandler CanExecuteChanged;
 
-        private readonly IHaveTheApi _api;
+        private readonly IMegaApi _megaApi;
         private readonly ICanSetStatus _status;
         private readonly IManageTransfers _transfers;
         private readonly ICanRefresh _refresh;
 
-        public DownloadCommand(IHaveTheApi api, ICanSetStatus status, ISelectedNodeListener selectedNodeListener, IDispatcher dispatcher, IManageTransfers transfers, ICanRefresh refresh)
+        public DownloadCommand(IMegaApi megaApi, ICanSetStatus status, ISelectedNodeListener selectedNodeListener, IDispatcher dispatcher, IManageTransfers transfers, ICanRefresh refresh)
         {
-            _api = api;
+            _megaApi = megaApi;
             _status = status;
             _transfers = transfers;
             _refresh = refresh;
@@ -57,7 +57,7 @@ namespace MegaDesktop.Commands
             if (d.ShowDialog() == true)
             {
                 _status.SetStatus(Status.Communicating);
-                _api.Api.DownloadFile(clickedNode, d.FileName, OnHandleReady, e => _status.Error(e));
+                _megaApi.DownloadFile(clickedNode, d.FileName, OnHandleReady, e => _status.Error(e));
             }
         }
 

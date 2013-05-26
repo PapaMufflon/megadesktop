@@ -48,6 +48,7 @@
     <Compile Include="MainViewModelTests.cs" />
     <Compile Include="NodeViewModelTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RefreshServiceTests.cs" />
     <Compile Include="StatusViewModelTests.cs" />
     <Compile Include="TestDispatcher.cs" />
   </ItemGroup>

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Windows.Threading;
 
 namespace MegaDesktop.Services
 {
@@ -9,7 +8,7 @@ namespace MegaDesktop.Services
 
         public Dispatcher(System.Windows.Threading.Dispatcher dispatcher)
         {
-            _dispatcher = dispatcher;
+            _dispatcher = dispatcher.AssertIsNotNull("dispatcher");
         }
 
         public void InvokeOnUiThread(Action action)

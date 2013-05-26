@@ -25,7 +25,7 @@ namespace MegaDesktop.ViewModels
             Status.SetStatus(Services.Status.Communicating);
 
             RootNode = new NodeViewModel(dispatcher);
-            var apiManager = new ApiManager();
+            var apiManager = new MegaApiWrapper();
             var refreshService = new RefreshService(Status, apiManager, this);
 
             var userAccount = new UserAccount(apiManager, Status, refreshService, title);
