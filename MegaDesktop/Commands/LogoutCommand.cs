@@ -11,10 +11,10 @@ namespace MegaDesktop.Commands
         public event EventHandler CanExecuteChanged;
 
         private readonly IManageTransfers _transfers;
-        private readonly IHaveTheRootNode _rootNode;
+        private readonly IHaveNodes _rootNode;
         private readonly IUserManagement _userAccount;
 
-        public LogoutCommand(IManageTransfers transfers, IHaveTheRootNode rootNode, IUserManagement userAccount)
+        public LogoutCommand(IManageTransfers transfers, IHaveNodes rootNode, IUserManagement userAccount)
         {
             _transfers = transfers;
             _rootNode = rootNode;

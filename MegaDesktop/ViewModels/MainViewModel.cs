@@ -4,13 +4,12 @@ using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
-using MegaApi;
 using MegaDesktop.Commands;
 using MegaDesktop.Services;
 
 namespace MegaDesktop.ViewModels
 {
-    internal class MainViewModel : ISelectedNodeListener, IHaveTheRootNode, ICanRefresh, INotifyPropertyChanged
+    internal class MainViewModel : ISelectedNodeListener, IHaveNodes, INotifyPropertyChanged
     {
         public event EventHandler<EventArgs> SelectedNodeChanged;
 
@@ -20,22 +19,26 @@ namespace MegaDesktop.ViewModels
 
         public MainViewModel(IDispatcher dispatcher, ICanSetTitle title)
         {
-            Status = new StatusViewModel { Message = "Retrieving the list of files..." };
+            dispatcher.AssertIsNotNull("dispatcher");
+            title.AssertIsNotNull("title");
 
+            Status = new StatusViewModel { Message = "Retrieving the list of files..." };
             _apiManager = new ApiManager();
-            var userAccount = new UserAccount(_apiManager, Status, this, title);
+
+            var refreshService = new RefreshService(Status, _apiManager, this);
+            var userAccount = new UserAccount(_apiManager, Status, refreshService, title);
             userAccount.AutoLoginLastUser();
 
             Transfers = new ObservableCollection<TransferHandleViewModel>();
-            var transferManager = new TransferManager(Transfers);
+            var transferManager = new TransferManager(Transfers, dispatcher, this);
 
-            UploadCommand = new UploadCommand(_apiManager, Status, this, dispatcher, transferManager, this);
-            DownloadCommand = new DownloadCommand(_apiManager, Status, this, dispatcher, transferManager, this);
-            DeleteCommand = new DeleteCommand(_apiManager, Status, this, this, dispatcher);
-            LoginCommand = new LoginCommand(_apiManager, userAccount, transferManager, title, this);
+            UploadCommand = new UploadCommand(_apiManager, Status, this, dispatcher, transferManager, refreshService);
+            DownloadCommand = new DownloadCommand(_apiManager, Status, this, dispatcher, transferManager, refreshService);
+            DeleteCommand = new DeleteCommand(_apiManager, Status, refreshService, this, dispatcher);
+            LoginCommand = new LoginCommand(_apiManager, userAccount, transferManager, title, refreshService);
             LogoutCommand = new LogoutCommand(transferManager, this, userAccount);
-            RefreshCommand = new RefreshCommand(this);
-            SelectedListNodeActionCommand = new SelectedListNodeActionCommand(DownloadCommand as DownloadCommand, this);
+            RefreshCommand = new RefreshCommand(refreshService);
+            SelectedListNodeActionCommand = new SelectedListNodeActionCommand(DownloadCommand as DownloadCommand, refreshService);
             RootNode = new NodeViewModel(dispatcher);
         }
 
@@ -49,7 +52,6 @@ namespace MegaDesktop.ViewModels
         public ICommand SelectedListNodeActionCommand { get; private set; }
         public NodeViewModel RootNode { get; private set; }
         public NodeViewModel SelectedNode { get; set; }
-
         public ObservableCollection<TransferHandleViewModel> Transfers { get; private set; }
         
         public NodeViewModel SelectedTreeNode
@@ -82,31 +84,6 @@ namespace MegaDesktop.ViewModels
 
             var handler = SelectedNodeChanged;
             if (handler != null) handler(this, EventArgs.Empty);
-        }
-
-        public void RefreshCurrentNode()
-        {
-            Refresh(SelectedListNode);
-        }
-
-        public void Reload()
-        {
-            Refresh();
-        }
-
-        private void Refresh(NodeViewModel node = null)
-        {
-            Status.SetStatus(Services.Status.Communicating);
-
-            _apiManager.Api.GetNodes(nodes =>
-            {
-                Status.SetStatus(Services.Status.Loaded);
-                RootNode.Update(nodes);
-
-                SelectedListNode = node == null
-                                       ? RootNode.Children.Single(n => n.Type == NodeType.RootFolder)
-                                       : RootNode.Descendant(node.Id);
-            }, e => Status.Error(e));
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

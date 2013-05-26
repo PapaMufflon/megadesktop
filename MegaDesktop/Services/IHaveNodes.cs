@@ -2,8 +2,9 @@
 
 namespace MegaDesktop.Services
 {
-    internal interface IHaveTheRootNode
+    internal interface IHaveNodes
     {
         NodeViewModel RootNode { get; }
+        NodeViewModel SelectedListNode { get; set; }
     }
 }
