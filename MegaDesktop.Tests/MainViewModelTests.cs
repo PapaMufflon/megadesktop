@@ -44,5 +44,22 @@ namespace MegaDesktop.Tests
 
             Assert.That(_target.SelectedNode, Is.EqualTo(_target.SelectedListNode));
         }
+
+        [Test]
+        public void Selecting_a_node_raises_the_SelectedNodeChanged_event()
+        {
+            var raised = false;
+            _target.SelectedNodeChanged += (s, e) => raised = true;
+
+            _target.SelectedListNode = new NodeViewModel(_dispatcher);
+
+            Assert.That(raised, Is.True);
+
+            raised = false;
+
+            _target.SelectedTreeNode = new NodeViewModel(_dispatcher);
+
+            Assert.That(raised, Is.True);
+        }
     }
 }
