@@ -60,6 +60,7 @@ namespace MegaDesktop.ViewModels
             {
                 _selectedNode = value;
                 OnPropertyChanged();
+                OnSelectedNodeChanged();
             }
         }
 
@@ -91,6 +92,12 @@ namespace MegaDesktop.ViewModels
         {
             var handler = PropertyChanged;
             if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        protected virtual void OnSelectedNodeChanged()
+        {
+            var handler = SelectedNodeChanged;
+            if (handler != null) handler(this, EventArgs.Empty);
         }
     }
 }
