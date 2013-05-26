@@ -28,5 +28,21 @@ namespace MegaDesktop.Tests
             Assert.Throws<ArgumentNullException>(() => new MainViewModel(null, _title));
             Assert.Throws<ArgumentNullException>(() => new MainViewModel(_dispatcher, null));
         }
+
+        [Test]
+        public void Selecting_a_node_in_the_tree_sets_this_node_as_the_selected_node()
+        {
+            _target.SelectedTreeNode = new NodeViewModel(_dispatcher);
+
+            Assert.That(_target.SelectedNode, Is.EqualTo(_target.SelectedTreeNode));
+        }
+
+        [Test]
+        public void Selecting_a_node_in_the_list_sets_this_node_as_the_selected_node()
+        {
+            _target.SelectedListNode = new NodeViewModel(_dispatcher);
+
+            Assert.That(_target.SelectedNode, Is.EqualTo(_target.SelectedListNode));
+        }
     }
 }
