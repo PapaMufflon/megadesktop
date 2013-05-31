@@ -1,9 +1,13 @@
-﻿namespace MegaDesktop.Services
+﻿using System.Threading.Tasks;
+using MegaApi;
+
+namespace MegaDesktop.Services
 {
     internal interface IUserManagement
     {
         void SaveCurrentAccount();
         void DeleteCurrentAccount();
-        void AutoLoginLastUser();
+        Task LoginLastUser();
+        Task LoginUser(MegaUser user);
     }
 }

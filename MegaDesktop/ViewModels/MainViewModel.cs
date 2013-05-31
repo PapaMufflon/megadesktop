@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Windows;
 using System.Windows.Input;
 using MegaDesktop.Commands;
 using MegaDesktop.Services;
@@ -28,16 +29,23 @@ namespace MegaDesktop.ViewModels
             var apiManager = new MegaApiWrapper();
             var refreshService = new RefreshService(Status, apiManager, this);
 
-            var userAccount = new UserAccount(apiManager, Status, refreshService, title);
-            userAccount.AutoLoginLastUser();
-
             Transfers = new ObservableCollection<TransferHandleViewModel>();
             var transferManager = new TransferManager(Transfers, dispatcher, this);
+
+            var userAccount = new UserAccount(apiManager, Status, refreshService, title, transferManager);
+            userAccount.LoginLastUser().ContinueWith(x =>
+            {
+                if (x.Exception == null)
+                    return;
+
+                MessageBox.Show("Error while loading account: " + x.Exception);
+                Application.Current.Shutdown();
+            });
 
             UploadCommand = new UploadCommand(apiManager, Status, this, dispatcher, transferManager, refreshService);
             DownloadCommand = new DownloadCommand(apiManager, Status, this, dispatcher, transferManager, refreshService);
             DeleteCommand = new DeleteCommand(apiManager, Status, refreshService, this, dispatcher);
-            LoginCommand = new LoginCommand(apiManager, userAccount, transferManager, title, refreshService);
+            LoginCommand = new LoginCommand(apiManager, userAccount);
             LogoutCommand = new LogoutCommand(transferManager, this, userAccount);
             RefreshCommand = new RefreshCommand(refreshService);
             SelectedListNodeActionCommand = new SelectedListNodeActionCommand(DownloadCommand as DownloadCommand, refreshService);

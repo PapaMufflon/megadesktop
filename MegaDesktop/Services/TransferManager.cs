@@ -22,9 +22,7 @@ namespace MegaDesktop.Services
         public void CancelAllTransfers()
         {
             foreach (var transfer in Transfers)
-            {
                 transfer.CancelTransfer();
-            }
         }
 
         public void Remove(TransferHandleViewModel transfer)

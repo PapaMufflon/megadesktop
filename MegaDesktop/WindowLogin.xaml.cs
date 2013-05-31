@@ -1,17 +1,21 @@
 ﻿using System;
 using System.Windows;
 using MegaApi;
+using MegaDesktop.Services;
 
 namespace MegaDesktop
 {
     /// <summary>
     /// Interaction logic for WindowLogin.xaml
     /// </summary>
-    public partial class WindowLogin : Window
+    internal partial class WindowLogin
     {
-        public event EventHandler<SuccessfulLoginArgs> OnLoggedIn;
-        public WindowLogin()
+        private readonly IUserManagement _userManagement;
+        
+        public WindowLogin(IUserManagement userManagement)
         {
+            _userManagement = userManagement;
+
             InitializeComponent();
             textBoxPass_LostFocus(null, null);
             textBoxEmail_LostFocus(null, null);
@@ -61,24 +65,19 @@ namespace MegaDesktop
             { return; }
 
             textBoxStatus.Text = "Checking...";
-            Mega.Init(new MegaUser(textBoxEmail.Text, textBoxPass.Password),
-                (m) => 
-                {
-                    if (OnLoggedIn != null)
-                    {
-                        OnLoggedIn(this, new SuccessfulLoginArgs { Api = m});
-                    }
-                },
-                (err) => { Invoke(()=> textBoxStatus.Text = "Incorrect login or password"); });
+
+            _userManagement.LoginUser(new MegaUser(textBoxEmail.Text, textBoxPass.Password)).ContinueWith(x =>
+            {
+                if (x.Exception == null)
+                    Close();
+                else
+                    Invoke(() => textBoxStatus.Text = "Incorrect login or password");
+            });
         }
+
         void Invoke(Action fn)
         {
             Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority.Normal, (Delegate)fn);
         }
-    }
-    
-    public class SuccessfulLoginArgs : EventArgs
-    {
-        public Mega Api { get; set; }
     }
 }

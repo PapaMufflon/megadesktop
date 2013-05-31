@@ -9,11 +9,28 @@ namespace MegaDesktop.Services
     {
         private Mega _mega;
 
-        public MegaUser User { get { return _mega.AssertIsNotNull().User; } }
-
-        public void Use(Mega mega)
+        public MegaUser User
         {
-            _mega = mega;
+            get
+            {
+                return _mega != null
+                           ? _mega.User
+                           : null;
+            }
+        }
+
+        public void Init(MegaUser user, Action onSuccess, Action<int> onError)
+        {
+            Mega.Init(user, mega =>
+            {
+                _mega = mega;
+                onSuccess();
+            }, onError);
+        }
+
+        public MegaUser LoadAccount(string filePath)
+        {
+            return Mega.LoadAccount(filePath);
         }
 
         public IMegaRequest GetNodes(Action<List<MegaNode>> onSuccess, Action<int> onError)

@@ -51,6 +51,7 @@
     <Compile Include="RefreshServiceTests.cs" />
     <Compile Include="StatusViewModelTests.cs" />
     <Compile Include="TestDispatcher.cs" />
+    <Compile Include="UserAccountTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

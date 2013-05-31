@@ -9,7 +9,8 @@ namespace MegaDesktop.Services
     {
         MegaUser User { get; }
 
-        void Use(Mega mega);
+        void Init(MegaUser user, Action onSuccess, Action<int> onError);
+        MegaUser LoadAccount(string filePath);
 
         IMegaRequest GetNodes(Action<List<MegaNode>> onSuccess, Action<int> onError);
         IMegaRequest RemoveNode(string targetNodeId, Action onSuccess, Action<int> onError);
