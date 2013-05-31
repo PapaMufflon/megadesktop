@@ -17,6 +17,7 @@ namespace MegaDesktop.Services
 
         IMegaRequest UploadFile(string targetNodeId, string filename, Action<UploadHandle> onHandleReady, Action<int> onError);
         IMegaRequest DownloadFile(MegaNode node, string filename, Action<DownloadHandle> onHandleReady, Action<int> onError);
+        IMegaRequest CreateFolder(string targetNodeId, string folderName, Action<MegaNode> OnSuccess, Action<int> OnError);
         
         void SaveAccount(string filePath);
     }

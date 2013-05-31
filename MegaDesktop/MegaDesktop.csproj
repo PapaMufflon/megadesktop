@@ -68,6 +68,7 @@
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
@@ -90,6 +91,7 @@
     <Compile Include="Commands\SelectedListNodeActionCommand.cs" />
     <Compile Include="Commands\UploadCommand.cs" />
     <Compile Include="AssertObjectIsNotNull.cs" />
+    <Compile Include="Commands\UploadFolderCommand.cs" />
     <Compile Include="Resource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -195,6 +197,10 @@
       <Project>{e38721b9-bdb2-4ba8-bcb8-35821267be59}</Project>
       <Name>MegaApi</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\folderDownload.png" />
+    <Resource Include="Resources\folderUpload.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

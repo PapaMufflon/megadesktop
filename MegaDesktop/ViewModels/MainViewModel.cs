@@ -43,6 +43,7 @@ namespace MegaDesktop.ViewModels
             });
 
             UploadCommand = new UploadCommand(apiManager, Status, this, dispatcher, transferManager, refreshService);
+            UploadFolderCommand = new UploadFolderCommand(apiManager, Status, this, this, dispatcher);
             DownloadCommand = new DownloadCommand(apiManager, Status, this, dispatcher, transferManager, refreshService);
             DeleteCommand = new DeleteCommand(apiManager, Status, refreshService, this, dispatcher);
             LoginCommand = new LoginCommand(apiManager, userAccount);
@@ -53,6 +54,7 @@ namespace MegaDesktop.ViewModels
 
         public ICanSetStatus Status { get; private set; }
         public ICommand UploadCommand { get; private set; }
+        public ICommand UploadFolderCommand { get; private set; }
         public ICommand DownloadCommand { get; private set; }
         public ICommand DeleteCommand { get; private set; }
         public ICommand LoginCommand { get; private set; }

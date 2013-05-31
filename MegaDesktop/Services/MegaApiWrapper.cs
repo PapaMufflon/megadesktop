@@ -53,6 +53,11 @@ namespace MegaDesktop.Services
             return _mega.AssertIsNotNull().DownloadFile(node, filename, onHandleReady, onError);
         }
 
+        public IMegaRequest CreateFolder(string targetNodeId, string folderName, Action<MegaNode> OnSuccess, Action<int> OnError)
+        {
+            return _mega.AssertIsNotNull().CreateFolder(targetNodeId, folderName, OnSuccess, OnError);
+        }
+
         public void SaveAccount(string filePath)
         {
             _mega.AssertIsNotNull().SaveAccount(filePath);

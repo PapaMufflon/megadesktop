@@ -164,6 +164,9 @@
             <Button Height="50" Command="{Binding UploadCommand}" CommandParameter="{Binding SelectedNode, Mode=OneWay}" Width="50" HorizontalAlignment="Left" ToolTip="Upload" Margin="10,0,0,0">
                 <Image Source="pack://application:,,,/MegaDesktop;component/resources/upload.png" />
             </Button>
+            <Button Height="50" Command="{Binding UploadFolderCommand}" CommandParameter="{Binding SelectedNode, Mode=OneWay}" Width="50" HorizontalAlignment="Left" ToolTip="Upload" Margin="10,0,0,0">
+                <Image Source="pack://application:,,,/MegaDesktop;component/resources/folderUpload.png" />
+            </Button>
             <Button Height="50" Command="{Binding DownloadCommand}" CommandParameter="{Binding SelectedNode, Mode=OneWay}" Width="50" HorizontalAlignment="Left" ToolTip="Download">
                 <Image Source="pack://application:,,,/MegaDesktop;component/resources/download.png" />
             </Button>
