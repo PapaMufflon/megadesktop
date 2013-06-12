@@ -6,7 +6,6 @@ using MegaDesktop.Services.Fakes;
 using MegaDesktop.ViewModels;
 using MegaDesktop.ViewModels.Fakes;
 using Microsoft.QualityTools.Testing.Fakes;
-using NSubstitute;
 using NUnit.Framework;
 
 namespace MegaDesktop.Tests

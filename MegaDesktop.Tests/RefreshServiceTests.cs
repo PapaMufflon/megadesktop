@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using MegaApi;
-using MegaApi.Fakes;
 using MegaDesktop.Services;
 using MegaDesktop.Services.Fakes;
 using MegaDesktop.ViewModels;
