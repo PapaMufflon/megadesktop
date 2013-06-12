@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Input;
-using MegaApi;
 using MegaDesktop.Services;
 using MegaDesktop.ViewModels;
 
@@ -9,9 +8,9 @@ namespace MegaDesktop.Commands
     internal class SelectedListNodeActionCommand : ICommand
     {
         private readonly DownloadCommand _downloadCommand;
-        private readonly ICanRefresh _refresh;
+        private readonly RefreshService _refresh;
 
-        public SelectedListNodeActionCommand(DownloadCommand downloadCommand, ICanRefresh refresh)
+        public SelectedListNodeActionCommand(DownloadCommand downloadCommand, RefreshService refresh)
         {
             _downloadCommand = downloadCommand;
             _refresh = refresh;

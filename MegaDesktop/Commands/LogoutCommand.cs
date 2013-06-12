@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using System.Linq;
 using System.Windows.Input;
 using MegaDesktop.Services;
@@ -8,18 +7,18 @@ namespace MegaDesktop.Commands
 {
     internal class LogoutCommand : ICommand
     {
-        public event EventHandler CanExecuteChanged;
-
-        private readonly IManageTransfers _transfers;
-        private readonly IHaveNodes _rootNode;
+        private readonly NodeManager _rootNode;
+        private readonly TransferManager _transfers;
         private readonly IUserManagement _userAccount;
 
-        public LogoutCommand(IManageTransfers transfers, IHaveNodes rootNode, IUserManagement userAccount)
+        public LogoutCommand(TransferManager transfers, NodeManager rootNode, IUserManagement userAccount)
         {
             _transfers = transfers;
             _rootNode = rootNode;
             _userAccount = userAccount;
         }
+
+        public event EventHandler CanExecuteChanged;
 
         public bool CanExecute(object parameter)
         {
@@ -39,7 +38,7 @@ namespace MegaDesktop.Commands
 
         protected virtual void OnCanExecuteChanged()
         {
-            var handler = CanExecuteChanged;
+            EventHandler handler = CanExecuteChanged;
             if (handler != null) handler(this, EventArgs.Empty);
         }
     }

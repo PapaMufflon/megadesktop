@@ -9,19 +9,17 @@ namespace MegaDesktop.ViewModels
 {
     internal class TransferHandleViewModel : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
         private readonly TransferHandle _transferHandle;
-        
-        public TransferHandleViewModel(TransferHandle transferHandle, IManageTransfers transfers, IDispatcher dispatcher, ISelectedNodeListener listener)
+
+        public TransferHandleViewModel(TransferHandle transferHandle, TransferManager transfers, IDispatcher dispatcher)
         {
             _transferHandle = transferHandle;
             _transferHandle.PropertyChanged += (s, e) =>
-            {
-                ((RemoveCommand)RemoveCommand).RaiseCanExecuteChanged();
+                {
+                    ((RemoveCommand) RemoveCommand).RaiseCanExecuteChanged();
 
-                OnPropertyChanged(e.PropertyName);
-            };
+                    OnPropertyChanged(e.PropertyName);
+                };
 
             RemoveCommand = new RemoveCommand(transfers, dispatcher);
             CancelCommand = new CancelCommand();
@@ -30,14 +28,31 @@ namespace MegaDesktop.ViewModels
         public ICommand RemoveCommand { get; private set; }
         public ICommand CancelCommand { get; private set; }
 
-        public string Name { get { return _transferHandle.Node.Attributes.Name; } }
-        public double Progress { get { return _transferHandle.Progress; } }
-        public TransferHandleStatus Status { get { return _transferHandle.Status; } }
-        public double? Speed { get { return _transferHandle.Speed; } }
+        public string Name
+        {
+            get { return _transferHandle.Node.Attributes.Name; }
+        }
+
+        public double Progress
+        {
+            get { return _transferHandle.Progress; }
+        }
+
+        public TransferHandleStatus Status
+        {
+            get { return _transferHandle.Status; }
+        }
+
+        public double? Speed
+        {
+            get { return _transferHandle.Speed; }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            var handler = PropertyChanged;
+            PropertyChangedEventHandler handler = PropertyChanged;
             if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
         }
 

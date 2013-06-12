@@ -1,77 +1,51 @@
 ﻿using System;
 using System.Collections.Generic;
 using MegaApi;
-using MegaApi.Comms.Requests;
 
 namespace MegaDesktop.Services
 {
-    internal class MegaApiWrapper : IMegaApi
+    internal class MegaApiWrapper
     {
-        private Mega _mega;
+        private Mega _api;
 
         public MegaUser User
         {
-            get
-            {
-                return _mega != null
-                           ? _mega.User
-                           : null;
-            }
+            get { return _api != null ? _api.User : null; }
         }
 
-        public void Init(MegaUser user, Action onSuccess, Action<int> onError)
+        public void Register(Mega api)
         {
-            Mega.Init(user, mega =>
-            {
-                _mega = mega;
-                onSuccess();
-            }, onError);
+            _api = api;
         }
 
-        public MegaUser LoadAccount(string filePath)
+        public void GetNodes(Action<List<MegaNode>> onSuccess, Action<int> onError)
         {
-            return Mega.LoadAccount(filePath);
+            _api.GetNodes(onSuccess, onError);
         }
 
-        public IMegaRequest GetNodes(Action<List<MegaNode>> onSuccess, Action<int> onError)
+        public void RemoveNode(string targetNodeId, Action onSuccess, Action<int> onError)
         {
-            return _mega.AssertIsNotNull().GetNodes(onSuccess, onError);
+            _api.RemoveNode(targetNodeId, onSuccess, onError);
         }
 
-        public IMegaRequest RemoveNode(string targetNodeId, Action onSuccess, Action<int> onError)
+        public void UploadFile(string targetNodeId, string filename, Action<UploadHandle> onHandleReady, Action<int> onError)
         {
-            return _mega.AssertIsNotNull().RemoveNode(targetNodeId, onSuccess, onError);
+            _api.UploadFile(targetNodeId, filename, onHandleReady, onError);
         }
 
-        public IMegaRequest UploadFile(string targetNodeId, string filename, Action<UploadHandle> onHandleReady, Action<int> onError)
+        public void CreateFolder(string targetNodeId, string folderName, Action<MegaNode> onSuccess, Action<int> onError)
         {
-            return _mega.AssertIsNotNull().UploadFile(targetNodeId, filename, onHandleReady, onError);
+            _api.CreateFolder(targetNodeId, folderName, onSuccess, onError);
         }
 
-        public IMegaRequest DownloadFile(MegaNode node, string filename, Action<DownloadHandle> onHandleReady, Action<int> onError)
+        public void DownloadFile(MegaNode node, string filename, Action<DownloadHandle> onHandleReady, Action<int> onError)
         {
-            return _mega.AssertIsNotNull().DownloadFile(node, filename, onHandleReady, onError);
-        }
-
-        public IMegaRequest CreateFolder(string targetNodeId, string folderName, Action<MegaNode> OnSuccess, Action<int> OnError)
-        {
-            return _mega.AssertIsNotNull().CreateFolder(targetNodeId, folderName, OnSuccess, OnError);
+            _api.DownloadFile(node, filename, onHandleReady, onError);
         }
 
         public void SaveAccount(string filePath)
         {
-            _mega.AssertIsNotNull().SaveAccount(filePath);
-        }
-    }
-
-    internal static class MegaShouldNotBeNull
-    {
-        public static Mega AssertIsNotNull(this Mega self)
-        {
-            if (self == null)
-                throw new InvalidOperationException("The MEGA-API has not been set yet. You cannot do this action.");
-
-            return self;
+            _api.SaveAccount(filePath);
         }
     }
 }

@@ -4,37 +4,38 @@
         xmlns:local="clr-namespace:MegaApi;assembly=MegaApi"
         xmlns:e="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         xmlns:behaviours="clr-namespace:MegaDesktop.Ui"
-        Title="Mega Desktop (v0.75 beta)" Height="500" Width="500" MinHeight="500" MinWidth="500" Icon="pack://application:,,,/m.ico" AllowDrop="True" DragEnter="Window_DragEnter_1" Drop="Window_Drop_1">
+        Title="Mega Desktop (v0.75 beta)" Height="500" Width="500" MinHeight="500" MinWidth="500"
+        Icon="pack://application:,,,/m.ico" AllowDrop="True" DragEnter="Window_DragEnter_1" Drop="Window_Drop_1">
     <Window.Resources>
         <DataTemplate x:Key="NodeViewTemplate">
             <StackPanel Orientation="Horizontal">
                 <Label Content=">">
                     <Label.Style>
                         <Style TargetType="Label">
-                            <Setter Property="Visibility" Value="Hidden"/>
+                            <Setter Property="Visibility" Value="Hidden" />
                             <Style.Triggers>
-                                <DataTrigger Binding="{Binding Path=Type}"  Value="1">
-                                    <Setter Property="Visibility" Value="Visible"/>
+                                <DataTrigger Binding="{Binding Path=Type}" Value="1">
+                                    <Setter Property="Visibility" Value="Visible" />
                                 </DataTrigger>
-                                <DataTrigger Binding="{Binding Path=Type}"  Value="-1">
-                                    <Setter Property="Visibility" Value="Visible"/>
+                                <DataTrigger Binding="{Binding Path=Type}" Value="-1">
+                                    <Setter Property="Visibility" Value="Visible" />
                                 </DataTrigger>
                             </Style.Triggers>
                         </Style>
                     </Label.Style>
                 </Label>
                 <Label>
-                    <Binding Path="Name"/>
+                    <Binding Path="Name" />
                 </Label>
             </StackPanel>
         </DataTemplate>
         <DataTemplate x:Key="TransferViewTemplate">
             <StackPanel Orientation="Horizontal">
                 <Label>
-                    <Binding Path="Name"/>
+                    <Binding Path="Name" />
                 </Label>
                 <Label ContentStringFormat="F2">
-                    <Binding Path="Progress"/>
+                    <Binding Path="Progress" />
                 </Label>
                 <Label>
                     <Label.Style>
@@ -44,43 +45,43 @@
                                     <DataTrigger.Value>
                                         <local:TransferHandleStatus>Success</local:TransferHandleStatus>
                                     </DataTrigger.Value>
-                                    <Setter Property="Content" Value="Success"/>
+                                    <Setter Property="Content" Value="Success" />
                                 </DataTrigger>
                                 <DataTrigger Binding="{Binding Path=Status}">
                                     <DataTrigger.Value>
                                         <local:TransferHandleStatus>Downloading</local:TransferHandleStatus>
                                     </DataTrigger.Value>
-                                    <Setter Property="Content" Value="Downloading"/>
+                                    <Setter Property="Content" Value="Downloading" />
                                 </DataTrigger>
                                 <DataTrigger Binding="{Binding Path=Status}">
                                     <DataTrigger.Value>
                                         <local:TransferHandleStatus>Uploading</local:TransferHandleStatus>
                                     </DataTrigger.Value>
-                                    <Setter Property="Content" Value="Uploading"/>
+                                    <Setter Property="Content" Value="Uploading" />
                                 </DataTrigger>
                                 <DataTrigger Binding="{Binding Path=Status}">
                                     <DataTrigger.Value>
                                         <local:TransferHandleStatus>Pending</local:TransferHandleStatus>
                                     </DataTrigger.Value>
-                                    <Setter Property="Content" Value="Pending"/>
+                                    <Setter Property="Content" Value="Pending" />
                                 </DataTrigger>
                                 <DataTrigger Binding="{Binding Path=Status}">
                                     <DataTrigger.Value>
                                         <local:TransferHandleStatus>Error</local:TransferHandleStatus>
                                     </DataTrigger.Value>
-                                    <Setter Property="Content" Value="Error"/>
+                                    <Setter Property="Content" Value="Error" />
                                 </DataTrigger>
                                 <DataTrigger Binding="{Binding Path=Status}">
                                     <DataTrigger.Value>
                                         <local:TransferHandleStatus>Cancelled</local:TransferHandleStatus>
                                     </DataTrigger.Value>
-                                    <Setter Property="Content" Value="Cancelled"/>
+                                    <Setter Property="Content" Value="Cancelled" />
                                 </DataTrigger>
                             </Style.Triggers>
                         </Style>
                     </Label.Style>
                 </Label>
-                <Label ContentStringFormat="{}{0:F2} MB/s" Content="{Binding Path=Speed}"/>
+                <Label ContentStringFormat="{}{0:F2} MB/s" Content="{Binding Path=Speed}" />
 
                 <Button Content="Cancel" Command="{Binding CancelCommand}" CommandParameter="{Binding}">
                     <Button.Template>
@@ -98,19 +99,19 @@
                                     <DataTrigger.Value>
                                         <local:TransferHandleStatus>Cancelled</local:TransferHandleStatus>
                                     </DataTrigger.Value>
-                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                    <Setter Property="Visibility" Value="Collapsed" />
                                 </DataTrigger>
                                 <DataTrigger Binding="{Binding Path=Status}">
                                     <DataTrigger.Value>
                                         <local:TransferHandleStatus>Success</local:TransferHandleStatus>
                                     </DataTrigger.Value>
-                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                    <Setter Property="Visibility" Value="Collapsed" />
                                 </DataTrigger>
                                 <DataTrigger Binding="{Binding Path=Status}">
                                     <DataTrigger.Value>
                                         <local:TransferHandleStatus>Error</local:TransferHandleStatus>
                                     </DataTrigger.Value>
-                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                    <Setter Property="Visibility" Value="Collapsed" />
                                 </DataTrigger>
                                 <Trigger Property="IsMouseOver" Value="true">
                                     <Setter Property="Foreground" Value="Red" />
@@ -135,19 +136,19 @@
                                     <DataTrigger.Value>
                                         <local:TransferHandleStatus>Uploading</local:TransferHandleStatus>
                                     </DataTrigger.Value>
-                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                    <Setter Property="Visibility" Value="Collapsed" />
                                 </DataTrigger>
                                 <DataTrigger Binding="{Binding Path=Status}">
                                     <DataTrigger.Value>
                                         <local:TransferHandleStatus>Downloading</local:TransferHandleStatus>
                                     </DataTrigger.Value>
-                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                    <Setter Property="Visibility" Value="Collapsed" />
                                 </DataTrigger>
                                 <DataTrigger Binding="{Binding Path=Status}">
                                     <DataTrigger.Value>
                                         <local:TransferHandleStatus>Pending</local:TransferHandleStatus>
                                     </DataTrigger.Value>
-                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                    <Setter Property="Visibility" Value="Collapsed" />
                                 </DataTrigger>
                                 <Trigger Property="IsMouseOver" Value="true">
                                     <Setter Property="Foreground" Value="Red" />
@@ -161,32 +162,42 @@
     </Window.Resources>
     <Grid>
         <DockPanel Height="100" HorizontalAlignment="Stretch" Name="dockPanel1" VerticalAlignment="Top">
-            <Button Height="50" Command="{Binding UploadCommand}" CommandParameter="{Binding SelectedNode, Mode=OneWay}" Width="50" HorizontalAlignment="Left" ToolTip="Upload" Margin="10,0,0,0">
+            <Button Height="50" Command="{Binding UploadCommand}"
+                    CommandParameter="{Binding SelectedNode, Mode=OneWay}" Width="50" HorizontalAlignment="Left"
+                    ToolTip="Upload" Margin="10,0,0,0">
                 <Image Source="pack://application:,,,/MegaDesktop;component/resources/upload.png" />
             </Button>
-            <Button Height="50" Command="{Binding UploadFolderCommand}" CommandParameter="{Binding SelectedNode, Mode=OneWay}" Width="50" HorizontalAlignment="Left" ToolTip="Upload" Margin="10,0,0,0">
+            <Button Height="50" Command="{Binding UploadFolderCommand}"
+                    CommandParameter="{Binding SelectedNode, Mode=OneWay}" Width="50" HorizontalAlignment="Left"
+                    ToolTip="Upload" Margin="10,0,0,0">
                 <Image Source="pack://application:,,,/MegaDesktop;component/resources/folderUpload.png" />
             </Button>
-            <Button Height="50" Command="{Binding DownloadCommand}" CommandParameter="{Binding SelectedNode, Mode=OneWay}" Width="50" HorizontalAlignment="Left" ToolTip="Download">
+            <Button Height="50" Command="{Binding DownloadCommand}"
+                    CommandParameter="{Binding SelectedNode, Mode=OneWay}" Width="50" HorizontalAlignment="Left"
+                    ToolTip="Download">
                 <Image Source="pack://application:,,,/MegaDesktop;component/resources/download.png" />
             </Button>
-            <Button Height="50" Command="{Binding DeleteCommand}" CommandParameter="{Binding SelectedNode, Mode=OneWay}" Width="50" HorizontalAlignment="Left" Margin="10,0,0,0" ToolTip="Delete">
+            <Button Height="50" Command="{Binding DeleteCommand}"
+                    CommandParameter="{Binding SelectedNode, Mode=OneWay}" Width="50" HorizontalAlignment="Left"
+                    Margin="10,0,0,0" ToolTip="Delete">
                 <Image Source="pack://application:,,,/MegaDesktop;component/resources/remove.png" Height="26" />
             </Button>
             <Button Height="50" Command="{Binding LoginCommand}" Width="50" Margin="10,0,0,0" ToolTip="Login">
-                <Image Source="pack://application:,,,/MegaDesktop;component/resources/login.png"  Height="36"/>
+                <Image Source="pack://application:,,,/MegaDesktop;component/resources/login.png" Height="36" />
             </Button>
             <Button Height="50" Command="{Binding LogoutCommand}" Width="50" Margin="10,0,0,0" ToolTip="Logout">
                 <Image Source="pack://application:,,,/MegaDesktop;component/resources/logout.png" Height="20" />
             </Button>
-            <Button Height="50" Command="{Binding RefreshCommand}" Width="50" HorizontalAlignment="Left" ToolTip="Refresh" Margin="10,0,0,0" >
-                <Image Source="pack://application:,,,/MegaDesktop;component/resources/refresh.png" Height="40"/>
+            <Button Height="50" Command="{Binding RefreshCommand}" Width="50" HorizontalAlignment="Left"
+                    ToolTip="Refresh" Margin="10,0,0,0">
+                <Image Source="pack://application:,,,/MegaDesktop;component/resources/refresh.png" Height="40" />
             </Button>
         </DockPanel>
-        <DockPanel  HorizontalAlignment="Stretch" Margin="0,100,0,130" Name="dockPanel2" VerticalAlignment="Stretch">
+        <DockPanel HorizontalAlignment="Stretch" Margin="0,100,0,130" Name="dockPanel2" VerticalAlignment="Stretch">
             <TreeView DockPanel.Dock="Left" ItemsSource="{Binding RootNode.ChildNodes}">
                 <e:Interaction.Behaviors>
-                    <behaviours:BindableSelectedItemBehavior SelectedItem="{Binding SelectedTreeNode, Mode=OneWayToSource}" />
+                    <behaviours:BindableSelectedItemBehavior
+                        SelectedItem="{Binding SelectedTreeNode, Mode=OneWayToSource}" />
                 </e:Interaction.Behaviors>
                 <TreeView.ItemTemplate>
                     <HierarchicalDataTemplate ItemsSource="{Binding ChildNodes}">
@@ -202,13 +213,14 @@
                                   Command="{Binding SelectedListNodeActionCommand}"
                                   CommandParameter="{Binding SelectedListNode}" />
                 </ListBox.InputBindings>
-                </ListBox>
+            </ListBox>
         </DockPanel>
         <ListBox Height="100" HorizontalAlignment="Stretch" Margin="0,0,0,25" VerticalAlignment="Bottom"
                  ItemsSource="{Binding Transfers}"
-                 ItemTemplate="{StaticResource TransferViewTemplate}"/>
+                 ItemTemplate="{StaticResource TransferViewTemplate}" />
         <DockPanel Height="25" VerticalAlignment="Bottom">
-            <TextBox Padding="3" HorizontalAlignment="Left" Text="{Binding Status.Message}" FontSize="14" IsReadOnly="True" BorderThickness="0"/>
+            <TextBox Padding="3" HorizontalAlignment="Left" Text="{Binding Status.Message}" FontSize="14"
+                     IsReadOnly="True" BorderThickness="0" />
         </DockPanel>
     </Grid>
 </Window>

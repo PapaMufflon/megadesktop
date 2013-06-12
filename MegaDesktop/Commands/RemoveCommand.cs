@@ -7,16 +7,16 @@ namespace MegaDesktop.Commands
 {
     internal class RemoveCommand : ICommand
     {
-        public event EventHandler CanExecuteChanged;
-
-        private readonly IManageTransfers _transfers;
         private readonly IDispatcher _dispatcher;
+        private readonly TransferManager _transfers;
 
-        public RemoveCommand(IManageTransfers transfers, IDispatcher dispatcher)
+        public RemoveCommand(TransferManager transfers, IDispatcher dispatcher)
         {
             _transfers = transfers;
             _dispatcher = dispatcher;
         }
+
+        public event EventHandler CanExecuteChanged;
 
         public bool CanExecute(object parameter)
         {
@@ -37,7 +37,7 @@ namespace MegaDesktop.Commands
 
         protected virtual void OnCanExecuteChanged()
         {
-            var handler = CanExecuteChanged;
+            EventHandler handler = CanExecuteChanged;
             if (handler != null) handler(this, EventArgs.Empty);
         }
     }

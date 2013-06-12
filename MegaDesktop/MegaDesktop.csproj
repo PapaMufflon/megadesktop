@@ -65,6 +65,12 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.0.2-unstable-9\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Conventions">
+      <HintPath>..\packages\ninject.extensions.conventions.3.0.0.11\lib\net45-full\Ninject.Extensions.Conventions.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
@@ -97,17 +103,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
-    <Compile Include="Services\ICanRefresh.cs" />
-    <Compile Include="Services\ICanSetStatus.cs" />
     <Compile Include="Services\ICanSetTitle.cs" />
     <Compile Include="Services\IDispatcher.cs" />
     <Compile Include="Services\Dispatcher.cs" />
-    <Compile Include="Services\IHaveNodes.cs" />
-    <Compile Include="Services\IManageTransfers.cs" />
-    <Compile Include="Services\IMegaApi.cs" />
-    <Compile Include="Services\ISelectedNodeListener.cs" />
     <Compile Include="Services\IUserManagement.cs" />
     <Compile Include="Services\MegaApiWrapper.cs" />
+    <Compile Include="Services\NodeManager.cs" />
     <Compile Include="Services\RefreshService.cs" />
     <Compile Include="Services\Status.cs" />
     <Compile Include="Services\TransferManager.cs" />
@@ -169,6 +170,7 @@
       <LastGenOutput>Resource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

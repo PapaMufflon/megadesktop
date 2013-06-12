@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Windows;
+using System.Windows.Threading;
 using MegaApi;
 using MegaDesktop.Services;
 
 namespace MegaDesktop
 {
     /// <summary>
-    /// Interaction logic for WindowLogin.xaml
+    ///     Interaction logic for WindowLogin.xaml
     /// </summary>
     internal partial class WindowLogin
     {
         private readonly IUserManagement _userManagement;
-        
+
         public WindowLogin(IUserManagement userManagement)
         {
             _userManagement = userManagement;
@@ -61,23 +62,25 @@ namespace MegaDesktop
         private void buttonOk_Click(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(textBoxPass.Password) ||
-               string.IsNullOrEmpty(textBoxEmail.Text))
-            { return; }
+                string.IsNullOrEmpty(textBoxEmail.Text))
+            {
+                return;
+            }
 
             textBoxStatus.Text = "Checking...";
 
             _userManagement.LoginUser(new MegaUser(textBoxEmail.Text, textBoxPass.Password)).ContinueWith(x =>
-            {
-                if (x.Exception == null)
-                    Close();
-                else
-                    Invoke(() => textBoxStatus.Text = "Incorrect login or password");
-            });
+                {
+                    if (x.Exception == null)
+                        Close();
+                    else
+                        Invoke(() => textBoxStatus.Text = "Incorrect login or password");
+                });
         }
 
-        void Invoke(Action fn)
+        private void Invoke(Action fn)
         {
-            Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority.Normal, (Delegate)fn);
+            Dispatcher.Invoke(DispatcherPriority.Normal, fn);
         }
     }
 }

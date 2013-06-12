@@ -1,5 +1,9 @@
 ﻿using System;
 using MegaDesktop.Services;
+using MegaDesktop.Services.Fakes;
+using MegaDesktop.ViewModels;
+using MegaDesktop.ViewModels.Fakes;
+using Microsoft.QualityTools.Testing.Fakes;
 using NSubstitute;
 using NUnit.Framework;
 
@@ -8,33 +12,42 @@ namespace MegaDesktop.Tests
     [TestFixture]
     public class UserAccountTests
     {
-        private ICanSetTitle _title;
-        private ICanRefresh _refresh;
-        private ICanSetStatus _status;
-        private IMegaApi _megaApi;
-        private IManageTransfers _transfers;
-        private UserAccount _target;
-
         [SetUp]
         public void Setup()
         {
-            _megaApi = Substitute.For<IMegaApi>();
-            _status = Substitute.For<ICanSetStatus>();
-            _refresh = Substitute.For<ICanRefresh>();
-            _title = Substitute.For<ICanSetTitle>();
-            _transfers = Substitute.For<IManageTransfers>();
+            _shimContext = ShimsContext.Create();
 
-            _target = new UserAccount(_megaApi, _status, _refresh, _title, _transfers);
+            _status = new ShimStatusViewModel();
+            _refresh = new ShimRefreshService();
+            _title = Substitute.For<ICanSetTitle>();
+            _transfers = new ShimTransferManager();
+            _megaApiWrapper = new ShimMegaApiWrapper();
+
+            _target = new UserAccount(_status, _refresh, _title, _transfers, _megaApiWrapper);
         }
+
+        [TearDown]
+        public void TearDown()
+        {
+            _shimContext.Dispose();
+        }
+
+        private ICanSetTitle _title;
+        private StatusViewModel _status;
+        private TransferManager _transfers;
+        private UserAccount _target;
+        private RefreshService _refresh;
+        private MegaApiWrapper _megaApiWrapper;
+        private IDisposable _shimContext;
 
         [Test]
         public void Ctor_arguments_should_not_be_null()
         {
-            Assert.Throws<ArgumentNullException>(() => new UserAccount(null, _status, _refresh, _title, _transfers));
-            Assert.Throws<ArgumentNullException>(() => new UserAccount(_megaApi, null, _refresh, _title, _transfers));
-            Assert.Throws<ArgumentNullException>(() => new UserAccount(_megaApi, _status, null, _title, _transfers));
-            Assert.Throws<ArgumentNullException>(() => new UserAccount(_megaApi, _status, _refresh, null, _transfers));
-            Assert.Throws<ArgumentNullException>(() => new UserAccount(_megaApi, _status, _refresh, _title, null));
+            Assert.Throws<ArgumentNullException>(() => new UserAccount(null, _refresh, _title, _transfers, _megaApiWrapper));
+            Assert.Throws<ArgumentNullException>(() => new UserAccount(_status, null, _title, _transfers, _megaApiWrapper));
+            Assert.Throws<ArgumentNullException>(() => new UserAccount(_status, _refresh, null, _transfers, _megaApiWrapper));
+            Assert.Throws<ArgumentNullException>(() => new UserAccount(_status, _refresh, _title, null, _megaApiWrapper));
+            Assert.Throws<ArgumentNullException>(() => new UserAccount(_status, _refresh, _title, _transfers, null));
         }
 
         [Test]

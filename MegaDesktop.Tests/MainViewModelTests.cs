@@ -1,7 +1,9 @@
 ﻿using System;
 using MegaDesktop.Services;
+using MegaDesktop.Services.Fakes;
 using MegaDesktop.ViewModels;
-using NSubstitute;
+using MegaDesktop.ViewModels.Fakes;
+using Microsoft.QualityTools.Testing.Fakes;
 using NUnit.Framework;
 
 namespace MegaDesktop.Tests
@@ -9,57 +11,48 @@ namespace MegaDesktop.Tests
     [TestFixture]
     public class MainViewModelTests
     {
-        private ICanSetTitle _title;
-        private IDispatcher _dispatcher;
-        private MainViewModel _target;
-
         [SetUp]
         public void Setup()
         {
-            _dispatcher = new TestDispatcher();
-            _title = Substitute.For<ICanSetTitle>();
+            _shimContext = ShimsContext.Create();
+            _status = new ShimStatusViewModel();
+            _nodeManager = new ShimNodeManager();
 
-            _target = new MainViewModel(_dispatcher, _title);
+            _target = new MainViewModel(_status, _nodeManager);
         }
+
+        [TearDown]
+        public void TearDown()
+        {
+            _shimContext.Dispose();
+        }
+
+        private MainViewModel _target;
+        private StatusViewModel _status;
+        private NodeManager _nodeManager;
+        private IDisposable _shimContext;
 
         [Test]
         public void Ctor_arguments_should_not_be_null()
         {
-            Assert.Throws<ArgumentNullException>(() => new MainViewModel(null, _title));
-            Assert.Throws<ArgumentNullException>(() => new MainViewModel(_dispatcher, null));
-        }
-
-        [Test]
-        public void Selecting_a_node_in_the_tree_sets_this_node_as_the_selected_node()
-        {
-            _target.SelectedTreeNode = new NodeViewModel(_dispatcher);
-
-            Assert.That(_target.SelectedNode, Is.EqualTo(_target.SelectedTreeNode));
+            Assert.Throws<ArgumentNullException>(() => new MainViewModel(null, _nodeManager));
+            Assert.Throws<ArgumentNullException>(() => new MainViewModel(_status, null));
         }
 
         [Test]
         public void Selecting_a_node_in_the_list_sets_this_node_as_the_selected_node()
         {
-            _target.SelectedListNode = new NodeViewModel(_dispatcher);
+            _target.SelectedListNode = new NodeViewModel(new TestDispatcher());
 
             Assert.That(_target.SelectedNode, Is.EqualTo(_target.SelectedListNode));
         }
 
         [Test]
-        public void Selecting_a_node_raises_the_SelectedNodeChanged_event()
+        public void Selecting_a_node_in_the_tree_sets_this_node_as_the_selected_node()
         {
-            var raised = false;
-            _target.SelectedNodeChanged += (s, e) => raised = true;
+            _target.SelectedTreeNode = new NodeViewModel(new TestDispatcher());
 
-            _target.SelectedListNode = new NodeViewModel(_dispatcher);
-
-            Assert.That(raised, Is.True);
-
-            raised = false;
-
-            _target.SelectedTreeNode = new NodeViewModel(_dispatcher);
-
-            Assert.That(raised, Is.True);
+            Assert.That(_target.SelectedNode, Is.EqualTo(_target.SelectedTreeNode));
         }
     }
 }

@@ -1,20 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace MegaDesktop
 {
     /// <summary>
-    /// Interaction logic for TermsOfServiceWindow.xaml
+    ///     Interaction logic for TermsOfServiceWindow.xaml
     /// </summary>
     public partial class TermsOfServiceWindow : Window
     {

@@ -1,16 +1,17 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Net;
 using System.Windows;
-using System.Windows.Controls;
-using MegaApi;
+using MegaDesktop.Properties;
 using MegaDesktop.Services;
 using MegaDesktop.ViewModels;
-using System.Diagnostics;
+using Ninject;
+using Ninject.Extensions.Conventions;
 
 namespace MegaDesktop
 {
     public partial class MainWindow : ICanSetTitle
     {
-        private readonly MainViewModel _mainViewModel;
         private readonly Dispatcher _dispatcher;
 
         public MainWindow()
@@ -18,36 +19,66 @@ namespace MegaDesktop
             InitializeComponent();
 
             _dispatcher = new Dispatcher(Dispatcher);
-            _mainViewModel = new MainViewModel(_dispatcher, this);
-            DataContext = _mainViewModel;
+
+            var kernel = new StandardKernel();
+            kernel.Bind(x => x.FromThisAssembly()
+                              .SelectAllClasses()
+                              .BindToSelf()
+                              .Configure(y => y.InTransientScope()));
+            kernel.Bind(x => x.FromThisAssembly()
+                              .SelectAllClasses()
+                              .BindAllInterfaces()
+                              .Configure(y => y.InTransientScope()));
+
+            kernel.Bind<IUserManagement>().To<UserAccount>();
+
+            kernel.Rebind<IDispatcher>().ToConstant(_dispatcher);
+            kernel.Rebind<MegaApiWrapper>().ToSelf().InSingletonScope();
+            kernel.Rebind<StatusViewModel>().ToSelf().InSingletonScope();
+            kernel.Rebind<NodeManager>().ToSelf().InSingletonScope();
+            kernel.Rebind<ICanSetTitle>().ToConstant(this);
+
+            kernel.Get<UserAccount>().LoginLastUser().ContinueWith(x =>
+                {
+                    if (x.Exception == null)
+                        return;
+
+                    MessageBox.Show("Error while loading account: " + x.Exception);
+                    Application.Current.Shutdown();
+                });
+
+            DataContext = kernel.Get<MainViewModel>();
 
             CheckTos();
 
-            System.Net.ServicePointManager.DefaultConnectionLimit = 50;
+            ServicePointManager.DefaultConnectionLimit = 50;
+        }
+
+        public void SetTitle(string newTitle)
+        {
+            _dispatcher.InvokeOnUiThread(() => Title = newTitle);
         }
 
         private static void CheckTos()
         {
-            if (Properties.Settings.Default.TosAccepted) { return; }
+            if (Settings.Default.TosAccepted)
+            {
+                return;
+            }
             else
             {
-                TermsOfServiceWindow tos = new TermsOfServiceWindow();
-                var res = tos.ShowDialog();
+                var tos = new TermsOfServiceWindow();
+                bool? res = tos.ShowDialog();
                 if (!res.Value)
                 {
                     Process.GetCurrentProcess().Kill();
                 }
                 else
                 {
-                    Properties.Settings.Default.TosAccepted = true;
-                    Properties.Settings.Default.Save();
+                    Settings.Default.TosAccepted = true;
+                    Settings.Default.Save();
                 }
             }
-        }
-
-        public void SetTitle(string newTitle)
-        {
-            _dispatcher.InvokeOnUiThread(() => Title = newTitle);
         }
 
         private void Window_DragEnter_1(object sender, DragEventArgs e)
@@ -68,7 +99,7 @@ namespace MegaDesktop
             {
                 if ((e.Effects & DragDropEffects.Copy) == DragDropEffects.Copy)
                 {
-                    String[] files = (String[])e.Data.GetData(DataFormats.FileDrop);
+                    var files = (String[]) e.Data.GetData(DataFormats.FileDrop);
 
                     if (files.Length > 0)
                     {

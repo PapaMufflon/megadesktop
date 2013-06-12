@@ -7,7 +7,9 @@ namespace MegaDesktop
         public static T AssertIsNotNull<T>(this T self, string parameterName) where T : class
         {
             if (self == null)
-                throw new ArgumentNullException(string.IsNullOrEmpty(parameterName) ? typeof(T).ToString() : parameterName);
+                throw new ArgumentNullException(string.IsNullOrEmpty(parameterName)
+                                                    ? typeof (T).ToString()
+                                                    : parameterName);
 
             return self;
         }

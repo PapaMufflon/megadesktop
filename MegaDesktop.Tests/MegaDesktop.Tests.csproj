@@ -30,6 +30,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MegaApi.Fakes">
+      <HintPath>FakesAssemblies\MegaApi.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="MegaDesktop.Fakes">
+      <HintPath>FakesAssemblies\MegaDesktop.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="NSubstitute">
       <HintPath>..\packages\NSubstitute.1.6.0.0\lib\NET40\NSubstitute.dll</HintPath>
     </Reference>
@@ -46,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainViewModelTests.cs" />
+    <Compile Include="NodeManagerTests.cs" />
     <Compile Include="NodeViewModelTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RefreshServiceTests.cs" />
@@ -55,6 +63,8 @@
     <Compile Include="UserAccountTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Fakes Include="Fakes\MegaDesktop.fakes" />
+    <Fakes Include="Fakes\MegaApi.fakes" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

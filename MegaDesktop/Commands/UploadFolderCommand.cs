@@ -5,27 +5,30 @@ using System.Windows.Input;
 using MegaApi;
 using MegaDesktop.Services;
 using MegaDesktop.ViewModels;
+using Ninject;
 
 namespace MegaDesktop.Commands
 {
     internal class UploadFolderCommand : ICommand
     {
-        public event EventHandler CanExecuteChanged;
-        
-        private readonly IMegaApi _megaApi;
-        private readonly ICanSetStatus _status;
-        private readonly IHaveNodes _nodes;
+        private readonly MegaApiWrapper _megaApiWrapper;
         private readonly IDispatcher _dispatcher;
+        private readonly NodeManager _nodes;
+        private readonly StatusViewModel _status;
 
-        public UploadFolderCommand(IMegaApi megaApi, ICanSetStatus status, ISelectedNodeListener selectedNodeListener, IHaveNodes nodes, IDispatcher dispatcher)
+        public UploadFolderCommand(StatusViewModel status, NodeManager nodes,
+                                   IDispatcher dispatcher, MegaApiWrapper megaApiWrapper)
         {
-            _megaApi = megaApi.AssertIsNotNull("megaApi");
             _status = status.AssertIsNotNull("status");
             _nodes = nodes.AssertIsNotNull("nodes");
             _dispatcher = dispatcher.AssertIsNotNull("dispatcher");
+            _megaApiWrapper = megaApiWrapper.AssertIsNotNull("megaApiWrapper");
 
-            selectedNodeListener.AssertIsNotNull("selectedNodeListener").SelectedNodeChanged += (s, e) => dispatcher.InvokeOnUiThread(OnCanExecuteChanged);
+            nodes.SelectedNodeChanged +=
+                (s, e) => dispatcher.InvokeOnUiThread(OnCanExecuteChanged);
         }
+
+        public event EventHandler CanExecuteChanged;
 
         public bool CanExecute(object parameter)
         {
@@ -44,31 +47,31 @@ namespace MegaDesktop.Commands
                 return;
 
             var d = new FolderBrowserDialog();
-            var result = d.ShowDialog();
+            DialogResult result = d.ShowDialog();
 
             if (result != DialogResult.OK)
                 return;
 
             _status.SetStatus(Status.Communicating);
-            _megaApi.CreateFolder(currentNode.Id, Path.GetFileName(d.SelectedPath), OnSuccess, err => _status.Error(err));
+            _megaApiWrapper.CreateFolder(currentNode.Id, Path.GetFileName(d.SelectedPath), OnSuccess, err => _status.Error(err));
         }
 
         private void OnSuccess(MegaNode node)
         {
             var nodeViewModel = new NodeViewModel(_dispatcher, node);
 
-            var parent = _nodes.RootNode.Descendant(node.ParentId);
+            NodeViewModel parent = _nodes.RootNode.Descendant(node.ParentId);
 
             _dispatcher.InvokeOnUiThread(() =>
-            {
-                parent.Children.Add(nodeViewModel);
-                parent.ChildNodes.Add(nodeViewModel);        
-            });
+                {
+                    parent.Children.Add(nodeViewModel);
+                    parent.ChildNodes.Add(nodeViewModel);
+                });
         }
 
         protected virtual void OnCanExecuteChanged()
         {
-            var handler = CanExecuteChanged;
+            EventHandler handler = CanExecuteChanged;
             if (handler != null) handler(this, EventArgs.Empty);
         }
     }

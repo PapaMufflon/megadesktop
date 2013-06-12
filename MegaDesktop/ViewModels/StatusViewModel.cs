@@ -5,13 +5,10 @@ using MegaDesktop.Services;
 
 namespace MegaDesktop.ViewModels
 {
-    internal class StatusViewModel : INotifyPropertyChanged, ICanSetStatus
+    internal class StatusViewModel : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-        public event EventHandler<EventArgs> CurrentStatusChanged;
-
-        private string _message;
         private Status _currentStatus;
+        private string _message;
 
         public string Message
         {
@@ -22,6 +19,19 @@ namespace MegaDesktop.ViewModels
                 OnPropertyChanged();
             }
         }
+
+        public Status CurrentStatus
+        {
+            get { return _currentStatus; }
+            private set
+            {
+                _currentStatus = value;
+                OnCurrentStatusChanged();
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        public event EventHandler<EventArgs> CurrentStatusChanged;
 
         public void SetStatus(Status newStatus)
         {
@@ -43,16 +53,6 @@ namespace MegaDesktop.ViewModels
             CurrentStatus = newStatus;
         }
 
-        public Status CurrentStatus
-        {
-            get { return _currentStatus; }
-            private set
-            {
-                _currentStatus = value;
-                OnCurrentStatusChanged();
-            }
-        }
-
         public void Error(int errorNumber)
         {
             Message = String.Format("Error: {0}", errorNumber);
@@ -61,13 +61,13 @@ namespace MegaDesktop.ViewModels
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            var handler = PropertyChanged;
+            PropertyChangedEventHandler handler = PropertyChanged;
             if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
         }
 
         protected virtual void OnCurrentStatusChanged()
         {
-            var handler = CurrentStatusChanged;
+            EventHandler<EventArgs> handler = CurrentStatusChanged;
             if (handler != null) handler(this, EventArgs.Empty);
         }
     }

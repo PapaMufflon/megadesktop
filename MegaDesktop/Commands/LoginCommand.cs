@@ -6,20 +6,20 @@ namespace MegaDesktop.Commands
 {
     internal class LoginCommand : ICommand
     {
-        public event EventHandler CanExecuteChanged;
-
-        private readonly IMegaApi _megaApi;
+        private readonly MegaApiWrapper _megaApiWrapper;
         private readonly IUserManagement _userAccount;
 
-        public LoginCommand(IMegaApi megaApi, IUserManagement userAccount)
+        public LoginCommand(MegaApiWrapper megaApiWrapper, IUserManagement userAccount)
         {
-            _megaApi = megaApi;
+            _megaApiWrapper = megaApiWrapper;
             _userAccount = userAccount;
         }
 
+        public event EventHandler CanExecuteChanged;
+
         public bool CanExecute(object parameter)
         {
-            return _megaApi.User == null;
+            return _megaApiWrapper.User == null;
         }
 
         public void Execute(object parameter)
@@ -30,7 +30,7 @@ namespace MegaDesktop.Commands
 
         protected virtual void OnCanExecuteChanged()
         {
-            var handler = CanExecuteChanged;
+            EventHandler handler = CanExecuteChanged;
             if (handler != null) handler(this, EventArgs.Empty);
         }
     }

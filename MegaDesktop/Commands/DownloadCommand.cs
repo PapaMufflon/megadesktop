@@ -9,22 +9,23 @@ namespace MegaDesktop.Commands
 {
     internal class DownloadCommand : ICommand
     {
-        public event EventHandler CanExecuteChanged;
+        private readonly MegaApiWrapper _megaApiWrapper;
+        private readonly RefreshService _refresh;
+        private readonly StatusViewModel _status;
+        private readonly TransferManager _transfers;
 
-        private readonly IMegaApi _megaApi;
-        private readonly ICanSetStatus _status;
-        private readonly IManageTransfers _transfers;
-        private readonly ICanRefresh _refresh;
-
-        public DownloadCommand(IMegaApi megaApi, ICanSetStatus status, ISelectedNodeListener selectedNodeListener, IDispatcher dispatcher, IManageTransfers transfers, ICanRefresh refresh)
+        public DownloadCommand(MegaApiWrapper megaApiWrapper, StatusViewModel status, NodeManager nodes,
+                               IDispatcher dispatcher, TransferManager transfers, RefreshService refresh)
         {
-            _megaApi = megaApi;
+            _megaApiWrapper = megaApiWrapper;
             _status = status;
             _transfers = transfers;
             _refresh = refresh;
 
-            selectedNodeListener.SelectedNodeChanged += (s, e) => dispatcher.InvokeOnUiThread(OnCanExecuteChanged);
+            nodes.SelectedNodeChanged += (s, e) => dispatcher.InvokeOnUiThread(OnCanExecuteChanged);
         }
+
+        public event EventHandler CanExecuteChanged;
 
         public bool CanExecute(object parameter)
         {
@@ -36,7 +37,7 @@ namespace MegaDesktop.Commands
 
         public void Execute(object parameter)
         {
-            var node = (parameter as NodeViewModel).MegaNode;
+            MegaNode node = (parameter as NodeViewModel).MegaNode;
 
             if (node.Type == MegaNodeType.File)
             {
@@ -57,7 +58,7 @@ namespace MegaDesktop.Commands
             if (d.ShowDialog() == true)
             {
                 _status.SetStatus(Status.Communicating);
-                _megaApi.DownloadFile(clickedNode, d.FileName, OnHandleReady, e => _status.Error(e));
+                _megaApiWrapper.DownloadFile(clickedNode, d.FileName, OnHandleReady, e => _status.Error(e));
             }
         }
 
@@ -68,10 +69,10 @@ namespace MegaDesktop.Commands
 
             _status.SetStatus(Status.Loaded);
         }
-        
+
         protected virtual void OnCanExecuteChanged()
         {
-            var handler = CanExecuteChanged;
+            EventHandler handler = CanExecuteChanged;
             if (handler != null) handler(this, EventArgs.Empty);
         }
     }

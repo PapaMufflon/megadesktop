@@ -1,114 +1,93 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Windows;
-using System.Windows.Input;
 using MegaDesktop.Commands;
 using MegaDesktop.Services;
+using Ninject;
 
 namespace MegaDesktop.ViewModels
 {
-    internal class MainViewModel : ISelectedNodeListener, IHaveNodes, INotifyPropertyChanged
+    internal class MainViewModel : INotifyPropertyChanged
     {
-        public event EventHandler<EventArgs> SelectedNodeChanged;
+        private readonly NodeManager _nodeManager;
 
-        private NodeViewModel _selectedNode;
-        private NodeViewModel _selectedTreeNode;
-        private NodeViewModel _selectedListNode;
-
-        public MainViewModel(IDispatcher dispatcher, ICanSetTitle title)
+        public MainViewModel(StatusViewModel status, NodeManager nodeManager)
         {
-            dispatcher.AssertIsNotNull("dispatcher");
-            title.AssertIsNotNull("title");
+            Status = status.AssertIsNotNull("status");
+            _nodeManager = nodeManager.AssertIsNotNull("nodeManager");
 
-            Status = new StatusViewModel();
             Status.SetStatus(Services.Status.Communicating);
-
-            RootNode = new NodeViewModel(dispatcher);
-            var apiManager = new MegaApiWrapper();
-            var refreshService = new RefreshService(Status, apiManager, this);
-
             Transfers = new ObservableCollection<TransferHandleViewModel>();
-            var transferManager = new TransferManager(Transfers, dispatcher, this);
-
-            var userAccount = new UserAccount(apiManager, Status, refreshService, title, transferManager);
-            userAccount.LoginLastUser().ContinueWith(x =>
-            {
-                if (x.Exception == null)
-                    return;
-
-                MessageBox.Show("Error while loading account: " + x.Exception);
-                Application.Current.Shutdown();
-            });
-
-            UploadCommand = new UploadCommand(apiManager, Status, this, dispatcher, transferManager, refreshService);
-            UploadFolderCommand = new UploadFolderCommand(apiManager, Status, this, this, dispatcher);
-            DownloadCommand = new DownloadCommand(apiManager, Status, this, dispatcher, transferManager, refreshService);
-            DeleteCommand = new DeleteCommand(apiManager, Status, refreshService, this, dispatcher);
-            LoginCommand = new LoginCommand(apiManager, userAccount);
-            LogoutCommand = new LogoutCommand(transferManager, this, userAccount);
-            RefreshCommand = new RefreshCommand(refreshService);
-            SelectedListNodeActionCommand = new SelectedListNodeActionCommand(DownloadCommand as DownloadCommand, refreshService);
         }
 
-        public ICanSetStatus Status { get; private set; }
-        public ICommand UploadCommand { get; private set; }
-        public ICommand UploadFolderCommand { get; private set; }
-        public ICommand DownloadCommand { get; private set; }
-        public ICommand DeleteCommand { get; private set; }
-        public ICommand LoginCommand { get; private set; }
-        public ICommand LogoutCommand { get; private set; }
-        public ICommand RefreshCommand { get; private set; }
-        public ICommand SelectedListNodeActionCommand { get; private set; }
-        public NodeViewModel RootNode { get; private set; }
+        public StatusViewModel Status { get; private set; }
         public ObservableCollection<TransferHandleViewModel> Transfers { get; private set; }
+
+        [Inject]
+        public UploadCommand UploadCommand { get; set; }
+
+        [Inject]
+        public UploadFolderCommand UploadFolderCommand { get; set; }
+
+        [Inject]
+        public DownloadCommand DownloadCommand { get; set; }
+
+        [Inject]
+        public DeleteCommand DeleteCommand { get; set; }
+
+        [Inject]
+        public LoginCommand LoginCommand { get; set; }
+
+        [Inject]
+        public LogoutCommand LogoutCommand { get; set; }
+
+        [Inject]
+        public RefreshCommand RefreshCommand { get; set; }
+
+        [Inject]
+        public SelectedListNodeActionCommand SelectedListNodeActionCommand { get; set; }
 
         public NodeViewModel SelectedNode
         {
-            get { return _selectedNode; }
+            get { return _nodeManager.SelectedNode; }
             set
             {
-                _selectedNode = value;
+                _nodeManager.SelectedNode = value;
                 OnPropertyChanged();
-                OnSelectedNodeChanged();
             }
         }
 
         public NodeViewModel SelectedTreeNode
         {
-            get { return _selectedTreeNode; }
+            get { return _nodeManager.SelectedTreeNode; }
             set
             {
-                _selectedTreeNode = value;
-                SelectedNode = SelectedTreeNode;
+                _nodeManager.SelectedTreeNode = value;
                 OnPropertyChanged();
             }
         }
 
         public NodeViewModel SelectedListNode
         {
-            get { return _selectedListNode; }
+            get { return _nodeManager.SelectedListNode; }
             set
             {
-                _selectedListNode = value;
-                SelectedNode = SelectedListNode;
+                _nodeManager.SelectedListNode = value;
                 OnPropertyChanged();
             }
+        }
+
+        public NodeViewModel RootNode
+        {
+            get { return _nodeManager.RootNode; }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            var handler = PropertyChanged;
+            PropertyChangedEventHandler handler = PropertyChanged;
             if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        protected virtual void OnSelectedNodeChanged()
-        {
-            var handler = SelectedNodeChanged;
-            if (handler != null) handler(this, EventArgs.Empty);
         }
     }
 }
