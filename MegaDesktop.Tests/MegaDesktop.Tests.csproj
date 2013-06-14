@@ -30,10 +30,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MegaApi.Fakes">
+      <HintPath>FakesAssemblies\MegaApi.Fakes.dll</HintPath>
+    </Reference>
     <Reference Include="MegaDesktop.Fakes">
       <HintPath>FakesAssemblies\MegaDesktop.Fakes.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="mscorlib.4.0.0.0.Fakes">
+      <HintPath>FakesAssemblies\mscorlib.4.0.0.0.Fakes.dll</HintPath>
+    </Reference>
     <Reference Include="NSubstitute">
       <HintPath>..\packages\NSubstitute.1.6.0.0\lib\NET40\NSubstitute.dll</HintPath>
     </Reference>
@@ -41,7 +47,14 @@
       <HintPath>..\packages\NUnit.2.6.2\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.4.0.0.0.Fakes">
+      <HintPath>FakesAssemblies\System.4.0.0.0.Fakes.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.4.0.0.0.Fakes">
+      <HintPath>FakesAssemblies\System.Windows.Forms.4.0.0.0.Fakes.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainViewModelTests.cs" />
@@ -57,6 +70,9 @@
   <ItemGroup>
     <Fakes Include="Fakes\MegaDesktop.fakes" />
     <Fakes Include="Fakes\MegaApi.fakes" />
+    <Fakes Include="Fakes\System.Windows.Forms.fakes" />
+    <Fakes Include="Fakes\System.fakes" />
+    <Fakes Include="Fakes\mscorlib.fakes" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

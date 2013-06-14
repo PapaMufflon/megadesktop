@@ -7,15 +7,12 @@ namespace MegaDesktop.Services
     internal class TransferManager
     {
         private readonly IDispatcher _dispatcher;
-        private readonly NodeManager _nodes;
         private readonly ObservableCollection<TransferHandleViewModel> _transfers;
 
-        public TransferManager(ObservableCollection<TransferHandleViewModel> transfers, IDispatcher dispatcher,
-                               NodeManager nodes)
+        public TransferManager(ObservableCollection<TransferHandleViewModel> transfers, IDispatcher dispatcher)
         {
             _transfers = transfers;
             _dispatcher = dispatcher;
-            _nodes = nodes;
         }
 
         public ObservableCollection<TransferHandleViewModel> Transfers
@@ -32,13 +29,13 @@ namespace MegaDesktop.Services
         public void Remove(TransferHandleViewModel transfer)
         {
             _dispatcher.InvokeOnUiThread(() =>
-                                         Transfers.Remove(transfer));
+                Transfers.Remove(transfer));
         }
 
         public void AddNewTransfer(TransferHandle transfer)
         {
             _dispatcher.InvokeOnUiThread(() =>
-                                         Transfers.Add(new TransferHandleViewModel(transfer, this, _dispatcher)));
+                Transfers.Add(new TransferHandleViewModel(transfer, this, _dispatcher)));
         }
     }
 }

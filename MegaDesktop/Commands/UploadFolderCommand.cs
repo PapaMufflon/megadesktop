@@ -5,24 +5,26 @@ using System.Windows.Input;
 using MegaApi;
 using MegaDesktop.Services;
 using MegaDesktop.ViewModels;
-using Ninject;
 
 namespace MegaDesktop.Commands
 {
     internal class UploadFolderCommand : ICommand
     {
+        private readonly UploadCommand _uploadCommand;
         private readonly MegaApiWrapper _megaApiWrapper;
         private readonly IDispatcher _dispatcher;
         private readonly NodeManager _nodes;
         private readonly StatusViewModel _status;
 
         public UploadFolderCommand(StatusViewModel status, NodeManager nodes,
-                                   IDispatcher dispatcher, MegaApiWrapper megaApiWrapper)
+                                   IDispatcher dispatcher, MegaApiWrapper megaApiWrapper,
+            UploadCommand uploadCommand)
         {
             _status = status.AssertIsNotNull("status");
             _nodes = nodes.AssertIsNotNull("nodes");
             _dispatcher = dispatcher.AssertIsNotNull("dispatcher");
             _megaApiWrapper = megaApiWrapper.AssertIsNotNull("megaApiWrapper");
+            _uploadCommand = uploadCommand.AssertIsNotNull("uploadCommand");
 
             nodes.SelectedNodeChanged +=
                 (s, e) => dispatcher.InvokeOnUiThread(OnCanExecuteChanged);
@@ -43,20 +45,22 @@ namespace MegaDesktop.Commands
         {
             var currentNode = parameter as NodeViewModel;
 
-            if (currentNode == null)
-                return;
-
             var d = new FolderBrowserDialog();
             DialogResult result = d.ShowDialog();
 
             if (result != DialogResult.OK)
                 return;
 
-            _status.SetStatus(Status.Communicating);
-            _megaApiWrapper.CreateFolder(currentNode.Id, Path.GetFileName(d.SelectedPath), OnSuccess, err => _status.Error(err));
+            CreateFolder(currentNode, d.SelectedPath);
         }
 
-        private void OnSuccess(MegaNode node)
+        private void CreateFolder(NodeViewModel node, string path)
+        {
+            _status.SetStatus(Status.Communicating);
+            _megaApiWrapper.CreateFolder(node.Id, Path.GetFileName(path), x => OnSuccess(x, path), err => _status.Error(err));
+        }
+
+        private void OnSuccess(MegaNode node, string path)
         {
             var nodeViewModel = new NodeViewModel(_dispatcher, node);
 
@@ -67,6 +71,14 @@ namespace MegaDesktop.Commands
                     parent.Children.Add(nodeViewModel);
                     parent.ChildNodes.Add(nodeViewModel);
                 });
+
+            foreach (var file in Directory.EnumerateFiles(path))
+                _uploadCommand.UploadFile(file, nodeViewModel);
+
+            foreach (var directory in Directory.EnumerateDirectories(path))
+                CreateFolder(nodeViewModel, directory);
+
+            _status.SetStatus(Status.Loaded);
         }
 
         protected virtual void OnCanExecuteChanged()

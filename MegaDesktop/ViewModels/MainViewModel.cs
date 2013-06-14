@@ -9,19 +9,22 @@ namespace MegaDesktop.ViewModels
 {
     internal class MainViewModel : INotifyPropertyChanged
     {
+        private readonly TransferManager _transferManager;
         private readonly NodeManager _nodeManager;
 
-        public MainViewModel(StatusViewModel status, NodeManager nodeManager)
+        public MainViewModel(StatusViewModel status, NodeManager nodeManager, TransferManager transferManager)
         {
+            _transferManager = transferManager;
             Status = status.AssertIsNotNull("status");
             _nodeManager = nodeManager.AssertIsNotNull("nodeManager");
 
+            _nodeManager.SelectedNodeChanged += (s, e) => OnPropertyChanged("SelectedNode");
+
             Status.SetStatus(Services.Status.Communicating);
-            Transfers = new ObservableCollection<TransferHandleViewModel>();
         }
 
         public StatusViewModel Status { get; private set; }
-        public ObservableCollection<TransferHandleViewModel> Transfers { get; private set; }
+        public ObservableCollection<TransferHandleViewModel> Transfers { get { return _transferManager.Transfers; } }
 
         [Inject]
         public UploadCommand UploadCommand { get; set; }

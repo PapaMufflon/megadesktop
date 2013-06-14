@@ -36,6 +36,7 @@ namespace MegaDesktop
             kernel.Rebind<MegaApiWrapper>().ToSelf().InSingletonScope();
             kernel.Rebind<StatusViewModel>().ToSelf().InSingletonScope();
             kernel.Rebind<NodeManager>().ToSelf().InSingletonScope();
+            kernel.Rebind<TransferManager>().ToSelf().InSingletonScope();
             kernel.Rebind<ICanSetTitle>().ToConstant(this);
 
             kernel.Get<UserAccount>().LoginLastUser().ContinueWith(x =>

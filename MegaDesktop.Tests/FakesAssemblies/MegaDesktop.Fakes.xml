@@ -538,11 +538,14 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.OnHandleReadyTransferHandle">
             <summary>Sets the shim of UploadCommand.OnHandleReady(TransferHandle transfer)</summary>
         </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand._Executeb__6Int32">
-            <summary>Sets the shim of UploadCommand.&lt;Execute&gt;b__6(Int32 err)</summary>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.UploadFileStringNodeViewModel">
+            <summary>Sets the shim of UploadCommand.UploadFile(String fileName, NodeViewModel node)</summary>
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand._OnHandleReadyb__7ObjectTransferEndedArgs">
             <summary>Sets the shim of UploadCommand.&lt;OnHandleReady&gt;b__7(Object s, TransferEndedArgs e)</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand._UploadFileb__6Int32">
+            <summary>Sets the shim of UploadCommand.&lt;UploadFile&gt;b__6(Int32 err)</summary>
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand._ctorb__0ObjectEventArgs">
             <summary>Sets the shim of UploadCommand.&lt;.ctor&gt;b__0(Object s, EventArgs e)</summary>
@@ -568,11 +571,14 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.AllInstances.OnHandleReadyTransferHandle">
             <summary>Sets the shim of UploadCommand.OnHandleReady(TransferHandle transfer)</summary>
         </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.AllInstances._Executeb__6Int32">
-            <summary>Sets the shim of UploadCommand.&lt;Execute&gt;b__6(Int32 err)</summary>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.AllInstances.UploadFileStringNodeViewModel">
+            <summary>Sets the shim of UploadCommand.UploadFile(String fileName, NodeViewModel node)</summary>
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.AllInstances._OnHandleReadyb__7ObjectTransferEndedArgs">
             <summary>Sets the shim of UploadCommand.&lt;OnHandleReady&gt;b__7(Object s, TransferEndedArgs e)</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.AllInstances._UploadFileb__6Int32">
+            <summary>Sets the shim of UploadCommand.&lt;UploadFile&gt;b__6(Int32 err)</summary>
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.AllInstances._ctorb__0ObjectEventArgs">
             <summary>Sets the shim of UploadCommand.&lt;.ctor&gt;b__0(Object s, EventArgs e)</summary>
@@ -607,8 +613,11 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.CanExecuteObject">
             <summary>Sets the shim of UploadFolderCommand.CanExecute(Object parameter)</summary>
         </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.ConstructorStatusViewModelNodeManagerIDispatcherMegaApiWrapper">
-            <summary>Sets the shim of UploadFolderCommand.UploadFolderCommand(StatusViewModel status, NodeManager nodes, IDispatcher dispatcher, MegaApiWrapper megaApiWrapper)</summary>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.ConstructorStatusViewModelNodeManagerIDispatcherMegaApiWrapperUploadCommand">
+            <summary>Sets the shim of UploadFolderCommand.UploadFolderCommand(StatusViewModel status, NodeManager nodes, IDispatcher dispatcher, MegaApiWrapper megaApiWrapper, UploadCommand uploadCommand)</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.CreateFolderNodeViewModelString">
+            <summary>Sets the shim of UploadFolderCommand.CreateFolder(NodeViewModel node, String path)</summary>
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.ExecuteObject">
             <summary>Sets the shim of UploadFolderCommand.Execute(Object parameter)</summary>
@@ -616,11 +625,11 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.OnCanExecuteChanged">
             <summary>Sets the shim of UploadFolderCommand.OnCanExecuteChanged()</summary>
         </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.OnSuccessMegaNode">
-            <summary>Sets the shim of UploadFolderCommand.OnSuccess(MegaNode node)</summary>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.OnSuccessMegaNodeString">
+            <summary>Sets the shim of UploadFolderCommand.OnSuccess(MegaNode node, String path)</summary>
         </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand._Executeb__4Int32">
-            <summary>Sets the shim of UploadFolderCommand.&lt;Execute&gt;b__4(Int32 err)</summary>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand._CreateFolderb__5Int32">
+            <summary>Sets the shim of UploadFolderCommand.&lt;CreateFolder&gt;b__5(Int32 err)</summary>
         </member>
         <member name="T:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.AllInstances">
             <summary>Define shims for all instances members</summary>
@@ -634,17 +643,20 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.AllInstances.CanExecuteObject">
             <summary>Sets the shim of UploadFolderCommand.CanExecute(Object parameter)</summary>
         </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.AllInstances.CreateFolderNodeViewModelString">
+            <summary>Sets the shim of UploadFolderCommand.CreateFolder(NodeViewModel node, String path)</summary>
+        </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.AllInstances.ExecuteObject">
             <summary>Sets the shim of UploadFolderCommand.Execute(Object parameter)</summary>
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.AllInstances.OnCanExecuteChanged">
             <summary>Sets the shim of UploadFolderCommand.OnCanExecuteChanged()</summary>
         </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.AllInstances.OnSuccessMegaNode">
-            <summary>Sets the shim of UploadFolderCommand.OnSuccess(MegaNode node)</summary>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.AllInstances.OnSuccessMegaNodeString">
+            <summary>Sets the shim of UploadFolderCommand.OnSuccess(MegaNode node, String path)</summary>
         </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.AllInstances._Executeb__4Int32">
-            <summary>Sets the shim of UploadFolderCommand.&lt;Execute&gt;b__4(Int32 err)</summary>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.AllInstances._CreateFolderb__5Int32">
+            <summary>Sets the shim of UploadFolderCommand.&lt;CreateFolder&gt;b__5(Int32 err)</summary>
         </member>
         <member name="T:MegaDesktop.Commands.Fakes.StubCancelCommand">
             <summary>Stub type of MegaDesktop.Commands.CancelCommand</summary>
@@ -859,7 +871,7 @@
         <member name="T:MegaDesktop.Commands.Fakes.StubUploadFolderCommand">
             <summary>Stub type of MegaDesktop.Commands.UploadFolderCommand</summary>
         </member>
-        <member name="M:MegaDesktop.Commands.Fakes.StubUploadFolderCommand.#ctor(MegaDesktop.ViewModels.StatusViewModel,MegaDesktop.Services.NodeManager,MegaDesktop.Services.IDispatcher,MegaDesktop.Services.MegaApiWrapper)">
+        <member name="M:MegaDesktop.Commands.Fakes.StubUploadFolderCommand.#ctor(MegaDesktop.ViewModels.StatusViewModel,MegaDesktop.Services.NodeManager,MegaDesktop.Services.IDispatcher,MegaDesktop.Services.MegaApiWrapper,MegaDesktop.Commands.UploadCommand)">
             <summary>Initializes a new instance</summary>
         </member>
         <member name="M:MegaDesktop.Commands.Fakes.StubUploadFolderCommand.InitializeStub">

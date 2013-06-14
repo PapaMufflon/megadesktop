@@ -44,8 +44,13 @@ namespace MegaDesktop.Commands
             if (d.ShowDialog() != true)
                 return;
 
+            UploadFile(d.FileName, currentNode);
+        }
+
+        public void UploadFile(string fileName, NodeViewModel node)
+        {
             _status.SetStatus(Status.Communicating);
-            _megaApiWrapper.UploadFile(currentNode.Id, d.FileName, OnHandleReady, err => _status.Error(err));
+            _megaApiWrapper.UploadFile(node.Id, fileName, OnHandleReady, err => _status.Error(err));
         }
 
         public bool CanExecute(object parameter)
