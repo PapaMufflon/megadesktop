@@ -20,6 +20,15 @@ namespace MegaDesktop.Tests
     [TestFixture]
     public class UploadFolderCommandTests
     {
+        private ShimNodeManager _nodes;
+        private ShimStatusViewModel _status;
+        private UploadFolderCommand _target;
+        private ShimMegaApiWrapper _megaApiWrapper;
+        private IDisposable _shimContext;
+        private EventHandler<EventArgs> _raiseSelectedNodeChanged;
+        private TransferManager _transfers;
+        private RefreshService _refresh;
+
         [SetUp]
         public void Setup()
         {
@@ -30,9 +39,10 @@ namespace MegaDesktop.Tests
             _nodes.SelectedNodeChangedAddEventHandlerOfEventArgs = handler => _raiseSelectedNodeChanged = handler;
             var dispatcher = new TestDispatcher();
             _megaApiWrapper = new ShimMegaApiWrapper();
-            _uploadCommand = new ShimUploadCommand();
+            _transfers = new ShimTransferManager();
+            _refresh = new ShimRefreshService();
 
-            _target = new UploadFolderCommand(_status, _nodes, dispatcher, _megaApiWrapper, _uploadCommand);
+            _target = new UploadFolderCommand(_status, _nodes, dispatcher, _megaApiWrapper, _transfers, _refresh);
         }
 
         [TearDown]
@@ -41,13 +51,16 @@ namespace MegaDesktop.Tests
             _shimContext.Dispose();
         }
 
-        private ShimNodeManager _nodes;
-        private ShimStatusViewModel _status;
-        private UploadFolderCommand _target;
-        private ShimMegaApiWrapper _megaApiWrapper;
-        private IDisposable _shimContext;
-        private EventHandler<EventArgs> _raiseSelectedNodeChanged;
-        private ShimUploadCommand _uploadCommand;
+        [Test]
+        public void Ctor_arguments_should_not_be_null()
+        {
+            Assert.Throws<ArgumentNullException>(() => new UploadFolderCommand(null, _nodes, new TestDispatcher(), _megaApiWrapper, _transfers, _refresh));
+            Assert.Throws<ArgumentNullException>(() => new UploadFolderCommand(_status, null, new TestDispatcher(), _megaApiWrapper, _transfers, _refresh));
+            Assert.Throws<ArgumentNullException>(() => new UploadFolderCommand(_status, _nodes, null, _megaApiWrapper, _transfers, _refresh));
+            Assert.Throws<ArgumentNullException>(() => new UploadFolderCommand(_status, _nodes, new TestDispatcher(), null, _transfers, _refresh));
+            Assert.Throws<ArgumentNullException>(() => new UploadFolderCommand(_status, _nodes, new TestDispatcher(), _megaApiWrapper, null, _refresh));
+            Assert.Throws<ArgumentNullException>(() => new UploadFolderCommand(_status, _nodes, new TestDispatcher(), _megaApiWrapper, _transfers, null));
+        }
 
         [Test]
         public void Can_execute_when_selected_node_is_a_folder()
@@ -86,16 +99,6 @@ namespace MegaDesktop.Tests
                 }));
 
             Assert.That(actual, Is.False);
-        }
-
-        [Test]
-        public void Ctor_arguments_should_not_be_null()
-        {
-            Assert.Throws<ArgumentNullException>(() => new UploadFolderCommand(null, _nodes, new TestDispatcher(), _megaApiWrapper, _uploadCommand));
-            Assert.Throws<ArgumentNullException>(() => new UploadFolderCommand(_status, null, new TestDispatcher(), _megaApiWrapper, _uploadCommand));
-            Assert.Throws<ArgumentNullException>(() => new UploadFolderCommand(_status, _nodes, null, _megaApiWrapper, _uploadCommand));
-            Assert.Throws<ArgumentNullException>(() => new UploadFolderCommand(_status, _nodes, new TestDispatcher(), null, _uploadCommand));
-            Assert.Throws<ArgumentNullException>(() => new UploadFolderCommand(_status, _nodes, new TestDispatcher(), _megaApiWrapper, null));
         }
 
         [Test]
@@ -151,7 +154,7 @@ namespace MegaDesktop.Tests
             _nodes.RootNodeGet = () => nodeViewModel;
 
             _megaApiWrapper.CreateFolderStringStringActionOfMegaNodeActionOfInt32 = (s, s1, callback, arg4) => callback(new MegaNode { ParentId = parentId });
-            _uploadCommand.UploadFileStringNodeViewModel = (s, model) => called++;
+            _megaApiWrapper.UploadFileStringStringActionOfUploadHandleActionOfInt32 = (s, s1, arg3, arg4) => called++;
 
             _target.Execute(new NodeViewModel(new TestDispatcher()));
 
@@ -219,7 +222,7 @@ namespace MegaDesktop.Tests
             ShimFolderBrowserDialog.AllInstances.SelectedPathGet = x => "foo";
             ShimDirectory.EnumerateFilesString = s => new List<string> { "bar" };
             ShimDirectory.EnumerateDirectoriesString = s => new List<string>();
-            _uploadCommand.UploadFileStringNodeViewModel = (s, model) => called = true;
+            _megaApiWrapper.UploadFileStringStringActionOfUploadHandleActionOfInt32 = (s, s1, arg3, arg4) => called = true;
 
             var parent = new NodeViewModel(new TestDispatcher());
             var child = new NodeViewModel(new TestDispatcher(), new MegaNode { Attributes = new NodeAttributes { Name = "foo" } });
