@@ -34,9 +34,7 @@
                 <Label>
                     <Binding Path="Name" />
                 </Label>
-                <Label ContentStringFormat="F2">
-                    <Binding Path="Progress" />
-                </Label>
+                <ProgressBar Width="100" Maximum="100" Value="{Binding Progress, Mode=OneWay}" />
                 <Label>
                     <Label.Style>
                         <Style TargetType="Label">
