@@ -15,10 +15,12 @@ namespace MegaDesktop.Tests
         public void Setup()
         {
             _shimContext = ShimsContext.Create();
+            
             _status = new ShimStatusViewModel();
             _nodeManager = new ShimNodeManager();
+            _transferManager = new ShimTransferManager();
 
-            _target = new MainViewModel(_status, _nodeManager);
+            _target = new MainViewModel(_status, _nodeManager, _transferManager);
         }
 
         [TearDown]
@@ -31,12 +33,14 @@ namespace MegaDesktop.Tests
         private StatusViewModel _status;
         private NodeManager _nodeManager;
         private IDisposable _shimContext;
+        private TransferManager _transferManager;
 
         [Test]
         public void Ctor_arguments_should_not_be_null()
         {
-            Assert.Throws<ArgumentNullException>(() => new MainViewModel(null, _nodeManager));
-            Assert.Throws<ArgumentNullException>(() => new MainViewModel(_status, null));
+            Assert.Throws<ArgumentNullException>(() => new MainViewModel(null, _nodeManager, _transferManager));
+            Assert.Throws<ArgumentNullException>(() => new MainViewModel(_status, null, _transferManager));
+            Assert.Throws<ArgumentNullException>(() => new MainViewModel(_status, _nodeManager, null));
         }
 
         [Test]

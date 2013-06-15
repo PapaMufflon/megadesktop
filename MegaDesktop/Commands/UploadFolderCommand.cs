@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using System.Windows.Input;
 using MegaApi;
@@ -57,7 +58,14 @@ namespace MegaDesktop.Commands
         private void CreateFolder(NodeViewModel node, string path)
         {
             _status.SetStatus(Status.Communicating);
-            _megaApiWrapper.CreateFolder(node.Id, Path.GetFileName(path), x => OnSuccess(x, path), err => _status.Error(err));
+
+            var folderName = Path.GetFileName(path);
+            var child = node.Children.SingleOrDefault(x => x.Name == folderName);
+
+            if (child != null)
+                UploadFolderContent(path, child);
+            else
+                _megaApiWrapper.CreateFolder(node.Id, folderName, x => OnSuccess(x, path), err => _status.Error(err));
         }
 
         private void OnSuccess(MegaNode node, string path)
@@ -72,8 +80,18 @@ namespace MegaDesktop.Commands
                     parent.ChildNodes.Add(nodeViewModel);
                 });
 
+            UploadFolderContent(path, nodeViewModel);
+        }
+
+        private void UploadFolderContent(string path, NodeViewModel nodeViewModel)
+        {
             foreach (var file in Directory.EnumerateFiles(path))
-                _uploadCommand.UploadFile(file, nodeViewModel);
+            {
+                var fileName = Path.GetFileName(file);
+
+                if (nodeViewModel.Children.All(x => x.Name != fileName))
+                    _uploadCommand.UploadFile(file, nodeViewModel);
+            }
 
             foreach (var directory in Directory.EnumerateDirectories(path))
                 CreateFolder(nodeViewModel, directory);

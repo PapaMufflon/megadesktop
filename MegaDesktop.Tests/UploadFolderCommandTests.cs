@@ -5,6 +5,7 @@ using System.IO.Fakes;
 using System.Windows.Forms;
 using System.Windows.Forms.Fakes;
 using MegaApi;
+using MegaApi.DataTypes;
 using MegaDesktop.Commands;
 using MegaDesktop.Commands.Fakes;
 using MegaDesktop.Services;
@@ -172,7 +173,7 @@ namespace MegaDesktop.Tests
                     return new List<string>();
 
                 first = false;
-                return new[] {"C:\\foo", "C:\\bar"};
+                return new[] { "C:\\foo", "C:\\bar" };
             };
 
             var nodeViewModel = new NodeViewModel(new TestDispatcher());
@@ -188,6 +189,47 @@ namespace MegaDesktop.Tests
             _target.Execute(new NodeViewModel(new TestDispatcher()));
 
             Assert.That(called, Is.EqualTo(3));
+        }
+
+        [Test]
+        public void Uploading_a_folder_twice_does_not_upload_this_folder_again()
+        {
+            var called = false;
+
+            ShimCommonDialog.AllInstances.ShowDialog = x => DialogResult.OK;
+            ShimFolderBrowserDialog.AllInstances.SelectedPathGet = x => "foo";
+            ShimDirectory.EnumerateFilesString = s => new List<string>();
+            ShimDirectory.EnumerateDirectoriesString = s => new List<string>();
+            _megaApiWrapper.CreateFolderStringStringActionOfMegaNodeActionOfInt32 = (s, s1, arg3, arg4) => called = true;
+
+            var parent = new NodeViewModel(new TestDispatcher());
+            parent.Children.Add(new NodeViewModel(new TestDispatcher(), new MegaNode { Attributes = new NodeAttributes { Name = "foo" } }));
+
+            _target.Execute(parent);
+
+            Assert.That(called, Is.False);
+        }
+
+        [Test]
+        public void Uploading_the_files_in_a_folder_twice_does_not_upload_these_files_again()
+        {
+            var called = false;
+
+            ShimCommonDialog.AllInstances.ShowDialog = x => DialogResult.OK;
+            ShimFolderBrowserDialog.AllInstances.SelectedPathGet = x => "foo";
+            ShimDirectory.EnumerateFilesString = s => new List<string> { "bar" };
+            ShimDirectory.EnumerateDirectoriesString = s => new List<string>();
+            _uploadCommand.UploadFileStringNodeViewModel = (s, model) => called = true;
+
+            var parent = new NodeViewModel(new TestDispatcher());
+            var child = new NodeViewModel(new TestDispatcher(), new MegaNode { Attributes = new NodeAttributes { Name = "foo" } });
+            child.Children.Add(new NodeViewModel(new TestDispatcher(), new MegaNode { Attributes = new NodeAttributes { Name = "bar" } }));
+            parent.Children.Add(child);
+            parent.ChildNodes.Add(child);
+
+            _target.Execute(parent);
+
+            Assert.That(called, Is.False);
         }
     }
 }

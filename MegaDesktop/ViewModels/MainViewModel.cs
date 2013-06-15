@@ -14,9 +14,9 @@ namespace MegaDesktop.ViewModels
 
         public MainViewModel(StatusViewModel status, NodeManager nodeManager, TransferManager transferManager)
         {
-            _transferManager = transferManager;
             Status = status.AssertIsNotNull("status");
             _nodeManager = nodeManager.AssertIsNotNull("nodeManager");
+            _transferManager = transferManager.AssertIsNotNull("transferManager");
 
             _nodeManager.SelectedNodeChanged += (s, e) => OnPropertyChanged("SelectedNode");
 

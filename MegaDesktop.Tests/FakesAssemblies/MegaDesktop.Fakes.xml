@@ -628,8 +628,11 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.OnSuccessMegaNodeString">
             <summary>Sets the shim of UploadFolderCommand.OnSuccess(MegaNode node, String path)</summary>
         </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand._CreateFolderb__5Int32">
-            <summary>Sets the shim of UploadFolderCommand.&lt;CreateFolder&gt;b__5(Int32 err)</summary>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.UploadFolderContentStringNodeViewModel">
+            <summary>Sets the shim of UploadFolderCommand.UploadFolderContent(String path, NodeViewModel nodeViewModel)</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand._CreateFolderb__6Int32">
+            <summary>Sets the shim of UploadFolderCommand.&lt;CreateFolder&gt;b__6(Int32 err)</summary>
         </member>
         <member name="T:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.AllInstances">
             <summary>Define shims for all instances members</summary>
@@ -655,8 +658,11 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.AllInstances.OnSuccessMegaNodeString">
             <summary>Sets the shim of UploadFolderCommand.OnSuccess(MegaNode node, String path)</summary>
         </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.AllInstances._CreateFolderb__5Int32">
-            <summary>Sets the shim of UploadFolderCommand.&lt;CreateFolder&gt;b__5(Int32 err)</summary>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.AllInstances.UploadFolderContentStringNodeViewModel">
+            <summary>Sets the shim of UploadFolderCommand.UploadFolderContent(String path, NodeViewModel nodeViewModel)</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.AllInstances._CreateFolderb__6Int32">
+            <summary>Sets the shim of UploadFolderCommand.&lt;CreateFolder&gt;b__6(Int32 err)</summary>
         </member>
         <member name="T:MegaDesktop.Commands.Fakes.StubCancelCommand">
             <summary>Stub type of MegaDesktop.Commands.CancelCommand</summary>
@@ -4081,8 +4087,8 @@
         <member name="P:MegaDesktop.Services.Fakes.ShimTransferManager.CancelAllTransfers">
             <summary>Sets the shim of TransferManager.CancelAllTransfers()</summary>
         </member>
-        <member name="P:MegaDesktop.Services.Fakes.ShimTransferManager.ConstructorObservableCollectionOfTransferHandleViewModelIDispatcherNodeManager">
-            <summary>Sets the shim of TransferManager.TransferManager(ObservableCollection`1&lt;TransferHandleViewModel&gt; transfers, IDispatcher dispatcher, NodeManager nodes)</summary>
+        <member name="P:MegaDesktop.Services.Fakes.ShimTransferManager.ConstructorObservableCollectionOfTransferHandleViewModelIDispatcher">
+            <summary>Sets the shim of TransferManager.TransferManager(ObservableCollection`1&lt;TransferHandleViewModel&gt; transfers, IDispatcher dispatcher)</summary>
         </member>
         <member name="P:MegaDesktop.Services.Fakes.ShimTransferManager.RemoveTransferHandleViewModel">
             <summary>Sets the shim of TransferManager.Remove(TransferHandleViewModel transfer)</summary>
@@ -4297,7 +4303,7 @@
         <member name="T:MegaDesktop.Services.Fakes.StubTransferManager">
             <summary>Stub type of MegaDesktop.Services.TransferManager</summary>
         </member>
-        <member name="M:MegaDesktop.Services.Fakes.StubTransferManager.#ctor(System.Collections.ObjectModel.ObservableCollection{MegaDesktop.ViewModels.TransferHandleViewModel},MegaDesktop.Services.IDispatcher,MegaDesktop.Services.NodeManager)">
+        <member name="M:MegaDesktop.Services.Fakes.StubTransferManager.#ctor(System.Collections.ObjectModel.ObservableCollection{MegaDesktop.ViewModels.TransferHandleViewModel},MegaDesktop.Services.IDispatcher)">
             <summary>Initializes a new instance</summary>
         </member>
         <member name="M:MegaDesktop.Services.Fakes.StubTransferManager.InitializeStub">
@@ -4501,8 +4507,8 @@
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.Behavior">
             <summary>Assigns the behavior for all methods of the shimmed type</summary>
         </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.ConstructorStatusViewModelNodeManager">
-            <summary>Sets the shim of MainViewModel.MainViewModel(StatusViewModel status, NodeManager nodeManager)</summary>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.ConstructorStatusViewModelNodeManagerTransferManager">
+            <summary>Sets the shim of MainViewModel.MainViewModel(StatusViewModel status, NodeManager nodeManager, TransferManager transferManager)</summary>
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.DeleteCommandGet">
             <summary>Sets the shim of MainViewModel.get_DeleteCommand()</summary>
@@ -4579,9 +4585,6 @@
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.TransfersGet">
             <summary>Sets the shim of MainViewModel.get_Transfers()</summary>
         </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.TransfersSetObservableCollectionOfTransferHandleViewModel">
-            <summary>Sets the shim of MainViewModel.set_Transfers(ObservableCollection`1&lt;TransferHandleViewModel&gt; value)</summary>
-        </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.UploadCommandGet">
             <summary>Sets the shim of MainViewModel.get_UploadCommand()</summary>
         </member>
@@ -4593,6 +4596,9 @@
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.UploadFolderCommandSetUploadFolderCommand">
             <summary>Sets the shim of MainViewModel.set_UploadFolderCommand(UploadFolderCommand value)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel._ctorb__0ObjectEventArgs">
+            <summary>Sets the shim of MainViewModel.&lt;.ctor&gt;b__0(Object s, EventArgs e)</summary>
         </member>
         <member name="T:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances">
             <summary>Define shims for all instances members</summary>
@@ -4672,9 +4678,6 @@
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.TransfersGet">
             <summary>Sets the shim of MainViewModel.get_Transfers()</summary>
         </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.TransfersSetObservableCollectionOfTransferHandleViewModel">
-            <summary>Sets the shim of MainViewModel.set_Transfers(ObservableCollection`1&lt;TransferHandleViewModel&gt; value)</summary>
-        </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.UploadCommandGet">
             <summary>Sets the shim of MainViewModel.get_UploadCommand()</summary>
         </member>
@@ -4686,6 +4689,9 @@
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.UploadFolderCommandSetUploadFolderCommand">
             <summary>Sets the shim of MainViewModel.set_UploadFolderCommand(UploadFolderCommand value)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances._ctorb__0ObjectEventArgs">
+            <summary>Sets the shim of MainViewModel.&lt;.ctor&gt;b__0(Object s, EventArgs e)</summary>
         </member>
         <member name="T:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel">
             <summary>Shim type of MegaDesktop.ViewModels.NodeViewModel</summary>
@@ -5002,7 +5008,7 @@
         <member name="T:MegaDesktop.ViewModels.Fakes.StubMainViewModel">
             <summary>Stub type of MegaDesktop.ViewModels.MainViewModel</summary>
         </member>
-        <member name="M:MegaDesktop.ViewModels.Fakes.StubMainViewModel.#ctor(MegaDesktop.ViewModels.StatusViewModel,MegaDesktop.Services.NodeManager)">
+        <member name="M:MegaDesktop.ViewModels.Fakes.StubMainViewModel.#ctor(MegaDesktop.ViewModels.StatusViewModel,MegaDesktop.Services.NodeManager,MegaDesktop.Services.TransferManager)">
             <summary>Initializes a new instance</summary>
         </member>
         <member name="M:MegaDesktop.ViewModels.Fakes.StubMainViewModel.InitializeStub">
