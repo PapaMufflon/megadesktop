@@ -1,7 +1,9 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Input;
 using MegaApi;
+using MegaDesktop.Services;
 using MegaDesktop.ViewModels;
 
 namespace MegaDesktop.Commands
@@ -10,9 +12,40 @@ namespace MegaDesktop.Commands
     {
         public event EventHandler CanExecuteChanged;
 
+        private TransferHandleViewModel _observedTransfer;
+        private readonly IDispatcher _dispatcher;
+
+        public CancelCommand(IDispatcher dispatcher)
+        {
+            _dispatcher = dispatcher;
+        }
+
         public bool CanExecute(object parameter)
         {
-            return parameter as TransferHandleViewModel != null;
+            var transferHandleViewModel = parameter as TransferHandleViewModel;
+
+            ObserveTransfer(transferHandleViewModel);
+
+            return transferHandleViewModel != null &&
+                   transferHandleViewModel.Status != TransferHandleStatus.Success &&
+                   transferHandleViewModel.Status != TransferHandleStatus.Cancelled &&
+                   transferHandleViewModel.Status != TransferHandleStatus.Error;
+        }
+
+        private void ObserveTransfer(TransferHandleViewModel transferHandleViewModel)
+        {
+            if (_observedTransfer != null)
+                _observedTransfer.PropertyChanged -= OnTransferChanged;
+
+            _observedTransfer = transferHandleViewModel;
+
+            if (_observedTransfer != null)
+                _observedTransfer.PropertyChanged += OnTransferChanged;
+        }
+
+        private void OnTransferChanged(object sender, PropertyChangedEventArgs e)
+        {
+            _dispatcher.InvokeOnUiThread(OnCanExecuteChanged);
         }
 
         public void Execute(object parameter)

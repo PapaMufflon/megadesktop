@@ -22,7 +22,7 @@ namespace MegaDesktop.ViewModels
                 };
 
             RemoveCommand = new RemoveCommand(transfers, dispatcher);
-            CancelCommand = new CancelCommand();
+            CancelCommand = new CancelCommand(dispatcher);
         }
 
         public ICommand RemoveCommand { get; private set; }
