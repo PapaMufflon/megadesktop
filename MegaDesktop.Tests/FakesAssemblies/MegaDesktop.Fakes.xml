@@ -4174,6 +4174,9 @@
         <member name="P:MegaDesktop.Services.Fakes.ShimUserAccount.SaveCurrentAccount">
             <summary>Sets the shim of UserAccount.SaveCurrentAccount()</summary>
         </member>
+        <member name="P:MegaDesktop.Services.Fakes.ShimUserAccount._LoginUserb__0TaskOfMega">
+            <summary>Sets the shim of UserAccount.&lt;LoginUser&gt;b__0(Task`1&lt;Mega&gt; task)</summary>
+        </member>
         <member name="T:MegaDesktop.Services.Fakes.ShimUserAccount.AllInstances">
             <summary>Define shims for all instances members</summary>
         </member>
@@ -4191,6 +4194,9 @@
         </member>
         <member name="P:MegaDesktop.Services.Fakes.ShimUserAccount.AllInstances.SaveCurrentAccount">
             <summary>Sets the shim of UserAccount.SaveCurrentAccount()</summary>
+        </member>
+        <member name="P:MegaDesktop.Services.Fakes.ShimUserAccount.AllInstances._LoginUserb__0TaskOfMega">
+            <summary>Sets the shim of UserAccount.&lt;LoginUser&gt;b__0(Task`1&lt;Mega&gt; task)</summary>
         </member>
         <member name="T:MegaDesktop.Services.Fakes.StubDispatcher">
             <summary>Stub type of MegaDesktop.Services.Dispatcher</summary>

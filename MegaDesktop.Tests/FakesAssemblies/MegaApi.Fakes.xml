@@ -409,36 +409,6 @@
         <member name="P:MegaApi.Comms.Converters.Fakes.StubUnixDateTimeConverter.InstanceObserver">
             <summary>Gets or sets the instance observer.</summary>
         </member>
-        <member name="T:MegaApi.Comms.Fakes.ShimGoogleAnalytics">
-            <summary>Shim type of MegaApi.Comms.GoogleAnalytics</summary>
-        </member>
-        <member name="M:MegaApi.Comms.Fakes.ShimGoogleAnalytics.#ctor">
-            <summary>Initializes a new shim instance</summary>
-        </member>
-        <member name="M:MegaApi.Comms.Fakes.ShimGoogleAnalytics.BehaveAsCurrent">
-            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
-        </member>
-        <member name="M:MegaApi.Comms.Fakes.ShimGoogleAnalytics.BehaveAsNotImplemented">
-            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
-        </member>
-        <member name="P:MegaApi.Comms.Fakes.ShimGoogleAnalytics.AnonymousUserIdGet">
-            <summary>Sets the shim of GoogleAnalytics.get_AnonymousUserId()</summary>
-        </member>
-        <member name="P:MegaApi.Comms.Fakes.ShimGoogleAnalytics.Behavior">
-            <summary>Assigns the behavior for all methods of the shimmed type</summary>
-        </member>
-        <member name="P:MegaApi.Comms.Fakes.ShimGoogleAnalytics.SendTrackingRequestStringStringString">
-            <summary>Sets the shim of GoogleAnalytics.SendTrackingRequest(String pageName, String trackingId, String referrer)</summary>
-        </member>
-        <member name="P:MegaApi.Comms.Fakes.ShimGoogleAnalytics.StaticConstructor">
-            <summary>Sets the shim of GoogleAnalytics.GoogleAnalytics()</summary>
-        </member>
-        <member name="P:MegaApi.Comms.Fakes.ShimGoogleAnalytics.SubmitString">
-            <summary>Sets the shim of GoogleAnalytics.Submit(String url)</summary>
-        </member>
-        <member name="P:MegaApi.Comms.Fakes.ShimGoogleAnalytics.wc_DownloadStringCompletedObjectDownloadStringCompletedEventArgs">
-            <summary>Sets the shim of GoogleAnalytics.wc_DownloadStringCompleted(Object sender, DownloadStringCompletedEventArgs e)</summary>
-        </member>
         <member name="T:MegaApi.Comms.Fakes.ShimServerRequestArgs">
             <summary>Shim type of MegaApi.Comms.ServerRequestArgs</summary>
         </member>
@@ -2455,8 +2425,8 @@
         <member name="P:MegaApi.Fakes.ShimMega.UserSetMegaUser">
             <summary>Sets the shim of Mega.set_User(MegaUser value)</summary>
         </member>
-        <member name="P:MegaApi.Fakes.ShimMega._ctorb__29ObjectServerRequestArgs">
-            <summary>Sets the shim of Mega.&lt;.ctor&gt;b__29(Object s, ServerRequestArgs e)</summary>
+        <member name="P:MegaApi.Fakes.ShimMega._ctorb__23ObjectServerRequestArgs">
+            <summary>Sets the shim of Mega.&lt;.ctor&gt;b__23(Object s, ServerRequestArgs e)</summary>
         </member>
         <member name="T:MegaApi.Fakes.ShimMega.AllInstances">
             <summary>Define shims for all instances members</summary>
@@ -2551,8 +2521,8 @@
         <member name="P:MegaApi.Fakes.ShimMega.AllInstances.UserSetMegaUser">
             <summary>Sets the shim of Mega.set_User(MegaUser value)</summary>
         </member>
-        <member name="P:MegaApi.Fakes.ShimMega.AllInstances._ctorb__29ObjectServerRequestArgs">
-            <summary>Sets the shim of Mega.&lt;.ctor&gt;b__29(Object s, ServerRequestArgs e)</summary>
+        <member name="P:MegaApi.Fakes.ShimMega.AllInstances._ctorb__23ObjectServerRequestArgs">
+            <summary>Sets the shim of Mega.&lt;.ctor&gt;b__23(Object s, ServerRequestArgs e)</summary>
         </member>
         <member name="T:MegaApi.Fakes.ShimMegaApiError">
             <summary>Shim type of MegaApi.MegaApiError</summary>

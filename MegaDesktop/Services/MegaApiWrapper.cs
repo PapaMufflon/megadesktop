@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using MegaApi;
 
 namespace MegaDesktop.Services
@@ -28,14 +29,14 @@ namespace MegaDesktop.Services
             _api.RemoveNode(targetNodeId, onSuccess, onError);
         }
 
-        public void UploadFile(string targetNodeId, string filename, Action<UploadHandle> onHandleReady, Action<int> onError)
+        public Task<TransferHandle> UploadFile(string targetNodeId, string filename)
         {
-            _api.UploadFile(targetNodeId, filename, onHandleReady, onError);
+            return _api.UploadFileAsync(targetNodeId, filename);
         }
 
-        public void CreateFolder(string targetNodeId, string folderName, Action<MegaNode> onSuccess, Action<int> onError)
+        public Task<MegaNode> CreateFolder(string targetNode, string folderName)
         {
-            _api.CreateFolder(targetNodeId, folderName, onSuccess, onError);
+            return _api.CreateFolderAsync(targetNode, folderName);
         }
 
         public void DownloadFile(MegaNode node, string filename, Action<DownloadHandle> onHandleReady, Action<int> onError)

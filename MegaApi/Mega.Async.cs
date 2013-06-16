@@ -40,14 +40,12 @@ namespace MegaApi
         }
 
 
-        public Task<MegaNode> UploadFileAsync(string targetNodeId, string filename)
+        public Task<TransferHandle> UploadFileAsync(string targetNodeId, string filename)
         {
-            var tcs = new TaskCompletionSource<MegaNode>();
+            var tcs = new TaskCompletionSource<TransferHandle>();
             UploadFile(targetNodeId, filename,
-                       m =>
-                       {
-                           m.TransferEnded += (sender, args) => tcs.SetResult(m.Node);
-                       }, errno => tcs.SetException(new MegaApiException(MegaApiError.ESYSTEM, "Could not upload the file"))
+                       tcs.SetResult,
+                       errno => tcs.SetException(new MegaApiException(MegaApiError.ESYSTEM, "Could not upload the file"))
                 );
 
             return tcs.Task;

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using MegaApi;
 using MegaDesktop.Services;
 
 namespace MegaDesktop.ViewModels
@@ -53,9 +54,9 @@ namespace MegaDesktop.ViewModels
             CurrentStatus = newStatus;
         }
 
-        public void Error(int errorNumber)
+        public void Error(MegaApiException exception)
         {
-            Message = String.Format("Error: {0}", errorNumber);
+            Message = String.Format("Error: {0}({1})", exception.ErrorNumber, exception.Message);
             CurrentStatus = Status.Loaded;
         }
 

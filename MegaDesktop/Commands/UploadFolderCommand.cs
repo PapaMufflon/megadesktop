@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Input;
 using MegaApi;
@@ -69,11 +70,19 @@ namespace MegaDesktop.Commands
             if (child != null)
                 UploadFolderContent(path, child);
             else
-                _megaApiWrapper.CreateFolder(node.Id, folderName, x => OnFolderCreated(x, path), err => _status.Error(err));
+                _megaApiWrapper.CreateFolder(node.Id, folderName)
+                               .ContinueWith(x =>
+                                   {
+                                       if (x.Exception != null)
+                                           _status.Error(x.Exception.InnerExceptions.First() as MegaApiException);
+                                       else
+                                           OnFolderCreated(x.Result, path);
+                                   });
         }
 
         private void OnFolderCreated(MegaNode node, string path)
         {
+
             var nodeViewModel = new NodeViewModel(_dispatcher, node);
 
             var parent = _nodes.RootNode.Descendant(node.ParentId);
@@ -94,10 +103,14 @@ namespace MegaDesktop.Commands
                 var fileName = Path.GetFileName(file);
 
                 if (nodeViewModel.Children.All(x => x.Name != fileName))
-                    _megaApiWrapper.UploadFile(nodeViewModel.Id,
-                                               file,
-                                               x => _transfers.AddNewTransfer(x),
-                                               err => _status.Error(err));
+                    _megaApiWrapper.UploadFile(nodeViewModel.Id, file)
+                                   .ContinueWith(x =>
+                                       {
+                                           if (x.Exception != null)
+                                               _status.Error(x.Exception.InnerExceptions.First() as MegaApiException);
+                                           else
+                                               _transfers.AddNewTransfer(x.Result);
+                                       });
             }
 
             foreach (var directory in Directory.EnumerateDirectories(path))

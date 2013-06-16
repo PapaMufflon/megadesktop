@@ -1,10 +1,10 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Input;
 using MegaApi;
 using MegaDesktop.Services;
 using MegaDesktop.ViewModels;
 using Microsoft.Win32;
-using Ninject;
 
 namespace MegaDesktop.Commands
 {
@@ -50,7 +50,14 @@ namespace MegaDesktop.Commands
         public void UploadFile(string fileName, NodeViewModel node)
         {
             _status.SetStatus(Status.Communicating);
-            _megaApiWrapper.UploadFile(node.Id, fileName, OnHandleReady, err => _status.Error(err));
+            _megaApiWrapper.UploadFile(node.Id, fileName)
+                           .ContinueWith(x =>
+                               {
+                                   if (x.Exception != null)
+                                       _status.Error(x.Exception.InnerExceptions.First() as MegaApiException);
+                                   else
+                                       OnHandleReady(x.Result);
+                               });
         }
 
         public bool CanExecute(object parameter)
