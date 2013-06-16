@@ -39,14 +39,15 @@ namespace MegaDesktop
             kernel.Rebind<TransferManager>().ToSelf().InSingletonScope();
             kernel.Rebind<ICanSetTitle>().ToConstant(this);
 
-            kernel.Get<UserAccount>().LoginLastUser().ContinueWith(x =>
-                {
-                    if (x.Exception == null)
-                        return;
+            kernel.Get<UserAccount>().LoginLastUser()
+                  .ContinueWith(x =>
+                      {
+                          if (x.Exception == null)
+                              return;
 
-                    MessageBox.Show("Error while loading account: " + x.Exception);
-                    Application.Current.Shutdown();
-                });
+                          MessageBox.Show("Error while loading account: " + x.Exception);
+                          Application.Current.Shutdown();
+                      });
 
             DataContext = kernel.Get<MainViewModel>();
 

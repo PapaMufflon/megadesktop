@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Threading;
 using System.Threading.Tasks;
 using MegaApi;
 using MegaDesktop.ViewModels;
@@ -30,8 +29,8 @@ namespace MegaDesktop.Services
 
         public Task LoginLastUser()
         {
-            string userAccountFile = GetUserKeyFilePath();
-            MegaUser user = Mega.LoadAccount(userAccountFile);
+            var userAccountFile = GetUserKeyFilePath();
+            var user = Mega.LoadAccount(userAccountFile);
 
             return LoginUser(user);
         }
@@ -40,25 +39,17 @@ namespace MegaDesktop.Services
         {
             _status.SetStatus(Status.LoggingIn);
 
-            var waitHandle = new AutoResetEvent(false);
-            var cancellationSource = new CancellationTokenSource();
-            CancellationToken token = cancellationSource.Token;
-
-            Task task = Task.Factory.StartNew(handle =>
+            return Mega.InitAsync(user)
+                .ContinueWith(task =>
                 {
-                    ((AutoResetEvent)handle).WaitOne();
+                    var mega = task.Result;
 
-                    token.ThrowIfCancellationRequested();
-                }, waitHandle, token);
-
-            Mega.Init(user, mega =>
-                {
                     _megaApiWrapper.Register(mega);
                     _transfers.CancelAllTransfers();
 
                     mega.SaveAccount(GetUserKeyFilePath());
 
-                    string username = mega.User.Status == MegaUserStatus.Anonymous
+                    var username = mega.User.Status == MegaUserStatus.Anonymous
                                           ? "anonymous account"
                                           : mega.User.Email;
 
@@ -66,20 +57,12 @@ namespace MegaDesktop.Services
 
                     _refresh.Reload();
                     _status.SetStatus(Status.Loaded);
-
-                    waitHandle.Set();
-                }, e =>
-                    {
-                        cancellationSource.Cancel();
-                        waitHandle.Set();
-                    });
-
-            return task;
+                });
         }
 
         public void DeleteCurrentAccount()
         {
-            string userAccount = GetUserKeyFilePath();
+            var userAccount = GetUserKeyFilePath();
             // to restore previous anon account
             //File.Move(System.IO.Path.Combine(System.IO.Path.GetDirectoryName(userAccount), "user.anon.dat"), userAccount);
             // or simply drop logged in account
@@ -93,7 +76,7 @@ namespace MegaDesktop.Services
 
         private string GetUserKeyFilePath()
         {
-            string userDirectory = Path.Combine(
+            var userDirectory = Path.Combine(
                 Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
                 "MegaDesktop");
 

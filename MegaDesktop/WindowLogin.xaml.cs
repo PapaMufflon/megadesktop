@@ -69,13 +69,14 @@ namespace MegaDesktop
 
             textBoxStatus.Text = "Checking...";
 
-            _userManagement.LoginUser(new MegaUser(textBoxEmail.Text, textBoxPass.Password)).ContinueWith(x =>
-                {
-                    if (x.Exception == null)
-                        Close();
-                    else
-                        Invoke(() => textBoxStatus.Text = "Incorrect login or password");
-                });
+            _userManagement.LoginUser(new MegaUser(textBoxEmail.Text, textBoxPass.Password))
+                           .ContinueWith(x =>
+                               {
+                                   if (x.Exception == null)
+                                       Close();
+                                   else
+                                       Invoke(() => textBoxStatus.Text = "Incorrect login or password");
+                               });
         }
 
         private void Invoke(Action fn)
