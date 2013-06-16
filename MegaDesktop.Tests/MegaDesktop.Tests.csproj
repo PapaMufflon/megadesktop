@@ -59,6 +59,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AsyncTestsHelper.cs" />
     <Compile Include="MainViewModelTests.cs" />
     <Compile Include="NodeManagerTests.cs" />
     <Compile Include="NodeViewModelTests.cs" />

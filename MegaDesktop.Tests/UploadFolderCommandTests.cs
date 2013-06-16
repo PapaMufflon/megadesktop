@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.IO.Fakes;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.Fakes;
 using MegaApi;
 using MegaApi.DataTypes;
+using MegaApi.Fakes;
 using MegaDesktop.Commands;
-using MegaDesktop.Commands.Fakes;
 using MegaDesktop.Services;
 using MegaDesktop.Services.Fakes;
 using MegaDesktop.ViewModels;
@@ -67,10 +67,10 @@ namespace MegaDesktop.Tests
         {
             _status.CurrentStatusGet = () => Status.Loaded;
 
-            bool actual = _target.CanExecute(new NodeViewModel(new TestDispatcher(), new MegaNode
-                {
-                    Type = MegaNodeType.Folder
-                }));
+            var actual = _target.CanExecute(new NodeViewModel(new TestDispatcher(), new MegaNode
+            {
+                Type = MegaNodeType.Folder
+            }));
 
             Assert.That(actual, Is.True);
         }
@@ -80,10 +80,10 @@ namespace MegaDesktop.Tests
         {
             _status.CurrentStatusGet = () => Status.Loaded;
 
-            bool actual = _target.CanExecute(new NodeViewModel(new TestDispatcher(), new MegaNode
-                {
-                    Type = MegaNodeType.File
-                }));
+            var actual = _target.CanExecute(new NodeViewModel(new TestDispatcher(), new MegaNode
+            {
+                Type = MegaNodeType.File
+            }));
 
             Assert.That(actual, Is.False);
         }
@@ -93,10 +93,10 @@ namespace MegaDesktop.Tests
         {
             _status.CurrentStatusGet = () => Status.Communicating;
 
-            bool actual = _target.CanExecute(new NodeViewModel(new TestDispatcher(), new MegaNode
-                {
-                    Type = MegaNodeType.Folder
-                }));
+            var actual = _target.CanExecute(new NodeViewModel(new TestDispatcher(), new MegaNode
+            {
+                Type = MegaNodeType.Folder
+            }));
 
             Assert.That(actual, Is.False);
         }
@@ -132,7 +132,11 @@ namespace MegaDesktop.Tests
             var called = false;
 
             ShimCommonDialog.AllInstances.ShowDialog = x => DialogResult.OK;
-            _megaApiWrapper.CreateFolderStringStringActionOfMegaNodeActionOfInt32 = (s, s1, arg3, arg4) => called = true;
+            _megaApiWrapper.CreateFolderStringString = (s, s1) =>
+            {
+                called = true;
+                return Task.Factory.StartNew(() => new MegaNode());
+            };
 
             _target.Execute(new NodeViewModel(new TestDispatcher()));
 
@@ -153,10 +157,16 @@ namespace MegaDesktop.Tests
             nodeViewModel.Children.Add(new NodeViewModel(new TestDispatcher(), new MegaNode { Id = parentId }));
             _nodes.RootNodeGet = () => nodeViewModel;
 
-            _megaApiWrapper.CreateFolderStringStringActionOfMegaNodeActionOfInt32 = (s, s1, callback, arg4) => callback(new MegaNode { ParentId = parentId });
-            _megaApiWrapper.UploadFileStringStringActionOfUploadHandleActionOfInt32 = (s, s1, arg3, arg4) => called++;
+            _megaApiWrapper.CreateFolderStringString = (s, s1) => Task.Factory.StartNew(() => new MegaNode {ParentId = parentId});
+            _megaApiWrapper.UploadFileStringString = (s, s1) =>
+            {
+                called++;
+                return Task.Factory.StartNew(() => (TransferHandle)new ShimTransferHandle(null));
+            };
 
             _target.Execute(new NodeViewModel(new TestDispatcher()));
+
+            AsyncTestsHelper.WaitFor(() => called == 2);
 
             Assert.That(called, Is.EqualTo(2));
         }
@@ -183,13 +193,15 @@ namespace MegaDesktop.Tests
             nodeViewModel.Children.Add(new NodeViewModel(new TestDispatcher(), new MegaNode { Id = parentId }));
             _nodes.RootNodeGet = () => nodeViewModel;
 
-            _megaApiWrapper.CreateFolderStringStringActionOfMegaNodeActionOfInt32 = (s, s1, callback, arg4) =>
+            _megaApiWrapper.CreateFolderStringString = (s, s1) =>
             {
-                callback(new MegaNode { ParentId = parentId });
                 called++;
+                return Task.Factory.StartNew(() => new MegaNode { ParentId = parentId });
             };
 
             _target.Execute(new NodeViewModel(new TestDispatcher()));
+
+            AsyncTestsHelper.WaitFor(() => called == 3);
 
             Assert.That(called, Is.EqualTo(3));
         }
@@ -203,7 +215,11 @@ namespace MegaDesktop.Tests
             ShimFolderBrowserDialog.AllInstances.SelectedPathGet = x => "foo";
             ShimDirectory.EnumerateFilesString = s => new List<string>();
             ShimDirectory.EnumerateDirectoriesString = s => new List<string>();
-            _megaApiWrapper.CreateFolderStringStringActionOfMegaNodeActionOfInt32 = (s, s1, arg3, arg4) => called = true;
+            _megaApiWrapper.CreateFolderStringString = (s, s1) =>
+            {
+                called = true;
+                return Task.Factory.StartNew(() => new MegaNode());
+            };
 
             var parent = new NodeViewModel(new TestDispatcher());
             parent.Children.Add(new NodeViewModel(new TestDispatcher(), new MegaNode { Attributes = new NodeAttributes { Name = "foo" } }));
@@ -222,7 +238,11 @@ namespace MegaDesktop.Tests
             ShimFolderBrowserDialog.AllInstances.SelectedPathGet = x => "foo";
             ShimDirectory.EnumerateFilesString = s => new List<string> { "bar" };
             ShimDirectory.EnumerateDirectoriesString = s => new List<string>();
-            _megaApiWrapper.UploadFileStringStringActionOfUploadHandleActionOfInt32 = (s, s1, arg3, arg4) => called = true;
+            _megaApiWrapper.UploadFileStringString = (s, s1) =>
+            {
+                called = true;
+                return Task.Factory.StartNew(() => (TransferHandle)new ShimTransferHandle(null));
+            };
 
             var parent = new NodeViewModel(new TestDispatcher());
             var child = new NodeViewModel(new TestDispatcher(), new MegaNode { Attributes = new NodeAttributes { Name = "foo" } });

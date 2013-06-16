@@ -58,13 +58,15 @@ namespace MegaDesktop.Tests
             NodeViewModel selectedListNode = null;
             _nodes.SelectedListNodeSetNodeViewModel = x => selectedListNode = x;
 
-            _megaApiWrapper.GetNodes = () => new Task<IEnumerable<MegaNode>>(() => new List<MegaNode>
+            _megaApiWrapper.GetNodes = () => Task.Factory.StartNew(() => (IEnumerable<MegaNode>)new List<MegaNode>
             {
                 new MegaNode {Id = "foo", Type = MegaNodeType.RootFolder},
                 new MegaNode {Id = "bar", ParentId = "foo", Type = MegaNodeType.Trash}
             });
 
             _target.RefreshCurrentNode();
+
+            AsyncTestsHelper.WaitFor(() => selectedListNode != null && selectedListNode.Type == NodeType.Trash);
 
             Assert.That(selectedListNode.Type, Is.EqualTo(NodeType.Trash));
         }
@@ -78,12 +80,14 @@ namespace MegaDesktop.Tests
             var nodeViewModel = new NodeViewModel(new TestDispatcher(), new MegaNode { Id = "foo" });
             _nodes.RootNodeGet = () => nodeViewModel;
 
-            _megaApiWrapper.GetNodes = () => new Task<IEnumerable<MegaNode>>(() => new List<MegaNode>
+            _megaApiWrapper.GetNodes = () => Task.Factory.StartNew(() => (IEnumerable<MegaNode>)new List<MegaNode>
             {
                 new MegaNode { ParentId = "foo", Type = MegaNodeType.RootFolder }
             });
 
             _target.Reload();
+
+            AsyncTestsHelper.WaitFor(() => setStatus.Count == 2);
 
             Assert.That(setStatus[1], Is.EqualTo(Status.Loaded));
             Assert.That(setStatus[0], Is.EqualTo(Status.Communicating));
@@ -95,12 +99,14 @@ namespace MegaDesktop.Tests
             var nodeViewModel = new NodeViewModel(new TestDispatcher(), new MegaNode { Id = "foo" });
             _nodes.RootNodeGet = () => nodeViewModel;
 
-            _megaApiWrapper.GetNodes = () => new Task<IEnumerable<MegaNode>>(() => new List<MegaNode>
+            _megaApiWrapper.GetNodes = () => Task.Factory.StartNew(() => (IEnumerable<MegaNode>)new List<MegaNode>
             {
                 new MegaNode { ParentId = "foo", Type = MegaNodeType.RootFolder }
             });
 
             _target.Reload();
+
+            AsyncTestsHelper.WaitFor(() => nodeViewModel.Children.Count == 1);
 
             Assert.That(nodeViewModel.Children.Count, Is.EqualTo(1));
         }
