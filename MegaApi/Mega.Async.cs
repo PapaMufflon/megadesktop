@@ -60,5 +60,17 @@ namespace MegaApi
 
             return tcs.Task;
         }
+
+        // wtf: http://stackoverflow.com/a/11969255/453024
+        public Task<bool> RemoveNodeAsync(string targetNodeId)
+        {
+            var tcs = new TaskCompletionSource<bool>();
+            
+            RemoveNode(targetNodeId,
+                       () => tcs.SetResult(true),
+                       errno => tcs.SetException(new MegaApiException(errno, "Could not remove the given node")));
+
+            return tcs.Task;
+        }
     }
 }

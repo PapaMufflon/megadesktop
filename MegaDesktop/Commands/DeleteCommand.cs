@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using MegaApi;
@@ -40,7 +42,14 @@ namespace MegaDesktop.Commands
             string text = String.Format("Are you sure to delete the {0} {1}?", type, node.Name);
             if (MessageBox.Show(text, "Deleting " + type, MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
-                _megaApiWrapper.RemoveNode(node.Id, () => _refresh.RefreshCurrentNode(), err => _status.Error(err));
+                _megaApiWrapper.RemoveNode(node.Id)
+                               .ContinueWith(x =>
+                                   {
+                                       if (x.Exception != null)
+                                           _status.Error(x.Exception.InnerExceptions.First() as MegaApiException);
+                                       else
+                                           _refresh.RefreshCurrentNode();
+                                   });
             }
         }
 

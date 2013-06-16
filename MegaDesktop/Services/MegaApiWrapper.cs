@@ -24,9 +24,10 @@ namespace MegaDesktop.Services
             return _api.GetNodesAsync();
         }
 
-        public void RemoveNode(string targetNodeId, Action onSuccess, Action<int> onError)
+        // wtf: http://stackoverflow.com/a/11969255/453024
+        public Task<bool> RemoveNode(string targetNodeId)
         {
-            _api.RemoveNode(targetNodeId, onSuccess, onError);
+            return _api.RemoveNodeAsync(targetNodeId);
         }
 
         public Task<TransferHandle> UploadFile(string targetNodeId, string filename)
