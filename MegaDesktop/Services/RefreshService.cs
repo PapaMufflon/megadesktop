@@ -1,4 +1,7 @@
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+using MegaApi;
 using MegaDesktop.ViewModels;
 
 namespace MegaDesktop.Services
@@ -30,15 +33,22 @@ namespace MegaDesktop.Services
         {
             _status.SetStatus(Status.Communicating);
 
-            _megaApiWrapper.GetNodes(nodes =>
-            {
-                _nodes.RootNode.Update(nodes);
-                _nodes.SelectedListNode = node == null
-                                                ? _nodes.RootNode.Children.Single(n => n.Type == NodeType.RootFolder)
-                                                : _nodes.RootNode.Descendant(node.Id);
+            _megaApiWrapper.GetNodes()
+                           .ContinueWith(x =>
+                               {
+                                   if (x.Exception != null)
+                                   {
+                                       _status.Error(x.Exception.InnerExceptions.First() as MegaApiException);
+                                       return;
+                                   }
 
-                _status.SetStatus(Status.Loaded);
-            }, e => _status.Error(e));
+                                   _nodes.RootNode.Update(x.Result.ToList());
+                                   _nodes.SelectedListNode = node == null
+                                                                 ? _nodes.RootNode.Children.Single(n => n.Type == NodeType.RootFolder)
+                                                                 : _nodes.RootNode.Descendant(node.Id);
+
+                                   _status.SetStatus(Status.Loaded);
+                               });
         }
     }
 }

@@ -19,9 +19,9 @@ namespace MegaDesktop.Services
             _api = api;
         }
 
-        public void GetNodes(Action<List<MegaNode>> onSuccess, Action<int> onError)
+        public Task<IEnumerable<MegaNode>> GetNodes()
         {
-            _api.GetNodes(onSuccess, onError);
+            return _api.GetNodesAsync();
         }
 
         public void RemoveNode(string targetNodeId, Action onSuccess, Action<int> onError)
