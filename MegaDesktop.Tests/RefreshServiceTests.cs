@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using MegaApi;
 using MegaDesktop.Services;
 using MegaDesktop.Services.Fakes;
 using MegaDesktop.ViewModels;
 using MegaDesktop.ViewModels.Fakes;
 using Microsoft.QualityTools.Testing.Fakes;
-using NSubstitute;
 using NUnit.Framework;
 
 namespace MegaDesktop.Tests
@@ -58,12 +58,11 @@ namespace MegaDesktop.Tests
             NodeViewModel selectedListNode = null;
             _nodes.SelectedListNodeSetNodeViewModel = x => selectedListNode = x;
 
-            _megaApiWrapper.GetNodesActionOfListOfMegaNodeActionOfInt32 = (action, action1) =>
-                action(new List<MegaNode>
-                {
-                    new MegaNode {Id = "foo", Type = MegaNodeType.RootFolder},
-                    new MegaNode {Id = "bar", ParentId = "foo", Type = MegaNodeType.Trash}
-                });
+            _megaApiWrapper.GetNodes = () => new Task<IEnumerable<MegaNode>>(() => new List<MegaNode>
+            {
+                new MegaNode {Id = "foo", Type = MegaNodeType.RootFolder},
+                new MegaNode {Id = "bar", ParentId = "foo", Type = MegaNodeType.Trash}
+            });
 
             _target.RefreshCurrentNode();
 
@@ -79,8 +78,10 @@ namespace MegaDesktop.Tests
             var nodeViewModel = new NodeViewModel(new TestDispatcher(), new MegaNode { Id = "foo" });
             _nodes.RootNodeGet = () => nodeViewModel;
 
-            _megaApiWrapper.GetNodesActionOfListOfMegaNodeActionOfInt32 = (action, action1) =>
-                action(new List<MegaNode> { new MegaNode { ParentId = "foo", Type = MegaNodeType.RootFolder } });
+            _megaApiWrapper.GetNodes = () => new Task<IEnumerable<MegaNode>>(() => new List<MegaNode>
+            {
+                new MegaNode { ParentId = "foo", Type = MegaNodeType.RootFolder }
+            });
 
             _target.Reload();
 
@@ -94,8 +95,10 @@ namespace MegaDesktop.Tests
             var nodeViewModel = new NodeViewModel(new TestDispatcher(), new MegaNode { Id = "foo" });
             _nodes.RootNodeGet = () => nodeViewModel;
 
-            _megaApiWrapper.GetNodesActionOfListOfMegaNodeActionOfInt32 = (action, action1) =>
-                action(new List<MegaNode> { new MegaNode { ParentId = "foo", Type = MegaNodeType.RootFolder } });
+            _megaApiWrapper.GetNodes = () => new Task<IEnumerable<MegaNode>>(() => new List<MegaNode>
+            {
+                new MegaNode { ParentId = "foo", Type = MegaNodeType.RootFolder }
+            });
 
             _target.Reload();
 
