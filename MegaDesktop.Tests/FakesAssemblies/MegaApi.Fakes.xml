@@ -409,6 +409,36 @@
         <member name="P:MegaApi.Comms.Converters.Fakes.StubUnixDateTimeConverter.InstanceObserver">
             <summary>Gets or sets the instance observer.</summary>
         </member>
+        <member name="T:MegaApi.Comms.Fakes.ShimGoogleAnalytics">
+            <summary>Shim type of MegaApi.Comms.GoogleAnalytics</summary>
+        </member>
+        <member name="M:MegaApi.Comms.Fakes.ShimGoogleAnalytics.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:MegaApi.Comms.Fakes.ShimGoogleAnalytics.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:MegaApi.Comms.Fakes.ShimGoogleAnalytics.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:MegaApi.Comms.Fakes.ShimGoogleAnalytics.AnonymousUserIdGet">
+            <summary>Sets the shim of GoogleAnalytics.get_AnonymousUserId()</summary>
+        </member>
+        <member name="P:MegaApi.Comms.Fakes.ShimGoogleAnalytics.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:MegaApi.Comms.Fakes.ShimGoogleAnalytics.SendTrackingRequestStringStringString">
+            <summary>Sets the shim of GoogleAnalytics.SendTrackingRequest(String pageName, String trackingId, String referrer)</summary>
+        </member>
+        <member name="P:MegaApi.Comms.Fakes.ShimGoogleAnalytics.StaticConstructor">
+            <summary>Sets the shim of GoogleAnalytics.GoogleAnalytics()</summary>
+        </member>
+        <member name="P:MegaApi.Comms.Fakes.ShimGoogleAnalytics.SubmitString">
+            <summary>Sets the shim of GoogleAnalytics.Submit(String url)</summary>
+        </member>
+        <member name="P:MegaApi.Comms.Fakes.ShimGoogleAnalytics.wc_DownloadStringCompletedObjectDownloadStringCompletedEventArgs">
+            <summary>Sets the shim of GoogleAnalytics.wc_DownloadStringCompleted(Object sender, DownloadStringCompletedEventArgs e)</summary>
+        </member>
         <member name="T:MegaApi.Comms.Fakes.ShimServerRequestArgs">
             <summary>Shim type of MegaApi.Comms.ServerRequestArgs</summary>
         </member>
@@ -2320,6 +2350,12 @@
         <member name="P:MegaApi.Fakes.ShimMega.Behavior">
             <summary>Assigns the behavior for all methods of the shimmed type</summary>
         </member>
+        <member name="P:MegaApi.Fakes.ShimMega.CreateFolderAsyncMegaNodeListOfMegaNodeStringChar">
+            <summary>Sets the shim of Mega.CreateFolderAsync(MegaNode target, List`1&lt;MegaNode&gt; nodes, String folder, Char separator)</summary>
+        </member>
+        <member name="P:MegaApi.Fakes.ShimMega.CreateFolderAsyncStringString">
+            <summary>Sets the shim of Mega.CreateFolderAsync(String targetNode, String folderName)</summary>
+        </member>
         <member name="P:MegaApi.Fakes.ShimMega.CreateFolderMegaNodeListOfMegaNodeStringCharActionOfMegaNodeActionOfInt32">
             <summary>Sets the shim of Mega.CreateFolder(MegaNode targetNode, List`1&lt;MegaNode&gt; existingNodes, String folderPath, Char separator, Action`1&lt;MegaNode&gt; OnSuccess, Action`1&lt;Int32&gt; OnError)</summary>
         </member>
@@ -2344,8 +2380,14 @@
         <member name="P:MegaApi.Fakes.ShimMega.GetNodesActionOfListOfMegaNodeActionOfInt32">
             <summary>Sets the shim of Mega.GetNodes(Action`1&lt;List`1&lt;MegaNode&gt;&gt; OnSuccess, Action`1&lt;Int32&gt; OnError)</summary>
         </member>
+        <member name="P:MegaApi.Fakes.ShimMega.GetNodesAsync">
+            <summary>Sets the shim of Mega.GetNodesAsync()</summary>
+        </member>
         <member name="P:MegaApi.Fakes.ShimMega.GetNodesSync">
             <summary>Sets the shim of Mega.GetNodesSync()</summary>
+        </member>
+        <member name="P:MegaApi.Fakes.ShimMega.InitAsyncMegaUser">
+            <summary>Sets the shim of Mega.InitAsync(MegaUser user)</summary>
         </member>
         <member name="P:MegaApi.Fakes.ShimMega.InitMegaUserActionOfMegaActionOfInt32">
             <summary>Sets the shim of Mega.Init(MegaUser user, Action`1&lt;Mega&gt; OnSuccess, Action`1&lt;Int32&gt; OnError)</summary>
@@ -2392,6 +2434,9 @@
         <member name="P:MegaApi.Fakes.ShimMega.UpdateNodeAttrSyncMegaNode">
             <summary>Sets the shim of Mega.UpdateNodeAttrSync(MegaNode node)</summary>
         </member>
+        <member name="P:MegaApi.Fakes.ShimMega.UploadFileAsyncStringString">
+            <summary>Sets the shim of Mega.UploadFileAsync(String targetNodeId, String filename)</summary>
+        </member>
         <member name="P:MegaApi.Fakes.ShimMega.UploadFileStringStringActionOfUploadHandleActionOfInt32">
             <summary>Sets the shim of Mega.UploadFile(String targetNodeId, String filename, Action`1&lt;UploadHandle&gt; OnHandleReady, Action`1&lt;Int32&gt; OnError)</summary>
         </member>
@@ -2410,11 +2455,17 @@
         <member name="P:MegaApi.Fakes.ShimMega.UserSetMegaUser">
             <summary>Sets the shim of Mega.set_User(MegaUser value)</summary>
         </member>
-        <member name="P:MegaApi.Fakes.ShimMega._ctorb__12ObjectServerRequestArgs">
-            <summary>Sets the shim of Mega.&lt;.ctor&gt;b__12(Object s, ServerRequestArgs e)</summary>
+        <member name="P:MegaApi.Fakes.ShimMega._ctorb__29ObjectServerRequestArgs">
+            <summary>Sets the shim of Mega.&lt;.ctor&gt;b__29(Object s, ServerRequestArgs e)</summary>
         </member>
         <member name="T:MegaApi.Fakes.ShimMega.AllInstances">
             <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:MegaApi.Fakes.ShimMega.AllInstances.CreateFolderAsyncMegaNodeListOfMegaNodeStringChar">
+            <summary>Sets the shim of Mega.CreateFolderAsync(MegaNode target, List`1&lt;MegaNode&gt; nodes, String folder, Char separator)</summary>
+        </member>
+        <member name="P:MegaApi.Fakes.ShimMega.AllInstances.CreateFolderAsyncStringString">
+            <summary>Sets the shim of Mega.CreateFolderAsync(String targetNode, String folderName)</summary>
         </member>
         <member name="P:MegaApi.Fakes.ShimMega.AllInstances.CreateFolderMegaNodeListOfMegaNodeStringCharActionOfMegaNodeActionOfInt32">
             <summary>Sets the shim of Mega.CreateFolder(MegaNode targetNode, List`1&lt;MegaNode&gt; existingNodes, String folderPath, Char separator, Action`1&lt;MegaNode&gt; OnSuccess, Action`1&lt;Int32&gt; OnError)</summary>
@@ -2439,6 +2490,9 @@
         </member>
         <member name="P:MegaApi.Fakes.ShimMega.AllInstances.GetNodesActionOfListOfMegaNodeActionOfInt32">
             <summary>Sets the shim of Mega.GetNodes(Action`1&lt;List`1&lt;MegaNode&gt;&gt; OnSuccess, Action`1&lt;Int32&gt; OnError)</summary>
+        </member>
+        <member name="P:MegaApi.Fakes.ShimMega.AllInstances.GetNodesAsync">
+            <summary>Sets the shim of Mega.GetNodesAsync()</summary>
         </member>
         <member name="P:MegaApi.Fakes.ShimMega.AllInstances.GetNodesSync">
             <summary>Sets the shim of Mega.GetNodesSync()</summary>
@@ -2476,6 +2530,9 @@
         <member name="P:MegaApi.Fakes.ShimMega.AllInstances.UpdateNodeAttrSyncMegaNode">
             <summary>Sets the shim of Mega.UpdateNodeAttrSync(MegaNode node)</summary>
         </member>
+        <member name="P:MegaApi.Fakes.ShimMega.AllInstances.UploadFileAsyncStringString">
+            <summary>Sets the shim of Mega.UploadFileAsync(String targetNodeId, String filename)</summary>
+        </member>
         <member name="P:MegaApi.Fakes.ShimMega.AllInstances.UploadFileStringStringActionOfUploadHandleActionOfInt32">
             <summary>Sets the shim of Mega.UploadFile(String targetNodeId, String filename, Action`1&lt;UploadHandle&gt; OnHandleReady, Action`1&lt;Int32&gt; OnError)</summary>
         </member>
@@ -2494,8 +2551,8 @@
         <member name="P:MegaApi.Fakes.ShimMega.AllInstances.UserSetMegaUser">
             <summary>Sets the shim of Mega.set_User(MegaUser value)</summary>
         </member>
-        <member name="P:MegaApi.Fakes.ShimMega.AllInstances._ctorb__12ObjectServerRequestArgs">
-            <summary>Sets the shim of Mega.&lt;.ctor&gt;b__12(Object s, ServerRequestArgs e)</summary>
+        <member name="P:MegaApi.Fakes.ShimMega.AllInstances._ctorb__29ObjectServerRequestArgs">
+            <summary>Sets the shim of Mega.&lt;.ctor&gt;b__29(Object s, ServerRequestArgs e)</summary>
         </member>
         <member name="T:MegaApi.Fakes.ShimMegaApiError">
             <summary>Shim type of MegaApi.MegaApiError</summary>
@@ -3073,8 +3130,8 @@
         <member name="P:MegaApi.Fakes.ShimTransferHandle._CancelTransferb__0">
             <summary>Sets the shim of TransferHandle.&lt;CancelTransfer&gt;b__0()</summary>
         </member>
-        <member name="P:MegaApi.Fakes.ShimTransferHandle._ResetConnectionsb__3WebClient">
-            <summary>Sets the shim of TransferHandle.&lt;ResetConnections&gt;b__3(WebClient c)</summary>
+        <member name="P:MegaApi.Fakes.ShimTransferHandle._ResetConnectionsb__6WebClient">
+            <summary>Sets the shim of TransferHandle.&lt;ResetConnections&gt;b__6(WebClient c)</summary>
         </member>
         <member name="T:MegaApi.Fakes.ShimTransferHandle.AllInstances">
             <summary>Define shims for all instances members</summary>

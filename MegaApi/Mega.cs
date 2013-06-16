@@ -16,7 +16,7 @@ namespace MegaApi
     /// <summary>
     /// The main class for api methods
     /// </summary>
-    public class Mega
+    public partial class Mega
     {
         public event EventHandler<ServerRequestArgs> ServerRequest;
         /// <summary>

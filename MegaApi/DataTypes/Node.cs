@@ -134,5 +134,6 @@ namespace MegaApi
             string name = string.Empty;
             return String.Format("{0}: {1}", Id, Attributes.Name);
         }
+
     }
 }
