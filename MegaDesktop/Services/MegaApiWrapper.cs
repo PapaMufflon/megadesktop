@@ -40,9 +40,9 @@ namespace MegaDesktop.Services
             return _api.CreateFolderAsync(targetNode, folderName);
         }
 
-        public void DownloadFile(MegaNode node, string filename, Action<DownloadHandle> onHandleReady, Action<int> onError)
+        public Task<DownloadHandle> DownloadFile(MegaNode node, string filename)
         {
-            _api.DownloadFile(node, filename, onHandleReady, onError);
+            return _api.DownloadFileAsync(node, filename);
         }
 
         public void SaveAccount(string filePath)

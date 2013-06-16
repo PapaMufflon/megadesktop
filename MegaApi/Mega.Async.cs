@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using MegaApi.Comms.Requests;
 
 namespace MegaApi
 {
@@ -69,6 +70,17 @@ namespace MegaApi
             RemoveNode(targetNodeId,
                        () => tcs.SetResult(true),
                        errno => tcs.SetException(new MegaApiException(errno, "Could not remove the given node")));
+
+            return tcs.Task;
+        }
+
+        public Task<DownloadHandle> DownloadFileAsync(MegaNode node, string filename)
+        {
+            var tcs = new TaskCompletionSource<DownloadHandle>();
+
+            DownloadFile(node, filename,
+                         tcs.SetResult,
+                         errno => tcs.SetException(new MegaApiException(errno, "Could not download the given node")));
 
             return tcs.Task;
         }

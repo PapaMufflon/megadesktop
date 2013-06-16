@@ -112,11 +112,8 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimDeleteCommand.OnCanExecuteChanged">
             <summary>Sets the shim of DeleteCommand.OnCanExecuteChanged()</summary>
         </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimDeleteCommand._Executeb__4">
-            <summary>Sets the shim of DeleteCommand.&lt;Execute&gt;b__4()</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimDeleteCommand._Executeb__5Int32">
-            <summary>Sets the shim of DeleteCommand.&lt;Execute&gt;b__5(Int32 err)</summary>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimDeleteCommand._Executeb__4TaskOfBoolean">
+            <summary>Sets the shim of DeleteCommand.&lt;Execute&gt;b__4(Task`1&lt;Boolean&gt; x)</summary>
         </member>
         <member name="T:MegaDesktop.Commands.Fakes.ShimDeleteCommand.AllInstances">
             <summary>Define shims for all instances members</summary>
@@ -136,11 +133,8 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimDeleteCommand.AllInstances.OnCanExecuteChanged">
             <summary>Sets the shim of DeleteCommand.OnCanExecuteChanged()</summary>
         </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimDeleteCommand.AllInstances._Executeb__4">
-            <summary>Sets the shim of DeleteCommand.&lt;Execute&gt;b__4()</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimDeleteCommand.AllInstances._Executeb__5Int32">
-            <summary>Sets the shim of DeleteCommand.&lt;Execute&gt;b__5(Int32 err)</summary>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimDeleteCommand.AllInstances._Executeb__4TaskOfBoolean">
+            <summary>Sets the shim of DeleteCommand.&lt;Execute&gt;b__4(Task`1&lt;Boolean&gt; x)</summary>
         </member>
         <member name="T:MegaDesktop.Commands.Fakes.ShimDownloadCommand">
             <summary>Shim type of MegaDesktop.Commands.DownloadCommand</summary>
@@ -187,8 +181,8 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimDownloadCommand.OnHandleReadyTransferHandle">
             <summary>Sets the shim of DownloadCommand.OnHandleReady(TransferHandle transfer)</summary>
         </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimDownloadCommand._DownloadFileb__4Int32">
-            <summary>Sets the shim of DownloadCommand.&lt;DownloadFile&gt;b__4(Int32 e)</summary>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimDownloadCommand._DownloadFileb__5TaskOfDownloadHandle">
+            <summary>Sets the shim of DownloadCommand.&lt;DownloadFile&gt;b__5(Task`1&lt;DownloadHandle&gt; x)</summary>
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimDownloadCommand._OnHandleReadyb__6ObjectTransferEndedArgs">
             <summary>Sets the shim of DownloadCommand.&lt;OnHandleReady&gt;b__6(Object s, TransferEndedArgs e)</summary>
@@ -217,8 +211,8 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimDownloadCommand.AllInstances.OnHandleReadyTransferHandle">
             <summary>Sets the shim of DownloadCommand.OnHandleReady(TransferHandle transfer)</summary>
         </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimDownloadCommand.AllInstances._DownloadFileb__4Int32">
-            <summary>Sets the shim of DownloadCommand.&lt;DownloadFile&gt;b__4(Int32 e)</summary>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimDownloadCommand.AllInstances._DownloadFileb__5TaskOfDownloadHandle">
+            <summary>Sets the shim of DownloadCommand.&lt;DownloadFile&gt;b__5(Task`1&lt;DownloadHandle&gt; x)</summary>
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimDownloadCommand.AllInstances._OnHandleReadyb__6ObjectTransferEndedArgs">
             <summary>Sets the shim of DownloadCommand.&lt;OnHandleReady&gt;b__6(Object s, TransferEndedArgs e)</summary>
@@ -556,8 +550,8 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand._OnHandleReadyb__7ObjectTransferEndedArgs">
             <summary>Sets the shim of UploadCommand.&lt;OnHandleReady&gt;b__7(Object s, TransferEndedArgs e)</summary>
         </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand._UploadFileb__6Int32">
-            <summary>Sets the shim of UploadCommand.&lt;UploadFile&gt;b__6(Int32 err)</summary>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand._UploadFileb__6TaskOfTransferHandle">
+            <summary>Sets the shim of UploadCommand.&lt;UploadFile&gt;b__6(Task`1&lt;TransferHandle&gt; x)</summary>
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand._ctorb__0ObjectEventArgs">
             <summary>Sets the shim of UploadCommand.&lt;.ctor&gt;b__0(Object s, EventArgs e)</summary>
@@ -589,8 +583,8 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.AllInstances._OnHandleReadyb__7ObjectTransferEndedArgs">
             <summary>Sets the shim of UploadCommand.&lt;OnHandleReady&gt;b__7(Object s, TransferEndedArgs e)</summary>
         </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.AllInstances._UploadFileb__6Int32">
-            <summary>Sets the shim of UploadCommand.&lt;UploadFile&gt;b__6(Int32 err)</summary>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.AllInstances._UploadFileb__6TaskOfTransferHandle">
+            <summary>Sets the shim of UploadCommand.&lt;UploadFile&gt;b__6(Task`1&lt;TransferHandle&gt; x)</summary>
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.AllInstances._ctorb__0ObjectEventArgs">
             <summary>Sets the shim of UploadCommand.&lt;.ctor&gt;b__0(Object s, EventArgs e)</summary>
@@ -643,14 +637,8 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.UploadFolderContentStringNodeViewModel">
             <summary>Sets the shim of UploadFolderCommand.UploadFolderContent(String path, NodeViewModel nodeViewModel)</summary>
         </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand._CreateFolderb__6Int32">
-            <summary>Sets the shim of UploadFolderCommand.&lt;CreateFolder&gt;b__6(Int32 err)</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand._UploadFolderContentb__dUploadHandle">
-            <summary>Sets the shim of UploadFolderCommand.&lt;UploadFolderContent&gt;b__d(UploadHandle x)</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand._UploadFolderContentb__eInt32">
-            <summary>Sets the shim of UploadFolderCommand.&lt;UploadFolderContent&gt;b__e(Int32 err)</summary>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand._UploadFolderContentb__cTaskOfTransferHandle">
+            <summary>Sets the shim of UploadFolderCommand.&lt;UploadFolderContent&gt;b__c(Task`1&lt;TransferHandle&gt; x)</summary>
         </member>
         <member name="T:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.AllInstances">
             <summary>Define shims for all instances members</summary>
@@ -679,14 +667,8 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.AllInstances.UploadFolderContentStringNodeViewModel">
             <summary>Sets the shim of UploadFolderCommand.UploadFolderContent(String path, NodeViewModel nodeViewModel)</summary>
         </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.AllInstances._CreateFolderb__6Int32">
-            <summary>Sets the shim of UploadFolderCommand.&lt;CreateFolder&gt;b__6(Int32 err)</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.AllInstances._UploadFolderContentb__dUploadHandle">
-            <summary>Sets the shim of UploadFolderCommand.&lt;UploadFolderContent&gt;b__d(UploadHandle x)</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.AllInstances._UploadFolderContentb__eInt32">
-            <summary>Sets the shim of UploadFolderCommand.&lt;UploadFolderContent&gt;b__e(Int32 err)</summary>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.AllInstances._UploadFolderContentb__cTaskOfTransferHandle">
+            <summary>Sets the shim of UploadFolderCommand.&lt;UploadFolderContent&gt;b__c(Task`1&lt;TransferHandle&gt; x)</summary>
         </member>
         <member name="T:MegaDesktop.Commands.Fakes.StubCancelCommand">
             <summary>Stub type of MegaDesktop.Commands.CancelCommand</summary>
@@ -3898,26 +3880,26 @@
         <member name="P:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.Constructor">
             <summary>Sets the shim of MegaApiWrapper.MegaApiWrapper()</summary>
         </member>
-        <member name="P:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.CreateFolderStringStringActionOfMegaNodeActionOfInt32">
-            <summary>Sets the shim of MegaApiWrapper.CreateFolder(String targetNodeId, String folderName, Action`1&lt;MegaNode&gt; onSuccess, Action`1&lt;Int32&gt; onError)</summary>
+        <member name="P:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.CreateFolderStringString">
+            <summary>Sets the shim of MegaApiWrapper.CreateFolder(String targetNode, String folderName)</summary>
         </member>
-        <member name="P:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.DownloadFileMegaNodeStringActionOfDownloadHandleActionOfInt32">
-            <summary>Sets the shim of MegaApiWrapper.DownloadFile(MegaNode node, String filename, Action`1&lt;DownloadHandle&gt; onHandleReady, Action`1&lt;Int32&gt; onError)</summary>
+        <member name="P:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.DownloadFileMegaNodeString">
+            <summary>Sets the shim of MegaApiWrapper.DownloadFile(MegaNode node, String filename)</summary>
         </member>
-        <member name="P:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.GetNodesActionOfListOfMegaNodeActionOfInt32">
-            <summary>Sets the shim of MegaApiWrapper.GetNodes(Action`1&lt;List`1&lt;MegaNode&gt;&gt; onSuccess, Action`1&lt;Int32&gt; onError)</summary>
+        <member name="P:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.GetNodes">
+            <summary>Sets the shim of MegaApiWrapper.GetNodes()</summary>
         </member>
         <member name="P:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.RegisterMega">
             <summary>Sets the shim of MegaApiWrapper.Register(Mega api)</summary>
         </member>
-        <member name="P:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.RemoveNodeStringActionActionOfInt32">
-            <summary>Sets the shim of MegaApiWrapper.RemoveNode(String targetNodeId, Action onSuccess, Action`1&lt;Int32&gt; onError)</summary>
+        <member name="P:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.RemoveNodeString">
+            <summary>Sets the shim of MegaApiWrapper.RemoveNode(String targetNodeId)</summary>
         </member>
         <member name="P:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.SaveAccountString">
             <summary>Sets the shim of MegaApiWrapper.SaveAccount(String filePath)</summary>
         </member>
-        <member name="P:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.UploadFileStringStringActionOfUploadHandleActionOfInt32">
-            <summary>Sets the shim of MegaApiWrapper.UploadFile(String targetNodeId, String filename, Action`1&lt;UploadHandle&gt; onHandleReady, Action`1&lt;Int32&gt; onError)</summary>
+        <member name="P:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.UploadFileStringString">
+            <summary>Sets the shim of MegaApiWrapper.UploadFile(String targetNodeId, String filename)</summary>
         </member>
         <member name="P:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.UserGet">
             <summary>Sets the shim of MegaApiWrapper.get_User()</summary>
@@ -3925,26 +3907,26 @@
         <member name="T:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.AllInstances">
             <summary>Define shims for all instances members</summary>
         </member>
-        <member name="P:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.AllInstances.CreateFolderStringStringActionOfMegaNodeActionOfInt32">
-            <summary>Sets the shim of MegaApiWrapper.CreateFolder(String targetNodeId, String folderName, Action`1&lt;MegaNode&gt; onSuccess, Action`1&lt;Int32&gt; onError)</summary>
+        <member name="P:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.AllInstances.CreateFolderStringString">
+            <summary>Sets the shim of MegaApiWrapper.CreateFolder(String targetNode, String folderName)</summary>
         </member>
-        <member name="P:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.AllInstances.DownloadFileMegaNodeStringActionOfDownloadHandleActionOfInt32">
-            <summary>Sets the shim of MegaApiWrapper.DownloadFile(MegaNode node, String filename, Action`1&lt;DownloadHandle&gt; onHandleReady, Action`1&lt;Int32&gt; onError)</summary>
+        <member name="P:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.AllInstances.DownloadFileMegaNodeString">
+            <summary>Sets the shim of MegaApiWrapper.DownloadFile(MegaNode node, String filename)</summary>
         </member>
-        <member name="P:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.AllInstances.GetNodesActionOfListOfMegaNodeActionOfInt32">
-            <summary>Sets the shim of MegaApiWrapper.GetNodes(Action`1&lt;List`1&lt;MegaNode&gt;&gt; onSuccess, Action`1&lt;Int32&gt; onError)</summary>
+        <member name="P:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.AllInstances.GetNodes">
+            <summary>Sets the shim of MegaApiWrapper.GetNodes()</summary>
         </member>
         <member name="P:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.AllInstances.RegisterMega">
             <summary>Sets the shim of MegaApiWrapper.Register(Mega api)</summary>
         </member>
-        <member name="P:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.AllInstances.RemoveNodeStringActionActionOfInt32">
-            <summary>Sets the shim of MegaApiWrapper.RemoveNode(String targetNodeId, Action onSuccess, Action`1&lt;Int32&gt; onError)</summary>
+        <member name="P:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.AllInstances.RemoveNodeString">
+            <summary>Sets the shim of MegaApiWrapper.RemoveNode(String targetNodeId)</summary>
         </member>
         <member name="P:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.AllInstances.SaveAccountString">
             <summary>Sets the shim of MegaApiWrapper.SaveAccount(String filePath)</summary>
         </member>
-        <member name="P:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.AllInstances.UploadFileStringStringActionOfUploadHandleActionOfInt32">
-            <summary>Sets the shim of MegaApiWrapper.UploadFile(String targetNodeId, String filename, Action`1&lt;UploadHandle&gt; onHandleReady, Action`1&lt;Int32&gt; onError)</summary>
+        <member name="P:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.AllInstances.UploadFileStringString">
+            <summary>Sets the shim of MegaApiWrapper.UploadFile(String targetNodeId, String filename)</summary>
         </member>
         <member name="P:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.AllInstances.UserGet">
             <summary>Sets the shim of MegaApiWrapper.get_User()</summary>
@@ -4069,9 +4051,6 @@
         <member name="P:MegaDesktop.Services.Fakes.ShimRefreshService.Reload">
             <summary>Sets the shim of RefreshService.Reload()</summary>
         </member>
-        <member name="P:MegaDesktop.Services.Fakes.ShimRefreshService._Refreshb__2Int32">
-            <summary>Sets the shim of RefreshService.&lt;Refresh&gt;b__2(Int32 e)</summary>
-        </member>
         <member name="T:MegaDesktop.Services.Fakes.ShimRefreshService.AllInstances">
             <summary>Define shims for all instances members</summary>
         </member>
@@ -4083,9 +4062,6 @@
         </member>
         <member name="P:MegaDesktop.Services.Fakes.ShimRefreshService.AllInstances.Reload">
             <summary>Sets the shim of RefreshService.Reload()</summary>
-        </member>
-        <member name="P:MegaDesktop.Services.Fakes.ShimRefreshService.AllInstances._Refreshb__2Int32">
-            <summary>Sets the shim of RefreshService.&lt;Refresh&gt;b__2(Int32 e)</summary>
         </member>
         <member name="T:MegaDesktop.Services.Fakes.ShimTransferManager">
             <summary>Shim type of MegaDesktop.Services.TransferManager</summary>
@@ -4867,8 +4843,8 @@
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimStatusViewModel.CurrentStatusSetStatus">
             <summary>Sets the shim of StatusViewModel.set_CurrentStatus(Status value)</summary>
         </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimStatusViewModel.ErrorInt32">
-            <summary>Sets the shim of StatusViewModel.Error(Int32 errorNumber)</summary>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimStatusViewModel.ErrorMegaApiException">
+            <summary>Sets the shim of StatusViewModel.Error(MegaApiException exception)</summary>
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimStatusViewModel.MessageGet">
             <summary>Sets the shim of StatusViewModel.get_Message()</summary>
@@ -4906,8 +4882,8 @@
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimStatusViewModel.AllInstances.CurrentStatusSetStatus">
             <summary>Sets the shim of StatusViewModel.set_CurrentStatus(Status value)</summary>
         </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimStatusViewModel.AllInstances.ErrorInt32">
-            <summary>Sets the shim of StatusViewModel.Error(Int32 errorNumber)</summary>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimStatusViewModel.AllInstances.ErrorMegaApiException">
+            <summary>Sets the shim of StatusViewModel.Error(MegaApiException exception)</summary>
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimStatusViewModel.AllInstances.MessageGet">
             <summary>Sets the shim of StatusViewModel.get_Message()</summary>

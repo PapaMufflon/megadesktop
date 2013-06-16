@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Input;
 using MegaApi;
 using MegaDesktop.Services;
@@ -53,13 +54,20 @@ namespace MegaDesktop.Commands
 
         private void DownloadFile(MegaNode clickedNode)
         {
-            var d = new SaveFileDialog();
-            d.FileName = clickedNode.Attributes.Name;
-            if (d.ShowDialog() == true)
-            {
-                _status.SetStatus(Status.Communicating);
-                _megaApiWrapper.DownloadFile(clickedNode, d.FileName, OnHandleReady, e => _status.Error(e));
-            }
+            var d = new SaveFileDialog { FileName = clickedNode.Attributes.Name };
+
+            if (d.ShowDialog() != true)
+                return;
+
+            _status.SetStatus(Status.Communicating);
+            _megaApiWrapper.DownloadFile(clickedNode, d.FileName)
+                           .ContinueWith(x =>
+                               {
+                                   if (x.Exception != null)
+                                       _status.Error(x.Exception.InnerExceptions.First() as MegaApiException);
+                                   else
+                                       OnHandleReady(x.Result);
+                               });
         }
 
         private void OnHandleReady(TransferHandle transfer)
@@ -72,8 +80,10 @@ namespace MegaDesktop.Commands
 
         protected virtual void OnCanExecuteChanged()
         {
-            EventHandler handler = CanExecuteChanged;
-            if (handler != null) handler(this, EventArgs.Empty);
+            var handler = CanExecuteChanged;
+
+            if (handler != null)
+                handler(this, EventArgs.Empty);
         }
     }
 }

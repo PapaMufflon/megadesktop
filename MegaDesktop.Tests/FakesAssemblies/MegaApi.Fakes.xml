@@ -2341,6 +2341,9 @@
         <member name="P:MegaApi.Fakes.ShimMega.CreateFoldersMegaNodeListOfMegaNodeStringArrayActionOfMegaNodeActionOfInt32">
             <summary>Sets the shim of Mega.CreateFolders(MegaNode targetNode, List`1&lt;MegaNode&gt; existingNodes, String[] folders, Action`1&lt;MegaNode&gt; OnSuccess, Action`1&lt;Int32&gt; OnError)</summary>
         </member>
+        <member name="P:MegaApi.Fakes.ShimMega.DownloadFileAsyncMegaNodeString">
+            <summary>Sets the shim of Mega.DownloadFileAsync(MegaNode node, String filename)</summary>
+        </member>
         <member name="P:MegaApi.Fakes.ShimMega.DownloadFileMegaNodeStringActionOfDownloadHandleActionOfInt32">
             <summary>Sets the shim of Mega.DownloadFile(MegaNode node, String filename, Action`1&lt;DownloadHandle&gt; OnHandleReady, Action`1&lt;Int32&gt; OnError)</summary>
         </member>
@@ -2428,8 +2431,8 @@
         <member name="P:MegaApi.Fakes.ShimMega.UserSetMegaUser">
             <summary>Sets the shim of Mega.set_User(MegaUser value)</summary>
         </member>
-        <member name="P:MegaApi.Fakes.ShimMega._ctorb__27ObjectServerRequestArgs">
-            <summary>Sets the shim of Mega.&lt;.ctor&gt;b__27(Object s, ServerRequestArgs e)</summary>
+        <member name="P:MegaApi.Fakes.ShimMega._ctorb__2aObjectServerRequestArgs">
+            <summary>Sets the shim of Mega.&lt;.ctor&gt;b__2a(Object s, ServerRequestArgs e)</summary>
         </member>
         <member name="T:MegaApi.Fakes.ShimMega.AllInstances">
             <summary>Define shims for all instances members</summary>
@@ -2454,6 +2457,9 @@
         </member>
         <member name="P:MegaApi.Fakes.ShimMega.AllInstances.CreateFoldersMegaNodeListOfMegaNodeStringArrayActionOfMegaNodeActionOfInt32">
             <summary>Sets the shim of Mega.CreateFolders(MegaNode targetNode, List`1&lt;MegaNode&gt; existingNodes, String[] folders, Action`1&lt;MegaNode&gt; OnSuccess, Action`1&lt;Int32&gt; OnError)</summary>
+        </member>
+        <member name="P:MegaApi.Fakes.ShimMega.AllInstances.DownloadFileAsyncMegaNodeString">
+            <summary>Sets the shim of Mega.DownloadFileAsync(MegaNode node, String filename)</summary>
         </member>
         <member name="P:MegaApi.Fakes.ShimMega.AllInstances.DownloadFileMegaNodeStringActionOfDownloadHandleActionOfInt32">
             <summary>Sets the shim of Mega.DownloadFile(MegaNode node, String filename, Action`1&lt;DownloadHandle&gt; OnHandleReady, Action`1&lt;Int32&gt; OnError)</summary>
@@ -2527,8 +2533,8 @@
         <member name="P:MegaApi.Fakes.ShimMega.AllInstances.UserSetMegaUser">
             <summary>Sets the shim of Mega.set_User(MegaUser value)</summary>
         </member>
-        <member name="P:MegaApi.Fakes.ShimMega.AllInstances._ctorb__27ObjectServerRequestArgs">
-            <summary>Sets the shim of Mega.&lt;.ctor&gt;b__27(Object s, ServerRequestArgs e)</summary>
+        <member name="P:MegaApi.Fakes.ShimMega.AllInstances._ctorb__2aObjectServerRequestArgs">
+            <summary>Sets the shim of Mega.&lt;.ctor&gt;b__2a(Object s, ServerRequestArgs e)</summary>
         </member>
         <member name="T:MegaApi.Fakes.ShimMegaApiError">
             <summary>Shim type of MegaApi.MegaApiError</summary>
