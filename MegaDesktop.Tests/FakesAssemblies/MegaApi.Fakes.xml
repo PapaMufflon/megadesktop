@@ -2431,8 +2431,8 @@
         <member name="P:MegaApi.Fakes.ShimMega.UserSetMegaUser">
             <summary>Sets the shim of Mega.set_User(MegaUser value)</summary>
         </member>
-        <member name="P:MegaApi.Fakes.ShimMega._ctorb__2aObjectServerRequestArgs">
-            <summary>Sets the shim of Mega.&lt;.ctor&gt;b__2a(Object s, ServerRequestArgs e)</summary>
+        <member name="P:MegaApi.Fakes.ShimMega._ctorb__2fObjectServerRequestArgs">
+            <summary>Sets the shim of Mega.&lt;.ctor&gt;b__2f(Object s, ServerRequestArgs e)</summary>
         </member>
         <member name="T:MegaApi.Fakes.ShimMega.AllInstances">
             <summary>Define shims for all instances members</summary>
@@ -2533,8 +2533,8 @@
         <member name="P:MegaApi.Fakes.ShimMega.AllInstances.UserSetMegaUser">
             <summary>Sets the shim of Mega.set_User(MegaUser value)</summary>
         </member>
-        <member name="P:MegaApi.Fakes.ShimMega.AllInstances._ctorb__2aObjectServerRequestArgs">
-            <summary>Sets the shim of Mega.&lt;.ctor&gt;b__2a(Object s, ServerRequestArgs e)</summary>
+        <member name="P:MegaApi.Fakes.ShimMega.AllInstances._ctorb__2fObjectServerRequestArgs">
+            <summary>Sets the shim of Mega.&lt;.ctor&gt;b__2f(Object s, ServerRequestArgs e)</summary>
         </member>
         <member name="T:MegaApi.Fakes.ShimMegaApiError">
             <summary>Shim type of MegaApi.MegaApiError</summary>

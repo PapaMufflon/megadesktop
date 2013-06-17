@@ -35,7 +35,7 @@ namespace MegaDesktop.Services
         public void AddNewTransfer(TransferHandle transfer)
         {
             _dispatcher.InvokeOnUiThread(() =>
-                Transfers.Add(new TransferHandleViewModel(transfer, this, _dispatcher)));
+                Transfers.Add(new TransferHandleViewModel(transfer, _dispatcher)));
         }
     }
 }

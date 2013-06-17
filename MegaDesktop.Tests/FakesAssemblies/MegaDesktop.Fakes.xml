@@ -388,69 +388,6 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimRefreshCommand.AllInstances.OnCanExecuteChanged">
             <summary>Sets the shim of RefreshCommand.OnCanExecuteChanged()</summary>
         </member>
-        <member name="T:MegaDesktop.Commands.Fakes.ShimRemoveCommand">
-            <summary>Shim type of MegaDesktop.Commands.RemoveCommand</summary>
-        </member>
-        <member name="M:MegaDesktop.Commands.Fakes.ShimRemoveCommand.#ctor">
-            <summary>Initializes a new shim instance</summary>
-        </member>
-        <member name="M:MegaDesktop.Commands.Fakes.ShimRemoveCommand.#ctor(MegaDesktop.Commands.RemoveCommand)">
-            <summary>Initializes a new shim for the given instance</summary>
-        </member>
-        <member name="M:MegaDesktop.Commands.Fakes.ShimRemoveCommand.BehaveAsCurrent">
-            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
-        </member>
-        <member name="M:MegaDesktop.Commands.Fakes.ShimRemoveCommand.BehaveAsNotImplemented">
-            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
-        </member>
-        <member name="M:MegaDesktop.Commands.Fakes.ShimRemoveCommand.Bind(System.Windows.Input.ICommand)">
-            <summary>Binds the members of the interface to the shim.</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimRemoveCommand.Behavior">
-            <summary>Assigns the behavior for all methods of the shimmed type</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimRemoveCommand.CanExecuteChangedAddEventHandler">
-            <summary>Sets the shim of RemoveCommand.add_CanExecuteChanged(EventHandler value)</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimRemoveCommand.CanExecuteChangedRemoveEventHandler">
-            <summary>Sets the shim of RemoveCommand.remove_CanExecuteChanged(EventHandler value)</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimRemoveCommand.CanExecuteObject">
-            <summary>Sets the shim of RemoveCommand.CanExecute(Object parameter)</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimRemoveCommand.ConstructorTransferManagerIDispatcher">
-            <summary>Sets the shim of RemoveCommand.RemoveCommand(TransferManager transfers, IDispatcher dispatcher)</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimRemoveCommand.ExecuteObject">
-            <summary>Sets the shim of RemoveCommand.Execute(Object parameter)</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimRemoveCommand.OnCanExecuteChanged">
-            <summary>Sets the shim of RemoveCommand.OnCanExecuteChanged()</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimRemoveCommand.RaiseCanExecuteChanged">
-            <summary>Sets the shim of RemoveCommand.RaiseCanExecuteChanged()</summary>
-        </member>
-        <member name="T:MegaDesktop.Commands.Fakes.ShimRemoveCommand.AllInstances">
-            <summary>Define shims for all instances members</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimRemoveCommand.AllInstances.CanExecuteChangedAddEventHandler">
-            <summary>Sets the shim of RemoveCommand.add_CanExecuteChanged(EventHandler value)</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimRemoveCommand.AllInstances.CanExecuteChangedRemoveEventHandler">
-            <summary>Sets the shim of RemoveCommand.remove_CanExecuteChanged(EventHandler value)</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimRemoveCommand.AllInstances.CanExecuteObject">
-            <summary>Sets the shim of RemoveCommand.CanExecute(Object parameter)</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimRemoveCommand.AllInstances.ExecuteObject">
-            <summary>Sets the shim of RemoveCommand.Execute(Object parameter)</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimRemoveCommand.AllInstances.OnCanExecuteChanged">
-            <summary>Sets the shim of RemoveCommand.OnCanExecuteChanged()</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimRemoveCommand.AllInstances.RaiseCanExecuteChanged">
-            <summary>Sets the shim of RemoveCommand.RaiseCanExecuteChanged()</summary>
-        </member>
         <member name="T:MegaDesktop.Commands.Fakes.ShimSelectedListNodeActionCommand">
             <summary>Shim type of MegaDesktop.Commands.SelectedListNodeActionCommand</summary>
         </member>
@@ -812,30 +749,6 @@
             <summary>Gets or sets the instance behavior.</summary>
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.StubRefreshCommand.InstanceObserver">
-            <summary>Gets or sets the instance observer.</summary>
-        </member>
-        <member name="T:MegaDesktop.Commands.Fakes.StubRemoveCommand">
-            <summary>Stub type of MegaDesktop.Commands.RemoveCommand</summary>
-        </member>
-        <member name="M:MegaDesktop.Commands.Fakes.StubRemoveCommand.#ctor(MegaDesktop.Services.TransferManager,MegaDesktop.Services.IDispatcher)">
-            <summary>Initializes a new instance</summary>
-        </member>
-        <member name="M:MegaDesktop.Commands.Fakes.StubRemoveCommand.InitializeStub">
-            <summary>Initializes a new instance of type StubRemoveCommand</summary>
-        </member>
-        <member name="M:MegaDesktop.Commands.Fakes.StubRemoveCommand.OnCanExecuteChanged">
-            <summary>Sets the stub of RemoveCommand.OnCanExecuteChanged()</summary>
-        </member>
-        <member name="F:MegaDesktop.Commands.Fakes.StubRemoveCommand.OnCanExecuteChanged01">
-            <summary>Sets the stub of RemoveCommand.OnCanExecuteChanged()</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.StubRemoveCommand.CallBase">
-            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.StubRemoveCommand.InstanceBehavior">
-            <summary>Gets or sets the instance behavior.</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.StubRemoveCommand.InstanceObserver">
             <summary>Gets or sets the instance observer.</summary>
         </member>
         <member name="T:MegaDesktop.Commands.Fakes.StubSelectedListNodeActionCommand">
@@ -4936,8 +4849,8 @@
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimTransferHandleViewModel.CancelTransfer">
             <summary>Sets the shim of TransferHandleViewModel.CancelTransfer()</summary>
         </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimTransferHandleViewModel.ConstructorTransferHandleTransferManagerIDispatcher">
-            <summary>Sets the shim of TransferHandleViewModel.TransferHandleViewModel(TransferHandle transferHandle, TransferManager transfers, IDispatcher dispatcher)</summary>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimTransferHandleViewModel.ConstructorTransferHandleIDispatcher">
+            <summary>Sets the shim of TransferHandleViewModel.TransferHandleViewModel(TransferHandle transferHandle, IDispatcher dispatcher)</summary>
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimTransferHandleViewModel.NameGet">
             <summary>Sets the shim of TransferHandleViewModel.get_Name()</summary>
@@ -4948,23 +4861,20 @@
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimTransferHandleViewModel.ProgressGet">
             <summary>Sets the shim of TransferHandleViewModel.get_Progress()</summary>
         </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimTransferHandleViewModel.ProgressSetInt32">
+            <summary>Sets the shim of TransferHandleViewModel.set_Progress(Int32 value)</summary>
+        </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimTransferHandleViewModel.PropertyChangedAddPropertyChangedEventHandler">
             <summary>Sets the shim of TransferHandleViewModel.add_PropertyChanged(PropertyChangedEventHandler value)</summary>
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimTransferHandleViewModel.PropertyChangedRemovePropertyChangedEventHandler">
             <summary>Sets the shim of TransferHandleViewModel.remove_PropertyChanged(PropertyChangedEventHandler value)</summary>
         </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimTransferHandleViewModel.RemoveCommandGet">
-            <summary>Sets the shim of TransferHandleViewModel.get_RemoveCommand()</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimTransferHandleViewModel.RemoveCommandSetICommand">
-            <summary>Sets the shim of TransferHandleViewModel.set_RemoveCommand(ICommand value)</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimTransferHandleViewModel.SpeedGet">
-            <summary>Sets the shim of TransferHandleViewModel.get_Speed()</summary>
-        </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimTransferHandleViewModel.StatusGet">
             <summary>Sets the shim of TransferHandleViewModel.get_Status()</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimTransferHandleViewModel.StatusSetTransferHandleStatus">
+            <summary>Sets the shim of TransferHandleViewModel.set_Status(TransferHandleStatus value)</summary>
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimTransferHandleViewModel._ctorb__0ObjectPropertyChangedEventArgs">
             <summary>Sets the shim of TransferHandleViewModel.&lt;.ctor&gt;b__0(Object s, PropertyChangedEventArgs e)</summary>
@@ -4990,23 +4900,20 @@
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimTransferHandleViewModel.AllInstances.ProgressGet">
             <summary>Sets the shim of TransferHandleViewModel.get_Progress()</summary>
         </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimTransferHandleViewModel.AllInstances.ProgressSetInt32">
+            <summary>Sets the shim of TransferHandleViewModel.set_Progress(Int32 value)</summary>
+        </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimTransferHandleViewModel.AllInstances.PropertyChangedAddPropertyChangedEventHandler">
             <summary>Sets the shim of TransferHandleViewModel.add_PropertyChanged(PropertyChangedEventHandler value)</summary>
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimTransferHandleViewModel.AllInstances.PropertyChangedRemovePropertyChangedEventHandler">
             <summary>Sets the shim of TransferHandleViewModel.remove_PropertyChanged(PropertyChangedEventHandler value)</summary>
         </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimTransferHandleViewModel.AllInstances.RemoveCommandGet">
-            <summary>Sets the shim of TransferHandleViewModel.get_RemoveCommand()</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimTransferHandleViewModel.AllInstances.RemoveCommandSetICommand">
-            <summary>Sets the shim of TransferHandleViewModel.set_RemoveCommand(ICommand value)</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimTransferHandleViewModel.AllInstances.SpeedGet">
-            <summary>Sets the shim of TransferHandleViewModel.get_Speed()</summary>
-        </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimTransferHandleViewModel.AllInstances.StatusGet">
             <summary>Sets the shim of TransferHandleViewModel.get_Status()</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimTransferHandleViewModel.AllInstances.StatusSetTransferHandleStatus">
+            <summary>Sets the shim of TransferHandleViewModel.set_Status(TransferHandleStatus value)</summary>
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimTransferHandleViewModel.AllInstances._ctorb__0ObjectPropertyChangedEventArgs">
             <summary>Sets the shim of TransferHandleViewModel.&lt;.ctor&gt;b__0(Object s, PropertyChangedEventArgs e)</summary>
@@ -5089,7 +4996,7 @@
         <member name="T:MegaDesktop.ViewModels.Fakes.StubTransferHandleViewModel">
             <summary>Stub type of MegaDesktop.ViewModels.TransferHandleViewModel</summary>
         </member>
-        <member name="M:MegaDesktop.ViewModels.Fakes.StubTransferHandleViewModel.#ctor(MegaApi.TransferHandle,MegaDesktop.Services.TransferManager,MegaDesktop.Services.IDispatcher)">
+        <member name="M:MegaDesktop.ViewModels.Fakes.StubTransferHandleViewModel.#ctor(MegaApi.TransferHandle,MegaDesktop.Services.IDispatcher)">
             <summary>Initializes a new instance</summary>
         </member>
         <member name="M:MegaDesktop.ViewModels.Fakes.StubTransferHandleViewModel.InitializeStub">

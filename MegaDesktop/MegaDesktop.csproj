@@ -95,7 +95,6 @@
     <Compile Include="Commands\LoginCommand.cs" />
     <Compile Include="Commands\LogoutCommand.cs" />
     <Compile Include="Commands\RefreshCommand.cs" />
-    <Compile Include="Commands\RemoveCommand.cs" />
     <Compile Include="Commands\SelectedListNodeActionCommand.cs" />
     <Compile Include="Commands\UploadCommand.cs" />
     <Compile Include="AssertObjectIsNotNull.cs" />

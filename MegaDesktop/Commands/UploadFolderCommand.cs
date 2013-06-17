@@ -82,10 +82,12 @@ namespace MegaDesktop.Commands
 
         private void OnFolderCreated(MegaNode node, string path)
         {
-
             var nodeViewModel = new NodeViewModel(_dispatcher, node);
 
             var parent = _nodes.RootNode.Descendant(node.ParentId);
+
+            if (parent == null)
+                throw new InvalidOperationException("Cannot find the parent to node " + node.Attributes.Name);
 
             _dispatcher.InvokeOnUiThread(() =>
                 {

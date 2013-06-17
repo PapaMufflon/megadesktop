@@ -10,22 +10,29 @@ namespace MegaDesktop.ViewModels
     internal class TransferHandleViewModel : INotifyPropertyChanged
     {
         private readonly TransferHandle _transferHandle;
+        private int _progress;
+        private TransferHandleStatus _status;
 
-        public TransferHandleViewModel(TransferHandle transferHandle, TransferManager transfers, IDispatcher dispatcher)
+        public TransferHandleViewModel(TransferHandle transferHandle, IDispatcher dispatcher)
         {
             _transferHandle = transferHandle;
             _transferHandle.PropertyChanged += (s, e) =>
+            {
+                switch (e.PropertyName)
                 {
-                    ((RemoveCommand) RemoveCommand).RaiseCanExecuteChanged();
+                    case "Progress":
+                        Progress = (int)_transferHandle.Progress;
+                        break;
 
-                    OnPropertyChanged(e.PropertyName);
-                };
+                    case "Status":
+                        Status = _transferHandle.Status;
+                        break;
+                }
+            };
 
-            RemoveCommand = new RemoveCommand(transfers, dispatcher);
             CancelCommand = new CancelCommand(dispatcher);
         }
 
-        public ICommand RemoveCommand { get; private set; }
         public ICommand CancelCommand { get; private set; }
 
         public string Name
@@ -33,19 +40,30 @@ namespace MegaDesktop.ViewModels
             get { return _transferHandle.Node.Attributes.Name; }
         }
 
-        public double Progress
+        public int Progress
         {
-            get { return _transferHandle.Progress; }
+            get { return _progress; }
+            set
+            {
+                if (value == Progress)
+                    return;
+
+                _progress = value;
+                OnPropertyChanged();
+            }
         }
 
         public TransferHandleStatus Status
         {
-            get { return _transferHandle.Status; }
-        }
+            get { return _status; }
+            set
+            {
+                if (value == Status)
+                    return;
 
-        public double? Speed
-        {
-            get { return _transferHandle.Speed; }
+                _status = value;
+                OnPropertyChanged();
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
