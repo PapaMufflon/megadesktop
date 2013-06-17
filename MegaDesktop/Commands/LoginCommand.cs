@@ -9,10 +9,12 @@ namespace MegaDesktop.Commands
         private readonly MegaApiWrapper _megaApiWrapper;
         private readonly IUserManagement _userAccount;
 
-        public LoginCommand(MegaApiWrapper megaApiWrapper, IUserManagement userAccount)
+        public LoginCommand(MegaApiWrapper megaApiWrapper, IUserManagement userAccount, IDispatcher dispatcher)
         {
             _megaApiWrapper = megaApiWrapper;
             _userAccount = userAccount;
+
+            _megaApiWrapper.ApiChanged += (s, e) => dispatcher.InvokeOnUiThread(OnCanExecuteChanged);
         }
 
         public event EventHandler CanExecuteChanged;
@@ -30,8 +32,10 @@ namespace MegaDesktop.Commands
 
         protected virtual void OnCanExecuteChanged()
         {
-            EventHandler handler = CanExecuteChanged;
-            if (handler != null) handler(this, EventArgs.Empty);
+            var handler = CanExecuteChanged;
+
+            if (handler != null)
+                handler(this, EventArgs.Empty);
         }
     }
 }

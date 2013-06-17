@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using MegaApi;
 
@@ -6,6 +7,8 @@ namespace MegaDesktop.Services
 {
     internal class MegaApiWrapper
     {
+        public event EventHandler<EventArgs> ApiChanged;
+
         private Mega _api;
 
         public MegaUser User
@@ -16,6 +19,8 @@ namespace MegaDesktop.Services
         public void Register(Mega api)
         {
             _api = api;
+
+            OnApiChanged();
         }
 
         public Task<IEnumerable<MegaNode>> GetNodes()
@@ -47,6 +52,14 @@ namespace MegaDesktop.Services
         public void SaveAccount(string filePath)
         {
             _api.SaveAccount(filePath);
+        }
+
+        protected virtual void OnApiChanged()
+        {
+            var handler = ApiChanged;
+            
+            if (handler != null)
+                handler(this, EventArgs.Empty);
         }
     }
 }
