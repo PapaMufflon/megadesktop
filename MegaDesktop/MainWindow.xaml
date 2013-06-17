@@ -32,46 +32,46 @@
     <DockPanel>
         <Ribbon DockPanel.Dock="Top">
             <RibbonTab Header="Home" KeyTip="H">
-                <RibbonGroup Header="Home">
-                    <RibbonButton Label="Upload" Command="{Binding UploadCommand}" CommandParameter="{Binding SelectedNode, Mode=OneWay}" KeyTip="U" />
-                    <RibbonButton Label="Upload Folder" Command="{Binding UploadFolderCommand}" CommandParameter="{Binding SelectedNode, Mode=OneWay}" KeyTip="F" />
-                    <RibbonButton Label="Download" Command="{Binding DownloadCommand}" CommandParameter="{Binding SelectedNode, Mode=OneWay}" KeyTip="D" />
-                    <RibbonButton Label="Delete" Command="{Binding DeleteCommand}" CommandParameter="{Binding SelectedNode, Mode=OneWay}" KeyTip="R" />
+                <RibbonGroup Header="Content">
+                    <RibbonButton Label="Upload"
+                                  Command="{Binding UploadCommand}"
+                                  CommandParameter="{Binding SelectedNode, Mode=OneWay}"
+                                  KeyTip="U"
+                                  LargeImageSource="pack://application:,,,/MegaDesktop;component/resources/upload.png"/>
+                    <RibbonButton Label="Upload Folder"
+                                  Command="{Binding UploadFolderCommand}"
+                                  CommandParameter="{Binding SelectedNode, Mode=OneWay}"
+                                  KeyTip="F"
+                                  LargeImageSource="pack://application:,,,/MegaDesktop;component/resources/folderUpload.png"/>
+                    <RibbonButton Label="Download"
+                                  Command="{Binding DownloadCommand}"
+                                  CommandParameter="{Binding SelectedNode, Mode=OneWay}"
+                                  KeyTip="D"
+                                  LargeImageSource="pack://application:,,,/MegaDesktop;component/resources/download.png"/>
+                    <RibbonButton Label="Delete"
+                                  Command="{Binding DeleteCommand}"
+                                  CommandParameter="{Binding SelectedNode, Mode=OneWay}"
+                                  KeyTip="E"
+                                  LargeImageSource="pack://application:,,,/MegaDesktop;component/resources/remove.png"/>
+                    <RibbonButton Label="Refresh"
+                                  Command="{Binding RefreshCommand}"
+                                  KeyTip="R"
+                                  LargeImageSource="pack://application:,,,/MegaDesktop;component/resources/refresh.png"/>
                 </RibbonGroup>
             </RibbonTab>
+            <Ribbon.ApplicationMenu>
+                <RibbonApplicationMenu KeyTip="A">
+                    <RibbonApplicationMenuItem Header="Login"
+                                               Command="{Binding LoginCommand}"
+                                               KeyTip="L"
+                                               ImageSource="pack://application:,,,/MegaDesktop;component/resources/login.png" />
+                    <RibbonApplicationMenuItem Header="Logout"
+                                               Command="{Binding LogoutCommand}"
+                                               KeyTip="O"
+                                               ImageSource="pack://application:,,,/MegaDesktop;component/resources/logout.png" />
+                </RibbonApplicationMenu>
+            </Ribbon.ApplicationMenu>
         </Ribbon>
-        <DockPanel DockPanel.Dock="Top" Height="100" HorizontalAlignment="Stretch" Name="dockPanel1" VerticalAlignment="Top">
-            <Button Height="50" Command="{Binding UploadCommand}"
-                    CommandParameter="{Binding SelectedNode, Mode=OneWay}" Width="50" HorizontalAlignment="Left"
-                    ToolTip="Upload" Margin="10,0,0,0">
-                <Image Source="pack://application:,,,/MegaDesktop;component/resources/upload.png" />
-            </Button>
-            <Button Height="50" Command="{Binding UploadFolderCommand}"
-                    CommandParameter="{Binding SelectedNode, Mode=OneWay}" Width="50" HorizontalAlignment="Left"
-                    ToolTip="Upload" Margin="10,0,0,0">
-                <Image Source="pack://application:,,,/MegaDesktop;component/resources/folderUpload.png" />
-            </Button>
-            <Button Height="50" Command="{Binding DownloadCommand}"
-                    CommandParameter="{Binding SelectedNode, Mode=OneWay}" Width="50" HorizontalAlignment="Left"
-                    ToolTip="Download">
-                <Image Source="pack://application:,,,/MegaDesktop;component/resources/download.png" />
-            </Button>
-            <Button Height="50" Command="{Binding DeleteCommand}"
-                    CommandParameter="{Binding SelectedNode, Mode=OneWay}" Width="50" HorizontalAlignment="Left"
-                    Margin="10,0,0,0" ToolTip="Delete">
-                <Image Source="pack://application:,,,/MegaDesktop;component/resources/remove.png" Height="26" />
-            </Button>
-            <Button Height="50" Command="{Binding LoginCommand}" Width="50" Margin="10,0,0,0" ToolTip="Login">
-                <Image Source="pack://application:,,,/MegaDesktop;component/resources/login.png" Height="36" />
-            </Button>
-            <Button Height="50" Command="{Binding LogoutCommand}" Width="50" Margin="10,0,0,0" ToolTip="Logout">
-                <Image Source="pack://application:,,,/MegaDesktop;component/resources/logout.png" Height="20" />
-            </Button>
-            <Button Height="50" Command="{Binding RefreshCommand}" Width="50" HorizontalAlignment="Left"
-                    ToolTip="Refresh" Margin="10,0,0,0">
-                <Image Source="pack://application:,,,/MegaDesktop;component/resources/refresh.png" Height="40" />
-            </Button>
-        </DockPanel>
         <DataGrid DockPanel.Dock="Bottom"
                   ItemsSource="{Binding Transfers}"
                   AutoGenerateColumns="False"
