@@ -30,6 +30,16 @@
         </DataTemplate>
     </Window.Resources>
     <DockPanel>
+        <Ribbon DockPanel.Dock="Top">
+            <RibbonTab Header="Home" KeyTip="H">
+                <RibbonGroup Header="Home">
+                    <RibbonButton Label="Upload" Command="{Binding UploadCommand}" CommandParameter="{Binding SelectedNode, Mode=OneWay}" KeyTip="U" />
+                    <RibbonButton Label="Upload Folder" Command="{Binding UploadFolderCommand}" CommandParameter="{Binding SelectedNode, Mode=OneWay}" KeyTip="F" />
+                    <RibbonButton Label="Download" Command="{Binding DownloadCommand}" CommandParameter="{Binding SelectedNode, Mode=OneWay}" KeyTip="D" />
+                    <RibbonButton Label="Delete" Command="{Binding DeleteCommand}" CommandParameter="{Binding SelectedNode, Mode=OneWay}" KeyTip="R" />
+                </RibbonGroup>
+            </RibbonTab>
+        </Ribbon>
         <DockPanel DockPanel.Dock="Top" Height="100" HorizontalAlignment="Stretch" Name="dockPanel1" VerticalAlignment="Top">
             <Button Height="50" Command="{Binding UploadCommand}"
                     CommandParameter="{Binding SelectedNode, Mode=OneWay}" Width="50" HorizontalAlignment="Left"
