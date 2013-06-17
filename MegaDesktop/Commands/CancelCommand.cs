@@ -12,40 +12,30 @@ namespace MegaDesktop.Commands
     {
         public event EventHandler CanExecuteChanged;
 
-        private TransferHandleViewModel _observedTransfer;
+        private readonly TransferHandleViewModel _transferHandleViewModel;
         private readonly IDispatcher _dispatcher;
 
-        public CancelCommand(IDispatcher dispatcher)
+        public CancelCommand(TransferHandleViewModel transferHandleViewModel, IDispatcher dispatcher)
         {
+            _transferHandleViewModel = transferHandleViewModel;
             _dispatcher = dispatcher;
+
+            _transferHandleViewModel.PropertyChanged += OnTransferChanged;
+        }
+
+        private void OnTransferChanged(object sender, PropertyChangedEventArgs e)
+        {
+            _dispatcher.InvokeOnUiThread(OnCanExecuteChanged);
         }
 
         public bool CanExecute(object parameter)
         {
             var transferHandleViewModel = parameter as TransferHandleViewModel;
 
-            ObserveTransfer(transferHandleViewModel);
-
             return transferHandleViewModel != null &&
                    transferHandleViewModel.Status != TransferHandleStatus.Success &&
                    transferHandleViewModel.Status != TransferHandleStatus.Cancelled &&
                    transferHandleViewModel.Status != TransferHandleStatus.Error;
-        }
-
-        private void ObserveTransfer(TransferHandleViewModel transferHandleViewModel)
-        {
-            if (_observedTransfer != null)
-                _observedTransfer.PropertyChanged -= OnTransferChanged;
-
-            _observedTransfer = transferHandleViewModel;
-
-            if (_observedTransfer != null)
-                _observedTransfer.PropertyChanged += OnTransferChanged;
-        }
-
-        private void OnTransferChanged(object sender, PropertyChangedEventArgs e)
-        {
-            _dispatcher.InvokeOnUiThread(OnCanExecuteChanged);
         }
 
         public void Execute(object parameter)

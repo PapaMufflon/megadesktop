@@ -30,7 +30,7 @@ namespace MegaDesktop.ViewModels
                 }
             };
 
-            CancelCommand = new CancelCommand(dispatcher);
+            CancelCommand = new CancelCommand(this, dispatcher);
         }
 
         public ICommand CancelCommand { get; private set; }
