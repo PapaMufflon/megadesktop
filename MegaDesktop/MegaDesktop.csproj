@@ -118,6 +118,7 @@
     <Compile Include="TermsOfServiceWindow.xaml.cs">
       <DependentUpon>TermsOfServiceWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TypeToImageConverter.cs" />
     <Compile Include="Ui\BindableSelectedItemBehavior.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\NodeType.cs" />
@@ -217,6 +218,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\rubbishBin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\messages.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

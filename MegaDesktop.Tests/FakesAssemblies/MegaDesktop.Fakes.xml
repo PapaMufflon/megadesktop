@@ -34,14 +34,11 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimCancelCommand.CanExecuteObject">
             <summary>Sets the shim of CancelCommand.CanExecute(Object parameter)</summary>
         </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimCancelCommand.ConstructorIDispatcher">
-            <summary>Sets the shim of CancelCommand.CancelCommand(IDispatcher dispatcher)</summary>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimCancelCommand.ConstructorTransferHandleViewModelIDispatcher">
+            <summary>Sets the shim of CancelCommand.CancelCommand(TransferHandleViewModel transferHandleViewModel, IDispatcher dispatcher)</summary>
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimCancelCommand.ExecuteObject">
             <summary>Sets the shim of CancelCommand.Execute(Object parameter)</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimCancelCommand.ObserveTransferTransferHandleViewModel">
-            <summary>Sets the shim of CancelCommand.ObserveTransfer(TransferHandleViewModel transferHandleViewModel)</summary>
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimCancelCommand.OnCanExecuteChanged">
             <summary>Sets the shim of CancelCommand.OnCanExecuteChanged()</summary>
@@ -63,9 +60,6 @@
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimCancelCommand.AllInstances.ExecuteObject">
             <summary>Sets the shim of CancelCommand.Execute(Object parameter)</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimCancelCommand.AllInstances.ObserveTransferTransferHandleViewModel">
-            <summary>Sets the shim of CancelCommand.ObserveTransfer(TransferHandleViewModel transferHandleViewModel)</summary>
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimCancelCommand.AllInstances.OnCanExecuteChanged">
             <summary>Sets the shim of CancelCommand.OnCanExecuteChanged()</summary>
@@ -247,8 +241,8 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimLoginCommand.CanExecuteObject">
             <summary>Sets the shim of LoginCommand.CanExecute(Object parameter)</summary>
         </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimLoginCommand.ConstructorMegaApiWrapperIUserManagement">
-            <summary>Sets the shim of LoginCommand.LoginCommand(MegaApiWrapper megaApiWrapper, IUserManagement userAccount)</summary>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimLoginCommand.ConstructorMegaApiWrapperIUserManagementIDispatcher">
+            <summary>Sets the shim of LoginCommand.LoginCommand(MegaApiWrapper megaApiWrapper, IUserManagement userAccount, IDispatcher dispatcher)</summary>
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimLoginCommand.ExecuteObject">
             <summary>Sets the shim of LoginCommand.Execute(Object parameter)</summary>
@@ -304,8 +298,8 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimLogoutCommand.CanExecuteObject">
             <summary>Sets the shim of LogoutCommand.CanExecute(Object parameter)</summary>
         </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimLogoutCommand.ConstructorTransferManagerNodeManagerIUserManagement">
-            <summary>Sets the shim of LogoutCommand.LogoutCommand(TransferManager transfers, NodeManager rootNode, IUserManagement userAccount)</summary>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimLogoutCommand.ConstructorTransferManagerNodeManagerIUserManagementIDispatcher">
+            <summary>Sets the shim of LogoutCommand.LogoutCommand(TransferManager transfers, NodeManager nodes, IUserManagement userAccount, IDispatcher dispatcher)</summary>
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimLogoutCommand.ExecuteObject">
             <summary>Sets the shim of LogoutCommand.Execute(Object parameter)</summary>
@@ -610,7 +604,7 @@
         <member name="T:MegaDesktop.Commands.Fakes.StubCancelCommand">
             <summary>Stub type of MegaDesktop.Commands.CancelCommand</summary>
         </member>
-        <member name="M:MegaDesktop.Commands.Fakes.StubCancelCommand.#ctor(MegaDesktop.Services.IDispatcher)">
+        <member name="M:MegaDesktop.Commands.Fakes.StubCancelCommand.#ctor(MegaDesktop.ViewModels.TransferHandleViewModel,MegaDesktop.Services.IDispatcher)">
             <summary>Initializes a new instance</summary>
         </member>
         <member name="M:MegaDesktop.Commands.Fakes.StubCancelCommand.InitializeStub">
@@ -682,7 +676,7 @@
         <member name="T:MegaDesktop.Commands.Fakes.StubLoginCommand">
             <summary>Stub type of MegaDesktop.Commands.LoginCommand</summary>
         </member>
-        <member name="M:MegaDesktop.Commands.Fakes.StubLoginCommand.#ctor(MegaDesktop.Services.MegaApiWrapper,MegaDesktop.Services.IUserManagement)">
+        <member name="M:MegaDesktop.Commands.Fakes.StubLoginCommand.#ctor(MegaDesktop.Services.MegaApiWrapper,MegaDesktop.Services.IUserManagement,MegaDesktop.Services.IDispatcher)">
             <summary>Initializes a new instance</summary>
         </member>
         <member name="M:MegaDesktop.Commands.Fakes.StubLoginCommand.InitializeStub">
@@ -706,7 +700,7 @@
         <member name="T:MegaDesktop.Commands.Fakes.StubLogoutCommand">
             <summary>Stub type of MegaDesktop.Commands.LogoutCommand</summary>
         </member>
-        <member name="M:MegaDesktop.Commands.Fakes.StubLogoutCommand.#ctor(MegaDesktop.Services.TransferManager,MegaDesktop.Services.NodeManager,MegaDesktop.Services.IUserManagement)">
+        <member name="M:MegaDesktop.Commands.Fakes.StubLogoutCommand.#ctor(MegaDesktop.Services.TransferManager,MegaDesktop.Services.NodeManager,MegaDesktop.Services.IUserManagement,MegaDesktop.Services.IDispatcher)">
             <summary>Initializes a new instance</summary>
         </member>
         <member name="M:MegaDesktop.Commands.Fakes.StubLogoutCommand.InitializeStub">
@@ -3787,6 +3781,12 @@
         <member name="M:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.BehaveAsNotImplemented">
             <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
         </member>
+        <member name="P:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.ApiChangedAddEventHandlerOfEventArgs">
+            <summary>Sets the shim of MegaApiWrapper.add_ApiChanged(EventHandler`1&lt;EventArgs&gt; value)</summary>
+        </member>
+        <member name="P:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.ApiChangedRemoveEventHandlerOfEventArgs">
+            <summary>Sets the shim of MegaApiWrapper.remove_ApiChanged(EventHandler`1&lt;EventArgs&gt; value)</summary>
+        </member>
         <member name="P:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.Behavior">
             <summary>Assigns the behavior for all methods of the shimmed type</summary>
         </member>
@@ -3801,6 +3801,9 @@
         </member>
         <member name="P:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.GetNodes">
             <summary>Sets the shim of MegaApiWrapper.GetNodes()</summary>
+        </member>
+        <member name="P:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.OnApiChanged">
+            <summary>Sets the shim of MegaApiWrapper.OnApiChanged()</summary>
         </member>
         <member name="P:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.RegisterMega">
             <summary>Sets the shim of MegaApiWrapper.Register(Mega api)</summary>
@@ -3820,6 +3823,12 @@
         <member name="T:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.AllInstances">
             <summary>Define shims for all instances members</summary>
         </member>
+        <member name="P:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.AllInstances.ApiChangedAddEventHandlerOfEventArgs">
+            <summary>Sets the shim of MegaApiWrapper.add_ApiChanged(EventHandler`1&lt;EventArgs&gt; value)</summary>
+        </member>
+        <member name="P:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.AllInstances.ApiChangedRemoveEventHandlerOfEventArgs">
+            <summary>Sets the shim of MegaApiWrapper.remove_ApiChanged(EventHandler`1&lt;EventArgs&gt; value)</summary>
+        </member>
         <member name="P:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.AllInstances.CreateFolderStringString">
             <summary>Sets the shim of MegaApiWrapper.CreateFolder(String targetNode, String folderName)</summary>
         </member>
@@ -3828,6 +3837,9 @@
         </member>
         <member name="P:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.AllInstances.GetNodes">
             <summary>Sets the shim of MegaApiWrapper.GetNodes()</summary>
+        </member>
+        <member name="P:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.AllInstances.OnApiChanged">
+            <summary>Sets the shim of MegaApiWrapper.OnApiChanged()</summary>
         </member>
         <member name="P:MegaDesktop.Services.Fakes.ShimMegaApiWrapper.AllInstances.RegisterMega">
             <summary>Sets the shim of MegaApiWrapper.Register(Mega api)</summary>
@@ -4167,6 +4179,12 @@
         </member>
         <member name="M:MegaDesktop.Services.Fakes.StubMegaApiWrapper.InitializeStub">
             <summary>Initializes a new instance of type StubMegaApiWrapper</summary>
+        </member>
+        <member name="M:MegaDesktop.Services.Fakes.StubMegaApiWrapper.OnApiChanged">
+            <summary>Sets the stub of MegaApiWrapper.OnApiChanged()</summary>
+        </member>
+        <member name="F:MegaDesktop.Services.Fakes.StubMegaApiWrapper.OnApiChanged01">
+            <summary>Sets the stub of MegaApiWrapper.OnApiChanged()</summary>
         </member>
         <member name="P:MegaDesktop.Services.Fakes.StubMegaApiWrapper.CallBase">
             <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
