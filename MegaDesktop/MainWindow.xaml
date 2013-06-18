@@ -100,27 +100,45 @@
             <TextBox Padding="3" HorizontalAlignment="Left" Text="{Binding Status.Message}" FontSize="14"
                      IsReadOnly="True" BorderThickness="0" />
         </DockPanel>
-        <DockPanel HorizontalAlignment="Stretch" Name="dockPanel2" VerticalAlignment="Stretch">
-            <TreeView DockPanel.Dock="Left" ItemsSource="{Binding RootNode.ChildNodes}">
-                <e:Interaction.Behaviors>
-                    <behaviours:BindableSelectedItemBehavior
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Background="#d11e00" Height="50">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                
+                <Image Source="../Resources/cloud.png" Width="30" Height="30" />
+            </Grid>
+
+            <DockPanel Grid.Row="1"
+                       HorizontalAlignment="Stretch"
+                       VerticalAlignment="Stretch">
+                <TreeView DockPanel.Dock="Left" ItemsSource="{Binding RootNode.ChildNodes}">
+                    <e:Interaction.Behaviors>
+                        <behaviours:BindableSelectedItemBehavior
                         SelectedItem="{Binding SelectedTreeNode, Mode=OneWayToSource}" />
-                </e:Interaction.Behaviors>
-                <TreeView.ItemTemplate>
-                    <HierarchicalDataTemplate ItemsSource="{Binding ChildNodes}">
-                        <TextBlock Text="{Binding Name}" />
-                    </HierarchicalDataTemplate>
-                </TreeView.ItemTemplate>
-            </TreeView>
-            <ListBox ItemsSource="{Binding SelectedTreeNode.Children}"
+                    </e:Interaction.Behaviors>
+                    <TreeView.ItemTemplate>
+                        <HierarchicalDataTemplate ItemsSource="{Binding ChildNodes}">
+                            <TextBlock Text="{Binding Name}" />
+                        </HierarchicalDataTemplate>
+                    </TreeView.ItemTemplate>
+                </TreeView>
+                <ListBox ItemsSource="{Binding SelectedTreeNode.Children}"
                      SelectedItem="{Binding SelectedListNode, Mode=OneWayToSource}"
                      ItemTemplate="{StaticResource NodeViewTemplate}">
-                <ListBox.InputBindings>
-                    <MouseBinding Gesture="LeftDoubleClick"
+                    <ListBox.InputBindings>
+                        <MouseBinding Gesture="LeftDoubleClick"
                                   Command="{Binding SelectedListNodeActionCommand}"
                                   CommandParameter="{Binding SelectedListNode}" />
-                </ListBox.InputBindings>
-            </ListBox>
-        </DockPanel>
+                    </ListBox.InputBindings>
+                </ListBox>
+            </DockPanel>
+        </Grid>
     </DockPanel>
 </Window>
