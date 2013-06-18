@@ -117,7 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Inbox" xml:space="preserve">
+    <value>Messages</value>
+  </data>
+  <data name="RootNode" xml:space="preserve">
+    <value>Cloud Drive</value>
+  </data>
   <data name="Title" xml:space="preserve">
     <value>Mega Windows Client</value>
+  </data>
+  <data name="Trash" xml:space="preserve">
+    <value>Rubbish Bin</value>
   </data>
 </root>

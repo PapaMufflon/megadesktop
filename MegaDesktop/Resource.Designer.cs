@@ -61,11 +61,38 @@ namespace MegaDesktop {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Messages.
+        /// </summary>
+        internal static string Inbox {
+            get {
+                return ResourceManager.GetString("Inbox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cloud Drive.
+        /// </summary>
+        internal static string RootNode {
+            get {
+                return ResourceManager.GetString("RootNode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Mega Windows Client.
         /// </summary>
         internal static string Title {
             get {
                 return ResourceManager.GetString("Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rubbish Bin.
+        /// </summary>
+        internal static string Trash {
+            get {
+                return ResourceManager.GetString("Trash", resourceCulture);
             }
         }
     }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using MegaApi;
@@ -35,7 +36,27 @@ namespace MegaDesktop.ViewModels
 
         public string Name
         {
-            get { return _node != null ? _node.Attributes.Name : string.Empty; }
+            get
+            {
+                if (_node == null)
+                    return string.Empty;
+
+                switch (Type)
+                {
+                    case NodeType.File:
+                    case NodeType.Folder:
+                    case NodeType.Dummy:
+                        return _node.Attributes.Name;
+                    case NodeType.RootFolder:
+                        return Resource.RootNode;
+                    case NodeType.Inbox:
+                        return Resource.Inbox;
+                    case NodeType.Trash:
+                        return Resource.Trash;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
+            }
         }
 
         public NodeType Type

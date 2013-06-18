@@ -209,6 +209,15 @@
   <ItemGroup>
     <Resource Include="Resources\cloud.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\cloudIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\rubbishBin.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

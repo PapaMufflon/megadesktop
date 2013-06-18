@@ -124,7 +124,15 @@
                 </e:Interaction.Behaviors>
                 <TreeView.ItemTemplate>
                     <HierarchicalDataTemplate ItemsSource="{Binding ChildNodes}">
-                        <TextBlock Text="{Binding Name}" />
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="pack://application:,,,/MegaDesktop;component/resources/folder.png" Width="22" Height="22" />
+                            <TextBlock Grid.Column="1" Text="{Binding Name}" FontSize="13" FontStretch="Normal" VerticalAlignment="Center" Margin="8,0,0,0" />
+                        </Grid>
                     </HierarchicalDataTemplate>
                 </TreeView.ItemTemplate>
             </TreeView>

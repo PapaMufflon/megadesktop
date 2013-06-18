@@ -4,7 +4,7 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <Style TargetType="{x:Type TextBlock}">
-            <Setter Property="FontFamily" Value="Arial" />
+            <Setter Property="FontFamily" Value="Open Sans" />
         </Style>
 
         <!-- TreeView -->
