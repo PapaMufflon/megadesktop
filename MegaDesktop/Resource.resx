@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Download</value>
+  </data>
   <data name="Inbox" xml:space="preserve">
     <value>Messages</value>
   </data>
@@ -125,6 +131,9 @@
   </data>
   <data name="Name" xml:space="preserve">
     <value>Name</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Refresh</value>
   </data>
   <data name="RootNode" xml:space="preserve">
     <value>Cloud Drive</value>
@@ -137,5 +146,11 @@
   </data>
   <data name="Trash" xml:space="preserve">
     <value>Rubbish Bin</value>
+  </data>
+  <data name="UploadFile" xml:space="preserve">
+    <value>Upload file</value>
+  </data>
+  <data name="UploadFolder" xml:space="preserve">
+    <value>Upload folder</value>
   </data>
 </root>
