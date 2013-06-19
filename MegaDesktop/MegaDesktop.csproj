@@ -120,6 +120,7 @@
     </Compile>
     <Compile Include="TypeToImageConverter.cs" />
     <Compile Include="Ui\BindableSelectedItemBehavior.cs" />
+    <Compile Include="Ui\DataGridHelper.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\NodeType.cs" />
     <Compile Include="ViewModels\NodeViewModel.cs" />
@@ -169,7 +170,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resource.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="app.config" />

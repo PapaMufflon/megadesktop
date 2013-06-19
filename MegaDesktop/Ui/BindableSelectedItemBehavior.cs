@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Interactivity;
 
@@ -9,7 +10,7 @@ namespace MegaDesktop.Ui
         #region SelectedItem Property
 
         public static readonly DependencyProperty SelectedItemProperty =
-            DependencyProperty.Register("SelectedItem", typeof (object), typeof (BindableSelectedItemBehavior),
+            DependencyProperty.Register("SelectedItem", typeof(object), typeof(BindableSelectedItemBehavior),
                                         new UIPropertyMetadata(null, OnSelectedItemChanged));
 
         public object SelectedItem

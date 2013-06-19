@@ -64,9 +64,19 @@ namespace MegaDesktop.ViewModels
             get { return (NodeType) _node.Type; }
         }
 
+        public DateTime? LastModified
+        {
+            get { return _node.Timestamp; }
+        }
+
         public MegaNode MegaNode
         {
             get { return _node; }
+        }
+
+        public double? Size
+        {
+            get { return _node.Size; }
         }
 
         public void Update(List<MegaNode> nodes)

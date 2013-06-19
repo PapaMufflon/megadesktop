@@ -22,7 +22,7 @@ namespace MegaDesktop {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resource {
+    public class Resource {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace MegaDesktop {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MegaDesktop.Resource", typeof(Resource).Assembly);
@@ -51,7 +51,7 @@ namespace MegaDesktop {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,25 +63,52 @@ namespace MegaDesktop {
         /// <summary>
         ///   Looks up a localized string similar to Messages.
         /// </summary>
-        internal static string Inbox {
+        public static string Inbox {
             get {
                 return ResourceManager.GetString("Inbox", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Last modified.
+        /// </summary>
+        public static string LastModified {
+            get {
+                return ResourceManager.GetString("LastModified", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string Name {
+            get {
+                return ResourceManager.GetString("Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cloud Drive.
         /// </summary>
-        internal static string RootNode {
+        public static string RootNode {
             get {
                 return ResourceManager.GetString("RootNode", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Size.
+        /// </summary>
+        public static string Size {
+            get {
+                return ResourceManager.GetString("Size", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Mega Windows Client.
         /// </summary>
-        internal static string Title {
+        public static string Title {
             get {
                 return ResourceManager.GetString("Title", resourceCulture);
             }
@@ -90,7 +117,7 @@ namespace MegaDesktop {
         /// <summary>
         ///   Looks up a localized string similar to Rubbish Bin.
         /// </summary>
-        internal static string Trash {
+        public static string Trash {
             get {
                 return ResourceManager.GetString("Trash", resourceCulture);
             }

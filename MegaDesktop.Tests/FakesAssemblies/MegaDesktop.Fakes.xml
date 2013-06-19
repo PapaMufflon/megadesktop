@@ -1030,6 +1030,45 @@
         <member name="P:MegaDesktop.Fakes.ShimTermsOfServiceWindow.AllInstances.SystemWindowsMarkupIComponentConnectorConnectInt32Object">
             <summary>Sets the shim of TermsOfServiceWindow.System.Windows.Markup.IComponentConnector.Connect(Int32 connectionId, Object target)</summary>
         </member>
+        <member name="T:MegaDesktop.Fakes.ShimTypeToImageConverter">
+            <summary>Shim type of MegaDesktop.TypeToImageConverter</summary>
+        </member>
+        <member name="M:MegaDesktop.Fakes.ShimTypeToImageConverter.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:MegaDesktop.Fakes.ShimTypeToImageConverter.#ctor(MegaDesktop.TypeToImageConverter)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:MegaDesktop.Fakes.ShimTypeToImageConverter.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:MegaDesktop.Fakes.ShimTypeToImageConverter.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:MegaDesktop.Fakes.ShimTypeToImageConverter.Bind(System.Windows.Data.IValueConverter)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:MegaDesktop.Fakes.ShimTypeToImageConverter.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:MegaDesktop.Fakes.ShimTypeToImageConverter.Constructor">
+            <summary>Sets the shim of TypeToImageConverter.TypeToImageConverter()</summary>
+        </member>
+        <member name="P:MegaDesktop.Fakes.ShimTypeToImageConverter.ConvertBackObjectTypeObjectCultureInfo">
+            <summary>Sets the shim of TypeToImageConverter.ConvertBack(Object value, Type targetType, Object parameter, CultureInfo culture)</summary>
+        </member>
+        <member name="P:MegaDesktop.Fakes.ShimTypeToImageConverter.ConvertObjectTypeObjectCultureInfo">
+            <summary>Sets the shim of TypeToImageConverter.Convert(Object value, Type targetType, Object parameter, CultureInfo culture)</summary>
+        </member>
+        <member name="T:MegaDesktop.Fakes.ShimTypeToImageConverter.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:MegaDesktop.Fakes.ShimTypeToImageConverter.AllInstances.ConvertBackObjectTypeObjectCultureInfo">
+            <summary>Sets the shim of TypeToImageConverter.ConvertBack(Object value, Type targetType, Object parameter, CultureInfo culture)</summary>
+        </member>
+        <member name="P:MegaDesktop.Fakes.ShimTypeToImageConverter.AllInstances.ConvertObjectTypeObjectCultureInfo">
+            <summary>Sets the shim of TypeToImageConverter.Convert(Object value, Type targetType, Object parameter, CultureInfo culture)</summary>
+        </member>
         <member name="T:MegaDesktop.Fakes.ShimWindowLogin">
             <summary>Shim type of MegaDesktop.WindowLogin</summary>
         </member>
@@ -2875,6 +2914,24 @@
         <member name="P:MegaDesktop.Fakes.StubTermsOfServiceWindow.VisualChildrenCount">
             <summary>Sets the stub of FrameworkElement.get_VisualChildrenCount()</summary>
         </member>
+        <member name="T:MegaDesktop.Fakes.StubTypeToImageConverter">
+            <summary>Stub type of MegaDesktop.TypeToImageConverter</summary>
+        </member>
+        <member name="M:MegaDesktop.Fakes.StubTypeToImageConverter.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:MegaDesktop.Fakes.StubTypeToImageConverter.InitializeStub">
+            <summary>Initializes a new instance of type StubTypeToImageConverter</summary>
+        </member>
+        <member name="P:MegaDesktop.Fakes.StubTypeToImageConverter.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:MegaDesktop.Fakes.StubTypeToImageConverter.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:MegaDesktop.Fakes.StubTypeToImageConverter.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
         <member name="T:MegaDesktop.Fakes.StubWindowLogin">
             <summary>Stub type of MegaDesktop.WindowLogin</summary>
         </member>
@@ -4339,6 +4396,45 @@
         <member name="P:MegaDesktop.Ui.Fakes.ShimBindableSelectedItemBehavior.AllInstances.SelectedItemSetObject">
             <summary>Sets the shim of BindableSelectedItemBehavior.set_SelectedItem(Object value)</summary>
         </member>
+        <member name="T:MegaDesktop.Ui.Fakes.ShimDataGridHelper">
+            <summary>Shim type of MegaDesktop.Ui.DataGridHelper</summary>
+        </member>
+        <member name="M:MegaDesktop.Ui.Fakes.ShimDataGridHelper.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:MegaDesktop.Ui.Fakes.ShimDataGridHelper.#ctor(MegaDesktop.Ui.DataGridHelper)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:MegaDesktop.Ui.Fakes.ShimDataGridHelper.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:MegaDesktop.Ui.Fakes.ShimDataGridHelper.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:MegaDesktop.Ui.Fakes.ShimDataGridHelper.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:MegaDesktop.Ui.Fakes.ShimDataGridHelper.Constructor">
+            <summary>Sets the shim of DataGridHelper.DataGridHelper()</summary>
+        </member>
+        <member name="P:MegaDesktop.Ui.Fakes.ShimDataGridHelper.GetTextColumnStyleDataGrid">
+            <summary>Sets the shim of DataGridHelper.GetTextColumnStyle(DataGrid element)</summary>
+        </member>
+        <member name="P:MegaDesktop.Ui.Fakes.ShimDataGridHelper.OnStyleChangedDependencyObjectDependencyPropertyChangedEventArgs">
+            <summary>Sets the shim of DataGridHelper.OnStyleChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs dependencyPropertyChangedEventArgs)</summary>
+        </member>
+        <member name="P:MegaDesktop.Ui.Fakes.ShimDataGridHelper.SetTextColumnStyleDataGridStyle">
+            <summary>Sets the shim of DataGridHelper.SetTextColumnStyle(DataGrid element, Style value)</summary>
+        </member>
+        <member name="P:MegaDesktop.Ui.Fakes.ShimDataGridHelper.StaticConstructor">
+            <summary>Sets the shim of DataGridHelper.DataGridHelper()</summary>
+        </member>
+        <member name="P:MegaDesktop.Ui.Fakes.ShimDataGridHelper.UpdateColumnStylesDataGrid">
+            <summary>Sets the shim of DataGridHelper.UpdateColumnStyles(DataGrid grid)</summary>
+        </member>
+        <member name="T:MegaDesktop.Ui.Fakes.ShimDataGridHelper.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
         <member name="T:MegaDesktop.Ui.Fakes.StubBindableSelectedItemBehavior">
             <summary>Stub type of MegaDesktop.Ui.BindableSelectedItemBehavior</summary>
         </member>
@@ -4421,6 +4517,36 @@
             <summary>Gets or sets the instance behavior.</summary>
         </member>
         <member name="P:MegaDesktop.Ui.Fakes.StubBindableSelectedItemBehavior.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:MegaDesktop.Ui.Fakes.StubDataGridHelper">
+            <summary>Stub type of MegaDesktop.Ui.DataGridHelper</summary>
+        </member>
+        <member name="M:MegaDesktop.Ui.Fakes.StubDataGridHelper.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:MegaDesktop.Ui.Fakes.StubDataGridHelper.InitializeStub">
+            <summary>Initializes a new instance of type StubDataGridHelper</summary>
+        </member>
+        <member name="M:MegaDesktop.Ui.Fakes.StubDataGridHelper.OnPropertyChanged(System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>Sets the stub of DependencyObject.OnPropertyChanged(DependencyPropertyChangedEventArgs e)</summary>
+        </member>
+        <member name="F:MegaDesktop.Ui.Fakes.StubDataGridHelper.OnPropertyChangedDependencyPropertyChangedEventArgs">
+            <summary>Sets the stub of DependencyObject.OnPropertyChanged(DependencyPropertyChangedEventArgs e)</summary>
+        </member>
+        <member name="M:MegaDesktop.Ui.Fakes.StubDataGridHelper.ShouldSerializeProperty(System.Windows.DependencyProperty)">
+            <summary>Sets the stub of DependencyObject.ShouldSerializeProperty(DependencyProperty dp)</summary>
+        </member>
+        <member name="F:MegaDesktop.Ui.Fakes.StubDataGridHelper.ShouldSerializePropertyDependencyProperty">
+            <summary>Sets the stub of DependencyObject.ShouldSerializeProperty(DependencyProperty dp)</summary>
+        </member>
+        <member name="P:MegaDesktop.Ui.Fakes.StubDataGridHelper.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:MegaDesktop.Ui.Fakes.StubDataGridHelper.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:MegaDesktop.Ui.Fakes.StubDataGridHelper.InstanceObserver">
             <summary>Gets or sets the instance observer.</summary>
         </member>
         <member name="T:MegaDesktop.ViewModels.Fakes.ShimMainViewModel">
@@ -4672,6 +4798,9 @@
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel.IdGet">
             <summary>Sets the shim of NodeViewModel.get_Id()</summary>
         </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel.LastModifiedGet">
+            <summary>Sets the shim of NodeViewModel.get_LastModified()</summary>
+        </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel.MegaNodeGet">
             <summary>Sets the shim of NodeViewModel.get_MegaNode()</summary>
         </member>
@@ -4686,6 +4815,9 @@
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel.SetNodeMegaNode">
             <summary>Sets the shim of NodeViewModel.SetNode(MegaNode child)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel.SizeGet">
+            <summary>Sets the shim of NodeViewModel.get_Size()</summary>
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel.TypeGet">
             <summary>Sets the shim of NodeViewModel.get_Type()</summary>
@@ -4717,6 +4849,9 @@
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel.AllInstances.IdGet">
             <summary>Sets the shim of NodeViewModel.get_Id()</summary>
         </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel.AllInstances.LastModifiedGet">
+            <summary>Sets the shim of NodeViewModel.get_LastModified()</summary>
+        </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel.AllInstances.MegaNodeGet">
             <summary>Sets the shim of NodeViewModel.get_MegaNode()</summary>
         </member>
@@ -4731,6 +4866,9 @@
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel.AllInstances.SetNodeMegaNode">
             <summary>Sets the shim of NodeViewModel.SetNode(MegaNode child)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel.AllInstances.SizeGet">
+            <summary>Sets the shim of NodeViewModel.get_Size()</summary>
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel.AllInstances.TypeGet">
             <summary>Sets the shim of NodeViewModel.get_Type()</summary>
