@@ -64,9 +64,9 @@ namespace MegaDesktop.ViewModels
             get { return (NodeType) _node.Type; }
         }
 
-        public DateTime? LastModified
+        public string LastModified
         {
-            get { return _node.Timestamp; }
+            get { return _node.Timestamp.HasValue ? string.Format("{0:g}", _node.Timestamp.Value) : string.Empty; }
         }
 
         public MegaNode MegaNode
