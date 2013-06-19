@@ -189,8 +189,6 @@
     <Resource Include="Resources\login.png" />
     <Resource Include="Resources\logout.png" />
     <Resource Include="Resources\refresh.png" />
-    <Resource Include="Resources\remove.png" />
-    <Resource Include="Resources\upload.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\bug.png" />
@@ -203,10 +201,6 @@
       <Project>{e38721b9-bdb2-4ba8-bcb8-35821267be59}</Project>
       <Name>MegaApi</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\folderDownload.png" />
-    <Resource Include="Resources\folderUpload.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\cloud.png" />
@@ -222,6 +216,11 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\messages.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Delete.png" />
+    <Resource Include="Resources\UploadFile.png" />
+    <Resource Include="Resources\UploadFolder.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
