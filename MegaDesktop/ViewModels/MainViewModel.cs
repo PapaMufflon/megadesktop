@@ -45,6 +45,9 @@ namespace MegaDesktop.ViewModels
         public LogoutCommand LogoutCommand { get; set; }
 
         [Inject]
+        public ExitCommand ExitCommand { get; set; }
+
+        [Inject]
         public RefreshCommand RefreshCommand { get; set; }
 
         [Inject]

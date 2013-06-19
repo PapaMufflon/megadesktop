@@ -93,6 +93,7 @@
     <Compile Include="Commands\CancelCommand.cs" />
     <Compile Include="Commands\DeleteCommand.cs" />
     <Compile Include="Commands\DownloadCommand.cs" />
+    <Compile Include="Commands\ExitCommand.cs" />
     <Compile Include="Commands\LoginCommand.cs" />
     <Compile Include="Commands\LogoutCommand.cs" />
     <Compile Include="Commands\RefreshCommand.cs" />
@@ -221,6 +222,9 @@
     <Resource Include="Resources\Delete.png" />
     <Resource Include="Resources\UploadFile.png" />
     <Resource Include="Resources\UploadFolder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Mega.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

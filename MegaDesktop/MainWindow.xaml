@@ -5,6 +5,8 @@
         xmlns:behaviours="clr-namespace:MegaDesktop.Ui"
         xmlns:megaDesktop="clr-namespace:MegaDesktop"
         Title="Mega Desktop (v0.75 beta)" Height="500" Width="800" MinHeight="500" MinWidth="500"
+        WindowStyle="None" AllowsTransparency="True" ResizeMode="CanResizeWithGrip"
+        MouseDown="MainWindow_OnMouseDown"
         Icon="pack://application:,,,/m.ico" AllowDrop="True" DragEnter="Window_DragEnter_1" Drop="Window_Drop_1">
     <Window.Resources>
         <megaDesktop:TypeToImageConverter x:Key="TypeToImageConverter" />
@@ -54,7 +56,8 @@
         </DataGrid>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
@@ -62,7 +65,29 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Grid Grid.Row="0" Background="#d11e00" Height="50" Width="200">
+            <Grid Grid.Row="0" Grid.ColumnSpan="2" Background="Black">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                </Grid>
+                
+                <StackPanel Grid.Column="0" Orientation="Horizontal">
+                    <Image Source="pack://application:,,,/MegaDesktop;component/resources/Mega.png"
+                           HorizontalAlignment="Left" Width="128" Height="26"
+                           Margin="16,0,10,0" />
+                    <TextBlock Text="{x:Static megaDesktop:Resource.Desktop}" Foreground="#9d220c" Margin="0,26,0,0" />
+                </StackPanel>
+                
+                <StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal">
+                    <Button Content="{x:Static megaDesktop:Resource.LogIn}" Command="{Binding LoginCommand}" />
+                    <Button Content="{x:Static megaDesktop:Resource.LogOut}" Command="{Binding LogoutCommand}" />
+                    <Button Content="{x:Static megaDesktop:Resource.Exit}" Command="{Binding ExitCommand}" />
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="1" Grid.Column="0" Background="#d11e00" Width="200">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="60" />
                     <ColumnDefinition />
@@ -73,7 +98,7 @@
                            VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Column="1" />
             </Grid>
 
-            <TreeView Grid.Row="1" ItemsSource="{Binding RootNode.ChildNodes}" Background="#f2f2f3"
+            <TreeView Grid.Row="2" Grid.Column="0" ItemsSource="{Binding RootNode.ChildNodes}" Background="#f2f2f3"
                       ItemContainerStyle="{StaticResource TreeViewItemStyle1}">
                 <e:Interaction.Behaviors>
                     <behaviours:BindableSelectedItemBehavior SelectedItem="{Binding SelectedTreeNode, Mode=OneWayToSource}" />
@@ -94,8 +119,9 @@
                     </HierarchicalDataTemplate>
                 </TreeView.ItemTemplate>
             </TreeView>
-            
-            <StackPanel Grid.Column="1"
+
+            <StackPanel Grid.Row="1"
+                        Grid.Column="1"
                         Orientation="Horizontal">
                 <Button Command="{Binding UploadCommand}"
                         CommandParameter="{Binding SelectedNode, Mode=OneWay}"
@@ -138,9 +164,9 @@
                     </Button.Content>
                 </Button>
             </StackPanel>
-            
+
             <DataGrid Grid.Column="1"
-                      Grid.Row="1"
+                      Grid.Row="2"
                       ItemsSource="{Binding SelectedTreeNode.Children}"
                       SelectedItem="{Binding SelectedListNode, Mode=OneWayToSource}"
                       IsReadOnly="True"

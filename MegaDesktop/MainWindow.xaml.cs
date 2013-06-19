@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Net;
 using System.Windows;
+using System.Windows.Input;
 using MegaDesktop.Properties;
 using MegaDesktop.Services;
 using MegaDesktop.ViewModels;
@@ -178,5 +179,11 @@ namespace MegaDesktop
         //        AddDirectoryContent(subdir, list, root);
         //    }
         //}
+
+        private void MainWindow_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                DragMove();
+        }
     }
 }
