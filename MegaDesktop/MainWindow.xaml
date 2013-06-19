@@ -52,6 +52,10 @@
                 </RibbonApplicationMenu>
             </Ribbon.ApplicationMenu>
         </Ribbon>
+        <DockPanel DockPanel.Dock="Bottom" Height="25" VerticalAlignment="Bottom">
+            <TextBox Padding="3" HorizontalAlignment="Left" Text="{Binding Status.Message}" FontSize="14"
+                     IsReadOnly="True" BorderThickness="0" />
+        </DockPanel>
         <DataGrid DockPanel.Dock="Bottom"
                   ItemsSource="{Binding Transfers}"
                   AutoGenerateColumns="False"
@@ -76,15 +80,15 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <DockPanel DockPanel.Dock="Bottom" Height="25" VerticalAlignment="Bottom">
-            <TextBox Padding="3" HorizontalAlignment="Left" Text="{Binding Status.Message}" FontSize="14"
-                     IsReadOnly="True" BorderThickness="0" />
-        </DockPanel>
-        <Grid DockPanel.Dock="Left">
+        <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
             <Grid Grid.Row="0" Background="#d11e00" Height="50" Width="200">
                 <Grid.ColumnDefinitions>
@@ -118,35 +122,42 @@
                     </HierarchicalDataTemplate>
                 </TreeView.ItemTemplate>
             </TreeView>
+
+            <DataGrid Grid.Column="1"
+                      Grid.Row="1"
+                      ItemsSource="{Binding SelectedTreeNode.Children}"
+                      SelectedItem="{Binding SelectedListNode, Mode=OneWayToSource}"
+                      IsReadOnly="True"
+                      CanUserAddRows="False" CanUserDeleteRows="False"
+                      CanUserResizeColumns="True" CanUserResizeRows="True"
+                      CanUserSortColumns="True" CanUserReorderColumns="True"
+                      AutoGenerateColumns="False"
+                      AlternatingRowBackground="#f7f8fa"
+                      HeadersVisibility="Column"
+                      GridLinesVisibility="Horizontal"
+                      CellStyle="{StaticResource DataGridCellStyle}"
+                      ColumnHeaderStyle="{StaticResource ColumnHeaderStyle}">
+                <behaviours:DataGridHelper.TextColumnStyle>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="FontFamily" Value="Open Sans" />
+                        <Setter Property="FontSize" Value="13" />
+                        <Setter Property="FontWeight" Value="Normal" />
+                        <Setter Property="FontStretch" Value="ExtraExpanded" />
+                        <Setter Property="Foreground" Value="Black" />
+                    </Style>
+                </behaviours:DataGridHelper.TextColumnStyle>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="{x:Static megaDesktop:Resource.Name}"
+                                        MinWidth="300"
+                                        Binding="{Binding Name}" />
+                    <DataGridTextColumn Header="{x:Static megaDesktop:Resource.Size}"
+                                        MinWidth="80"
+                                        Binding="{Binding Size}" />
+                    <DataGridTextColumn Header="{x:Static megaDesktop:Resource.LastModified}"
+                                        Width="*"
+                                        Binding="{Binding LastModified}" />
+                </DataGrid.Columns>
+            </DataGrid>
         </Grid>
-        <DataGrid ItemsSource="{Binding SelectedTreeNode.Children}"
-                  SelectedItem="{Binding SelectedListNode, Mode=OneWayToSource}"
-                  AutoGenerateColumns="False"
-                  AlternatingRowBackground="#f7f8fa"
-                  HeadersVisibility="Column"
-                  GridLinesVisibility="Horizontal"
-                  CellStyle="{StaticResource DataGridCellStyle}"
-                  ColumnHeaderStyle="{StaticResource ColumnHeaderStyle}">
-            <behaviours:DataGridHelper.TextColumnStyle>
-                <Style TargetType="TextBlock">
-                    <Setter Property="FontFamily" Value="Open Sans" />
-                    <Setter Property="FontSize" Value="13" />
-                    <Setter Property="FontWeight" Value="Normal" />
-                    <Setter Property="FontStretch" Value="ExtraExpanded" />
-                    <Setter Property="Foreground" Value="Black" />
-                </Style>
-            </behaviours:DataGridHelper.TextColumnStyle>
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="{x:Static megaDesktop:Resource.Name}"
-                                    MinWidth="300"
-                                    Binding="{Binding Name}" />
-                <DataGridTextColumn Header="{x:Static megaDesktop:Resource.Size}"
-                                    MinWidth="80"
-                                    Binding="{Binding Size}" />
-                <DataGridTextColumn Header="{x:Static megaDesktop:Resource.LastModified}"
-                                    Width="*"
-                                    Binding="{Binding LastModified}" />
-            </DataGrid.Columns>
-        </DataGrid>
     </DockPanel>
 </Window>
