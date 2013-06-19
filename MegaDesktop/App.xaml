@@ -3,6 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        <Color x:Key="InactiveMegaButtonColor">#c0c0be</Color>
+
+        <SolidColorBrush x:Key="InactiveMegaButtonBrush" Color="{StaticResource InactiveMegaButtonColor}" />
+        
         <Style TargetType="{x:Type TextBlock}">
             <Setter Property="FontFamily" Value="Open Sans" />
         </Style>
@@ -13,7 +17,7 @@
             <Setter Property="OverridesDefaultStyle" Value="true"/>
             <Setter Property="Height" Value="28"/>
             <Setter Property="MinWidth" Value="75"/>
-            <Setter Property="Foreground" Value="#c0c0be" />
+            <Setter Property="Foreground" Value="{StaticResource InactiveMegaButtonBrush}" />
             <Setter Property="FontSize" Value="14" />
             <Setter Property="FontStretch" Value="Expanded" />
             <Setter Property="Template">

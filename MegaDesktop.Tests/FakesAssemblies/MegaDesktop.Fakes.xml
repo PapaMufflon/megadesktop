@@ -211,6 +211,57 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimDownloadCommand.AllInstances._OnHandleReadyb__6ObjectTransferEndedArgs">
             <summary>Sets the shim of DownloadCommand.&lt;OnHandleReady&gt;b__6(Object s, TransferEndedArgs e)</summary>
         </member>
+        <member name="T:MegaDesktop.Commands.Fakes.ShimExitCommand">
+            <summary>Shim type of MegaDesktop.Commands.ExitCommand</summary>
+        </member>
+        <member name="M:MegaDesktop.Commands.Fakes.ShimExitCommand.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:MegaDesktop.Commands.Fakes.ShimExitCommand.#ctor(MegaDesktop.Commands.ExitCommand)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:MegaDesktop.Commands.Fakes.ShimExitCommand.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:MegaDesktop.Commands.Fakes.ShimExitCommand.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:MegaDesktop.Commands.Fakes.ShimExitCommand.Bind(System.Windows.Input.ICommand)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimExitCommand.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimExitCommand.CanExecuteChangedAddEventHandler">
+            <summary>Sets the shim of ExitCommand.add_CanExecuteChanged(EventHandler value)</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimExitCommand.CanExecuteChangedRemoveEventHandler">
+            <summary>Sets the shim of ExitCommand.remove_CanExecuteChanged(EventHandler value)</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimExitCommand.CanExecuteObject">
+            <summary>Sets the shim of ExitCommand.CanExecute(Object parameter)</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimExitCommand.Constructor">
+            <summary>Sets the shim of ExitCommand.ExitCommand()</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimExitCommand.ExecuteObject">
+            <summary>Sets the shim of ExitCommand.Execute(Object parameter)</summary>
+        </member>
+        <member name="T:MegaDesktop.Commands.Fakes.ShimExitCommand.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimExitCommand.AllInstances.CanExecuteChangedAddEventHandler">
+            <summary>Sets the shim of ExitCommand.add_CanExecuteChanged(EventHandler value)</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimExitCommand.AllInstances.CanExecuteChangedRemoveEventHandler">
+            <summary>Sets the shim of ExitCommand.remove_CanExecuteChanged(EventHandler value)</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimExitCommand.AllInstances.CanExecuteObject">
+            <summary>Sets the shim of ExitCommand.CanExecute(Object parameter)</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimExitCommand.AllInstances.ExecuteObject">
+            <summary>Sets the shim of ExitCommand.Execute(Object parameter)</summary>
+        </member>
         <member name="T:MegaDesktop.Commands.Fakes.ShimLoginCommand">
             <summary>Shim type of MegaDesktop.Commands.LoginCommand</summary>
         </member>
@@ -673,6 +724,24 @@
         <member name="P:MegaDesktop.Commands.Fakes.StubDownloadCommand.InstanceObserver">
             <summary>Gets or sets the instance observer.</summary>
         </member>
+        <member name="T:MegaDesktop.Commands.Fakes.StubExitCommand">
+            <summary>Stub type of MegaDesktop.Commands.ExitCommand</summary>
+        </member>
+        <member name="M:MegaDesktop.Commands.Fakes.StubExitCommand.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:MegaDesktop.Commands.Fakes.StubExitCommand.InitializeStub">
+            <summary>Initializes a new instance of type StubExitCommand</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.StubExitCommand.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.StubExitCommand.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.StubExitCommand.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
         <member name="T:MegaDesktop.Commands.Fakes.StubLoginCommand">
             <summary>Stub type of MegaDesktop.Commands.LoginCommand</summary>
         </member>
@@ -904,6 +973,9 @@
         <member name="P:MegaDesktop.Fakes.ShimMainWindow.InitializeComponent">
             <summary>Sets the shim of MainWindow.InitializeComponent()</summary>
         </member>
+        <member name="P:MegaDesktop.Fakes.ShimMainWindow.MainWindow_OnMouseDownObjectMouseButtonEventArgs">
+            <summary>Sets the shim of MainWindow.MainWindow_OnMouseDown(Object sender, MouseButtonEventArgs e)</summary>
+        </member>
         <member name="P:MegaDesktop.Fakes.ShimMainWindow.SetTitleString">
             <summary>Sets the shim of MainWindow.SetTitle(String newTitle)</summary>
         </member>
@@ -939,6 +1011,9 @@
         </member>
         <member name="P:MegaDesktop.Fakes.ShimMainWindow.AllInstances.InitializeComponent">
             <summary>Sets the shim of MainWindow.InitializeComponent()</summary>
+        </member>
+        <member name="P:MegaDesktop.Fakes.ShimMainWindow.AllInstances.MainWindow_OnMouseDownObjectMouseButtonEventArgs">
+            <summary>Sets the shim of MainWindow.MainWindow_OnMouseDown(Object sender, MouseButtonEventArgs e)</summary>
         </member>
         <member name="P:MegaDesktop.Fakes.ShimMainWindow.AllInstances.SetTitleString">
             <summary>Sets the shim of MainWindow.SetTitle(String newTitle)</summary>
@@ -4585,6 +4660,12 @@
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.DownloadCommandSetDownloadCommand">
             <summary>Sets the shim of MainViewModel.set_DownloadCommand(DownloadCommand value)</summary>
         </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.ExitCommandGet">
+            <summary>Sets the shim of MainViewModel.get_ExitCommand()</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.ExitCommandSetExitCommand">
+            <summary>Sets the shim of MainViewModel.set_ExitCommand(ExitCommand value)</summary>
+        </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.LoginCommandGet">
             <summary>Sets the shim of MainViewModel.get_LoginCommand()</summary>
         </member>
@@ -4677,6 +4758,12 @@
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.DownloadCommandSetDownloadCommand">
             <summary>Sets the shim of MainViewModel.set_DownloadCommand(DownloadCommand value)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.ExitCommandGet">
+            <summary>Sets the shim of MainViewModel.get_ExitCommand()</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.ExitCommandSetExitCommand">
+            <summary>Sets the shim of MainViewModel.set_ExitCommand(ExitCommand value)</summary>
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.LoginCommandGet">
             <summary>Sets the shim of MainViewModel.get_LoginCommand()</summary>
@@ -4773,6 +4860,9 @@
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel.Behavior">
             <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel.BytesToStringInt64">
+            <summary>Sets the shim of NodeViewModel.BytesToString(Int64 byteCount)</summary>
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel.ChildNodesGet">
             <summary>Sets the shim of NodeViewModel.get_ChildNodes()</summary>

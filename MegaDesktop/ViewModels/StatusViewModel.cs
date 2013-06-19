@@ -1,6 +1,8 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Threading;
+using System.Threading.Tasks;
 using MegaApi;
 using MegaDesktop.Services;
 
@@ -8,8 +10,14 @@ namespace MegaDesktop.ViewModels
 {
     internal class StatusViewModel : INotifyPropertyChanged
     {
+        private readonly IDispatcher _dispatcher;
         private Status _currentStatus;
         private string _message;
+
+        public StatusViewModel(IDispatcher dispatcher)
+        {
+            _dispatcher = dispatcher;
+        }
 
         public string Message
         {
@@ -43,6 +51,7 @@ namespace MegaDesktop.ViewModels
                     break;
                 case Status.Loaded:
                     Message = "Done.";
+                    EmptyInAMoment();
                     break;
                 case Status.LoggingIn:
                     Message = "Logging in...";
@@ -52,6 +61,15 @@ namespace MegaDesktop.ViewModels
             }
 
             CurrentStatus = newStatus;
+        }
+
+        private void EmptyInAMoment()
+        {
+            Task.Factory.StartNew(() =>
+            {
+                Thread.Sleep(2000);
+                _dispatcher.InvokeOnUiThread(() => Message = string.Empty);
+            });
         }
 
         public void Error(MegaApiException exception)
