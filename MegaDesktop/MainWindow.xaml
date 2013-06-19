@@ -81,9 +81,18 @@
                 </StackPanel>
                 
                 <StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal">
-                    <Button Content="{x:Static megaDesktop:Resource.LogIn}" Command="{Binding LoginCommand}" />
-                    <Button Content="{x:Static megaDesktop:Resource.LogOut}" Command="{Binding LogoutCommand}" />
-                    <Button Content="{x:Static megaDesktop:Resource.Exit}" Command="{Binding ExitCommand}" />
+                    <Button Content="{x:Static megaDesktop:Resource.LogIn}"
+                            Command="{Binding LoginCommand}"
+                            Style="{StaticResource MegaButtonStyle}"
+                            Margin="0,0,8,0" />
+                    <Button Content="{x:Static megaDesktop:Resource.LogOut}"
+                            Command="{Binding LogoutCommand}"
+                            Style="{StaticResource MegaButtonStyle}"
+                            Margin="0,0,24,0" />
+                    <Button Content="{x:Static megaDesktop:Resource.Exit}"
+                            Command="{Binding ExitCommand}"
+                            Style="{StaticResource MegaButtonStyle}"
+                            Margin="0,0,8,0" />
                 </StackPanel>
             </Grid>
 

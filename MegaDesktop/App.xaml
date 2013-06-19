@@ -7,8 +7,48 @@
             <Setter Property="FontFamily" Value="Open Sans" />
         </Style>
 
+        <!-- Button -->
+        <Style x:Key="MegaButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="SnapsToDevicePixels" Value="true"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="Height" Value="28"/>
+            <Setter Property="MinWidth" Value="75"/>
+            <Setter Property="Foreground" Value="#c0c0be" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontStretch" Value="Expanded" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Border"  
+                                CornerRadius="6" 
+                                BorderThickness="1"
+                                Background="#2d2c2a"
+                                BorderBrush="Transparent">
+                            <ContentPresenter Margin="2"
+                                              HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              RecognizesAccessKey="True"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter TargetName="Border" Property="Background" Value="#d9290b" />
+                                <Setter Property="Foreground" Value="White" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter TargetName="Border" Property="Background" Value="#d9290b" />
+                                <Setter Property="Foreground" Value="White" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="#7f7f7d"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
         <!-- DataGrid -->
-        <Style x:Key="DataGridCellStyle" TargetType="DataGridCell">
+        <Style x:Key="DataGridCellStyle" TargetType="{x:Type DataGridCell}">
             <Setter Property="Height" Value="24" />
             <Setter Property="Template">
                 <Setter.Value>
