@@ -187,9 +187,14 @@
                     </Style>
                 </behaviours:DataGridHelper.TextColumnStyle>
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="{x:Static megaDesktop:Resource.Name}"
-                                        MinWidth="300"
-                                        Binding="{Binding Name}" />
+                    <DataGridTemplateColumn Header="{x:Static megaDesktop:Resource.Name}"
+                                            MinWidth="300">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Name}" Margin="8,0,0,0" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
                     <DataGridTextColumn Header="{x:Static megaDesktop:Resource.Size}"
                                         MinWidth="80"
                                         Binding="{Binding Size}" />
