@@ -74,9 +74,24 @@ namespace MegaDesktop.ViewModels
             get { return _node; }
         }
 
-        public double? Size
+        public string Size
         {
-            get { return _node.Size; }
+            get { return _node.Size.HasValue ? BytesToString(_node.Size.Value) : string.Empty; }
+        }
+
+        // taken from http://stackoverflow.com/a/4975942/453024
+        static String BytesToString(long byteCount)
+        {
+            string[] suffix = { " B", " KB", " MB", " GB", " TB", " PB", " EB" };
+
+            if (byteCount == 0)
+                return "0" + suffix[0];
+
+            var bytes = Math.Abs(byteCount);
+            var place = Convert.ToInt32(Math.Floor(Math.Log(bytes, 1024)));
+            var num = Math.Round(bytes / Math.Pow(1024, place), 1);
+
+            return (Math.Sign(byteCount) * num) + suffix[place];
         }
 
         public void Update(List<MegaNode> nodes)
