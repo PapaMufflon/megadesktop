@@ -35,9 +35,9 @@ namespace MegaApi
 
         public MegaNode Node { get; internal set; }
         public int? Error { get; private set; }
-        public TransferHandleStatus Status 
+        public TransferHandleStatus Status
         {
-            get { return _status; } 
+            get { return _status; }
             protected set
             {
                 _status = value;
@@ -67,6 +67,8 @@ namespace MegaApi
             }
         }
 
+        public long Size { get; internal set; }
+
         internal bool SkipChunks
         {
             get
@@ -81,15 +83,14 @@ namespace MegaApi
         internal List<MegaChunk> Chunks = new List<MegaChunk>();
         internal volatile int chunksProcessed = 0;
         internal byte[] Nonce;
-        internal long Size;
-        
+
         TransferHandleStatus _status;
         string tempPath;
         long processedBytes = 0;
         List<WebClient> runningConnections = new List<WebClient>();
         double _progress;
         double? _speed;
-        
+
         // filename is without the directory path
         internal TransferHandle(string filename, long size, string tempPath)
         {
@@ -117,7 +118,7 @@ namespace MegaApi
         {
             Util.StartThread(() => CancelTransferInternal(null), "mega_api_transfer_cancel");
         }
-        
+
         internal void EndTransfer(int? error)
         {
             Progress = 100;
@@ -231,7 +232,7 @@ namespace MegaApi
         {
             if (PropertyChanged != null)
             {
-                ThreadPool.QueueUserWorkItem((e) =>PropertyChanged(this, new PropertyChangedEventArgs(propertyName)));
+                ThreadPool.QueueUserWorkItem((e) => PropertyChanged(this, new PropertyChangedEventArgs(propertyName)));
             }
         }
         private void OnTransferEnded()
@@ -269,7 +270,7 @@ namespace MegaApi
         internal byte[] MacCheck;
         internal string TempFile { get; private set; }
         internal DownloadHandle(string filename, long filesize, string tempPath)
-            : base(Path.GetFileName(filename), filesize, tempPath) 
+            : base(Path.GetFileName(filename), filesize, tempPath)
         {
             TargetPath = filename;
             TempFile = Path.Combine(Path.GetDirectoryName(filename), Path.GetFileNameWithoutExtension(filename) + ".mdwnl");

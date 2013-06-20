@@ -1,10 +1,10 @@
 C:\Users\PapaMufflon\SkyDrive\Sourcecode\megadesktop\MegaDesktop.Tests\Fakes\MegaDesktop.fakes : warning : Cannot generate stub for MegaDesktop.AssertObjectIsNotNull: type is sealed.
 C:\Users\PapaMufflon\SkyDrive\Sourcecode\megadesktop\MegaDesktop.Tests\Fakes\MegaDesktop.fakes : warning : Cannot generate stub for MegaDesktop.Resource: type is compiler generated.
+C:\Users\PapaMufflon\SkyDrive\Sourcecode\megadesktop\MegaDesktop.Tests\Fakes\MegaDesktop.fakes : warning : Cannot generate stub for MegaDesktop.Services.SizeHelper: type is sealed.
 C:\Users\PapaMufflon\SkyDrive\Sourcecode\megadesktop\MegaDesktop.Tests\Fakes\MegaDesktop.fakes : warning : Cannot generate stub for MegaDesktop.Services.Status: type is a value type.
 C:\Users\PapaMufflon\SkyDrive\Sourcecode\megadesktop\MegaDesktop.Tests\Fakes\MegaDesktop.fakes : warning : Cannot generate stub for MegaDesktop.ViewModels.NodeType: type is a value type.
 C:\Users\PapaMufflon\SkyDrive\Sourcecode\megadesktop\MegaDesktop.Tests\Fakes\MegaDesktop.fakes : warning : Cannot generate stub for MegaDesktop.Properties.Resources: type is compiler generated.
 C:\Users\PapaMufflon\SkyDrive\Sourcecode\megadesktop\MegaDesktop.Tests\Fakes\MegaDesktop.fakes : warning : Cannot generate stub for MegaDesktop.Properties.Settings: type is sealed.
-C:\Users\PapaMufflon\SkyDrive\Sourcecode\megadesktop\MegaDesktop.Tests\Fakes\MegaDesktop.fakes : warning : Cannot generate stub for XamlGeneratedNamespace.GeneratedInternalTypeHelper: type is sealed.
 C:\Users\PapaMufflon\SkyDrive\Sourcecode\megadesktop\MegaDesktop.Tests\Fakes\MegaDesktop.fakes : warning : Cannot generate shim for MegaDesktop.Commands.DeleteCommand+<>c__DisplayClass2: type is not supported because of internal limitations.
 C:\Users\PapaMufflon\SkyDrive\Sourcecode\megadesktop\MegaDesktop.Tests\Fakes\MegaDesktop.fakes : warning : Cannot generate shim for MegaDesktop.Commands.DownloadCommand+<>c__DisplayClass2: type is not supported because of internal limitations.
 C:\Users\PapaMufflon\SkyDrive\Sourcecode\megadesktop\MegaDesktop.Tests\Fakes\MegaDesktop.fakes : warning : Cannot generate shim for MegaDesktop.Commands.LoginCommand+<>c__DisplayClass2: type is not supported because of internal limitations.
@@ -28,7 +28,6 @@ C:\Users\PapaMufflon\SkyDrive\Sourcecode\megadesktop\MegaDesktop.Tests\Fakes\Meg
 C:\Users\PapaMufflon\SkyDrive\Sourcecode\megadesktop\MegaDesktop.Tests\Fakes\MegaDesktop.fakes : warning : Cannot generate shim for MegaDesktop.ViewModels.NodeViewModel+<>c__DisplayClass3: type is not supported because of internal limitations.
 C:\Users\PapaMufflon\SkyDrive\Sourcecode\megadesktop\MegaDesktop.Tests\Fakes\MegaDesktop.fakes : warning : Cannot generate shim for MegaDesktop.ViewModels.NodeViewModel+<>c__DisplayClass7: type is not supported because of internal limitations.
 C:\Users\PapaMufflon\SkyDrive\Sourcecode\megadesktop\MegaDesktop.Tests\Fakes\MegaDesktop.fakes : warning : Cannot generate shim for MegaDesktop.ViewModels.NodeViewModel+<>c__DisplayClassc: type is not supported because of internal limitations.
-C:\Users\PapaMufflon\SkyDrive\Sourcecode\megadesktop\MegaDesktop.Tests\Fakes\MegaDesktop.fakes : warning : Cannot generate shim for MegaDesktop.MainWindow+<>c__DisplayClassb: type is not supported because of internal limitations.
+C:\Users\PapaMufflon\SkyDrive\Sourcecode\megadesktop\MegaDesktop.Tests\Fakes\MegaDesktop.fakes : warning : Cannot generate shim for MegaDesktop.Views.MainWindow+<>c__DisplayClassb: type is not supported because of internal limitations.
 C:\Users\PapaMufflon\SkyDrive\Sourcecode\megadesktop\MegaDesktop.Tests\Fakes\MegaDesktop.fakes : warning : Cannot generate shim for MegaDesktop.Properties.Resources: type is compiler generated.
 C:\Users\PapaMufflon\SkyDrive\Sourcecode\megadesktop\MegaDesktop.Tests\Fakes\MegaDesktop.fakes : warning : Cannot generate shim for MegaDesktop.Properties.Settings: type is compiler generated.
-C:\Users\PapaMufflon\SkyDrive\Sourcecode\megadesktop\MegaDesktop.Tests\Fakes\MegaDesktop.fakes : warning : Cannot generate shim for XamlGeneratedNamespace.GeneratedInternalTypeHelper: type is not supported because of internal limitations.

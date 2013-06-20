@@ -113,6 +113,7 @@
     <Compile Include="Services\MegaApiWrapper.cs" />
     <Compile Include="Services\NodeManager.cs" />
     <Compile Include="Services\RefreshService.cs" />
+    <Compile Include="Services\SizeHelper.cs" />
     <Compile Include="Services\Status.cs" />
     <Compile Include="Services\TransferManager.cs" />
     <Compile Include="Services\UserAccount.cs" />
@@ -142,6 +143,7 @@
     <Compile Include="Views\TransfersView.xaml.cs">
       <DependentUpon>TransfersView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\TransfersViewModelDesignData.cs" />
     <Compile Include="Views\TreeView.xaml.cs">
       <DependentUpon>TreeView.xaml</DependentUpon>
     </Compile>
@@ -259,6 +261,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Mega.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\downloadTransfer.png" />
+    <Resource Include="Resources\uploadTransfer.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

@@ -34,7 +34,7 @@ C:\Users\PapaMufflon\SkyDrive\Sourcecode\megadesktop\MegaDesktop.Tests\Fakes\Meg
 C:\Users\PapaMufflon\SkyDrive\Sourcecode\megadesktop\MegaDesktop.Tests\Fakes\MegaApi.fakes : warning : Cannot generate stub for MegaApi.Converter: type is sealed.
 C:\Users\PapaMufflon\SkyDrive\Sourcecode\megadesktop\MegaDesktop.Tests\Fakes\MegaApi.fakes : warning : Cannot generate stub for UnixDateTimeHelper: type is sealed.
 C:\Users\PapaMufflon\SkyDrive\Sourcecode\megadesktop\MegaDesktop.Tests\Fakes\MegaApi.fakes : warning : Cannot generate stub for MegaApi.Utility.Util: type is sealed.
-C:\Users\PapaMufflon\SkyDrive\Sourcecode\megadesktop\MegaDesktop.Tests\Fakes\MegaApi.fakes : warning : Cannot generate stub for <PrivateImplementationDetails>{E3441E98-6A3C-4E12-AC4B-B95F9D9A1FFA}: type is not supported because of internal limitations.
+C:\Users\PapaMufflon\SkyDrive\Sourcecode\megadesktop\MegaDesktop.Tests\Fakes\MegaApi.fakes : warning : Cannot generate stub for <PrivateImplementationDetails>{D2EC5429-8521-47E6-A1E5-D0855133B3AE}: type is not supported because of internal limitations.
 C:\Users\PapaMufflon\SkyDrive\Sourcecode\megadesktop\MegaDesktop.Tests\Fakes\MegaApi.fakes : warning : Cannot generate shim for Mono.Math.BigInteger+Kernel: type is not visible to exported or assembly(MegaApi.Fakes).
 C:\Users\PapaMufflon\SkyDrive\Sourcecode\megadesktop\MegaDesktop.Tests\Fakes\MegaApi.fakes : warning : Cannot generate shim for Mono.Math.BigInteger+Montgomery: type is not visible to exported or assembly(MegaApi.Fakes).
 C:\Users\PapaMufflon\SkyDrive\Sourcecode\megadesktop\MegaDesktop.Tests\Fakes\MegaApi.fakes : warning : Cannot generate shim for Mono.Math.BigInteger+Sign: type is an enum.
@@ -98,4 +98,4 @@ C:\Users\PapaMufflon\SkyDrive\Sourcecode\megadesktop\MegaDesktop.Tests\Fakes\Meg
 C:\Users\PapaMufflon\SkyDrive\Sourcecode\megadesktop\MegaDesktop.Tests\Fakes\MegaApi.fakes : warning : Cannot generate shim for MegaApi.Mega+<>c__DisplayClasse: type is not supported because of internal limitations.
 C:\Users\PapaMufflon\SkyDrive\Sourcecode\megadesktop\MegaDesktop.Tests\Fakes\MegaApi.fakes : warning : Cannot generate shim for MegaApi.Comms.Transfers.MegaDownloader: type is not visible to exported or assembly(MegaApi.Fakes).
 C:\Users\PapaMufflon\SkyDrive\Sourcecode\megadesktop\MegaDesktop.Tests\Fakes\MegaApi.fakes : warning : Cannot generate shim for MegaApi.Comms.Transfers.MegaUploader: type is not visible to exported or assembly(MegaApi.Fakes).
-C:\Users\PapaMufflon\SkyDrive\Sourcecode\megadesktop\MegaDesktop.Tests\Fakes\MegaApi.fakes : warning : Cannot generate shim for <PrivateImplementationDetails>{E3441E98-6A3C-4E12-AC4B-B95F9D9A1FFA}: type is not supported because of internal limitations.
+C:\Users\PapaMufflon\SkyDrive\Sourcecode\megadesktop\MegaDesktop.Tests\Fakes\MegaApi.fakes : warning : Cannot generate shim for <PrivateImplementationDetails>{D2EC5429-8521-47E6-A1E5-D0855133B3AE}: type is not supported because of internal limitations.

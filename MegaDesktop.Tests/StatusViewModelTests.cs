@@ -10,7 +10,7 @@ namespace MegaDesktop.Tests
         [Test]
         public void Changing_a_status_changes_also_the_message()
         {
-            var target = new StatusViewModel();
+            var target = new StatusViewModel(new TestDispatcher());
 
             target.SetStatus(Status.Loaded);
 
@@ -25,7 +25,7 @@ namespace MegaDesktop.Tests
         public void Changing_the_status_raises_the_CurrentStatusChanged_event()
         {
             bool raised = false;
-            var target = new StatusViewModel();
+            var target = new StatusViewModel(new TestDispatcher());
 
             target.CurrentStatusChanged += (s, e) => raised = true;
 
@@ -37,7 +37,7 @@ namespace MegaDesktop.Tests
         [Test]
         public void Setting_a_status_makes_that_the_current_status()
         {
-            var target = new StatusViewModel();
+            var target = new StatusViewModel(new TestDispatcher());
 
             target.SetStatus(Status.Loaded);
 

@@ -159,6 +159,9 @@
   <data name="Trash" xml:space="preserve">
     <value>Rubbish Bin</value>
   </data>
+  <data name="Upload" xml:space="preserve">
+    <value>Upload</value>
+  </data>
   <data name="UploadFile" xml:space="preserve">
     <value>Upload file</value>
   </data>

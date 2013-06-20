@@ -6,7 +6,7 @@
         <Color x:Key="InactiveMegaButtonColor">#c0c0be</Color>
 
         <SolidColorBrush x:Key="InactiveMegaButtonBrush" Color="{StaticResource InactiveMegaButtonColor}" />
-        
+
         <Style TargetType="{x:Type TextBlock}">
             <Setter Property="FontFamily" Value="Open Sans" />
         </Style>
@@ -50,7 +50,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        
+
         <!-- DataGrid -->
         <Style x:Key="DataGridCellStyle" TargetType="{x:Type DataGridCell}">
             <Setter Property="Height" Value="24" />
@@ -188,6 +188,52 @@
                                 <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- ProgressBar -->
+        <Style x:Key="{x:Type ProgressBar}" TargetType="{x:Type ProgressBar}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ProgressBar}" >
+                        <Grid Name="TemplateRoot"
+                              SnapsToDevicePixels="True"
+                              Height="16">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <Rectangle Grid.Column="0"
+                                       RadiusX="8"
+                                       RadiusY="8"
+                                       Fill="#b8bcbf" />
+                            <Rectangle Grid.Column="0"
+                                       Name="PART_Track" />
+                            <Decorator Grid.Column="0"
+                                       Name="PART_Indicator"
+                                       HorizontalAlignment="Left">
+                                <Rectangle Fill="White"
+                                           Margin="4,0"
+                                           Height="8"
+                                           RadiusX="4"
+                                           RadiusY="4"
+                                           Name="Indicator" />
+                            </Decorator>
+
+                            <Grid Grid.Column="1"
+                                  Margin="10,0,0,0">
+                                <Border CornerRadius="8" Background="#d9290b" BorderThickness="0">
+                                    <TextBlock Foreground="White"
+                                               FontSize="10"
+                                               Margin="12,0,0,2"
+                                               VerticalAlignment="Center"
+                                               Text="{Binding Progress, StringFormat={}{0}%}" />
+                                </Border>
+                            </Grid>
+                        </Grid>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>

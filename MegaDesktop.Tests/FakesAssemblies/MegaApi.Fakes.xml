@@ -3088,6 +3088,12 @@
         <member name="P:MegaApi.Fakes.ShimTransferHandle.ResumeTransfer">
             <summary>Sets the shim of TransferHandle.ResumeTransfer()</summary>
         </member>
+        <member name="P:MegaApi.Fakes.ShimTransferHandle.SizeGet">
+            <summary>Sets the shim of TransferHandle.get_Size()</summary>
+        </member>
+        <member name="P:MegaApi.Fakes.ShimTransferHandle.SizeSetInt64">
+            <summary>Sets the shim of TransferHandle.set_Size(Int64 value)</summary>
+        </member>
         <member name="P:MegaApi.Fakes.ShimTransferHandle.SkipChunksGet">
             <summary>Sets the shim of TransferHandle.get_SkipChunks()</summary>
         </member>
@@ -3183,6 +3189,12 @@
         </member>
         <member name="P:MegaApi.Fakes.ShimTransferHandle.AllInstances.ResumeTransfer">
             <summary>Sets the shim of TransferHandle.ResumeTransfer()</summary>
+        </member>
+        <member name="P:MegaApi.Fakes.ShimTransferHandle.AllInstances.SizeGet">
+            <summary>Sets the shim of TransferHandle.get_Size()</summary>
+        </member>
+        <member name="P:MegaApi.Fakes.ShimTransferHandle.AllInstances.SizeSetInt64">
+            <summary>Sets the shim of TransferHandle.set_Size(Int64 value)</summary>
         </member>
         <member name="P:MegaApi.Fakes.ShimTransferHandle.AllInstances.SkipChunksGet">
             <summary>Sets the shim of TransferHandle.get_SkipChunks()</summary>
