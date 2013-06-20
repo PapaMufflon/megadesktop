@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.Net;
 using System.Windows;
@@ -9,7 +9,7 @@ using MegaDesktop.ViewModels;
 using Ninject;
 using Ninject.Extensions.Conventions;
 
-namespace MegaDesktop
+namespace MegaDesktop.Views
 {
     public partial class MainWindow : ICanSetTitle
     {
