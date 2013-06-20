@@ -1,14 +1,13 @@
 <Window x:Class="MegaDesktop.Views.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:e="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
-        xmlns:behaviours="clr-namespace:MegaDesktop.Ui"
-        xmlns:megaDesktop="clr-namespace:MegaDesktop" xmlns:ui="clr-namespace:MegaDesktop.Views"
+        xmlns:ui="clr-namespace:MegaDesktop.Views"
         Title="Mega Desktop (v0.75 beta)" Height="500" Width="800" MinHeight="500" MinWidth="500"
         WindowStyle="None" AllowsTransparency="True" ResizeMode="CanResizeWithGrip"
-        MouseDown="MainWindow_OnMouseDown"
-        Icon="pack://application:,,,/m.ico" AllowDrop="True" DragEnter="Window_DragEnter_1" Drop="Window_Drop_1">
-    <Border BorderThickness="1" BorderBrush="Black">
+        MouseDown="MainWindow_OnMouseDown" AllowDrop="True" DragEnter="Window_DragEnter_1" Drop="Window_Drop_1"
+        Icon="pack://application:,,,/m.ico">
+    <Border BorderThickness="1"
+            BorderBrush="Black">
         <DockPanel>
             <ui:TransfersView DockPanel.Dock="Bottom"
                               DataContext="{Binding}" />
@@ -33,91 +32,13 @@
                              Grid.Column="0"
                              DataContext="{Binding}" />
 
-                <StackPanel Grid.Row="1"
-                            Grid.Column="1"
-                            Orientation="Horizontal">
-                    <Button Command="{Binding UploadCommand}"
-                            CommandParameter="{Binding SelectedNode, Mode=OneWay}"
-                            ToolTip="{x:Static megaDesktop:Resource.UploadFile}"
-                            Margin="8,0,0,0" Height="32" Width="42">
-                        <Button.Content>
-                            <Image Width="22" Height="20" Source="pack://application:,,,/MegaDesktop;component/resources/UploadFile.png" />
-                        </Button.Content>
-                    </Button>
-                    <Button Command="{Binding UploadFolderCommand}"
-                            CommandParameter="{Binding SelectedNode, Mode=OneWay}"
-                            ToolTip="{x:Static megaDesktop:Resource.UploadFolder}"
-                            Margin="2,0,0,0" Height="32" Width="42">
-                        <Button.Content>
-                            <Image Width="22" Height="20" Source="pack://application:,,,/MegaDesktop;component/resources/UploadFolder.png" />
-                        </Button.Content>
-                    </Button>
-                    <Button Command="{Binding DownloadCommand}"
-                            CommandParameter="{Binding SelectedNode, Mode=OneWay}"
-                            ToolTip="{x:Static megaDesktop:Resource.Download}"
-                            Margin="8,0,0,0" Height="32" Width="42">
-                        <Button.Content>
-                            <Image Width="22" Height="20" Source="pack://application:,,,/MegaDesktop;component/resources/download.png" />
-                        </Button.Content>
-                    </Button>
-                    <Button Command="{Binding DeleteCommand}"
-                            CommandParameter="{Binding SelectedNode, Mode=OneWay}"
-                            ToolTip="{x:Static megaDesktop:Resource.Delete}"
-                            Margin="2,0,0,0" Height="32" Width="42">
-                        <Button.Content>
-                            <Image Width="22" Height="20" Source="pack://application:,,,/MegaDesktop;component/resources/Delete.png" />
-                        </Button.Content>
-                    </Button>
-                    <Button Command="{Binding RefreshCommand}"
-                            CommandParameter="{Binding SelectedNode, Mode=OneWay}"
-                            ToolTip="{x:Static megaDesktop:Resource.Refresh}"
-                            Margin="8,0,0,0" Height="32" Width="42">
-                        <Button.Content>
-                            <Image Width="22" Height="20" Source="pack://application:,,,/MegaDesktop;component/resources/refresh.png" />
-                        </Button.Content>
-                    </Button>
-                </StackPanel>
+                <ui:ToolBarView Grid.Row="1"
+                                Grid.Column="1"
+                                DataContext="{Binding}" />
 
-                <DataGrid Grid.Column="1"
-                          Grid.Row="2"
-                          ItemsSource="{Binding SelectedTreeNode.Children}"
-                          SelectedItem="{Binding SelectedListNode, Mode=OneWayToSource}"
-                          IsReadOnly="True"
-                          CanUserAddRows="False" CanUserDeleteRows="False"
-                          CanUserResizeColumns="True" CanUserResizeRows="True"
-                          CanUserSortColumns="True" CanUserReorderColumns="True"
-                          AutoGenerateColumns="False"
-                          AlternatingRowBackground="#f7f8fa"
-                          HeadersVisibility="Column"
-                          GridLinesVisibility="Horizontal"
-                          CellStyle="{StaticResource DataGridCellStyle}"
-                          ColumnHeaderStyle="{StaticResource ColumnHeaderStyle}">
-                    <behaviours:DataGridHelper.TextColumnStyle>
-                        <Style TargetType="TextBlock">
-                            <Setter Property="FontFamily" Value="Open Sans" />
-                            <Setter Property="FontSize" Value="13" />
-                            <Setter Property="FontWeight" Value="Normal" />
-                            <Setter Property="FontStretch" Value="ExtraExpanded" />
-                            <Setter Property="Foreground" Value="Black" />
-                        </Style>
-                    </behaviours:DataGridHelper.TextColumnStyle>
-                    <DataGrid.Columns>
-                        <DataGridTemplateColumn Header="{x:Static megaDesktop:Resource.Name}"
-                                                MinWidth="300">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding Name}" Margin="8,0,0,0" />
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTextColumn Header="{x:Static megaDesktop:Resource.Size}"
-                                            MinWidth="80"
-                                            Binding="{Binding Size}" />
-                        <DataGridTextColumn Header="{x:Static megaDesktop:Resource.LastModified}"
-                                            Width="*"
-                                            Binding="{Binding LastModified}" />
-                    </DataGrid.Columns>
-                </DataGrid>
+                <ui:NodesView Grid.Column="1"
+                              Grid.Row="2"
+                              DataContext="{Binding}" />
             </Grid>
         </DockPanel>
     </Border>
