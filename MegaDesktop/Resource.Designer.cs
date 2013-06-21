@@ -178,7 +178,7 @@ namespace MegaDesktop {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Mega Windows Client.
+        ///   Looks up a localized string similar to Mega Desktop (v0.8 beta).
         /// </summary>
         public static string Title {
             get {

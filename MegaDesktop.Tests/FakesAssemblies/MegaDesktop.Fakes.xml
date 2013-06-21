@@ -3952,12 +3952,6 @@
         <member name="P:MegaDesktop.Views.Fakes.ShimMainWindow.SystemWindowsMarkupIComponentConnectorConnectInt32Object">
             <summary>Sets the shim of MainWindow.System.Windows.Markup.IComponentConnector.Connect(Int32 connectionId, Object target)</summary>
         </member>
-        <member name="P:MegaDesktop.Views.Fakes.ShimMainWindow.Window_DragEnter_1ObjectDragEventArgs">
-            <summary>Sets the shim of MainWindow.Window_DragEnter_1(Object sender, DragEventArgs e)</summary>
-        </member>
-        <member name="P:MegaDesktop.Views.Fakes.ShimMainWindow.Window_Drop_1ObjectDragEventArgs">
-            <summary>Sets the shim of MainWindow.Window_Drop_1(Object sender, DragEventArgs e)</summary>
-        </member>
         <member name="P:MegaDesktop.Views.Fakes.ShimMainWindow._CreateDelegateTypeString">
             <summary>Sets the shim of MainWindow._CreateDelegate(Type delegateType, String handler)</summary>
         </member>
@@ -3975,12 +3969,6 @@
         </member>
         <member name="P:MegaDesktop.Views.Fakes.ShimMainWindow.AllInstances.SystemWindowsMarkupIComponentConnectorConnectInt32Object">
             <summary>Sets the shim of MainWindow.System.Windows.Markup.IComponentConnector.Connect(Int32 connectionId, Object target)</summary>
-        </member>
-        <member name="P:MegaDesktop.Views.Fakes.ShimMainWindow.AllInstances.Window_DragEnter_1ObjectDragEventArgs">
-            <summary>Sets the shim of MainWindow.Window_DragEnter_1(Object sender, DragEventArgs e)</summary>
-        </member>
-        <member name="P:MegaDesktop.Views.Fakes.ShimMainWindow.AllInstances.Window_Drop_1ObjectDragEventArgs">
-            <summary>Sets the shim of MainWindow.Window_Drop_1(Object sender, DragEventArgs e)</summary>
         </member>
         <member name="P:MegaDesktop.Views.Fakes.ShimMainWindow.AllInstances._CreateDelegateTypeString">
             <summary>Sets the shim of MainWindow._CreateDelegate(Type delegateType, String handler)</summary>
