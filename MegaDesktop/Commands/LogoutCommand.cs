@@ -43,6 +43,7 @@ namespace MegaDesktop.Commands
                 _nodes.RootNode.Children.RemoveAt(_nodes.RootNode.Children.Count - 1);
 
             _userAccount.DeleteCurrentAccount();
+            _apiWrapper.Register(null);
         }
 
         protected virtual void OnCanExecuteChanged()
