@@ -1,6 +1,6 @@
-﻿using System;
+using System;
 
-namespace MegaDesktop
+namespace MegaDesktop.Util
 {
     public static class AssertObjectIsNotNull
     {

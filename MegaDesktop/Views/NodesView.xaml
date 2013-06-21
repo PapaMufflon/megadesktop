@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:megaDesktop="clr-namespace:MegaDesktop"
              xmlns:behaviours="clr-namespace:MegaDesktop.Ui"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="600">
     <DataGrid ItemsSource="{Binding SelectedTreeNode.Children}"
@@ -28,6 +29,11 @@
                 <Setter Property="Foreground" Value="Black" />
             </Style>
         </behaviours:DataGridHelper.TextColumnStyle>
+        <i:Interaction.Triggers>
+            <i:EventTrigger EventName="MouseDoubleClick">
+                <i:InvokeCommandAction Command="{Binding DownloadCommand}" />
+            </i:EventTrigger>
+        </i:Interaction.Triggers>
         <DataGrid.Columns>
             <DataGridTemplateColumn Header="{x:Static megaDesktop:Resource.Name}"
                                     MinWidth="300">

@@ -100,8 +100,8 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimDeleteCommand.CanExecuteObject">
             <summary>Sets the shim of DeleteCommand.CanExecute(Object parameter)</summary>
         </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimDeleteCommand.ConstructorMegaApiWrapperStatusViewModelRefreshServiceNodeManagerIDispatcher">
-            <summary>Sets the shim of DeleteCommand.DeleteCommand(MegaApiWrapper megaApiWrapper, StatusViewModel status, RefreshService refresh, NodeManager nodes, IDispatcher dispatcher)</summary>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimDeleteCommand.ConstructorMegaApiWrapperStatusViewModelRefreshService">
+            <summary>Sets the shim of DeleteCommand.DeleteCommand(MegaApiWrapper megaApiWrapper, StatusViewModel status, RefreshService refresh)</summary>
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimDeleteCommand.ExecuteObject">
             <summary>Sets the shim of DeleteCommand.Execute(Object parameter)</summary>
@@ -112,6 +112,9 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimDeleteCommand.ImageSourceGet">
             <summary>Sets the shim of DeleteCommand.get_ImageSource()</summary>
         </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimDeleteCommand.NodeRemovedTask">
+            <summary>Sets the shim of DeleteCommand.NodeRemoved(Task task)</summary>
+        </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimDeleteCommand.OnCanExecuteChanged">
             <summary>Sets the shim of DeleteCommand.OnCanExecuteChanged()</summary>
         </member>
@@ -120,9 +123,6 @@
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimDeleteCommand.ToolTipGet">
             <summary>Sets the shim of DeleteCommand.get_ToolTip()</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimDeleteCommand._Executeb__4TaskOfBoolean">
-            <summary>Sets the shim of DeleteCommand.&lt;Execute&gt;b__4(Task`1&lt;Boolean&gt; x)</summary>
         </member>
         <member name="T:MegaDesktop.Commands.Fakes.ShimDeleteCommand.AllInstances">
             <summary>Define shims for all instances members</summary>
@@ -145,6 +145,9 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimDeleteCommand.AllInstances.ImageSourceGet">
             <summary>Sets the shim of DeleteCommand.get_ImageSource()</summary>
         </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimDeleteCommand.AllInstances.NodeRemovedTask">
+            <summary>Sets the shim of DeleteCommand.NodeRemoved(Task task)</summary>
+        </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimDeleteCommand.AllInstances.OnCanExecuteChanged">
             <summary>Sets the shim of DeleteCommand.OnCanExecuteChanged()</summary>
         </member>
@@ -153,9 +156,6 @@
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimDeleteCommand.AllInstances.ToolTipGet">
             <summary>Sets the shim of DeleteCommand.get_ToolTip()</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimDeleteCommand.AllInstances._Executeb__4TaskOfBoolean">
-            <summary>Sets the shim of DeleteCommand.&lt;Execute&gt;b__4(Task`1&lt;Boolean&gt; x)</summary>
         </member>
         <member name="T:MegaDesktop.Commands.Fakes.ShimDownloadCommand">
             <summary>Shim type of MegaDesktop.Commands.DownloadCommand</summary>
@@ -190,8 +190,8 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimDownloadCommand.CanExecuteObject">
             <summary>Sets the shim of DownloadCommand.CanExecute(Object parameter)</summary>
         </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimDownloadCommand.ConstructorMegaApiWrapperStatusViewModelNodeManagerIDispatcherTransferManagerRefreshService">
-            <summary>Sets the shim of DownloadCommand.DownloadCommand(MegaApiWrapper megaApiWrapper, StatusViewModel status, NodeManager nodes, IDispatcher dispatcher, TransferManager transfers, RefreshService refresh)</summary>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimDownloadCommand.ConstructorMegaApiWrapperStatusViewModelTransferManager">
+            <summary>Sets the shim of DownloadCommand.DownloadCommand(MegaApiWrapper megaApiWrapper, StatusViewModel status, TransferManager transfers)</summary>
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimDownloadCommand.DownloadFileMegaNode">
             <summary>Sets the shim of DownloadCommand.DownloadFile(MegaNode clickedNode)</summary>
@@ -217,11 +217,8 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimDownloadCommand.ToolTipGet">
             <summary>Sets the shim of DownloadCommand.get_ToolTip()</summary>
         </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimDownloadCommand._DownloadFileb__5TaskOfDownloadHandle">
-            <summary>Sets the shim of DownloadCommand.&lt;DownloadFile&gt;b__5(Task`1&lt;DownloadHandle&gt; x)</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimDownloadCommand._OnHandleReadyb__6ObjectTransferEndedArgs">
-            <summary>Sets the shim of DownloadCommand.&lt;OnHandleReady&gt;b__6(Object s, TransferEndedArgs e)</summary>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimDownloadCommand._DownloadFileb__1TaskOfDownloadHandle">
+            <summary>Sets the shim of DownloadCommand.&lt;DownloadFile&gt;b__1(Task`1&lt;DownloadHandle&gt; x)</summary>
         </member>
         <member name="T:MegaDesktop.Commands.Fakes.ShimDownloadCommand.AllInstances">
             <summary>Define shims for all instances members</summary>
@@ -259,11 +256,8 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimDownloadCommand.AllInstances.ToolTipGet">
             <summary>Sets the shim of DownloadCommand.get_ToolTip()</summary>
         </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimDownloadCommand.AllInstances._DownloadFileb__5TaskOfDownloadHandle">
-            <summary>Sets the shim of DownloadCommand.&lt;DownloadFile&gt;b__5(Task`1&lt;DownloadHandle&gt; x)</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimDownloadCommand.AllInstances._OnHandleReadyb__6ObjectTransferEndedArgs">
-            <summary>Sets the shim of DownloadCommand.&lt;OnHandleReady&gt;b__6(Object s, TransferEndedArgs e)</summary>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimDownloadCommand.AllInstances._DownloadFileb__1TaskOfDownloadHandle">
+            <summary>Sets the shim of DownloadCommand.&lt;DownloadFile&gt;b__1(Task`1&lt;DownloadHandle&gt; x)</summary>
         </member>
         <member name="T:MegaDesktop.Commands.Fakes.ShimExitCommand">
             <summary>Shim type of MegaDesktop.Commands.ExitCommand</summary>
@@ -514,57 +508,6 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimRefreshCommand.AllInstances.ToolTipGet">
             <summary>Sets the shim of RefreshCommand.get_ToolTip()</summary>
         </member>
-        <member name="T:MegaDesktop.Commands.Fakes.ShimSelectedListNodeActionCommand">
-            <summary>Shim type of MegaDesktop.Commands.SelectedListNodeActionCommand</summary>
-        </member>
-        <member name="M:MegaDesktop.Commands.Fakes.ShimSelectedListNodeActionCommand.#ctor">
-            <summary>Initializes a new shim instance</summary>
-        </member>
-        <member name="M:MegaDesktop.Commands.Fakes.ShimSelectedListNodeActionCommand.#ctor(MegaDesktop.Commands.SelectedListNodeActionCommand)">
-            <summary>Initializes a new shim for the given instance</summary>
-        </member>
-        <member name="M:MegaDesktop.Commands.Fakes.ShimSelectedListNodeActionCommand.BehaveAsCurrent">
-            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
-        </member>
-        <member name="M:MegaDesktop.Commands.Fakes.ShimSelectedListNodeActionCommand.BehaveAsNotImplemented">
-            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
-        </member>
-        <member name="M:MegaDesktop.Commands.Fakes.ShimSelectedListNodeActionCommand.Bind(System.Windows.Input.ICommand)">
-            <summary>Binds the members of the interface to the shim.</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimSelectedListNodeActionCommand.Behavior">
-            <summary>Assigns the behavior for all methods of the shimmed type</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimSelectedListNodeActionCommand.CanExecuteChangedAddEventHandler">
-            <summary>Sets the shim of SelectedListNodeActionCommand.add_CanExecuteChanged(EventHandler value)</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimSelectedListNodeActionCommand.CanExecuteChangedRemoveEventHandler">
-            <summary>Sets the shim of SelectedListNodeActionCommand.remove_CanExecuteChanged(EventHandler value)</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimSelectedListNodeActionCommand.CanExecuteObject">
-            <summary>Sets the shim of SelectedListNodeActionCommand.CanExecute(Object parameter)</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimSelectedListNodeActionCommand.ConstructorDownloadCommandRefreshService">
-            <summary>Sets the shim of SelectedListNodeActionCommand.SelectedListNodeActionCommand(DownloadCommand downloadCommand, RefreshService refresh)</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimSelectedListNodeActionCommand.ExecuteObject">
-            <summary>Sets the shim of SelectedListNodeActionCommand.Execute(Object parameter)</summary>
-        </member>
-        <member name="T:MegaDesktop.Commands.Fakes.ShimSelectedListNodeActionCommand.AllInstances">
-            <summary>Define shims for all instances members</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimSelectedListNodeActionCommand.AllInstances.CanExecuteChangedAddEventHandler">
-            <summary>Sets the shim of SelectedListNodeActionCommand.add_CanExecuteChanged(EventHandler value)</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimSelectedListNodeActionCommand.AllInstances.CanExecuteChangedRemoveEventHandler">
-            <summary>Sets the shim of SelectedListNodeActionCommand.remove_CanExecuteChanged(EventHandler value)</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimSelectedListNodeActionCommand.AllInstances.CanExecuteObject">
-            <summary>Sets the shim of SelectedListNodeActionCommand.CanExecute(Object parameter)</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimSelectedListNodeActionCommand.AllInstances.ExecuteObject">
-            <summary>Sets the shim of SelectedListNodeActionCommand.Execute(Object parameter)</summary>
-        </member>
         <member name="T:MegaDesktop.Commands.Fakes.ShimUploadCommand">
             <summary>Shim type of MegaDesktop.Commands.UploadCommand</summary>
         </member>
@@ -598,8 +541,8 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.CanExecuteObject">
             <summary>Sets the shim of UploadCommand.CanExecute(Object parameter)</summary>
         </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.ConstructorStatusViewModelNodeManagerIDispatcherTransferManagerRefreshServiceMegaApiWrapper">
-            <summary>Sets the shim of UploadCommand.UploadCommand(StatusViewModel status, NodeManager nodes, IDispatcher dispatcher, TransferManager transfers, RefreshService refresh, MegaApiWrapper megaApiWrapper)</summary>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.ConstructorStatusViewModelIDispatcherTransferManagerRefreshServiceMegaApiWrapper">
+            <summary>Sets the shim of UploadCommand.UploadCommand(StatusViewModel status, IDispatcher dispatcher, TransferManager transfers, RefreshService refresh, MegaApiWrapper megaApiWrapper)</summary>
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.ExecuteObject">
             <summary>Sets the shim of UploadCommand.Execute(Object parameter)</summary>
@@ -613,11 +556,11 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.OnCanExecuteChanged">
             <summary>Sets the shim of UploadCommand.OnCanExecuteChanged()</summary>
         </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.OnHandleReadyTransferHandle">
-            <summary>Sets the shim of UploadCommand.OnHandleReady(TransferHandle transfer)</summary>
-        </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.PositionGet">
             <summary>Sets the shim of UploadCommand.get_Position()</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.TakeCareOfTransferHandleTaskOfTransferHandle">
+            <summary>Sets the shim of UploadCommand.TakeCareOfTransferHandle(Task`1&lt;TransferHandle&gt; task)</summary>
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.ToolTipGet">
             <summary>Sets the shim of UploadCommand.get_ToolTip()</summary>
@@ -625,11 +568,8 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.UploadFileStringNodeViewModel">
             <summary>Sets the shim of UploadCommand.UploadFile(String fileName, NodeViewModel node)</summary>
         </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand._OnHandleReadyb__7ObjectTransferEndedArgs">
-            <summary>Sets the shim of UploadCommand.&lt;OnHandleReady&gt;b__7(Object s, TransferEndedArgs e)</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand._UploadFileb__6TaskOfTransferHandle">
-            <summary>Sets the shim of UploadCommand.&lt;UploadFile&gt;b__6(Task`1&lt;TransferHandle&gt; x)</summary>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand._TakeCareOfTransferHandleb__2ObjectTransferEndedArgs">
+            <summary>Sets the shim of UploadCommand.&lt;TakeCareOfTransferHandle&gt;b__2(Object s, TransferEndedArgs e)</summary>
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand._ctorb__0ObjectEventArgs">
             <summary>Sets the shim of UploadCommand.&lt;.ctor&gt;b__0(Object s, EventArgs e)</summary>
@@ -658,11 +598,11 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.AllInstances.OnCanExecuteChanged">
             <summary>Sets the shim of UploadCommand.OnCanExecuteChanged()</summary>
         </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.AllInstances.OnHandleReadyTransferHandle">
-            <summary>Sets the shim of UploadCommand.OnHandleReady(TransferHandle transfer)</summary>
-        </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.AllInstances.PositionGet">
             <summary>Sets the shim of UploadCommand.get_Position()</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.AllInstances.TakeCareOfTransferHandleTaskOfTransferHandle">
+            <summary>Sets the shim of UploadCommand.TakeCareOfTransferHandle(Task`1&lt;TransferHandle&gt; task)</summary>
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.AllInstances.ToolTipGet">
             <summary>Sets the shim of UploadCommand.get_ToolTip()</summary>
@@ -670,11 +610,8 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.AllInstances.UploadFileStringNodeViewModel">
             <summary>Sets the shim of UploadCommand.UploadFile(String fileName, NodeViewModel node)</summary>
         </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.AllInstances._OnHandleReadyb__7ObjectTransferEndedArgs">
-            <summary>Sets the shim of UploadCommand.&lt;OnHandleReady&gt;b__7(Object s, TransferEndedArgs e)</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.AllInstances._UploadFileb__6TaskOfTransferHandle">
-            <summary>Sets the shim of UploadCommand.&lt;UploadFile&gt;b__6(Task`1&lt;TransferHandle&gt; x)</summary>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.AllInstances._TakeCareOfTransferHandleb__2ObjectTransferEndedArgs">
+            <summary>Sets the shim of UploadCommand.&lt;TakeCareOfTransferHandle&gt;b__2(Object s, TransferEndedArgs e)</summary>
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.AllInstances._ctorb__0ObjectEventArgs">
             <summary>Sets the shim of UploadCommand.&lt;.ctor&gt;b__0(Object s, EventArgs e)</summary>
@@ -742,8 +679,8 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.UploadFolderContentStringNodeViewModel">
             <summary>Sets the shim of UploadFolderCommand.UploadFolderContent(String path, NodeViewModel nodeViewModel)</summary>
         </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand._UploadFolderContentb__cTaskOfTransferHandle">
-            <summary>Sets the shim of UploadFolderCommand.&lt;UploadFolderContent&gt;b__c(Task`1&lt;TransferHandle&gt; x)</summary>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand._UploadFolderContentb__8TaskOfTransferHandle">
+            <summary>Sets the shim of UploadFolderCommand.&lt;UploadFolderContent&gt;b__8(Task`1&lt;TransferHandle&gt; x)</summary>
         </member>
         <member name="T:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.AllInstances">
             <summary>Define shims for all instances members</summary>
@@ -784,8 +721,8 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.AllInstances.UploadFolderContentStringNodeViewModel">
             <summary>Sets the shim of UploadFolderCommand.UploadFolderContent(String path, NodeViewModel nodeViewModel)</summary>
         </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.AllInstances._UploadFolderContentb__cTaskOfTransferHandle">
-            <summary>Sets the shim of UploadFolderCommand.&lt;UploadFolderContent&gt;b__c(Task`1&lt;TransferHandle&gt; x)</summary>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.AllInstances._UploadFolderContentb__8TaskOfTransferHandle">
+            <summary>Sets the shim of UploadFolderCommand.&lt;UploadFolderContent&gt;b__8(Task`1&lt;TransferHandle&gt; x)</summary>
         </member>
         <member name="T:MegaDesktop.Commands.Fakes.StubCancelCommand">
             <summary>Stub type of MegaDesktop.Commands.CancelCommand</summary>
@@ -814,7 +751,7 @@
         <member name="T:MegaDesktop.Commands.Fakes.StubDeleteCommand">
             <summary>Stub type of MegaDesktop.Commands.DeleteCommand</summary>
         </member>
-        <member name="M:MegaDesktop.Commands.Fakes.StubDeleteCommand.#ctor(MegaDesktop.Services.MegaApiWrapper,MegaDesktop.ViewModels.StatusViewModel,MegaDesktop.Services.RefreshService,MegaDesktop.Services.NodeManager,MegaDesktop.Services.IDispatcher)">
+        <member name="M:MegaDesktop.Commands.Fakes.StubDeleteCommand.#ctor(MegaDesktop.Services.MegaApiWrapper,MegaDesktop.ViewModels.StatusViewModel,MegaDesktop.Services.RefreshService)">
             <summary>Initializes a new instance</summary>
         </member>
         <member name="M:MegaDesktop.Commands.Fakes.StubDeleteCommand.InitializeStub">
@@ -838,17 +775,11 @@
         <member name="T:MegaDesktop.Commands.Fakes.StubDownloadCommand">
             <summary>Stub type of MegaDesktop.Commands.DownloadCommand</summary>
         </member>
-        <member name="M:MegaDesktop.Commands.Fakes.StubDownloadCommand.#ctor(MegaDesktop.Services.MegaApiWrapper,MegaDesktop.ViewModels.StatusViewModel,MegaDesktop.Services.NodeManager,MegaDesktop.Services.IDispatcher,MegaDesktop.Services.TransferManager,MegaDesktop.Services.RefreshService)">
+        <member name="M:MegaDesktop.Commands.Fakes.StubDownloadCommand.#ctor(MegaDesktop.Services.MegaApiWrapper,MegaDesktop.ViewModels.StatusViewModel,MegaDesktop.Services.TransferManager)">
             <summary>Initializes a new instance</summary>
         </member>
         <member name="M:MegaDesktop.Commands.Fakes.StubDownloadCommand.InitializeStub">
             <summary>Initializes a new instance of type StubDownloadCommand</summary>
-        </member>
-        <member name="M:MegaDesktop.Commands.Fakes.StubDownloadCommand.OnCanExecuteChanged">
-            <summary>Sets the stub of DownloadCommand.OnCanExecuteChanged()</summary>
-        </member>
-        <member name="F:MegaDesktop.Commands.Fakes.StubDownloadCommand.OnCanExecuteChanged01">
-            <summary>Sets the stub of DownloadCommand.OnCanExecuteChanged()</summary>
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.StubDownloadCommand.CallBase">
             <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
@@ -888,6 +819,12 @@
         </member>
         <member name="F:MegaDesktop.Commands.Fakes.StubIToolBarCommand.ImageSourceGet">
             <summary>Sets the stub of IToolBarCommand.get_ImageSource()</summary>
+        </member>
+        <member name="M:MegaDesktop.Commands.Fakes.StubIToolBarCommand.md::MegaDesktop#Commands#IToolBarCommand#OnCanExecuteChanged">
+            <summary>Sets the stub of IToolBarCommand.OnCanExecuteChanged()</summary>
+        </member>
+        <member name="F:MegaDesktop.Commands.Fakes.StubIToolBarCommand.OnCanExecuteChanged">
+            <summary>Sets the stub of IToolBarCommand.OnCanExecuteChanged()</summary>
         </member>
         <member name="F:MegaDesktop.Commands.Fakes.StubIToolBarCommand.PositionGet">
             <summary>Sets the stub of IToolBarCommand.get_Position()</summary>
@@ -979,28 +916,10 @@
         <member name="P:MegaDesktop.Commands.Fakes.StubRefreshCommand.InstanceObserver">
             <summary>Gets or sets the instance observer.</summary>
         </member>
-        <member name="T:MegaDesktop.Commands.Fakes.StubSelectedListNodeActionCommand">
-            <summary>Stub type of MegaDesktop.Commands.SelectedListNodeActionCommand</summary>
-        </member>
-        <member name="M:MegaDesktop.Commands.Fakes.StubSelectedListNodeActionCommand.#ctor(MegaDesktop.Commands.DownloadCommand,MegaDesktop.Services.RefreshService)">
-            <summary>Initializes a new instance</summary>
-        </member>
-        <member name="M:MegaDesktop.Commands.Fakes.StubSelectedListNodeActionCommand.InitializeStub">
-            <summary>Initializes a new instance of type StubSelectedListNodeActionCommand</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.StubSelectedListNodeActionCommand.CallBase">
-            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.StubSelectedListNodeActionCommand.InstanceBehavior">
-            <summary>Gets or sets the instance behavior.</summary>
-        </member>
-        <member name="P:MegaDesktop.Commands.Fakes.StubSelectedListNodeActionCommand.InstanceObserver">
-            <summary>Gets or sets the instance observer.</summary>
-        </member>
         <member name="T:MegaDesktop.Commands.Fakes.StubUploadCommand">
             <summary>Stub type of MegaDesktop.Commands.UploadCommand</summary>
         </member>
-        <member name="M:MegaDesktop.Commands.Fakes.StubUploadCommand.#ctor(MegaDesktop.ViewModels.StatusViewModel,MegaDesktop.Services.NodeManager,MegaDesktop.Services.IDispatcher,MegaDesktop.Services.TransferManager,MegaDesktop.Services.RefreshService,MegaDesktop.Services.MegaApiWrapper)">
+        <member name="M:MegaDesktop.Commands.Fakes.StubUploadCommand.#ctor(MegaDesktop.ViewModels.StatusViewModel,MegaDesktop.Services.IDispatcher,MegaDesktop.Services.TransferManager,MegaDesktop.Services.RefreshService,MegaDesktop.Services.MegaApiWrapper)">
             <summary>Initializes a new instance</summary>
         </member>
         <member name="M:MegaDesktop.Commands.Fakes.StubUploadCommand.InitializeStub">
@@ -1068,24 +987,6 @@
         </member>
         <member name="T:MegaDesktop.Fakes.ShimApp.AllInstances">
             <summary>Define shims for all instances members</summary>
-        </member>
-        <member name="T:MegaDesktop.Fakes.ShimAssertObjectIsNotNull">
-            <summary>Shim type of MegaDesktop.AssertObjectIsNotNull</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.ShimAssertObjectIsNotNull.#ctor">
-            <summary>Initializes a new shim instance</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.ShimAssertObjectIsNotNull.AssertIsNotNullOf1M0String``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Func{``0,System.String,``0})">
-            <summary>Sets the shim of AssertObjectIsNotNull.AssertIsNotNull(!!0 self, String parameterName)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.ShimAssertObjectIsNotNull.BehaveAsCurrent">
-            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.ShimAssertObjectIsNotNull.BehaveAsNotImplemented">
-            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
-        </member>
-        <member name="P:MegaDesktop.Fakes.ShimAssertObjectIsNotNull.Behavior">
-            <summary>Assigns the behavior for all methods of the shimmed type</summary>
         </member>
         <member name="T:MegaDesktop.Fakes.ShimGapToMarginConverter">
             <summary>Shim type of MegaDesktop.GapToMarginConverter</summary>
@@ -1200,45 +1101,6 @@
         </member>
         <member name="P:MegaDesktop.Fakes.ShimTermsOfServiceWindow.AllInstances.SystemWindowsMarkupIComponentConnectorConnectInt32Object">
             <summary>Sets the shim of TermsOfServiceWindow.System.Windows.Markup.IComponentConnector.Connect(Int32 connectionId, Object target)</summary>
-        </member>
-        <member name="T:MegaDesktop.Fakes.ShimTypeToImageConverter">
-            <summary>Shim type of MegaDesktop.TypeToImageConverter</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.ShimTypeToImageConverter.#ctor">
-            <summary>Initializes a new shim instance</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.ShimTypeToImageConverter.#ctor(MegaDesktop.TypeToImageConverter)">
-            <summary>Initializes a new shim for the given instance</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.ShimTypeToImageConverter.BehaveAsCurrent">
-            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.ShimTypeToImageConverter.BehaveAsNotImplemented">
-            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.ShimTypeToImageConverter.Bind(System.Windows.Data.IValueConverter)">
-            <summary>Binds the members of the interface to the shim.</summary>
-        </member>
-        <member name="P:MegaDesktop.Fakes.ShimTypeToImageConverter.Behavior">
-            <summary>Assigns the behavior for all methods of the shimmed type</summary>
-        </member>
-        <member name="P:MegaDesktop.Fakes.ShimTypeToImageConverter.Constructor">
-            <summary>Sets the shim of TypeToImageConverter.TypeToImageConverter()</summary>
-        </member>
-        <member name="P:MegaDesktop.Fakes.ShimTypeToImageConverter.ConvertBackObjectTypeObjectCultureInfo">
-            <summary>Sets the shim of TypeToImageConverter.ConvertBack(Object value, Type targetType, Object parameter, CultureInfo culture)</summary>
-        </member>
-        <member name="P:MegaDesktop.Fakes.ShimTypeToImageConverter.ConvertObjectTypeObjectCultureInfo">
-            <summary>Sets the shim of TypeToImageConverter.Convert(Object value, Type targetType, Object parameter, CultureInfo culture)</summary>
-        </member>
-        <member name="T:MegaDesktop.Fakes.ShimTypeToImageConverter.AllInstances">
-            <summary>Define shims for all instances members</summary>
-        </member>
-        <member name="P:MegaDesktop.Fakes.ShimTypeToImageConverter.AllInstances.ConvertBackObjectTypeObjectCultureInfo">
-            <summary>Sets the shim of TypeToImageConverter.ConvertBack(Object value, Type targetType, Object parameter, CultureInfo culture)</summary>
-        </member>
-        <member name="P:MegaDesktop.Fakes.ShimTypeToImageConverter.AllInstances.ConvertObjectTypeObjectCultureInfo">
-            <summary>Sets the shim of TypeToImageConverter.Convert(Object value, Type targetType, Object parameter, CultureInfo culture)</summary>
         </member>
         <member name="T:MegaDesktop.Fakes.ShimWindowLogin">
             <summary>Shim type of MegaDesktop.WindowLogin</summary>
@@ -2245,24 +2107,6 @@
         <member name="P:MegaDesktop.Fakes.StubTermsOfServiceWindow.VisualChildrenCount">
             <summary>Sets the stub of FrameworkElement.get_VisualChildrenCount()</summary>
         </member>
-        <member name="T:MegaDesktop.Fakes.StubTypeToImageConverter">
-            <summary>Stub type of MegaDesktop.TypeToImageConverter</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTypeToImageConverter.#ctor">
-            <summary>Initializes a new instance</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTypeToImageConverter.InitializeStub">
-            <summary>Initializes a new instance of type StubTypeToImageConverter</summary>
-        </member>
-        <member name="P:MegaDesktop.Fakes.StubTypeToImageConverter.CallBase">
-            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
-        </member>
-        <member name="P:MegaDesktop.Fakes.StubTypeToImageConverter.InstanceBehavior">
-            <summary>Gets or sets the instance behavior.</summary>
-        </member>
-        <member name="P:MegaDesktop.Fakes.StubTypeToImageConverter.InstanceObserver">
-            <summary>Gets or sets the instance observer.</summary>
-        </member>
         <member name="T:MegaDesktop.Fakes.StubWindowLogin">
             <summary>Stub type of MegaDesktop.WindowLogin</summary>
         </member>
@@ -3259,14 +3103,32 @@
         <member name="M:MegaDesktop.Services.Fakes.ShimNodeManager.BehaveAsNotImplemented">
             <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
         </member>
+        <member name="M:MegaDesktop.Services.Fakes.ShimNodeManager.Bind(System.ComponentModel.INotifyPropertyChanged)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
         <member name="P:MegaDesktop.Services.Fakes.ShimNodeManager.Behavior">
             <summary>Assigns the behavior for all methods of the shimmed type</summary>
         </member>
-        <member name="P:MegaDesktop.Services.Fakes.ShimNodeManager.ConstructorIDispatcher">
-            <summary>Sets the shim of NodeManager.NodeManager(IDispatcher dispatcher)</summary>
+        <member name="P:MegaDesktop.Services.Fakes.ShimNodeManager.ConstructorIDispatcherDownloadCommand">
+            <summary>Sets the shim of NodeManager.NodeManager(IDispatcher dispatcher, DownloadCommand downloadCommand)</summary>
+        </member>
+        <member name="P:MegaDesktop.Services.Fakes.ShimNodeManager.DownloadCommandGet">
+            <summary>Sets the shim of NodeManager.get_DownloadCommand()</summary>
+        </member>
+        <member name="P:MegaDesktop.Services.Fakes.ShimNodeManager.DownloadCommandSetDownloadCommand">
+            <summary>Sets the shim of NodeManager.set_DownloadCommand(DownloadCommand value)</summary>
+        </member>
+        <member name="P:MegaDesktop.Services.Fakes.ShimNodeManager.OnPropertyChangedString">
+            <summary>Sets the shim of NodeManager.OnPropertyChanged(String propertyName)</summary>
         </member>
         <member name="P:MegaDesktop.Services.Fakes.ShimNodeManager.OnSelectedNodeChanged">
             <summary>Sets the shim of NodeManager.OnSelectedNodeChanged()</summary>
+        </member>
+        <member name="P:MegaDesktop.Services.Fakes.ShimNodeManager.PropertyChangedAddPropertyChangedEventHandler">
+            <summary>Sets the shim of NodeManager.add_PropertyChanged(PropertyChangedEventHandler value)</summary>
+        </member>
+        <member name="P:MegaDesktop.Services.Fakes.ShimNodeManager.PropertyChangedRemovePropertyChangedEventHandler">
+            <summary>Sets the shim of NodeManager.remove_PropertyChanged(PropertyChangedEventHandler value)</summary>
         </member>
         <member name="P:MegaDesktop.Services.Fakes.ShimNodeManager.RootNodeGet">
             <summary>Sets the shim of NodeManager.get_RootNode()</summary>
@@ -3301,8 +3163,23 @@
         <member name="T:MegaDesktop.Services.Fakes.ShimNodeManager.AllInstances">
             <summary>Define shims for all instances members</summary>
         </member>
+        <member name="P:MegaDesktop.Services.Fakes.ShimNodeManager.AllInstances.DownloadCommandGet">
+            <summary>Sets the shim of NodeManager.get_DownloadCommand()</summary>
+        </member>
+        <member name="P:MegaDesktop.Services.Fakes.ShimNodeManager.AllInstances.DownloadCommandSetDownloadCommand">
+            <summary>Sets the shim of NodeManager.set_DownloadCommand(DownloadCommand value)</summary>
+        </member>
+        <member name="P:MegaDesktop.Services.Fakes.ShimNodeManager.AllInstances.OnPropertyChangedString">
+            <summary>Sets the shim of NodeManager.OnPropertyChanged(String propertyName)</summary>
+        </member>
         <member name="P:MegaDesktop.Services.Fakes.ShimNodeManager.AllInstances.OnSelectedNodeChanged">
             <summary>Sets the shim of NodeManager.OnSelectedNodeChanged()</summary>
+        </member>
+        <member name="P:MegaDesktop.Services.Fakes.ShimNodeManager.AllInstances.PropertyChangedAddPropertyChangedEventHandler">
+            <summary>Sets the shim of NodeManager.add_PropertyChanged(PropertyChangedEventHandler value)</summary>
+        </member>
+        <member name="P:MegaDesktop.Services.Fakes.ShimNodeManager.AllInstances.PropertyChangedRemovePropertyChangedEventHandler">
+            <summary>Sets the shim of NodeManager.remove_PropertyChanged(PropertyChangedEventHandler value)</summary>
         </member>
         <member name="P:MegaDesktop.Services.Fakes.ShimNodeManager.AllInstances.RootNodeGet">
             <summary>Sets the shim of NodeManager.get_RootNode()</summary>
@@ -3364,6 +3241,12 @@
         <member name="P:MegaDesktop.Services.Fakes.ShimRefreshService.Reload">
             <summary>Sets the shim of RefreshService.Reload()</summary>
         </member>
+        <member name="P:MegaDesktop.Services.Fakes.ShimRefreshService.UpdateNodesTaskOfIEnumerableOfMegaNodeNodeViewModel">
+            <summary>Sets the shim of RefreshService.UpdateNodes(Task`1&lt;IEnumerable`1&lt;MegaNode&gt;&gt; task, NodeViewModel currentNode)</summary>
+        </member>
+        <member name="P:MegaDesktop.Services.Fakes.ShimRefreshService._UpdateNodesb__3NodeViewModel">
+            <summary>Sets the shim of RefreshService.&lt;UpdateNodes&gt;b__3(NodeViewModel n)</summary>
+        </member>
         <member name="T:MegaDesktop.Services.Fakes.ShimRefreshService.AllInstances">
             <summary>Define shims for all instances members</summary>
         </member>
@@ -3376,23 +3259,8 @@
         <member name="P:MegaDesktop.Services.Fakes.ShimRefreshService.AllInstances.Reload">
             <summary>Sets the shim of RefreshService.Reload()</summary>
         </member>
-        <member name="T:MegaDesktop.Services.Fakes.ShimSizeHelper">
-            <summary>Shim type of MegaDesktop.Services.SizeHelper</summary>
-        </member>
-        <member name="M:MegaDesktop.Services.Fakes.ShimSizeHelper.#ctor">
-            <summary>Initializes a new shim instance</summary>
-        </member>
-        <member name="M:MegaDesktop.Services.Fakes.ShimSizeHelper.BehaveAsCurrent">
-            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
-        </member>
-        <member name="M:MegaDesktop.Services.Fakes.ShimSizeHelper.BehaveAsNotImplemented">
-            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
-        </member>
-        <member name="P:MegaDesktop.Services.Fakes.ShimSizeHelper.Behavior">
-            <summary>Assigns the behavior for all methods of the shimmed type</summary>
-        </member>
-        <member name="P:MegaDesktop.Services.Fakes.ShimSizeHelper.BytesToStringInt64">
-            <summary>Sets the shim of SizeHelper.BytesToString(Int64 size)</summary>
+        <member name="P:MegaDesktop.Services.Fakes.ShimRefreshService.AllInstances.UpdateNodesTaskOfIEnumerableOfMegaNodeNodeViewModel">
+            <summary>Sets the shim of RefreshService.UpdateNodes(Task`1&lt;IEnumerable`1&lt;MegaNode&gt;&gt; task, NodeViewModel currentNode)</summary>
         </member>
         <member name="T:MegaDesktop.Services.Fakes.ShimTransferManager">
             <summary>Shim type of MegaDesktop.Services.TransferManager</summary>
@@ -3604,11 +3472,17 @@
         <member name="T:MegaDesktop.Services.Fakes.StubNodeManager">
             <summary>Stub type of MegaDesktop.Services.NodeManager</summary>
         </member>
-        <member name="M:MegaDesktop.Services.Fakes.StubNodeManager.#ctor(MegaDesktop.Services.IDispatcher)">
+        <member name="M:MegaDesktop.Services.Fakes.StubNodeManager.#ctor(MegaDesktop.Services.IDispatcher,MegaDesktop.Commands.DownloadCommand)">
             <summary>Initializes a new instance</summary>
         </member>
         <member name="M:MegaDesktop.Services.Fakes.StubNodeManager.InitializeStub">
             <summary>Initializes a new instance of type StubNodeManager</summary>
+        </member>
+        <member name="M:MegaDesktop.Services.Fakes.StubNodeManager.OnPropertyChanged(System.String)">
+            <summary>Sets the stub of NodeManager.OnPropertyChanged(String propertyName)</summary>
+        </member>
+        <member name="F:MegaDesktop.Services.Fakes.StubNodeManager.OnPropertyChangedString">
+            <summary>Sets the stub of NodeManager.OnPropertyChanged(String propertyName)</summary>
         </member>
         <member name="M:MegaDesktop.Services.Fakes.StubNodeManager.OnSelectedNodeChanged">
             <summary>Sets the stub of NodeManager.OnSelectedNodeChanged()</summary>
@@ -3784,6 +3658,45 @@
         <member name="T:MegaDesktop.Ui.Fakes.ShimDataGridHelper.AllInstances">
             <summary>Define shims for all instances members</summary>
         </member>
+        <member name="T:MegaDesktop.Ui.Fakes.ShimTypeToImageConverter">
+            <summary>Shim type of MegaDesktop.Ui.TypeToImageConverter</summary>
+        </member>
+        <member name="M:MegaDesktop.Ui.Fakes.ShimTypeToImageConverter.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:MegaDesktop.Ui.Fakes.ShimTypeToImageConverter.#ctor(MegaDesktop.Ui.TypeToImageConverter)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:MegaDesktop.Ui.Fakes.ShimTypeToImageConverter.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:MegaDesktop.Ui.Fakes.ShimTypeToImageConverter.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:MegaDesktop.Ui.Fakes.ShimTypeToImageConverter.Bind(System.Windows.Data.IValueConverter)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:MegaDesktop.Ui.Fakes.ShimTypeToImageConverter.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:MegaDesktop.Ui.Fakes.ShimTypeToImageConverter.Constructor">
+            <summary>Sets the shim of TypeToImageConverter.TypeToImageConverter()</summary>
+        </member>
+        <member name="P:MegaDesktop.Ui.Fakes.ShimTypeToImageConverter.ConvertBackObjectTypeObjectCultureInfo">
+            <summary>Sets the shim of TypeToImageConverter.ConvertBack(Object value, Type targetType, Object parameter, CultureInfo culture)</summary>
+        </member>
+        <member name="P:MegaDesktop.Ui.Fakes.ShimTypeToImageConverter.ConvertObjectTypeObjectCultureInfo">
+            <summary>Sets the shim of TypeToImageConverter.Convert(Object value, Type targetType, Object parameter, CultureInfo culture)</summary>
+        </member>
+        <member name="T:MegaDesktop.Ui.Fakes.ShimTypeToImageConverter.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:MegaDesktop.Ui.Fakes.ShimTypeToImageConverter.AllInstances.ConvertBackObjectTypeObjectCultureInfo">
+            <summary>Sets the shim of TypeToImageConverter.ConvertBack(Object value, Type targetType, Object parameter, CultureInfo culture)</summary>
+        </member>
+        <member name="P:MegaDesktop.Ui.Fakes.ShimTypeToImageConverter.AllInstances.ConvertObjectTypeObjectCultureInfo">
+            <summary>Sets the shim of TypeToImageConverter.Convert(Object value, Type targetType, Object parameter, CultureInfo culture)</summary>
+        </member>
         <member name="T:MegaDesktop.Ui.Fakes.StubBindableSelectedItemBehavior">
             <summary>Stub type of MegaDesktop.Ui.BindableSelectedItemBehavior</summary>
         </member>
@@ -3898,6 +3811,78 @@
         <member name="P:MegaDesktop.Ui.Fakes.StubDataGridHelper.InstanceObserver">
             <summary>Gets or sets the instance observer.</summary>
         </member>
+        <member name="T:MegaDesktop.Ui.Fakes.StubTypeToImageConverter">
+            <summary>Stub type of MegaDesktop.Ui.TypeToImageConverter</summary>
+        </member>
+        <member name="M:MegaDesktop.Ui.Fakes.StubTypeToImageConverter.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:MegaDesktop.Ui.Fakes.StubTypeToImageConverter.InitializeStub">
+            <summary>Initializes a new instance of type StubTypeToImageConverter</summary>
+        </member>
+        <member name="P:MegaDesktop.Ui.Fakes.StubTypeToImageConverter.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:MegaDesktop.Ui.Fakes.StubTypeToImageConverter.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:MegaDesktop.Ui.Fakes.StubTypeToImageConverter.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:MegaDesktop.Util.Fakes.ShimAssertObjectIsNotNull">
+            <summary>Shim type of MegaDesktop.Util.AssertObjectIsNotNull</summary>
+        </member>
+        <member name="M:MegaDesktop.Util.Fakes.ShimAssertObjectIsNotNull.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:MegaDesktop.Util.Fakes.ShimAssertObjectIsNotNull.AssertIsNotNullOf1M0String``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Func{``0,System.String,``0})">
+            <summary>Sets the shim of AssertObjectIsNotNull.AssertIsNotNull(!!0 self, String parameterName)</summary>
+        </member>
+        <member name="M:MegaDesktop.Util.Fakes.ShimAssertObjectIsNotNull.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:MegaDesktop.Util.Fakes.ShimAssertObjectIsNotNull.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:MegaDesktop.Util.Fakes.ShimAssertObjectIsNotNull.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="T:MegaDesktop.Util.Fakes.ShimEnumerableForEach">
+            <summary>Shim type of MegaDesktop.Util.EnumerableForEach</summary>
+        </member>
+        <member name="M:MegaDesktop.Util.Fakes.ShimEnumerableForEach.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:MegaDesktop.Util.Fakes.ShimEnumerableForEach.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:MegaDesktop.Util.Fakes.ShimEnumerableForEach.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:MegaDesktop.Util.Fakes.ShimEnumerableForEach.ForEachOf1IEnumerableOfM0ActionOfM0``1(Microsoft.QualityTools.Testing.Fakes.FakesDelegates.Action{System.Collections.Generic.IEnumerable{``0},System.Action{``0}})">
+            <summary>Sets the shim of EnumerableForEach.ForEach(IEnumerable`1&lt;!!0&gt; enumerable, Action`1&lt;!!0&gt; action)</summary>
+        </member>
+        <member name="P:MegaDesktop.Util.Fakes.ShimEnumerableForEach.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="T:MegaDesktop.Util.Fakes.ShimSizeHelper">
+            <summary>Shim type of MegaDesktop.Util.SizeHelper</summary>
+        </member>
+        <member name="M:MegaDesktop.Util.Fakes.ShimSizeHelper.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:MegaDesktop.Util.Fakes.ShimSizeHelper.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:MegaDesktop.Util.Fakes.ShimSizeHelper.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:MegaDesktop.Util.Fakes.ShimSizeHelper.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:MegaDesktop.Util.Fakes.ShimSizeHelper.BytesToStringInt64">
+            <summary>Sets the shim of SizeHelper.BytesToString(Int64 size)</summary>
+        </member>
         <member name="T:MegaDesktop.ViewModels.Fakes.ShimHeaderViewModel">
             <summary>Shim type of MegaDesktop.ViewModels.HeaderViewModel</summary>
         </member>
@@ -3985,9 +3970,6 @@
         <member name="M:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.BehaveAsNotImplemented">
             <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
         </member>
-        <member name="M:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.Bind(System.ComponentModel.INotifyPropertyChanged)">
-            <summary>Binds the members of the interface to the shim.</summary>
-        </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.Behavior">
             <summary>Assigns the behavior for all methods of the shimmed type</summary>
         </member>
@@ -4006,33 +3988,6 @@
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.NodeManagerSetNodeManager">
             <summary>Sets the shim of MainViewModel.set_NodeManager(NodeManager value)</summary>
         </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.OnPropertyChangedString">
-            <summary>Sets the shim of MainViewModel.OnPropertyChanged(String propertyName)</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.PropertyChangedAddPropertyChangedEventHandler">
-            <summary>Sets the shim of MainViewModel.add_PropertyChanged(PropertyChangedEventHandler value)</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.PropertyChangedRemovePropertyChangedEventHandler">
-            <summary>Sets the shim of MainViewModel.remove_PropertyChanged(PropertyChangedEventHandler value)</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.SelectedListNodeActionCommandGet">
-            <summary>Sets the shim of MainViewModel.get_SelectedListNodeActionCommand()</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.SelectedListNodeActionCommandSetSelectedListNodeActionCommand">
-            <summary>Sets the shim of MainViewModel.set_SelectedListNodeActionCommand(SelectedListNodeActionCommand value)</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.SelectedListNodeGet">
-            <summary>Sets the shim of MainViewModel.get_SelectedListNode()</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.SelectedListNodeSetNodeViewModel">
-            <summary>Sets the shim of MainViewModel.set_SelectedListNode(NodeViewModel value)</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.SelectedTreeNodeGet">
-            <summary>Sets the shim of MainViewModel.get_SelectedTreeNode()</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.SelectedTreeNodeSetNodeViewModel">
-            <summary>Sets the shim of MainViewModel.set_SelectedTreeNode(NodeViewModel value)</summary>
-        </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.ToolBarViewModelGet">
             <summary>Sets the shim of MainViewModel.get_ToolBarViewModel()</summary>
         </member>
@@ -4044,9 +3999,6 @@
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.TransfersViewModelSetTransfersViewModel">
             <summary>Sets the shim of MainViewModel.set_TransfersViewModel(TransfersViewModel value)</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel._ctorb__0ObjectEventArgs">
-            <summary>Sets the shim of MainViewModel.&lt;.ctor&gt;b__0(Object s, EventArgs e)</summary>
         </member>
         <member name="T:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances">
             <summary>Define shims for all instances members</summary>
@@ -4063,33 +4015,6 @@
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.NodeManagerSetNodeManager">
             <summary>Sets the shim of MainViewModel.set_NodeManager(NodeManager value)</summary>
         </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.OnPropertyChangedString">
-            <summary>Sets the shim of MainViewModel.OnPropertyChanged(String propertyName)</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.PropertyChangedAddPropertyChangedEventHandler">
-            <summary>Sets the shim of MainViewModel.add_PropertyChanged(PropertyChangedEventHandler value)</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.PropertyChangedRemovePropertyChangedEventHandler">
-            <summary>Sets the shim of MainViewModel.remove_PropertyChanged(PropertyChangedEventHandler value)</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.SelectedListNodeActionCommandGet">
-            <summary>Sets the shim of MainViewModel.get_SelectedListNodeActionCommand()</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.SelectedListNodeActionCommandSetSelectedListNodeActionCommand">
-            <summary>Sets the shim of MainViewModel.set_SelectedListNodeActionCommand(SelectedListNodeActionCommand value)</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.SelectedListNodeGet">
-            <summary>Sets the shim of MainViewModel.get_SelectedListNode()</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.SelectedListNodeSetNodeViewModel">
-            <summary>Sets the shim of MainViewModel.set_SelectedListNode(NodeViewModel value)</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.SelectedTreeNodeGet">
-            <summary>Sets the shim of MainViewModel.get_SelectedTreeNode()</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.SelectedTreeNodeSetNodeViewModel">
-            <summary>Sets the shim of MainViewModel.set_SelectedTreeNode(NodeViewModel value)</summary>
-        </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.ToolBarViewModelGet">
             <summary>Sets the shim of MainViewModel.get_ToolBarViewModel()</summary>
         </member>
@@ -4101,9 +4026,6 @@
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.TransfersViewModelSetTransfersViewModel">
             <summary>Sets the shim of MainViewModel.set_TransfersViewModel(TransfersViewModel value)</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances._ctorb__0ObjectEventArgs">
-            <summary>Sets the shim of MainViewModel.&lt;.ctor&gt;b__0(Object s, EventArgs e)</summary>
         </member>
         <member name="T:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel">
             <summary>Shim type of MegaDesktop.ViewModels.NodeViewModel</summary>
@@ -4390,6 +4312,9 @@
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel._ctorb__1IToolBarCommand">
             <summary>Sets the shim of ToolBarViewModel.&lt;.ctor&gt;b__1(IToolBarCommand x)</summary>
         </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel._set_SelectedNodeb__6IToolBarCommand">
+            <summary>Sets the shim of ToolBarViewModel.&lt;set_SelectedNode&gt;b__6(IToolBarCommand x)</summary>
+        </member>
         <member name="T:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.AllInstances">
             <summary>Define shims for all instances members</summary>
         </member>
@@ -4593,12 +4518,6 @@
         </member>
         <member name="M:MegaDesktop.ViewModels.Fakes.StubMainViewModel.InitializeStub">
             <summary>Initializes a new instance of type StubMainViewModel</summary>
-        </member>
-        <member name="M:MegaDesktop.ViewModels.Fakes.StubMainViewModel.OnPropertyChanged(System.String)">
-            <summary>Sets the stub of MainViewModel.OnPropertyChanged(String propertyName)</summary>
-        </member>
-        <member name="F:MegaDesktop.ViewModels.Fakes.StubMainViewModel.OnPropertyChangedString">
-            <summary>Sets the stub of MainViewModel.OnPropertyChanged(String propertyName)</summary>
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.StubMainViewModel.CallBase">
             <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>

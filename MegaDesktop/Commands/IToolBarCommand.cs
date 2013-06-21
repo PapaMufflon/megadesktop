@@ -6,5 +6,7 @@
         bool Gap { get; }
         string ImageSource { get; }
         string ToolTip { get; }
+
+        void OnCanExecuteChanged();
     }
 }

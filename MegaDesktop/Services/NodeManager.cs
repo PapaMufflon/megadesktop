@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using MegaDesktop.Commands;
 using MegaDesktop.ViewModels;
 
 namespace MegaDesktop.Services
@@ -13,12 +14,14 @@ namespace MegaDesktop.Services
         private NodeViewModel _selectedNode;
         private NodeViewModel _selectedTreeNode;
 
-        public NodeManager(IDispatcher dispatcher)
+        public NodeManager(IDispatcher dispatcher, DownloadCommand downloadCommand)
         {
             RootNode = new NodeViewModel(dispatcher);
+            DownloadCommand = downloadCommand;
         }
 
         public NodeViewModel RootNode { get; private set; }
+        public DownloadCommand DownloadCommand { get; set; }
 
         public NodeViewModel SelectedNode
         {

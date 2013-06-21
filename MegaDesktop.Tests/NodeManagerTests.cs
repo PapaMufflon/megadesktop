@@ -1,4 +1,6 @@
 ﻿using System;
+using MegaDesktop.Commands;
+using MegaDesktop.Commands.Fakes;
 using MegaDesktop.Services;
 using MegaDesktop.ViewModels;
 using NUnit.Framework;
@@ -9,17 +11,20 @@ namespace MegaDesktop.Tests
     public class NodeManagerTests
     {
         private NodeManager _target;
+        private DownloadCommand _downloadCommand;
 
         [SetUp]
         public void Setup()
         {
-            _target = new NodeManager(new TestDispatcher());
+            _downloadCommand = new ShimDownloadCommand();
+            _target = new NodeManager(new TestDispatcher(), _downloadCommand);
         }
 
         [Test]
         public void Ctor_arguments_should_not_be_null()
         {
-            Assert.Throws<ArgumentNullException>(() => new NodeManager(null));
+            Assert.Throws<ArgumentNullException>(() => new NodeManager(null, _downloadCommand));
+            Assert.Throws<ArgumentNullException>(() => new NodeManager(new TestDispatcher(), null));
         }
 
         [Test]

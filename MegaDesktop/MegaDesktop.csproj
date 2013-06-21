@@ -98,9 +98,7 @@
     <Compile Include="Commands\LoginCommand.cs" />
     <Compile Include="Commands\LogoutCommand.cs" />
     <Compile Include="Commands\RefreshCommand.cs" />
-    <Compile Include="Commands\SelectedListNodeActionCommand.cs" />
     <Compile Include="Commands\UploadCommand.cs" />
-    <Compile Include="AssertObjectIsNotNull.cs" />
     <Compile Include="Commands\UploadFolderCommand.cs" />
     <Compile Include="GapToMarginConverter.cs" />
     <Compile Include="Resource.Designer.cs">
@@ -115,16 +113,18 @@
     <Compile Include="Services\MegaApiWrapper.cs" />
     <Compile Include="Services\NodeManager.cs" />
     <Compile Include="Services\RefreshService.cs" />
-    <Compile Include="Services\SizeHelper.cs" />
     <Compile Include="Services\Status.cs" />
     <Compile Include="Services\TransferManager.cs" />
     <Compile Include="Services\UserAccount.cs" />
     <Compile Include="TermsOfServiceWindow.xaml.cs">
       <DependentUpon>TermsOfServiceWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TypeToImageConverter.cs" />
     <Compile Include="Ui\BindableSelectedItemBehavior.cs" />
     <Compile Include="Ui\DataGridHelper.cs" />
+    <Compile Include="Ui\TypeToImageConverter.cs" />
+    <Compile Include="Util\AssertObjectIsNotNull.cs" />
+    <Compile Include="Util\EnumerableForEach.cs" />
+    <Compile Include="Util\SizeHelper.cs" />
     <Compile Include="ViewModels\HeaderViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\NodeType.cs" />

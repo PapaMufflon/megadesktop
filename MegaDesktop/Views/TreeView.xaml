@@ -9,7 +9,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="200">
     <UserControl.Resources>
-        <megaDesktop:TypeToImageConverter x:Key="TypeToImageConverter" />
+        <behaviours:TypeToImageConverter x:Key="TypeToImageConverter" />
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>

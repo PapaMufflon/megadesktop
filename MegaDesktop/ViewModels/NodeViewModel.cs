@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using MegaApi;
 using MegaDesktop.Services;
+using MegaDesktop.Util;
 
 namespace MegaDesktop.ViewModels
 {

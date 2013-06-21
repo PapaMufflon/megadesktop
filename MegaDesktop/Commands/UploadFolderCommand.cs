@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using System.Windows.Input;
 using MegaApi;
 using MegaDesktop.Services;
+using MegaDesktop.Util;
 using MegaDesktop.ViewModels;
 
 namespace MegaDesktop.Commands
@@ -28,9 +29,6 @@ namespace MegaDesktop.Commands
             _megaApiWrapper = megaApiWrapper.AssertIsNotNull("megaApiWrapper");
             _transfers = transfers.AssertIsNotNull("transfers");
             _refresh = refresh.AssertIsNotNull("refresh");
-
-            nodes.SelectedNodeChanged +=
-                (s, e) => dispatcher.InvokeOnUiThread(OnCanExecuteChanged);
         }
 
         public event EventHandler CanExecuteChanged;
@@ -120,7 +118,7 @@ namespace MegaDesktop.Commands
             _status.SetStatus(Status.Loaded);
         }
 
-        protected virtual void OnCanExecuteChanged()
+        public virtual void OnCanExecuteChanged()
         {
             var handler = CanExecuteChanged;
 

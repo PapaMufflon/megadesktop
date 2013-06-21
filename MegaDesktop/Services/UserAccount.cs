@@ -2,6 +2,7 @@
 using System.IO;
 using System.Threading.Tasks;
 using MegaApi;
+using MegaDesktop.Util;
 using MegaDesktop.ViewModels;
 
 namespace MegaDesktop.Services

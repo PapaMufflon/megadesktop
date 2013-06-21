@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using MegaApi;
 using MegaDesktop.Services;
@@ -16,8 +17,10 @@ namespace MegaDesktop.Commands
         private readonly StatusViewModel _status;
         private readonly TransferManager _transfers;
 
-        public UploadCommand(StatusViewModel status, NodeManager nodes,
-                             IDispatcher dispatcher, TransferManager transfers, RefreshService refresh,
+        public UploadCommand(StatusViewModel status,
+                             IDispatcher dispatcher,
+                             TransferManager transfers,
+                             RefreshService refresh,
                              MegaApiWrapper megaApiWrapper)
         {
             _status = status;
@@ -27,7 +30,6 @@ namespace MegaDesktop.Commands
             _megaApiWrapper = megaApiWrapper;
 
             _status.CurrentStatusChanged += (s, e) => _dispatcher.InvokeOnUiThread(OnCanExecuteChanged);
-            nodes.SelectedNodeChanged += (s, e) => dispatcher.InvokeOnUiThread(OnCanExecuteChanged);
         }
 
         public event EventHandler CanExecuteChanged;
@@ -50,14 +52,23 @@ namespace MegaDesktop.Commands
         public void UploadFile(string fileName, NodeViewModel node)
         {
             _status.SetStatus(Status.Communicating);
+
             _megaApiWrapper.UploadFile(node.Id, fileName)
-                           .ContinueWith(x =>
-                               {
-                                   if (x.Exception != null)
-                                       _status.Error(x.Exception.InnerExceptions.First() as MegaApiException);
-                                   else
-                                       OnHandleReady(x.Result);
-                               });
+                           .ContinueWith(TakeCareOfTransferHandle);
+        }
+
+        private void TakeCareOfTransferHandle(Task<TransferHandle> task)
+        {
+            if (task.Exception == null)
+            {
+                var transfer = task.Result;
+                transfer.TransferEnded += (s, e) => _refresh.RefreshCurrentNode();
+                _transfers.AddNewTransfer(transfer);
+
+                _status.SetStatus(Status.Loaded);
+            }
+            else
+                _status.Error(task.Exception.InnerExceptions.First() as MegaApiException);
         }
 
         public bool CanExecute(object parameter)
@@ -69,15 +80,7 @@ namespace MegaDesktop.Commands
                    _status.CurrentStatus == Status.Loaded;
         }
 
-        private void OnHandleReady(TransferHandle transfer)
-        {
-            transfer.TransferEnded += (s, e) => _refresh.RefreshCurrentNode();
-            _transfers.AddNewTransfer(transfer);
-
-            _status.SetStatus(Status.Loaded);
-        }
-
-        protected virtual void OnCanExecuteChanged()
+        public virtual void OnCanExecuteChanged()
         {
             EventHandler handler = CanExecuteChanged;
             if (handler != null) handler(this, EventArgs.Empty);

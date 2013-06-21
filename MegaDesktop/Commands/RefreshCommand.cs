@@ -25,7 +25,7 @@ namespace MegaDesktop.Commands
             _refresh.RefreshCurrentNode();
         }
 
-        protected virtual void OnCanExecuteChanged()
+        public virtual void OnCanExecuteChanged()
         {
             EventHandler handler = CanExecuteChanged;
             if (handler != null) handler(this, EventArgs.Empty);

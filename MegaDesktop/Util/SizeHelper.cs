@@ -1,6 +1,6 @@
-﻿using System;
+using System;
 
-namespace MegaDesktop.Services
+namespace MegaDesktop.Util
 {
     public static class SizeHelper
     {

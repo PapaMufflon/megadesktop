@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MegaApi;
+using MegaDesktop.Util;
 using MegaDesktop.ViewModels;
 
 namespace MegaDesktop.Services
@@ -34,21 +35,23 @@ namespace MegaDesktop.Services
             _status.SetStatus(Status.Communicating);
 
             _megaApiWrapper.GetNodes()
-                           .ContinueWith(x =>
-                               {
-                                   if (x.Exception != null)
-                                   {
-                                       _status.Error(x.Exception.InnerExceptions.First() as MegaApiException);
-                                       return;
-                                   }
+                           .ContinueWith(x => UpdateNodes(x, node));
+        }
 
-                                   _nodes.RootNode.Update(x.Result.ToList());
-                                   _nodes.SelectedListNode = node == null
-                                                                 ? _nodes.RootNode.Children.Single(n => n.Type == NodeType.RootFolder)
-                                                                 : _nodes.RootNode.Descendant(node.Id);
+        private void UpdateNodes(Task<IEnumerable<MegaNode>> task, NodeViewModel currentNode)
+        {
+            if (task.Exception != null)
+            {
+                _status.Error(task.Exception.InnerExceptions.First() as MegaApiException);
+                return;
+            }
 
-                                   _status.SetStatus(Status.Loaded);
-                               });
+            _nodes.RootNode.Update(task.Result.ToList());
+            _nodes.SelectedListNode = currentNode == null
+                                          ? _nodes.RootNode.Children.Single(n => n.Type == NodeType.RootFolder)
+                                          : _nodes.RootNode.Descendant(currentNode.Id);
+
+            _status.SetStatus(Status.Loaded);
         }
     }
 }

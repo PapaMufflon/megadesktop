@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using MegaDesktop.Commands;
 using MegaDesktop.Services;
+using MegaDesktop.Util;
 
 namespace MegaDesktop.ViewModels
 {
@@ -27,6 +28,8 @@ namespace MegaDesktop.ViewModels
             {
                 _selectedNode = value;
                 OnPropertyChanged();
+
+                Commands.ForEach(x => x.OnCanExecuteChanged());
             }
         }
 
