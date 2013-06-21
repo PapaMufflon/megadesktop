@@ -10,7 +10,7 @@
             BorderBrush="Black">
         <DockPanel>
             <ui:TransfersView DockPanel.Dock="Bottom"
-                              DataContext="{Binding}" />
+                              DataContext="{Binding TransfersViewModel}" />
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50" />

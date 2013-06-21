@@ -3697,8 +3697,8 @@
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.Behavior">
             <summary>Assigns the behavior for all methods of the shimmed type</summary>
         </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.ConstructorStatusViewModelNodeManagerTransferManager">
-            <summary>Sets the shim of MainViewModel.MainViewModel(StatusViewModel status, NodeManager nodeManager, TransferManager transferManager)</summary>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.ConstructorStatusViewModelNodeManagerTransfersViewModel">
+            <summary>Sets the shim of MainViewModel.MainViewModel(StatusViewModel status, NodeManager nodeManager, TransfersViewModel transfersViewModel)</summary>
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.DeleteCommandGet">
             <summary>Sets the shim of MainViewModel.get_DeleteCommand()</summary>
@@ -3778,8 +3778,11 @@
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.StatusSetStatusViewModel">
             <summary>Sets the shim of MainViewModel.set_Status(StatusViewModel value)</summary>
         </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.TransfersGet">
-            <summary>Sets the shim of MainViewModel.get_Transfers()</summary>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.TransfersViewModelGet">
+            <summary>Sets the shim of MainViewModel.get_TransfersViewModel()</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.TransfersViewModelSetTransfersViewModel">
+            <summary>Sets the shim of MainViewModel.set_TransfersViewModel(TransfersViewModel value)</summary>
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.UploadCommandGet">
             <summary>Sets the shim of MainViewModel.get_UploadCommand()</summary>
@@ -3877,8 +3880,11 @@
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.StatusSetStatusViewModel">
             <summary>Sets the shim of MainViewModel.set_Status(StatusViewModel value)</summary>
         </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.TransfersGet">
-            <summary>Sets the shim of MainViewModel.get_Transfers()</summary>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.TransfersViewModelGet">
+            <summary>Sets the shim of MainViewModel.get_TransfersViewModel()</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.TransfersViewModelSetTransfersViewModel">
+            <summary>Sets the shim of MainViewModel.set_TransfersViewModel(TransfersViewModel value)</summary>
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.UploadCommandGet">
             <summary>Sets the shim of MainViewModel.get_UploadCommand()</summary>
@@ -4255,10 +4261,40 @@
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimTransferHandleViewModel.AllInstances._ctorb__0ObjectPropertyChangedEventArgs">
             <summary>Sets the shim of TransferHandleViewModel.&lt;.ctor&gt;b__0(Object s, PropertyChangedEventArgs e)</summary>
         </member>
+        <member name="T:MegaDesktop.ViewModels.Fakes.ShimTransfersViewModel">
+            <summary>Shim type of MegaDesktop.ViewModels.TransfersViewModel</summary>
+        </member>
+        <member name="M:MegaDesktop.ViewModels.Fakes.ShimTransfersViewModel.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:MegaDesktop.ViewModels.Fakes.ShimTransfersViewModel.#ctor(MegaDesktop.ViewModels.TransfersViewModel)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:MegaDesktop.ViewModels.Fakes.ShimTransfersViewModel.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:MegaDesktop.ViewModels.Fakes.ShimTransfersViewModel.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimTransfersViewModel.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimTransfersViewModel.ConstructorTransferManager">
+            <summary>Sets the shim of TransfersViewModel.TransfersViewModel(TransferManager transferManager)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimTransfersViewModel.TransfersGet">
+            <summary>Sets the shim of TransfersViewModel.get_Transfers()</summary>
+        </member>
+        <member name="T:MegaDesktop.ViewModels.Fakes.ShimTransfersViewModel.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimTransfersViewModel.AllInstances.TransfersGet">
+            <summary>Sets the shim of TransfersViewModel.get_Transfers()</summary>
+        </member>
         <member name="T:MegaDesktop.ViewModels.Fakes.StubMainViewModel">
             <summary>Stub type of MegaDesktop.ViewModels.MainViewModel</summary>
         </member>
-        <member name="M:MegaDesktop.ViewModels.Fakes.StubMainViewModel.#ctor(MegaDesktop.ViewModels.StatusViewModel,MegaDesktop.Services.NodeManager,MegaDesktop.Services.TransferManager)">
+        <member name="M:MegaDesktop.ViewModels.Fakes.StubMainViewModel.#ctor(MegaDesktop.ViewModels.StatusViewModel,MegaDesktop.Services.NodeManager,MegaDesktop.ViewModels.TransfersViewModel)">
             <summary>Initializes a new instance</summary>
         </member>
         <member name="M:MegaDesktop.ViewModels.Fakes.StubMainViewModel.InitializeStub">
@@ -4352,6 +4388,24 @@
             <summary>Gets or sets the instance behavior.</summary>
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.StubTransferHandleViewModel.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:MegaDesktop.ViewModels.Fakes.StubTransfersViewModel">
+            <summary>Stub type of MegaDesktop.ViewModels.TransfersViewModel</summary>
+        </member>
+        <member name="M:MegaDesktop.ViewModels.Fakes.StubTransfersViewModel.#ctor(MegaDesktop.Services.TransferManager)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:MegaDesktop.ViewModels.Fakes.StubTransfersViewModel.InitializeStub">
+            <summary>Initializes a new instance of type StubTransfersViewModel</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.StubTransfersViewModel.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.StubTransfersViewModel.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.StubTransfersViewModel.InstanceObserver">
             <summary>Gets or sets the instance observer.</summary>
         </member>
         <member name="T:MegaDesktop.Views.Fakes.ShimHeaderView">

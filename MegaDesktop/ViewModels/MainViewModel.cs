@@ -9,14 +9,13 @@ namespace MegaDesktop.ViewModels
 {
     internal class MainViewModel : INotifyPropertyChanged
     {
-        private readonly TransferManager _transferManager;
         private readonly NodeManager _nodeManager;
 
-        public MainViewModel(StatusViewModel status, NodeManager nodeManager, TransferManager transferManager)
+        public MainViewModel(StatusViewModel status, NodeManager nodeManager, TransfersViewModel transfersViewModel)
         {
             Status = status.AssertIsNotNull("status");
             _nodeManager = nodeManager.AssertIsNotNull("nodeManager");
-            _transferManager = transferManager.AssertIsNotNull("transferManager");
+            TransfersViewModel = transfersViewModel;
 
             _nodeManager.SelectedNodeChanged += (s, e) => OnPropertyChanged("SelectedNode");
 
@@ -24,34 +23,17 @@ namespace MegaDesktop.ViewModels
         }
 
         public StatusViewModel Status { get; private set; }
-        public ObservableCollection<TransferHandleViewModel> Transfers { get { return _transferManager.Transfers; } }
+        public TransfersViewModel TransfersViewModel { get; private set; }
 
-        [Inject]
-        public UploadCommand UploadCommand { get; set; }
-
-        [Inject]
-        public UploadFolderCommand UploadFolderCommand { get; set; }
-
-        [Inject]
-        public DownloadCommand DownloadCommand { get; set; }
-
-        [Inject]
-        public DeleteCommand DeleteCommand { get; set; }
-
-        [Inject]
-        public LoginCommand LoginCommand { get; set; }
-
-        [Inject]
-        public LogoutCommand LogoutCommand { get; set; }
-
-        [Inject]
-        public ExitCommand ExitCommand { get; set; }
-
-        [Inject]
-        public RefreshCommand RefreshCommand { get; set; }
-
-        [Inject]
-        public SelectedListNodeActionCommand SelectedListNodeActionCommand { get; set; }
+        [Inject] public UploadCommand UploadCommand { get; set; }
+        [Inject] public UploadFolderCommand UploadFolderCommand { get; set; }
+        [Inject] public DownloadCommand DownloadCommand { get; set; }
+        [Inject] public DeleteCommand DeleteCommand { get; set; }
+        [Inject] public LoginCommand LoginCommand { get; set; }
+        [Inject] public LogoutCommand LogoutCommand { get; set; }
+        [Inject] public ExitCommand ExitCommand { get; set; }
+        [Inject] public RefreshCommand RefreshCommand { get; set; }
+        [Inject] public SelectedListNodeActionCommand SelectedListNodeActionCommand { get; set; }
 
         public NodeViewModel SelectedNode
         {
