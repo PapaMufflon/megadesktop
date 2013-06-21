@@ -86,11 +86,7 @@ namespace MegaDesktop.Commands
             if (parent == null)
                 throw new InvalidOperationException("Cannot find the parent to node " + node.Attributes.Name);
 
-            _dispatcher.InvokeOnUiThread(() =>
-                {
-                    parent.Children.Add(nodeViewModel);
-                    parent.ChildNodes.Add(nodeViewModel);
-                });
+            _dispatcher.InvokeOnUiThread(() => parent.Children.Add(nodeViewModel));
 
             UploadFolderContent(path, nodeViewModel);
         }

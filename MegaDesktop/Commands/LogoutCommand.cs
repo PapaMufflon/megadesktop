@@ -10,21 +10,28 @@ namespace MegaDesktop.Commands
         private readonly NodeManager _nodes;
         private readonly TransferManager _transfers;
         private readonly IUserManagement _userAccount;
+        private readonly MegaApiWrapper _apiWrapper;
 
-        public LogoutCommand(TransferManager transfers, NodeManager nodes, IUserManagement userAccount, IDispatcher dispatcher)
+        public LogoutCommand(TransferManager transfers,
+                             NodeManager nodes,
+                             IUserManagement userAccount,
+                             IDispatcher dispatcher,
+                             MegaApiWrapper apiWrapper)
         {
             _transfers = transfers;
             _nodes = nodes;
             _userAccount = userAccount;
+            _apiWrapper = apiWrapper;
 
             _nodes.RootNode.Children.CollectionChanged += (s, e) => dispatcher.InvokeOnUiThread(OnCanExecuteChanged);
+            _apiWrapper.ApiChanged += (s, e) => dispatcher.InvokeOnUiThread(OnCanExecuteChanged);
         }
 
         public event EventHandler CanExecuteChanged;
 
         public bool CanExecute(object parameter)
         {
-            return _nodes.RootNode.Children.Any();
+            return _apiWrapper.User != null;
         }
 
         public void Execute(object parameter)

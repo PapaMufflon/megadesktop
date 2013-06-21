@@ -248,7 +248,6 @@ namespace MegaDesktop.Tests
             var child = new NodeViewModel(new TestDispatcher(), new MegaNode { Attributes = new NodeAttributes { Name = "foo" } });
             child.Children.Add(new NodeViewModel(new TestDispatcher(), new MegaNode { Attributes = new NodeAttributes { Name = "bar" } }));
             parent.Children.Add(child);
-            parent.ChildNodes.Add(child);
 
             _target.Execute(parent);
 

@@ -397,8 +397,8 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimLogoutCommand.CanExecuteObject">
             <summary>Sets the shim of LogoutCommand.CanExecute(Object parameter)</summary>
         </member>
-        <member name="P:MegaDesktop.Commands.Fakes.ShimLogoutCommand.ConstructorTransferManagerNodeManagerIUserManagementIDispatcher">
-            <summary>Sets the shim of LogoutCommand.LogoutCommand(TransferManager transfers, NodeManager nodes, IUserManagement userAccount, IDispatcher dispatcher)</summary>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimLogoutCommand.ConstructorTransferManagerNodeManagerIUserManagementIDispatcherMegaApiWrapper">
+            <summary>Sets the shim of LogoutCommand.LogoutCommand(TransferManager transfers, NodeManager nodes, IUserManagement userAccount, IDispatcher dispatcher, MegaApiWrapper apiWrapper)</summary>
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimLogoutCommand.ExecuteObject">
             <summary>Sets the shim of LogoutCommand.Execute(Object parameter)</summary>
@@ -871,7 +871,7 @@
         <member name="T:MegaDesktop.Commands.Fakes.StubLogoutCommand">
             <summary>Stub type of MegaDesktop.Commands.LogoutCommand</summary>
         </member>
-        <member name="M:MegaDesktop.Commands.Fakes.StubLogoutCommand.#ctor(MegaDesktop.Services.TransferManager,MegaDesktop.Services.NodeManager,MegaDesktop.Services.IUserManagement,MegaDesktop.Services.IDispatcher)">
+        <member name="M:MegaDesktop.Commands.Fakes.StubLogoutCommand.#ctor(MegaDesktop.Services.TransferManager,MegaDesktop.Services.NodeManager,MegaDesktop.Services.IUserManagement,MegaDesktop.Services.IDispatcher,MegaDesktop.Services.MegaApiWrapper)">
             <summary>Initializes a new instance</summary>
         </member>
         <member name="M:MegaDesktop.Commands.Fakes.StubLogoutCommand.InitializeStub">
@@ -3238,14 +3238,14 @@
         <member name="M:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel.BehaveAsNotImplemented">
             <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
         </member>
+        <member name="M:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel.Bind(System.ComponentModel.INotifyPropertyChanged)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel.Behavior">
             <summary>Assigns the behavior for all methods of the shimmed type</summary>
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel.ChildNodesGet">
             <summary>Sets the shim of NodeViewModel.get_ChildNodes()</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel.ChildNodesSetObservableCollectionOfNodeViewModel">
-            <summary>Sets the shim of NodeViewModel.set_ChildNodes(ObservableCollection`1&lt;NodeViewModel&gt; value)</summary>
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel.ChildrenGet">
             <summary>Sets the shim of NodeViewModel.get_Children()</summary>
@@ -3274,6 +3274,15 @@
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel.NameGet">
             <summary>Sets the shim of NodeViewModel.get_Name()</summary>
         </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel.OnPropertyChangedString">
+            <summary>Sets the shim of NodeViewModel.OnPropertyChanged(String propertyName)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel.PropertyChangedAddPropertyChangedEventHandler">
+            <summary>Sets the shim of NodeViewModel.add_PropertyChanged(PropertyChangedEventHandler value)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel.PropertyChangedRemovePropertyChangedEventHandler">
+            <summary>Sets the shim of NodeViewModel.remove_PropertyChanged(PropertyChangedEventHandler value)</summary>
+        </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel.SetAsChildNodeViewModelMegaNode">
             <summary>Sets the shim of NodeViewModel.SetAsChild(NodeViewModel nodeViewModel, MegaNode child)</summary>
         </member>
@@ -3292,17 +3301,23 @@
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel.UpdateListOfMegaNode">
             <summary>Sets the shim of NodeViewModel.Update(List`1&lt;MegaNode&gt; nodes)</summary>
         </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel._Descendantb__10NodeViewModel">
-            <summary>Sets the shim of NodeViewModel.&lt;Descendant&gt;b__10(NodeViewModel x)</summary>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel._Descendantb__15NodeViewModel">
+            <summary>Sets the shim of NodeViewModel.&lt;Descendant&gt;b__15(NodeViewModel x)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel._ctorb__0ObjectNotifyCollectionChangedEventArgs">
+            <summary>Sets the shim of NodeViewModel.&lt;.ctor&gt;b__0(Object s, NotifyCollectionChangedEventArgs e)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel._ctorb__1">
+            <summary>Sets the shim of NodeViewModel.&lt;.ctor&gt;b__1()</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel._get_ChildNodesb__3NodeViewModel">
+            <summary>Sets the shim of NodeViewModel.&lt;get_ChildNodes&gt;b__3(NodeViewModel x)</summary>
         </member>
         <member name="T:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel.AllInstances">
             <summary>Define shims for all instances members</summary>
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel.AllInstances.ChildNodesGet">
             <summary>Sets the shim of NodeViewModel.get_ChildNodes()</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel.AllInstances.ChildNodesSetObservableCollectionOfNodeViewModel">
-            <summary>Sets the shim of NodeViewModel.set_ChildNodes(ObservableCollection`1&lt;NodeViewModel&gt; value)</summary>
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel.AllInstances.ChildrenGet">
             <summary>Sets the shim of NodeViewModel.get_Children()</summary>
@@ -3325,6 +3340,15 @@
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel.AllInstances.NameGet">
             <summary>Sets the shim of NodeViewModel.get_Name()</summary>
         </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel.AllInstances.OnPropertyChangedString">
+            <summary>Sets the shim of NodeViewModel.OnPropertyChanged(String propertyName)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel.AllInstances.PropertyChangedAddPropertyChangedEventHandler">
+            <summary>Sets the shim of NodeViewModel.add_PropertyChanged(PropertyChangedEventHandler value)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel.AllInstances.PropertyChangedRemovePropertyChangedEventHandler">
+            <summary>Sets the shim of NodeViewModel.remove_PropertyChanged(PropertyChangedEventHandler value)</summary>
+        </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel.AllInstances.SetAsChildNodeViewModelMegaNode">
             <summary>Sets the shim of NodeViewModel.SetAsChild(NodeViewModel nodeViewModel, MegaNode child)</summary>
         </member>
@@ -3342,6 +3366,12 @@
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel.AllInstances.UpdateListOfMegaNode">
             <summary>Sets the shim of NodeViewModel.Update(List`1&lt;MegaNode&gt; nodes)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel.AllInstances._ctorb__0ObjectNotifyCollectionChangedEventArgs">
+            <summary>Sets the shim of NodeViewModel.&lt;.ctor&gt;b__0(Object s, NotifyCollectionChangedEventArgs e)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimNodeViewModel.AllInstances._ctorb__1">
+            <summary>Sets the shim of NodeViewModel.&lt;.ctor&gt;b__1()</summary>
         </member>
         <member name="T:MegaDesktop.ViewModels.Fakes.ShimStatusViewModel">
             <summary>Shim type of MegaDesktop.ViewModels.StatusViewModel</summary>
@@ -3735,6 +3765,12 @@
         </member>
         <member name="M:MegaDesktop.ViewModels.Fakes.StubNodeViewModel.InitializeStub">
             <summary>Initializes a new instance of type StubNodeViewModel</summary>
+        </member>
+        <member name="M:MegaDesktop.ViewModels.Fakes.StubNodeViewModel.OnPropertyChanged(System.String)">
+            <summary>Sets the stub of NodeViewModel.OnPropertyChanged(String propertyName)</summary>
+        </member>
+        <member name="F:MegaDesktop.ViewModels.Fakes.StubNodeViewModel.OnPropertyChangedString">
+            <summary>Sets the stub of NodeViewModel.OnPropertyChanged(String propertyName)</summary>
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.StubNodeViewModel.CallBase">
             <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
