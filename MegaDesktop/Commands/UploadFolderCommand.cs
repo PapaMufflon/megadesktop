@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Input;
 using MegaApi;
@@ -10,7 +9,7 @@ using MegaDesktop.ViewModels;
 
 namespace MegaDesktop.Commands
 {
-    internal class UploadFolderCommand : ICommand
+    internal class UploadFolderCommand : ICommand, IToolBarCommand
     {
         private readonly TransferManager _transfers;
         private readonly RefreshService _refresh;
@@ -128,5 +127,10 @@ namespace MegaDesktop.Commands
             if (handler != null)
                 handler(this, EventArgs.Empty);
         }
+
+        public int Position { get { return 1; } }
+        public bool Gap { get { return false; } }
+        public string ImageSource { get { return "pack://application:,,,/MegaDesktop;component/resources/UploadFolder.png"; } }
+        public string ToolTip { get { return Resource.UploadFolder; } }
     }
 }

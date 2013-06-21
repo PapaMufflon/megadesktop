@@ -9,7 +9,7 @@ using MegaDesktop.ViewModels;
 
 namespace MegaDesktop.Commands
 {
-    internal class DeleteCommand : ICommand
+    internal class DeleteCommand : ICommand, IToolBarCommand
     {
         private readonly MegaApiWrapper _megaApiWrapper;
         private readonly RefreshService _refresh;
@@ -58,5 +58,10 @@ namespace MegaDesktop.Commands
             EventHandler handler = CanExecuteChanged;
             if (handler != null) handler(this, EventArgs.Empty);
         }
+
+        public int Position { get { return 3; } }
+        public bool Gap { get { return false; } }
+        public string ImageSource { get { return "pack://application:,,,/MegaDesktop;component/resources/Delete.png"; } }
+        public string ToolTip { get { return Resource.Delete; } }
     }
 }

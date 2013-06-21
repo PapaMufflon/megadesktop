@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Net;
 using System.Windows;
 using System.Windows.Input;
+using MegaDesktop.Commands;
 using MegaDesktop.Properties;
 using MegaDesktop.Services;
 using MegaDesktop.ViewModels;
@@ -26,12 +27,10 @@ namespace MegaDesktop.Views
                               .SelectAllClasses()
                               .BindToSelf()
                               .Configure(y => y.InTransientScope()));
-            kernel.Bind(x => x.FromThisAssembly()
+            kernel.Bind(x => x.FromThisAssembly().IncludingNonePublicTypes()
                               .SelectAllClasses()
                               .BindAllInterfaces()
                               .Configure(y => y.InTransientScope()));
-
-            kernel.Bind<IUserManagement>().To<UserAccount>();
 
             kernel.Rebind<IDispatcher>().ToConstant(_dispatcher);
             kernel.Rebind<MegaApiWrapper>().ToSelf().InSingletonScope();
@@ -40,6 +39,7 @@ namespace MegaDesktop.Views
             kernel.Rebind<TransferManager>().ToSelf().InSingletonScope();
             kernel.Rebind<ICanSetTitle>().ToConstant(this);
 
+            var foo = kernel.GetAll<IToolBarCommand>();
             kernel.Get<UserAccount>().LoginLastUser()
                   .ContinueWith(x =>
                       {

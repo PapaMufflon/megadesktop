@@ -8,7 +8,7 @@ using Microsoft.Win32;
 
 namespace MegaDesktop.Commands
 {
-    internal class DownloadCommand : ICommand
+    internal class DownloadCommand : ICommand, IToolBarCommand
     {
         private readonly MegaApiWrapper _megaApiWrapper;
         private readonly RefreshService _refresh;
@@ -85,5 +85,10 @@ namespace MegaDesktop.Commands
             if (handler != null)
                 handler(this, EventArgs.Empty);
         }
+
+        public int Position { get { return 2; } }
+        public bool Gap { get { return true; } }
+        public string ImageSource { get { return "pack://application:,,,/MegaDesktop;component/resources/Download.png"; } }
+        public string ToolTip { get { return Resource.Download; } }
     }
 }

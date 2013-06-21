@@ -82,6 +82,9 @@
         <member name="M:MegaDesktop.Commands.Fakes.ShimDeleteCommand.BehaveAsNotImplemented">
             <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
         </member>
+        <member name="M:MegaDesktop.Commands.Fakes.ShimDeleteCommand.Bind(MegaDesktop.Commands.IToolBarCommand)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
         <member name="M:MegaDesktop.Commands.Fakes.ShimDeleteCommand.Bind(System.Windows.Input.ICommand)">
             <summary>Binds the members of the interface to the shim.</summary>
         </member>
@@ -103,8 +106,20 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimDeleteCommand.ExecuteObject">
             <summary>Sets the shim of DeleteCommand.Execute(Object parameter)</summary>
         </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimDeleteCommand.GapGet">
+            <summary>Sets the shim of DeleteCommand.get_Gap()</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimDeleteCommand.ImageSourceGet">
+            <summary>Sets the shim of DeleteCommand.get_ImageSource()</summary>
+        </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimDeleteCommand.OnCanExecuteChanged">
             <summary>Sets the shim of DeleteCommand.OnCanExecuteChanged()</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimDeleteCommand.PositionGet">
+            <summary>Sets the shim of DeleteCommand.get_Position()</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimDeleteCommand.ToolTipGet">
+            <summary>Sets the shim of DeleteCommand.get_ToolTip()</summary>
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimDeleteCommand._Executeb__4TaskOfBoolean">
             <summary>Sets the shim of DeleteCommand.&lt;Execute&gt;b__4(Task`1&lt;Boolean&gt; x)</summary>
@@ -124,8 +139,20 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimDeleteCommand.AllInstances.ExecuteObject">
             <summary>Sets the shim of DeleteCommand.Execute(Object parameter)</summary>
         </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimDeleteCommand.AllInstances.GapGet">
+            <summary>Sets the shim of DeleteCommand.get_Gap()</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimDeleteCommand.AllInstances.ImageSourceGet">
+            <summary>Sets the shim of DeleteCommand.get_ImageSource()</summary>
+        </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimDeleteCommand.AllInstances.OnCanExecuteChanged">
             <summary>Sets the shim of DeleteCommand.OnCanExecuteChanged()</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimDeleteCommand.AllInstances.PositionGet">
+            <summary>Sets the shim of DeleteCommand.get_Position()</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimDeleteCommand.AllInstances.ToolTipGet">
+            <summary>Sets the shim of DeleteCommand.get_ToolTip()</summary>
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimDeleteCommand.AllInstances._Executeb__4TaskOfBoolean">
             <summary>Sets the shim of DeleteCommand.&lt;Execute&gt;b__4(Task`1&lt;Boolean&gt; x)</summary>
@@ -144,6 +171,9 @@
         </member>
         <member name="M:MegaDesktop.Commands.Fakes.ShimDownloadCommand.BehaveAsNotImplemented">
             <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:MegaDesktop.Commands.Fakes.ShimDownloadCommand.Bind(MegaDesktop.Commands.IToolBarCommand)">
+            <summary>Binds the members of the interface to the shim.</summary>
         </member>
         <member name="M:MegaDesktop.Commands.Fakes.ShimDownloadCommand.Bind(System.Windows.Input.ICommand)">
             <summary>Binds the members of the interface to the shim.</summary>
@@ -169,11 +199,23 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimDownloadCommand.ExecuteObject">
             <summary>Sets the shim of DownloadCommand.Execute(Object parameter)</summary>
         </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimDownloadCommand.GapGet">
+            <summary>Sets the shim of DownloadCommand.get_Gap()</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimDownloadCommand.ImageSourceGet">
+            <summary>Sets the shim of DownloadCommand.get_ImageSource()</summary>
+        </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimDownloadCommand.OnCanExecuteChanged">
             <summary>Sets the shim of DownloadCommand.OnCanExecuteChanged()</summary>
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimDownloadCommand.OnHandleReadyTransferHandle">
             <summary>Sets the shim of DownloadCommand.OnHandleReady(TransferHandle transfer)</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimDownloadCommand.PositionGet">
+            <summary>Sets the shim of DownloadCommand.get_Position()</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimDownloadCommand.ToolTipGet">
+            <summary>Sets the shim of DownloadCommand.get_ToolTip()</summary>
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimDownloadCommand._DownloadFileb__5TaskOfDownloadHandle">
             <summary>Sets the shim of DownloadCommand.&lt;DownloadFile&gt;b__5(Task`1&lt;DownloadHandle&gt; x)</summary>
@@ -199,11 +241,23 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimDownloadCommand.AllInstances.ExecuteObject">
             <summary>Sets the shim of DownloadCommand.Execute(Object parameter)</summary>
         </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimDownloadCommand.AllInstances.GapGet">
+            <summary>Sets the shim of DownloadCommand.get_Gap()</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimDownloadCommand.AllInstances.ImageSourceGet">
+            <summary>Sets the shim of DownloadCommand.get_ImageSource()</summary>
+        </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimDownloadCommand.AllInstances.OnCanExecuteChanged">
             <summary>Sets the shim of DownloadCommand.OnCanExecuteChanged()</summary>
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimDownloadCommand.AllInstances.OnHandleReadyTransferHandle">
             <summary>Sets the shim of DownloadCommand.OnHandleReady(TransferHandle transfer)</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimDownloadCommand.AllInstances.PositionGet">
+            <summary>Sets the shim of DownloadCommand.get_Position()</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimDownloadCommand.AllInstances.ToolTipGet">
+            <summary>Sets the shim of DownloadCommand.get_ToolTip()</summary>
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimDownloadCommand.AllInstances._DownloadFileb__5TaskOfDownloadHandle">
             <summary>Sets the shim of DownloadCommand.&lt;DownloadFile&gt;b__5(Task`1&lt;DownloadHandle&gt; x)</summary>
@@ -391,6 +445,9 @@
         <member name="M:MegaDesktop.Commands.Fakes.ShimRefreshCommand.BehaveAsNotImplemented">
             <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
         </member>
+        <member name="M:MegaDesktop.Commands.Fakes.ShimRefreshCommand.Bind(MegaDesktop.Commands.IToolBarCommand)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
         <member name="M:MegaDesktop.Commands.Fakes.ShimRefreshCommand.Bind(System.Windows.Input.ICommand)">
             <summary>Binds the members of the interface to the shim.</summary>
         </member>
@@ -412,8 +469,20 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimRefreshCommand.ExecuteObject">
             <summary>Sets the shim of RefreshCommand.Execute(Object parameter)</summary>
         </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimRefreshCommand.GapGet">
+            <summary>Sets the shim of RefreshCommand.get_Gap()</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimRefreshCommand.ImageSourceGet">
+            <summary>Sets the shim of RefreshCommand.get_ImageSource()</summary>
+        </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimRefreshCommand.OnCanExecuteChanged">
             <summary>Sets the shim of RefreshCommand.OnCanExecuteChanged()</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimRefreshCommand.PositionGet">
+            <summary>Sets the shim of RefreshCommand.get_Position()</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimRefreshCommand.ToolTipGet">
+            <summary>Sets the shim of RefreshCommand.get_ToolTip()</summary>
         </member>
         <member name="T:MegaDesktop.Commands.Fakes.ShimRefreshCommand.AllInstances">
             <summary>Define shims for all instances members</summary>
@@ -430,8 +499,20 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimRefreshCommand.AllInstances.ExecuteObject">
             <summary>Sets the shim of RefreshCommand.Execute(Object parameter)</summary>
         </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimRefreshCommand.AllInstances.GapGet">
+            <summary>Sets the shim of RefreshCommand.get_Gap()</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimRefreshCommand.AllInstances.ImageSourceGet">
+            <summary>Sets the shim of RefreshCommand.get_ImageSource()</summary>
+        </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimRefreshCommand.AllInstances.OnCanExecuteChanged">
             <summary>Sets the shim of RefreshCommand.OnCanExecuteChanged()</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimRefreshCommand.AllInstances.PositionGet">
+            <summary>Sets the shim of RefreshCommand.get_Position()</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimRefreshCommand.AllInstances.ToolTipGet">
+            <summary>Sets the shim of RefreshCommand.get_ToolTip()</summary>
         </member>
         <member name="T:MegaDesktop.Commands.Fakes.ShimSelectedListNodeActionCommand">
             <summary>Shim type of MegaDesktop.Commands.SelectedListNodeActionCommand</summary>
@@ -499,6 +580,9 @@
         <member name="M:MegaDesktop.Commands.Fakes.ShimUploadCommand.BehaveAsNotImplemented">
             <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
         </member>
+        <member name="M:MegaDesktop.Commands.Fakes.ShimUploadCommand.Bind(MegaDesktop.Commands.IToolBarCommand)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
         <member name="M:MegaDesktop.Commands.Fakes.ShimUploadCommand.Bind(System.Windows.Input.ICommand)">
             <summary>Binds the members of the interface to the shim.</summary>
         </member>
@@ -520,11 +604,23 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.ExecuteObject">
             <summary>Sets the shim of UploadCommand.Execute(Object parameter)</summary>
         </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.GapGet">
+            <summary>Sets the shim of UploadCommand.get_Gap()</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.ImageSourceGet">
+            <summary>Sets the shim of UploadCommand.get_ImageSource()</summary>
+        </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.OnCanExecuteChanged">
             <summary>Sets the shim of UploadCommand.OnCanExecuteChanged()</summary>
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.OnHandleReadyTransferHandle">
             <summary>Sets the shim of UploadCommand.OnHandleReady(TransferHandle transfer)</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.PositionGet">
+            <summary>Sets the shim of UploadCommand.get_Position()</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.ToolTipGet">
+            <summary>Sets the shim of UploadCommand.get_ToolTip()</summary>
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.UploadFileStringNodeViewModel">
             <summary>Sets the shim of UploadCommand.UploadFile(String fileName, NodeViewModel node)</summary>
@@ -553,11 +649,23 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.AllInstances.ExecuteObject">
             <summary>Sets the shim of UploadCommand.Execute(Object parameter)</summary>
         </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.AllInstances.GapGet">
+            <summary>Sets the shim of UploadCommand.get_Gap()</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.AllInstances.ImageSourceGet">
+            <summary>Sets the shim of UploadCommand.get_ImageSource()</summary>
+        </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.AllInstances.OnCanExecuteChanged">
             <summary>Sets the shim of UploadCommand.OnCanExecuteChanged()</summary>
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.AllInstances.OnHandleReadyTransferHandle">
             <summary>Sets the shim of UploadCommand.OnHandleReady(TransferHandle transfer)</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.AllInstances.PositionGet">
+            <summary>Sets the shim of UploadCommand.get_Position()</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.AllInstances.ToolTipGet">
+            <summary>Sets the shim of UploadCommand.get_ToolTip()</summary>
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadCommand.AllInstances.UploadFileStringNodeViewModel">
             <summary>Sets the shim of UploadCommand.UploadFile(String fileName, NodeViewModel node)</summary>
@@ -586,6 +694,9 @@
         <member name="M:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.BehaveAsNotImplemented">
             <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
         </member>
+        <member name="M:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.Bind(MegaDesktop.Commands.IToolBarCommand)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
         <member name="M:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.Bind(System.Windows.Input.ICommand)">
             <summary>Binds the members of the interface to the shim.</summary>
         </member>
@@ -610,11 +721,23 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.ExecuteObject">
             <summary>Sets the shim of UploadFolderCommand.Execute(Object parameter)</summary>
         </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.GapGet">
+            <summary>Sets the shim of UploadFolderCommand.get_Gap()</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.ImageSourceGet">
+            <summary>Sets the shim of UploadFolderCommand.get_ImageSource()</summary>
+        </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.OnCanExecuteChanged">
             <summary>Sets the shim of UploadFolderCommand.OnCanExecuteChanged()</summary>
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.OnFolderCreatedMegaNodeString">
             <summary>Sets the shim of UploadFolderCommand.OnFolderCreated(MegaNode node, String path)</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.PositionGet">
+            <summary>Sets the shim of UploadFolderCommand.get_Position()</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.ToolTipGet">
+            <summary>Sets the shim of UploadFolderCommand.get_ToolTip()</summary>
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.UploadFolderContentStringNodeViewModel">
             <summary>Sets the shim of UploadFolderCommand.UploadFolderContent(String path, NodeViewModel nodeViewModel)</summary>
@@ -640,11 +763,23 @@
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.AllInstances.ExecuteObject">
             <summary>Sets the shim of UploadFolderCommand.Execute(Object parameter)</summary>
         </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.AllInstances.GapGet">
+            <summary>Sets the shim of UploadFolderCommand.get_Gap()</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.AllInstances.ImageSourceGet">
+            <summary>Sets the shim of UploadFolderCommand.get_ImageSource()</summary>
+        </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.AllInstances.OnCanExecuteChanged">
             <summary>Sets the shim of UploadFolderCommand.OnCanExecuteChanged()</summary>
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.AllInstances.OnFolderCreatedMegaNodeString">
             <summary>Sets the shim of UploadFolderCommand.OnFolderCreated(MegaNode node, String path)</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.AllInstances.PositionGet">
+            <summary>Sets the shim of UploadFolderCommand.get_Position()</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.AllInstances.ToolTipGet">
+            <summary>Sets the shim of UploadFolderCommand.get_ToolTip()</summary>
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.ShimUploadFolderCommand.AllInstances.UploadFolderContentStringNodeViewModel">
             <summary>Sets the shim of UploadFolderCommand.UploadFolderContent(String path, NodeViewModel nodeViewModel)</summary>
@@ -741,6 +876,36 @@
         </member>
         <member name="P:MegaDesktop.Commands.Fakes.StubExitCommand.InstanceObserver">
             <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:MegaDesktop.Commands.Fakes.StubIToolBarCommand">
+            <summary>Stub type of MegaDesktop.Commands.IToolBarCommand</summary>
+        </member>
+        <member name="M:MegaDesktop.Commands.Fakes.StubIToolBarCommand.#ctor">
+            <summary>Initializes a new instance of type StubIToolBarCommand</summary>
+        </member>
+        <member name="F:MegaDesktop.Commands.Fakes.StubIToolBarCommand.GapGet">
+            <summary>Sets the stub of IToolBarCommand.get_Gap()</summary>
+        </member>
+        <member name="F:MegaDesktop.Commands.Fakes.StubIToolBarCommand.ImageSourceGet">
+            <summary>Sets the stub of IToolBarCommand.get_ImageSource()</summary>
+        </member>
+        <member name="F:MegaDesktop.Commands.Fakes.StubIToolBarCommand.PositionGet">
+            <summary>Sets the stub of IToolBarCommand.get_Position()</summary>
+        </member>
+        <member name="F:MegaDesktop.Commands.Fakes.StubIToolBarCommand.ToolTipGet">
+            <summary>Sets the stub of IToolBarCommand.get_ToolTip()</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.StubIToolBarCommand.md::MegaDesktop#Commands#IToolBarCommand#Gap">
+            <summary>Sets the stub of IToolBarCommand.get_Gap()</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.StubIToolBarCommand.md::MegaDesktop#Commands#IToolBarCommand#ImageSource">
+            <summary>Sets the stub of IToolBarCommand.get_ImageSource()</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.StubIToolBarCommand.md::MegaDesktop#Commands#IToolBarCommand#Position">
+            <summary>Sets the stub of IToolBarCommand.get_Position()</summary>
+        </member>
+        <member name="P:MegaDesktop.Commands.Fakes.StubIToolBarCommand.md::MegaDesktop#Commands#IToolBarCommand#ToolTip">
+            <summary>Sets the stub of IToolBarCommand.get_ToolTip()</summary>
         </member>
         <member name="T:MegaDesktop.Commands.Fakes.StubLoginCommand">
             <summary>Stub type of MegaDesktop.Commands.LoginCommand</summary>
@@ -921,6 +1086,45 @@
         </member>
         <member name="P:MegaDesktop.Fakes.ShimAssertObjectIsNotNull.Behavior">
             <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="T:MegaDesktop.Fakes.ShimGapToMarginConverter">
+            <summary>Shim type of MegaDesktop.GapToMarginConverter</summary>
+        </member>
+        <member name="M:MegaDesktop.Fakes.ShimGapToMarginConverter.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:MegaDesktop.Fakes.ShimGapToMarginConverter.#ctor(MegaDesktop.GapToMarginConverter)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:MegaDesktop.Fakes.ShimGapToMarginConverter.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:MegaDesktop.Fakes.ShimGapToMarginConverter.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:MegaDesktop.Fakes.ShimGapToMarginConverter.Bind(System.Windows.Data.IValueConverter)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:MegaDesktop.Fakes.ShimGapToMarginConverter.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:MegaDesktop.Fakes.ShimGapToMarginConverter.Constructor">
+            <summary>Sets the shim of GapToMarginConverter.GapToMarginConverter()</summary>
+        </member>
+        <member name="P:MegaDesktop.Fakes.ShimGapToMarginConverter.ConvertBackObjectTypeObjectCultureInfo">
+            <summary>Sets the shim of GapToMarginConverter.ConvertBack(Object value, Type targetType, Object parameter, CultureInfo culture)</summary>
+        </member>
+        <member name="P:MegaDesktop.Fakes.ShimGapToMarginConverter.ConvertObjectTypeObjectCultureInfo">
+            <summary>Sets the shim of GapToMarginConverter.Convert(Object value, Type targetType, Object parameter, CultureInfo culture)</summary>
+        </member>
+        <member name="T:MegaDesktop.Fakes.ShimGapToMarginConverter.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:MegaDesktop.Fakes.ShimGapToMarginConverter.AllInstances.ConvertBackObjectTypeObjectCultureInfo">
+            <summary>Sets the shim of GapToMarginConverter.ConvertBack(Object value, Type targetType, Object parameter, CultureInfo culture)</summary>
+        </member>
+        <member name="P:MegaDesktop.Fakes.ShimGapToMarginConverter.AllInstances.ConvertObjectTypeObjectCultureInfo">
+            <summary>Sets the shim of GapToMarginConverter.Convert(Object value, Type targetType, Object parameter, CultureInfo culture)</summary>
         </member>
         <member name="T:MegaDesktop.Fakes.ShimTermsOfServiceWindow">
             <summary>Shim type of MegaDesktop.TermsOfServiceWindow</summary>
@@ -1163,6 +1367,24 @@
             <summary>Gets or sets the instance behavior.</summary>
         </member>
         <member name="P:MegaDesktop.Fakes.StubApp.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:MegaDesktop.Fakes.StubGapToMarginConverter">
+            <summary>Stub type of MegaDesktop.GapToMarginConverter</summary>
+        </member>
+        <member name="M:MegaDesktop.Fakes.StubGapToMarginConverter.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:MegaDesktop.Fakes.StubGapToMarginConverter.InitializeStub">
+            <summary>Initializes a new instance of type StubGapToMarginConverter</summary>
+        </member>
+        <member name="P:MegaDesktop.Fakes.StubGapToMarginConverter.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:MegaDesktop.Fakes.StubGapToMarginConverter.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:MegaDesktop.Fakes.StubGapToMarginConverter.InstanceObserver">
             <summary>Gets or sets the instance observer.</summary>
         </member>
         <member name="T:MegaDesktop.Fakes.StubTermsOfServiceWindow">
@@ -3700,18 +3922,6 @@
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.ConstructorStatusViewModelNodeManagerTransfersViewModel">
             <summary>Sets the shim of MainViewModel.MainViewModel(StatusViewModel status, NodeManager nodeManager, TransfersViewModel transfersViewModel)</summary>
         </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.DeleteCommandGet">
-            <summary>Sets the shim of MainViewModel.get_DeleteCommand()</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.DeleteCommandSetDeleteCommand">
-            <summary>Sets the shim of MainViewModel.set_DeleteCommand(DeleteCommand value)</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.DownloadCommandGet">
-            <summary>Sets the shim of MainViewModel.get_DownloadCommand()</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.DownloadCommandSetDownloadCommand">
-            <summary>Sets the shim of MainViewModel.set_DownloadCommand(DownloadCommand value)</summary>
-        </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.ExitCommandGet">
             <summary>Sets the shim of MainViewModel.get_ExitCommand()</summary>
         </member>
@@ -3738,12 +3948,6 @@
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.PropertyChangedRemovePropertyChangedEventHandler">
             <summary>Sets the shim of MainViewModel.remove_PropertyChanged(PropertyChangedEventHandler value)</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.RefreshCommandGet">
-            <summary>Sets the shim of MainViewModel.get_RefreshCommand()</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.RefreshCommandSetRefreshCommand">
-            <summary>Sets the shim of MainViewModel.set_RefreshCommand(RefreshCommand value)</summary>
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.RootNodeGet">
             <summary>Sets the shim of MainViewModel.get_RootNode()</summary>
@@ -3784,35 +3988,11 @@
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.TransfersViewModelSetTransfersViewModel">
             <summary>Sets the shim of MainViewModel.set_TransfersViewModel(TransfersViewModel value)</summary>
         </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.UploadCommandGet">
-            <summary>Sets the shim of MainViewModel.get_UploadCommand()</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.UploadCommandSetUploadCommand">
-            <summary>Sets the shim of MainViewModel.set_UploadCommand(UploadCommand value)</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.UploadFolderCommandGet">
-            <summary>Sets the shim of MainViewModel.get_UploadFolderCommand()</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.UploadFolderCommandSetUploadFolderCommand">
-            <summary>Sets the shim of MainViewModel.set_UploadFolderCommand(UploadFolderCommand value)</summary>
-        </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel._ctorb__0ObjectEventArgs">
             <summary>Sets the shim of MainViewModel.&lt;.ctor&gt;b__0(Object s, EventArgs e)</summary>
         </member>
         <member name="T:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances">
             <summary>Define shims for all instances members</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.DeleteCommandGet">
-            <summary>Sets the shim of MainViewModel.get_DeleteCommand()</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.DeleteCommandSetDeleteCommand">
-            <summary>Sets the shim of MainViewModel.set_DeleteCommand(DeleteCommand value)</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.DownloadCommandGet">
-            <summary>Sets the shim of MainViewModel.get_DownloadCommand()</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.DownloadCommandSetDownloadCommand">
-            <summary>Sets the shim of MainViewModel.set_DownloadCommand(DownloadCommand value)</summary>
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.ExitCommandGet">
             <summary>Sets the shim of MainViewModel.get_ExitCommand()</summary>
@@ -3840,12 +4020,6 @@
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.PropertyChangedRemovePropertyChangedEventHandler">
             <summary>Sets the shim of MainViewModel.remove_PropertyChanged(PropertyChangedEventHandler value)</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.RefreshCommandGet">
-            <summary>Sets the shim of MainViewModel.get_RefreshCommand()</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.RefreshCommandSetRefreshCommand">
-            <summary>Sets the shim of MainViewModel.set_RefreshCommand(RefreshCommand value)</summary>
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.RootNodeGet">
             <summary>Sets the shim of MainViewModel.get_RootNode()</summary>
@@ -3885,18 +4059,6 @@
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.TransfersViewModelSetTransfersViewModel">
             <summary>Sets the shim of MainViewModel.set_TransfersViewModel(TransfersViewModel value)</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.UploadCommandGet">
-            <summary>Sets the shim of MainViewModel.get_UploadCommand()</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.UploadCommandSetUploadCommand">
-            <summary>Sets the shim of MainViewModel.set_UploadCommand(UploadCommand value)</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.UploadFolderCommandGet">
-            <summary>Sets the shim of MainViewModel.get_UploadFolderCommand()</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.UploadFolderCommandSetUploadFolderCommand">
-            <summary>Sets the shim of MainViewModel.set_UploadFolderCommand(UploadFolderCommand value)</summary>
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances._ctorb__0ObjectEventArgs">
             <summary>Sets the shim of MainViewModel.&lt;.ctor&gt;b__0(Object s, EventArgs e)</summary>
@@ -4138,6 +4300,138 @@
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimStatusViewModel.AllInstances._EmptyInAMomentb__1">
             <summary>Sets the shim of StatusViewModel.&lt;EmptyInAMoment&gt;b__1()</summary>
         </member>
+        <member name="T:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel">
+            <summary>Shim type of MegaDesktop.ViewModels.ToolBarViewModel</summary>
+        </member>
+        <member name="M:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.#ctor(MegaDesktop.ViewModels.ToolBarViewModel)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.Bind(System.ComponentModel.INotifyPropertyChanged)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.CommandsGet">
+            <summary>Sets the shim of ToolBarViewModel.get_Commands()</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.CommandsSetIEnumerableOfIToolBarCommand">
+            <summary>Sets the shim of ToolBarViewModel.set_Commands(IEnumerable`1&lt;IToolBarCommand&gt; value)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.ConstructorNodeManagerIEnumerableOfIToolBarCommand">
+            <summary>Sets the shim of ToolBarViewModel.ToolBarViewModel(NodeManager nodeManager, IEnumerable`1&lt;IToolBarCommand&gt; toolBarCommands)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.DeleteCommandGet">
+            <summary>Sets the shim of ToolBarViewModel.get_DeleteCommand()</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.DeleteCommandSetDeleteCommand">
+            <summary>Sets the shim of ToolBarViewModel.set_DeleteCommand(DeleteCommand value)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.DownloadCommandGet">
+            <summary>Sets the shim of ToolBarViewModel.get_DownloadCommand()</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.DownloadCommandSetDownloadCommand">
+            <summary>Sets the shim of ToolBarViewModel.set_DownloadCommand(DownloadCommand value)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.OnPropertyChangedString">
+            <summary>Sets the shim of ToolBarViewModel.OnPropertyChanged(String propertyName)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.PropertyChangedAddPropertyChangedEventHandler">
+            <summary>Sets the shim of ToolBarViewModel.add_PropertyChanged(PropertyChangedEventHandler value)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.PropertyChangedRemovePropertyChangedEventHandler">
+            <summary>Sets the shim of ToolBarViewModel.remove_PropertyChanged(PropertyChangedEventHandler value)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.RefreshCommandGet">
+            <summary>Sets the shim of ToolBarViewModel.get_RefreshCommand()</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.RefreshCommandSetRefreshCommand">
+            <summary>Sets the shim of ToolBarViewModel.set_RefreshCommand(RefreshCommand value)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.SelectedNodeGet">
+            <summary>Sets the shim of ToolBarViewModel.get_SelectedNode()</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.SelectedNodeSetNodeViewModel">
+            <summary>Sets the shim of ToolBarViewModel.set_SelectedNode(NodeViewModel value)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.UploadCommandGet">
+            <summary>Sets the shim of ToolBarViewModel.get_UploadCommand()</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.UploadCommandSetUploadCommand">
+            <summary>Sets the shim of ToolBarViewModel.set_UploadCommand(UploadCommand value)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.UploadFolderCommandGet">
+            <summary>Sets the shim of ToolBarViewModel.get_UploadFolderCommand()</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.UploadFolderCommandSetUploadFolderCommand">
+            <summary>Sets the shim of ToolBarViewModel.set_UploadFolderCommand(UploadFolderCommand value)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel._ctorb__0IToolBarCommand">
+            <summary>Sets the shim of ToolBarViewModel.&lt;.ctor&gt;b__0(IToolBarCommand x)</summary>
+        </member>
+        <member name="T:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.AllInstances.CommandsGet">
+            <summary>Sets the shim of ToolBarViewModel.get_Commands()</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.AllInstances.CommandsSetIEnumerableOfIToolBarCommand">
+            <summary>Sets the shim of ToolBarViewModel.set_Commands(IEnumerable`1&lt;IToolBarCommand&gt; value)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.AllInstances.DeleteCommandGet">
+            <summary>Sets the shim of ToolBarViewModel.get_DeleteCommand()</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.AllInstances.DeleteCommandSetDeleteCommand">
+            <summary>Sets the shim of ToolBarViewModel.set_DeleteCommand(DeleteCommand value)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.AllInstances.DownloadCommandGet">
+            <summary>Sets the shim of ToolBarViewModel.get_DownloadCommand()</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.AllInstances.DownloadCommandSetDownloadCommand">
+            <summary>Sets the shim of ToolBarViewModel.set_DownloadCommand(DownloadCommand value)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.AllInstances.OnPropertyChangedString">
+            <summary>Sets the shim of ToolBarViewModel.OnPropertyChanged(String propertyName)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.AllInstances.PropertyChangedAddPropertyChangedEventHandler">
+            <summary>Sets the shim of ToolBarViewModel.add_PropertyChanged(PropertyChangedEventHandler value)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.AllInstances.PropertyChangedRemovePropertyChangedEventHandler">
+            <summary>Sets the shim of ToolBarViewModel.remove_PropertyChanged(PropertyChangedEventHandler value)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.AllInstances.RefreshCommandGet">
+            <summary>Sets the shim of ToolBarViewModel.get_RefreshCommand()</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.AllInstances.RefreshCommandSetRefreshCommand">
+            <summary>Sets the shim of ToolBarViewModel.set_RefreshCommand(RefreshCommand value)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.AllInstances.SelectedNodeGet">
+            <summary>Sets the shim of ToolBarViewModel.get_SelectedNode()</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.AllInstances.SelectedNodeSetNodeViewModel">
+            <summary>Sets the shim of ToolBarViewModel.set_SelectedNode(NodeViewModel value)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.AllInstances.UploadCommandGet">
+            <summary>Sets the shim of ToolBarViewModel.get_UploadCommand()</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.AllInstances.UploadCommandSetUploadCommand">
+            <summary>Sets the shim of ToolBarViewModel.set_UploadCommand(UploadCommand value)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.AllInstances.UploadFolderCommandGet">
+            <summary>Sets the shim of ToolBarViewModel.get_UploadFolderCommand()</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.AllInstances.UploadFolderCommandSetUploadFolderCommand">
+            <summary>Sets the shim of ToolBarViewModel.set_UploadFolderCommand(UploadFolderCommand value)</summary>
+        </member>
         <member name="T:MegaDesktop.ViewModels.Fakes.ShimTransferHandleViewModel">
             <summary>Shim type of MegaDesktop.ViewModels.TransferHandleViewModel</summary>
         </member>
@@ -4364,6 +4658,30 @@
             <summary>Gets or sets the instance behavior.</summary>
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.StubStatusViewModel.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:MegaDesktop.ViewModels.Fakes.StubToolBarViewModel">
+            <summary>Stub type of MegaDesktop.ViewModels.ToolBarViewModel</summary>
+        </member>
+        <member name="M:MegaDesktop.ViewModels.Fakes.StubToolBarViewModel.#ctor(MegaDesktop.Services.NodeManager,System.Collections.Generic.IEnumerable{MegaDesktop.Commands.IToolBarCommand})">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:MegaDesktop.ViewModels.Fakes.StubToolBarViewModel.InitializeStub">
+            <summary>Initializes a new instance of type StubToolBarViewModel</summary>
+        </member>
+        <member name="M:MegaDesktop.ViewModels.Fakes.StubToolBarViewModel.OnPropertyChanged(System.String)">
+            <summary>Sets the stub of ToolBarViewModel.OnPropertyChanged(String propertyName)</summary>
+        </member>
+        <member name="F:MegaDesktop.ViewModels.Fakes.StubToolBarViewModel.OnPropertyChangedString">
+            <summary>Sets the stub of ToolBarViewModel.OnPropertyChanged(String propertyName)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.StubToolBarViewModel.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.StubToolBarViewModel.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.StubToolBarViewModel.InstanceObserver">
             <summary>Gets or sets the instance observer.</summary>
         </member>
         <member name="T:MegaDesktop.ViewModels.Fakes.StubTransferHandleViewModel">

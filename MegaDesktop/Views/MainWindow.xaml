@@ -34,7 +34,7 @@
 
                 <ui:ToolBarView Grid.Row="1"
                                 Grid.Column="1"
-                                DataContext="{Binding}" />
+                                DataContext="{Binding ToolBarViewModel}" />
 
                 <ui:NodesView Grid.Column="1"
                               Grid.Row="2"

@@ -2,69 +2,34 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:megaDesktop="clr-namespace:MegaDesktop"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:megaDesktop="clr-namespace:MegaDesktop"
              mc:Ignorable="d" 
              d:DesignHeight="50" d:DesignWidth="300">
-    <StackPanel Orientation="Horizontal">
-        <Button Command="{Binding UploadCommand}"
-                CommandParameter="{Binding SelectedNode, Mode=OneWay}"
-                ToolTip="{x:Static megaDesktop:Resource.UploadFile}"
-                Margin="8,0,0,0"
-                Height="32"
-                Width="42">
-            <Button.Content>
-                <Image Width="22"
-                       Height="20"
-                       Source="pack://application:,,,/MegaDesktop;component/resources/UploadFile.png" />
-            </Button.Content>
-        </Button>
-        <Button Command="{Binding UploadFolderCommand}"
-                CommandParameter="{Binding SelectedNode, Mode=OneWay}"
-                ToolTip="{x:Static megaDesktop:Resource.UploadFolder}"
-                Margin="2,0,0,0"
-                Height="32"
-                Width="42">
-            <Button.Content>
-                <Image Width="22"
-                       Height="20"
-                       Source="pack://application:,,,/MegaDesktop;component/resources/UploadFolder.png" />
-            </Button.Content>
-        </Button>
-        <Button Command="{Binding DownloadCommand}"
-                CommandParameter="{Binding SelectedNode, Mode=OneWay}"
-                ToolTip="{x:Static megaDesktop:Resource.Download}"
-                Margin="8,0,0,0"
-                Height="32"
-                Width="42">
-            <Button.Content>
-                <Image Width="22"
-                       Height="20"
-                       Source="pack://application:,,,/MegaDesktop;component/resources/download.png" />
-            </Button.Content>
-        </Button>
-        <Button Command="{Binding DeleteCommand}"
-                CommandParameter="{Binding SelectedNode, Mode=OneWay}"
-                ToolTip="{x:Static megaDesktop:Resource.Delete}"
-                Margin="2,0,0,0"
-                Height="32"
-                Width="42">
-            <Button.Content>
-                <Image Width="22"
-                       Height="20"
-                       Source="pack://application:,,,/MegaDesktop;component/resources/Delete.png" />
-            </Button.Content>
-        </Button>
-        <Button Command="{Binding RefreshCommand}"
-                CommandParameter="{Binding SelectedNode, Mode=OneWay}"
-                ToolTip="{x:Static megaDesktop:Resource.Refresh}"
-                Margin="8,0,0,0"
-                Height="32"
-                Width="42">
-            <Button.Content>
-                <Image Width="22"
-                       Height="20"
-                       Source="pack://application:,,,/MegaDesktop;component/resources/refresh.png" />
-            </Button.Content>
-        </Button>
-    </StackPanel>
+    <UserControl.Resources>
+        <megaDesktop:GapToMarginConverter x:Key="GapToMarginConverter" />
+    </UserControl.Resources>
+    <ListBox ItemsSource="{Binding Commands}">
+        <ListBox.ItemsPanel>
+            <ItemsPanelTemplate>
+                <StackPanel Orientation="Horizontal" />
+            </ItemsPanelTemplate>
+        </ListBox.ItemsPanel>
+        <ListBox.ItemTemplate>
+            <DataTemplate>
+                <Button Command="{Binding}"
+                        CommandParameter="{Binding DataContext.SelectedNode, Mode=OneWay, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
+                        ToolTip="{Binding ToolTip}"
+                        Margin="{Binding Gap, Converter={StaticResource GapToMarginConverter}}"
+                        Height="32"
+                        Width="42">
+                    <Button.Content>
+                        <Image Width="22"
+                               Height="20"
+                               Source="{Binding ImageSource}" />
+                    </Button.Content>
+                </Button>
+            </DataTemplate>
+        </ListBox.ItemTemplate>
+    </ListBox>
 </UserControl>

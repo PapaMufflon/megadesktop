@@ -8,7 +8,7 @@ using Microsoft.Win32;
 
 namespace MegaDesktop.Commands
 {
-    internal class UploadCommand : ICommand
+    internal class UploadCommand : ICommand, IToolBarCommand
     {
         private readonly IDispatcher _dispatcher;
         private readonly RefreshService _refresh;
@@ -82,5 +82,10 @@ namespace MegaDesktop.Commands
             EventHandler handler = CanExecuteChanged;
             if (handler != null) handler(this, EventArgs.Empty);
         }
+
+        public int Position { get { return 0; } }
+        public bool Gap { get { return true; } }
+        public string ImageSource { get { return "pack://application:,,,/MegaDesktop;component/resources/UploadFile.png"; } }
+        public string ToolTip { get { return Resource.UploadFile; } }
     }
 }

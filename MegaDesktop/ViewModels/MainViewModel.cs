@@ -11,11 +11,12 @@ namespace MegaDesktop.ViewModels
     {
         private readonly NodeManager _nodeManager;
 
-        public MainViewModel(StatusViewModel status, NodeManager nodeManager, TransfersViewModel transfersViewModel)
+        public MainViewModel(StatusViewModel status, NodeManager nodeManager, TransfersViewModel transfersViewModel, ToolBarViewModel toolBarViewModel)
         {
             Status = status.AssertIsNotNull("status");
             _nodeManager = nodeManager.AssertIsNotNull("nodeManager");
             TransfersViewModel = transfersViewModel;
+            ToolBarViewModel = toolBarViewModel;
 
             _nodeManager.SelectedNodeChanged += (s, e) => OnPropertyChanged("SelectedNode");
 
@@ -24,15 +25,11 @@ namespace MegaDesktop.ViewModels
 
         public StatusViewModel Status { get; private set; }
         public TransfersViewModel TransfersViewModel { get; private set; }
+        public ToolBarViewModel ToolBarViewModel { get; set; }
 
-        [Inject] public UploadCommand UploadCommand { get; set; }
-        [Inject] public UploadFolderCommand UploadFolderCommand { get; set; }
-        [Inject] public DownloadCommand DownloadCommand { get; set; }
-        [Inject] public DeleteCommand DeleteCommand { get; set; }
         [Inject] public LoginCommand LoginCommand { get; set; }
         [Inject] public LogoutCommand LogoutCommand { get; set; }
         [Inject] public ExitCommand ExitCommand { get; set; }
-        [Inject] public RefreshCommand RefreshCommand { get; set; }
         [Inject] public SelectedListNodeActionCommand SelectedListNodeActionCommand { get; set; }
 
         public NodeViewModel SelectedNode

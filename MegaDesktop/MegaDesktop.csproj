@@ -94,6 +94,7 @@
     <Compile Include="Commands\DeleteCommand.cs" />
     <Compile Include="Commands\DownloadCommand.cs" />
     <Compile Include="Commands\ExitCommand.cs" />
+    <Compile Include="Commands\IToolBarCommand.cs" />
     <Compile Include="Commands\LoginCommand.cs" />
     <Compile Include="Commands\LogoutCommand.cs" />
     <Compile Include="Commands\RefreshCommand.cs" />
@@ -101,6 +102,7 @@
     <Compile Include="Commands\UploadCommand.cs" />
     <Compile Include="AssertObjectIsNotNull.cs" />
     <Compile Include="Commands\UploadFolderCommand.cs" />
+    <Compile Include="GapToMarginConverter.cs" />
     <Compile Include="Resource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -127,6 +129,7 @@
     <Compile Include="ViewModels\NodeType.cs" />
     <Compile Include="ViewModels\NodeViewModel.cs" />
     <Compile Include="ViewModels\StatusViewModel.cs" />
+    <Compile Include="ViewModels\ToolBarViewModel.cs" />
     <Compile Include="ViewModels\TransferHandleViewModel.cs" />
     <Compile Include="ViewModels\TransfersViewModel.cs" />
     <Compile Include="Views\HeaderView.xaml.cs">
