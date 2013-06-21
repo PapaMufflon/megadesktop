@@ -143,7 +143,6 @@
     <Compile Include="Views\TransfersView.xaml.cs">
       <DependentUpon>TransfersView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\TransfersViewModelDesignData.cs" />
     <Compile Include="Views\TreeView.xaml.cs">
       <DependentUpon>TreeView.xaml</DependentUpon>
     </Compile>

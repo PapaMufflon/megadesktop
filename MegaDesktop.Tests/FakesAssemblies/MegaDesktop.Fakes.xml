@@ -4354,78 +4354,6 @@
         <member name="P:MegaDesktop.ViewModels.Fakes.StubTransferHandleViewModel.InstanceObserver">
             <summary>Gets or sets the instance observer.</summary>
         </member>
-        <member name="T:MegaDesktop.Views.Fakes.ShimFoo">
-            <summary>Shim type of MegaDesktop.Views.Foo</summary>
-        </member>
-        <member name="M:MegaDesktop.Views.Fakes.ShimFoo.#ctor">
-            <summary>Initializes a new shim instance</summary>
-        </member>
-        <member name="M:MegaDesktop.Views.Fakes.ShimFoo.#ctor(MegaDesktop.Views.Foo)">
-            <summary>Initializes a new shim for the given instance</summary>
-        </member>
-        <member name="M:MegaDesktop.Views.Fakes.ShimFoo.BehaveAsCurrent">
-            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
-        </member>
-        <member name="M:MegaDesktop.Views.Fakes.ShimFoo.BehaveAsNotImplemented">
-            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
-        </member>
-        <member name="P:MegaDesktop.Views.Fakes.ShimFoo.Behavior">
-            <summary>Assigns the behavior for all methods of the shimmed type</summary>
-        </member>
-        <member name="P:MegaDesktop.Views.Fakes.ShimFoo.CancelCommandGet">
-            <summary>Sets the shim of Foo.get_CancelCommand()</summary>
-        </member>
-        <member name="P:MegaDesktop.Views.Fakes.ShimFoo.CancelCommandSetICommand">
-            <summary>Sets the shim of Foo.set_CancelCommand(ICommand value)</summary>
-        </member>
-        <member name="P:MegaDesktop.Views.Fakes.ShimFoo.Constructor">
-            <summary>Sets the shim of Foo.Foo()</summary>
-        </member>
-        <member name="P:MegaDesktop.Views.Fakes.ShimFoo.NameGet">
-            <summary>Sets the shim of Foo.get_Name()</summary>
-        </member>
-        <member name="P:MegaDesktop.Views.Fakes.ShimFoo.NameSetString">
-            <summary>Sets the shim of Foo.set_Name(String value)</summary>
-        </member>
-        <member name="P:MegaDesktop.Views.Fakes.ShimFoo.ProgressGet">
-            <summary>Sets the shim of Foo.get_Progress()</summary>
-        </member>
-        <member name="P:MegaDesktop.Views.Fakes.ShimFoo.ProgressSetInt32">
-            <summary>Sets the shim of Foo.set_Progress(Int32 value)</summary>
-        </member>
-        <member name="P:MegaDesktop.Views.Fakes.ShimFoo.StatusGet">
-            <summary>Sets the shim of Foo.get_Status()</summary>
-        </member>
-        <member name="P:MegaDesktop.Views.Fakes.ShimFoo.StatusSetTransferHandleStatus">
-            <summary>Sets the shim of Foo.set_Status(TransferHandleStatus value)</summary>
-        </member>
-        <member name="T:MegaDesktop.Views.Fakes.ShimFoo.AllInstances">
-            <summary>Define shims for all instances members</summary>
-        </member>
-        <member name="P:MegaDesktop.Views.Fakes.ShimFoo.AllInstances.CancelCommandGet">
-            <summary>Sets the shim of Foo.get_CancelCommand()</summary>
-        </member>
-        <member name="P:MegaDesktop.Views.Fakes.ShimFoo.AllInstances.CancelCommandSetICommand">
-            <summary>Sets the shim of Foo.set_CancelCommand(ICommand value)</summary>
-        </member>
-        <member name="P:MegaDesktop.Views.Fakes.ShimFoo.AllInstances.NameGet">
-            <summary>Sets the shim of Foo.get_Name()</summary>
-        </member>
-        <member name="P:MegaDesktop.Views.Fakes.ShimFoo.AllInstances.NameSetString">
-            <summary>Sets the shim of Foo.set_Name(String value)</summary>
-        </member>
-        <member name="P:MegaDesktop.Views.Fakes.ShimFoo.AllInstances.ProgressGet">
-            <summary>Sets the shim of Foo.get_Progress()</summary>
-        </member>
-        <member name="P:MegaDesktop.Views.Fakes.ShimFoo.AllInstances.ProgressSetInt32">
-            <summary>Sets the shim of Foo.set_Progress(Int32 value)</summary>
-        </member>
-        <member name="P:MegaDesktop.Views.Fakes.ShimFoo.AllInstances.StatusGet">
-            <summary>Sets the shim of Foo.get_Status()</summary>
-        </member>
-        <member name="P:MegaDesktop.Views.Fakes.ShimFoo.AllInstances.StatusSetTransferHandleStatus">
-            <summary>Sets the shim of Foo.set_Status(TransferHandleStatus value)</summary>
-        </member>
         <member name="T:MegaDesktop.Views.Fakes.ShimHeaderView">
             <summary>Shim type of MegaDesktop.Views.HeaderView</summary>
         </member>
@@ -4762,42 +4690,6 @@
         <member name="P:MegaDesktop.Views.Fakes.ShimTransfersView.AllInstances.SystemWindowsMarkupIComponentConnectorConnectInt32Object">
             <summary>Sets the shim of TransfersView.System.Windows.Markup.IComponentConnector.Connect(Int32 connectionId, Object target)</summary>
         </member>
-        <member name="T:MegaDesktop.Views.Fakes.ShimTransfersViewModelDesignData">
-            <summary>Shim type of MegaDesktop.Views.TransfersViewModelDesignData</summary>
-        </member>
-        <member name="M:MegaDesktop.Views.Fakes.ShimTransfersViewModelDesignData.#ctor">
-            <summary>Initializes a new shim instance</summary>
-        </member>
-        <member name="M:MegaDesktop.Views.Fakes.ShimTransfersViewModelDesignData.#ctor(MegaDesktop.Views.TransfersViewModelDesignData)">
-            <summary>Initializes a new shim for the given instance</summary>
-        </member>
-        <member name="M:MegaDesktop.Views.Fakes.ShimTransfersViewModelDesignData.BehaveAsCurrent">
-            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
-        </member>
-        <member name="M:MegaDesktop.Views.Fakes.ShimTransfersViewModelDesignData.BehaveAsNotImplemented">
-            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
-        </member>
-        <member name="P:MegaDesktop.Views.Fakes.ShimTransfersViewModelDesignData.Behavior">
-            <summary>Assigns the behavior for all methods of the shimmed type</summary>
-        </member>
-        <member name="P:MegaDesktop.Views.Fakes.ShimTransfersViewModelDesignData.Constructor">
-            <summary>Sets the shim of TransfersViewModelDesignData.TransfersViewModelDesignData()</summary>
-        </member>
-        <member name="P:MegaDesktop.Views.Fakes.ShimTransfersViewModelDesignData.TransfersGet">
-            <summary>Sets the shim of TransfersViewModelDesignData.get_Transfers()</summary>
-        </member>
-        <member name="P:MegaDesktop.Views.Fakes.ShimTransfersViewModelDesignData.TransfersSetObservableCollectionOfFoo">
-            <summary>Sets the shim of TransfersViewModelDesignData.set_Transfers(ObservableCollection`1&lt;Foo&gt; value)</summary>
-        </member>
-        <member name="T:MegaDesktop.Views.Fakes.ShimTransfersViewModelDesignData.AllInstances">
-            <summary>Define shims for all instances members</summary>
-        </member>
-        <member name="P:MegaDesktop.Views.Fakes.ShimTransfersViewModelDesignData.AllInstances.TransfersGet">
-            <summary>Sets the shim of TransfersViewModelDesignData.get_Transfers()</summary>
-        </member>
-        <member name="P:MegaDesktop.Views.Fakes.ShimTransfersViewModelDesignData.AllInstances.TransfersSetObservableCollectionOfFoo">
-            <summary>Sets the shim of TransfersViewModelDesignData.set_Transfers(ObservableCollection`1&lt;Foo&gt; value)</summary>
-        </member>
         <member name="T:MegaDesktop.Views.Fakes.ShimTreeView">
             <summary>Shim type of MegaDesktop.Views.TreeView</summary>
         </member>
@@ -4860,24 +4752,6 @@
         </member>
         <member name="P:MegaDesktop.Views.Fakes.ShimTreeView.AllInstances._CreateDelegateTypeString">
             <summary>Sets the shim of TreeView._CreateDelegate(Type delegateType, String handler)</summary>
-        </member>
-        <member name="T:MegaDesktop.Views.Fakes.StubFoo">
-            <summary>Stub type of MegaDesktop.Views.Foo</summary>
-        </member>
-        <member name="M:MegaDesktop.Views.Fakes.StubFoo.#ctor">
-            <summary>Initializes a new instance</summary>
-        </member>
-        <member name="M:MegaDesktop.Views.Fakes.StubFoo.InitializeStub">
-            <summary>Initializes a new instance of type StubFoo</summary>
-        </member>
-        <member name="P:MegaDesktop.Views.Fakes.StubFoo.CallBase">
-            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
-        </member>
-        <member name="P:MegaDesktop.Views.Fakes.StubFoo.InstanceBehavior">
-            <summary>Gets or sets the instance behavior.</summary>
-        </member>
-        <member name="P:MegaDesktop.Views.Fakes.StubFoo.InstanceObserver">
-            <summary>Gets or sets the instance observer.</summary>
         </member>
         <member name="T:MegaDesktop.Views.Fakes.StubHeaderView">
             <summary>Stub type of MegaDesktop.Views.HeaderView</summary>
@@ -9000,24 +8874,6 @@
         </member>
         <member name="P:MegaDesktop.Views.Fakes.StubTransfersView.VisualChildrenCount">
             <summary>Sets the stub of FrameworkElement.get_VisualChildrenCount()</summary>
-        </member>
-        <member name="T:MegaDesktop.Views.Fakes.StubTransfersViewModelDesignData">
-            <summary>Stub type of MegaDesktop.Views.TransfersViewModelDesignData</summary>
-        </member>
-        <member name="M:MegaDesktop.Views.Fakes.StubTransfersViewModelDesignData.#ctor">
-            <summary>Initializes a new instance</summary>
-        </member>
-        <member name="M:MegaDesktop.Views.Fakes.StubTransfersViewModelDesignData.InitializeStub">
-            <summary>Initializes a new instance of type StubTransfersViewModelDesignData</summary>
-        </member>
-        <member name="P:MegaDesktop.Views.Fakes.StubTransfersViewModelDesignData.CallBase">
-            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
-        </member>
-        <member name="P:MegaDesktop.Views.Fakes.StubTransfersViewModelDesignData.InstanceBehavior">
-            <summary>Gets or sets the instance behavior.</summary>
-        </member>
-        <member name="P:MegaDesktop.Views.Fakes.StubTransfersViewModelDesignData.InstanceObserver">
-            <summary>Gets or sets the instance observer.</summary>
         </member>
         <member name="T:MegaDesktop.Views.Fakes.StubTreeView">
             <summary>Stub type of MegaDesktop.Views.TreeView</summary>

@@ -2,7 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:ui="clr-namespace:MegaDesktop.Views"
-        Title="Mega Desktop (v0.75 beta)" Height="500" Width="800" MinHeight="500" MinWidth="500"
+        Title="Mega Desktop (v0.75 beta)" Height="500" Width="800" MinHeight="500" MinWidth="600"
         WindowStyle="None" AllowsTransparency="True" ResizeMode="CanResizeWithGrip"
         MouseDown="MainWindow_OnMouseDown" AllowDrop="True" DragEnter="Window_DragEnter_1" Drop="Window_Drop_1"
         Icon="pack://application:,,,/m.ico">

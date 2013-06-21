@@ -228,8 +228,11 @@
                                 <Border CornerRadius="8" Background="#d9290b" BorderThickness="0">
                                     <TextBlock Foreground="White"
                                                FontSize="10"
-                                               Margin="12,0,0,2"
+                                               Margin="12,0"
+                                               Width="30"
                                                VerticalAlignment="Center"
+                                               HorizontalAlignment="Center"
+                                               TextAlignment="Center"
                                                Text="{Binding Progress, StringFormat={}{0}%}" />
                                 </Border>
                             </Grid>
