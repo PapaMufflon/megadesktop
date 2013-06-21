@@ -1,15 +1,14 @@
 ﻿using MegaDesktop.Services;
-using MegaDesktop.Util;
 
 namespace MegaDesktop.ViewModels
 {
     internal class MainViewModel
     {
-        private readonly NodeManager _nodeManager;
-
-        public MainViewModel(NodeManager nodeManager, TransfersViewModel transfersViewModel, ToolBarViewModel toolBarViewModel, HeaderViewModel headerViewModel)
+        public MainViewModel(NodeManager nodeManager,
+                             TransfersViewModel transfersViewModel,
+                             ToolBarViewModel toolBarViewModel,
+                             HeaderViewModel headerViewModel)
         {
-            _nodeManager = nodeManager.AssertIsNotNull("nodeManager");
             TransfersViewModel = transfersViewModel;
             ToolBarViewModel = toolBarViewModel;
             HeaderViewModel = headerViewModel;
