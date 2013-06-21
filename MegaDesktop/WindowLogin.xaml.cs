@@ -73,7 +73,7 @@ namespace MegaDesktop
                            .ContinueWith(x =>
                                {
                                    if (x.Exception == null)
-                                       Close();
+                                      Invoke(Close);
                                    else
                                        Invoke(() => textBoxStatus.Text = "Incorrect login or password");
                                });

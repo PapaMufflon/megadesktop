@@ -33,6 +33,9 @@ namespace MegaDesktop.Services
             var userAccountFile = GetUserKeyFilePath();
             var user = Mega.LoadAccount(userAccountFile);
 
+            if (user == null)
+                return new Task(() => { });
+
             return LoginUser(user);
         }
 
