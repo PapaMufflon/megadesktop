@@ -1,5 +1,4 @@
-﻿using System.Collections.ObjectModel;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using MegaDesktop.Commands;
 using MegaDesktop.Services;
@@ -11,25 +10,20 @@ namespace MegaDesktop.ViewModels
     {
         private readonly NodeManager _nodeManager;
 
-        public MainViewModel(StatusViewModel status, NodeManager nodeManager, TransfersViewModel transfersViewModel, ToolBarViewModel toolBarViewModel)
+        public MainViewModel(NodeManager nodeManager, TransfersViewModel transfersViewModel, ToolBarViewModel toolBarViewModel, HeaderViewModel headerViewModel)
         {
-            Status = status.AssertIsNotNull("status");
             _nodeManager = nodeManager.AssertIsNotNull("nodeManager");
             TransfersViewModel = transfersViewModel;
             ToolBarViewModel = toolBarViewModel;
+            HeaderViewModel = headerViewModel;
 
             _nodeManager.SelectedNodeChanged += (s, e) => OnPropertyChanged("SelectedNode");
-
-            Status.SetStatus(Services.Status.Communicating);
         }
 
-        public StatusViewModel Status { get; private set; }
         public TransfersViewModel TransfersViewModel { get; private set; }
-        public ToolBarViewModel ToolBarViewModel { get; set; }
+        public ToolBarViewModel ToolBarViewModel { get; private set; }
+        public HeaderViewModel HeaderViewModel { get; private set; }
 
-        [Inject] public LoginCommand LoginCommand { get; set; }
-        [Inject] public LogoutCommand LogoutCommand { get; set; }
-        [Inject] public ExitCommand ExitCommand { get; set; }
         [Inject] public SelectedListNodeActionCommand SelectedListNodeActionCommand { get; set; }
 
         public NodeViewModel SelectedNode

@@ -25,7 +25,7 @@
                 <ui:HeaderView Grid.Row="0"
                                Grid.Column="0"
                                Grid.ColumnSpan="2"
-                               DataContext="{Binding}" />
+                               DataContext="{Binding HeaderViewModel}" />
 
                 <ui:TreeView Grid.Row="1"
                              Grid.RowSpan="2"

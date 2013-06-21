@@ -125,6 +125,7 @@
     <Compile Include="TypeToImageConverter.cs" />
     <Compile Include="Ui\BindableSelectedItemBehavior.cs" />
     <Compile Include="Ui\DataGridHelper.cs" />
+    <Compile Include="ViewModels\HeaderViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\NodeType.cs" />
     <Compile Include="ViewModels\NodeViewModel.cs" />
