@@ -979,128 +979,68 @@
         <member name="M:MegaDesktop.Fakes.ShimApp.BehaveAsNotImplemented">
             <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
         </member>
+        <member name="M:MegaDesktop.Fakes.ShimApp.Bind(System.Windows.Markup.IQueryAmbient)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:MegaDesktop.Fakes.ShimApp.ApplicationStartObjectStartupEventArgs">
+            <summary>Sets the shim of App.ApplicationStart(Object sender, StartupEventArgs e)</summary>
+        </member>
+        <member name="P:MegaDesktop.Fakes.ShimApp.AssertLoggedInTask">
+            <summary>Sets the shim of App.AssertLoggedIn(Task task)</summary>
+        </member>
         <member name="P:MegaDesktop.Fakes.ShimApp.Behavior">
             <summary>Assigns the behavior for all methods of the shimmed type</summary>
         </member>
         <member name="P:MegaDesktop.Fakes.ShimApp.Constructor">
             <summary>Sets the shim of App.App()</summary>
         </member>
+        <member name="P:MegaDesktop.Fakes.ShimApp.CreateBindings">
+            <summary>Sets the shim of App.CreateBindings()</summary>
+        </member>
+        <member name="P:MegaDesktop.Fakes.ShimApp.InitializeComponent">
+            <summary>Sets the shim of App.InitializeComponent()</summary>
+        </member>
+        <member name="P:MegaDesktop.Fakes.ShimApp.LogIn">
+            <summary>Sets the shim of App.LogIn()</summary>
+        </member>
+        <member name="P:MegaDesktop.Fakes.ShimApp.Main">
+            <summary>Sets the shim of App.Main()</summary>
+        </member>
+        <member name="P:MegaDesktop.Fakes.ShimApp.ShowMainView">
+            <summary>Sets the shim of App.ShowMainView()</summary>
+        </member>
+        <member name="P:MegaDesktop.Fakes.ShimApp._CreateBindingsb__0IFromSyntax">
+            <summary>Sets the shim of App.&lt;CreateBindings&gt;b__0(IFromSyntax x)</summary>
+        </member>
+        <member name="P:MegaDesktop.Fakes.ShimApp._CreateBindingsb__1IBindingWhenInNamedWithOrOnSyntaxOfObject">
+            <summary>Sets the shim of App.&lt;CreateBindings&gt;b__1(IBindingWhenInNamedWithOrOnSyntax`1&lt;Object&gt; y)</summary>
+        </member>
+        <member name="P:MegaDesktop.Fakes.ShimApp._CreateBindingsb__2IFromSyntax">
+            <summary>Sets the shim of App.&lt;CreateBindings&gt;b__2(IFromSyntax x)</summary>
+        </member>
+        <member name="P:MegaDesktop.Fakes.ShimApp._CreateBindingsb__3IBindingWhenInNamedWithOrOnSyntaxOfObject">
+            <summary>Sets the shim of App.&lt;CreateBindings&gt;b__3(IBindingWhenInNamedWithOrOnSyntax`1&lt;Object&gt; y)</summary>
+        </member>
         <member name="T:MegaDesktop.Fakes.ShimApp.AllInstances">
             <summary>Define shims for all instances members</summary>
         </member>
-        <member name="T:MegaDesktop.Fakes.ShimGapToMarginConverter">
-            <summary>Shim type of MegaDesktop.GapToMarginConverter</summary>
+        <member name="P:MegaDesktop.Fakes.ShimApp.AllInstances.ApplicationStartObjectStartupEventArgs">
+            <summary>Sets the shim of App.ApplicationStart(Object sender, StartupEventArgs e)</summary>
         </member>
-        <member name="M:MegaDesktop.Fakes.ShimGapToMarginConverter.#ctor">
-            <summary>Initializes a new shim instance</summary>
+        <member name="P:MegaDesktop.Fakes.ShimApp.AllInstances.AssertLoggedInTask">
+            <summary>Sets the shim of App.AssertLoggedIn(Task task)</summary>
         </member>
-        <member name="M:MegaDesktop.Fakes.ShimGapToMarginConverter.#ctor(MegaDesktop.GapToMarginConverter)">
-            <summary>Initializes a new shim for the given instance</summary>
+        <member name="P:MegaDesktop.Fakes.ShimApp.AllInstances.CreateBindings">
+            <summary>Sets the shim of App.CreateBindings()</summary>
         </member>
-        <member name="M:MegaDesktop.Fakes.ShimGapToMarginConverter.BehaveAsCurrent">
-            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        <member name="P:MegaDesktop.Fakes.ShimApp.AllInstances.InitializeComponent">
+            <summary>Sets the shim of App.InitializeComponent()</summary>
         </member>
-        <member name="M:MegaDesktop.Fakes.ShimGapToMarginConverter.BehaveAsNotImplemented">
-            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        <member name="P:MegaDesktop.Fakes.ShimApp.AllInstances.LogIn">
+            <summary>Sets the shim of App.LogIn()</summary>
         </member>
-        <member name="M:MegaDesktop.Fakes.ShimGapToMarginConverter.Bind(System.Windows.Data.IValueConverter)">
-            <summary>Binds the members of the interface to the shim.</summary>
-        </member>
-        <member name="P:MegaDesktop.Fakes.ShimGapToMarginConverter.Behavior">
-            <summary>Assigns the behavior for all methods of the shimmed type</summary>
-        </member>
-        <member name="P:MegaDesktop.Fakes.ShimGapToMarginConverter.Constructor">
-            <summary>Sets the shim of GapToMarginConverter.GapToMarginConverter()</summary>
-        </member>
-        <member name="P:MegaDesktop.Fakes.ShimGapToMarginConverter.ConvertBackObjectTypeObjectCultureInfo">
-            <summary>Sets the shim of GapToMarginConverter.ConvertBack(Object value, Type targetType, Object parameter, CultureInfo culture)</summary>
-        </member>
-        <member name="P:MegaDesktop.Fakes.ShimGapToMarginConverter.ConvertObjectTypeObjectCultureInfo">
-            <summary>Sets the shim of GapToMarginConverter.Convert(Object value, Type targetType, Object parameter, CultureInfo culture)</summary>
-        </member>
-        <member name="T:MegaDesktop.Fakes.ShimGapToMarginConverter.AllInstances">
-            <summary>Define shims for all instances members</summary>
-        </member>
-        <member name="P:MegaDesktop.Fakes.ShimGapToMarginConverter.AllInstances.ConvertBackObjectTypeObjectCultureInfo">
-            <summary>Sets the shim of GapToMarginConverter.ConvertBack(Object value, Type targetType, Object parameter, CultureInfo culture)</summary>
-        </member>
-        <member name="P:MegaDesktop.Fakes.ShimGapToMarginConverter.AllInstances.ConvertObjectTypeObjectCultureInfo">
-            <summary>Sets the shim of GapToMarginConverter.Convert(Object value, Type targetType, Object parameter, CultureInfo culture)</summary>
-        </member>
-        <member name="T:MegaDesktop.Fakes.ShimTermsOfServiceWindow">
-            <summary>Shim type of MegaDesktop.TermsOfServiceWindow</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.ShimTermsOfServiceWindow.#ctor">
-            <summary>Initializes a new shim instance</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.ShimTermsOfServiceWindow.#ctor(MegaDesktop.TermsOfServiceWindow)">
-            <summary>Initializes a new shim for the given instance</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.ShimTermsOfServiceWindow.BehaveAsCurrent">
-            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.ShimTermsOfServiceWindow.BehaveAsNotImplemented">
-            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.ShimTermsOfServiceWindow.Bind(System.Windows.IInputElement)">
-            <summary>Binds the members of the interface to the shim.</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.ShimTermsOfServiceWindow.Bind(System.Windows.Markup.IAddChild)">
-            <summary>Binds the members of the interface to the shim.</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.ShimTermsOfServiceWindow.Bind(System.Windows.Media.Animation.IAnimatable)">
-            <summary>Binds the members of the interface to the shim.</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.ShimTermsOfServiceWindow.Bind(System.Windows.IFrameworkInputElement)">
-            <summary>Binds the members of the interface to the shim.</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.ShimTermsOfServiceWindow.Bind(System.ComponentModel.ISupportInitialize)">
-            <summary>Binds the members of the interface to the shim.</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.ShimTermsOfServiceWindow.Bind(System.Windows.Markup.IComponentConnector)">
-            <summary>Binds the members of the interface to the shim.</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.ShimTermsOfServiceWindow.Bind(System.Windows.Markup.IQueryAmbient)">
-            <summary>Binds the members of the interface to the shim.</summary>
-        </member>
-        <member name="P:MegaDesktop.Fakes.ShimTermsOfServiceWindow.AcceptTos_ClickObjectRoutedEventArgs">
-            <summary>Sets the shim of TermsOfServiceWindow.AcceptTos_Click(Object sender, RoutedEventArgs e)</summary>
-        </member>
-        <member name="P:MegaDesktop.Fakes.ShimTermsOfServiceWindow.Behavior">
-            <summary>Assigns the behavior for all methods of the shimmed type</summary>
-        </member>
-        <member name="P:MegaDesktop.Fakes.ShimTermsOfServiceWindow.Constructor">
-            <summary>Sets the shim of TermsOfServiceWindow.TermsOfServiceWindow()</summary>
-        </member>
-        <member name="P:MegaDesktop.Fakes.ShimTermsOfServiceWindow.DeclineTos_ClickObjectRoutedEventArgs">
-            <summary>Sets the shim of TermsOfServiceWindow.DeclineTos_Click(Object sender, RoutedEventArgs e)</summary>
-        </member>
-        <member name="P:MegaDesktop.Fakes.ShimTermsOfServiceWindow.Grid_Loaded_1ObjectRoutedEventArgs">
-            <summary>Sets the shim of TermsOfServiceWindow.Grid_Loaded_1(Object sender, RoutedEventArgs e)</summary>
-        </member>
-        <member name="P:MegaDesktop.Fakes.ShimTermsOfServiceWindow.InitializeComponent">
-            <summary>Sets the shim of TermsOfServiceWindow.InitializeComponent()</summary>
-        </member>
-        <member name="P:MegaDesktop.Fakes.ShimTermsOfServiceWindow.SystemWindowsMarkupIComponentConnectorConnectInt32Object">
-            <summary>Sets the shim of TermsOfServiceWindow.System.Windows.Markup.IComponentConnector.Connect(Int32 connectionId, Object target)</summary>
-        </member>
-        <member name="T:MegaDesktop.Fakes.ShimTermsOfServiceWindow.AllInstances">
-            <summary>Define shims for all instances members</summary>
-        </member>
-        <member name="P:MegaDesktop.Fakes.ShimTermsOfServiceWindow.AllInstances.AcceptTos_ClickObjectRoutedEventArgs">
-            <summary>Sets the shim of TermsOfServiceWindow.AcceptTos_Click(Object sender, RoutedEventArgs e)</summary>
-        </member>
-        <member name="P:MegaDesktop.Fakes.ShimTermsOfServiceWindow.AllInstances.DeclineTos_ClickObjectRoutedEventArgs">
-            <summary>Sets the shim of TermsOfServiceWindow.DeclineTos_Click(Object sender, RoutedEventArgs e)</summary>
-        </member>
-        <member name="P:MegaDesktop.Fakes.ShimTermsOfServiceWindow.AllInstances.Grid_Loaded_1ObjectRoutedEventArgs">
-            <summary>Sets the shim of TermsOfServiceWindow.Grid_Loaded_1(Object sender, RoutedEventArgs e)</summary>
-        </member>
-        <member name="P:MegaDesktop.Fakes.ShimTermsOfServiceWindow.AllInstances.InitializeComponent">
-            <summary>Sets the shim of TermsOfServiceWindow.InitializeComponent()</summary>
-        </member>
-        <member name="P:MegaDesktop.Fakes.ShimTermsOfServiceWindow.AllInstances.SystemWindowsMarkupIComponentConnectorConnectInt32Object">
-            <summary>Sets the shim of TermsOfServiceWindow.System.Windows.Markup.IComponentConnector.Connect(Int32 connectionId, Object target)</summary>
+        <member name="P:MegaDesktop.Fakes.ShimApp.AllInstances.ShowMainView">
+            <summary>Sets the shim of App.ShowMainView()</summary>
         </member>
         <member name="T:MegaDesktop.Fakes.ShimWindowLogin">
             <summary>Shim type of MegaDesktop.WindowLogin</summary>
@@ -1222,6 +1162,78 @@
         <member name="M:MegaDesktop.Fakes.StubApp.InitializeStub">
             <summary>Initializes a new instance of type StubApp</summary>
         </member>
+        <member name="M:MegaDesktop.Fakes.StubApp.OnActivated(System.EventArgs)">
+            <summary>Sets the stub of Application.OnActivated(EventArgs e)</summary>
+        </member>
+        <member name="F:MegaDesktop.Fakes.StubApp.OnActivatedEventArgs">
+            <summary>Sets the stub of Application.OnActivated(EventArgs e)</summary>
+        </member>
+        <member name="M:MegaDesktop.Fakes.StubApp.OnDeactivated(System.EventArgs)">
+            <summary>Sets the stub of Application.OnDeactivated(EventArgs e)</summary>
+        </member>
+        <member name="F:MegaDesktop.Fakes.StubApp.OnDeactivatedEventArgs">
+            <summary>Sets the stub of Application.OnDeactivated(EventArgs e)</summary>
+        </member>
+        <member name="M:MegaDesktop.Fakes.StubApp.OnExit(System.Windows.ExitEventArgs)">
+            <summary>Sets the stub of Application.OnExit(ExitEventArgs e)</summary>
+        </member>
+        <member name="F:MegaDesktop.Fakes.StubApp.OnExitExitEventArgs">
+            <summary>Sets the stub of Application.OnExit(ExitEventArgs e)</summary>
+        </member>
+        <member name="M:MegaDesktop.Fakes.StubApp.OnFragmentNavigation(System.Windows.Navigation.FragmentNavigationEventArgs)">
+            <summary>Sets the stub of Application.OnFragmentNavigation(FragmentNavigationEventArgs e)</summary>
+        </member>
+        <member name="F:MegaDesktop.Fakes.StubApp.OnFragmentNavigationFragmentNavigationEventArgs">
+            <summary>Sets the stub of Application.OnFragmentNavigation(FragmentNavigationEventArgs e)</summary>
+        </member>
+        <member name="M:MegaDesktop.Fakes.StubApp.OnLoadCompleted(System.Windows.Navigation.NavigationEventArgs)">
+            <summary>Sets the stub of Application.OnLoadCompleted(NavigationEventArgs e)</summary>
+        </member>
+        <member name="F:MegaDesktop.Fakes.StubApp.OnLoadCompletedNavigationEventArgs">
+            <summary>Sets the stub of Application.OnLoadCompleted(NavigationEventArgs e)</summary>
+        </member>
+        <member name="M:MegaDesktop.Fakes.StubApp.OnNavigated(System.Windows.Navigation.NavigationEventArgs)">
+            <summary>Sets the stub of Application.OnNavigated(NavigationEventArgs e)</summary>
+        </member>
+        <member name="F:MegaDesktop.Fakes.StubApp.OnNavigatedNavigationEventArgs">
+            <summary>Sets the stub of Application.OnNavigated(NavigationEventArgs e)</summary>
+        </member>
+        <member name="M:MegaDesktop.Fakes.StubApp.OnNavigating(System.Windows.Navigation.NavigatingCancelEventArgs)">
+            <summary>Sets the stub of Application.OnNavigating(NavigatingCancelEventArgs e)</summary>
+        </member>
+        <member name="F:MegaDesktop.Fakes.StubApp.OnNavigatingNavigatingCancelEventArgs">
+            <summary>Sets the stub of Application.OnNavigating(NavigatingCancelEventArgs e)</summary>
+        </member>
+        <member name="M:MegaDesktop.Fakes.StubApp.OnNavigationFailed(System.Windows.Navigation.NavigationFailedEventArgs)">
+            <summary>Sets the stub of Application.OnNavigationFailed(NavigationFailedEventArgs e)</summary>
+        </member>
+        <member name="F:MegaDesktop.Fakes.StubApp.OnNavigationFailedNavigationFailedEventArgs">
+            <summary>Sets the stub of Application.OnNavigationFailed(NavigationFailedEventArgs e)</summary>
+        </member>
+        <member name="M:MegaDesktop.Fakes.StubApp.OnNavigationProgress(System.Windows.Navigation.NavigationProgressEventArgs)">
+            <summary>Sets the stub of Application.OnNavigationProgress(NavigationProgressEventArgs e)</summary>
+        </member>
+        <member name="F:MegaDesktop.Fakes.StubApp.OnNavigationProgressNavigationProgressEventArgs">
+            <summary>Sets the stub of Application.OnNavigationProgress(NavigationProgressEventArgs e)</summary>
+        </member>
+        <member name="M:MegaDesktop.Fakes.StubApp.OnNavigationStopped(System.Windows.Navigation.NavigationEventArgs)">
+            <summary>Sets the stub of Application.OnNavigationStopped(NavigationEventArgs e)</summary>
+        </member>
+        <member name="F:MegaDesktop.Fakes.StubApp.OnNavigationStoppedNavigationEventArgs">
+            <summary>Sets the stub of Application.OnNavigationStopped(NavigationEventArgs e)</summary>
+        </member>
+        <member name="M:MegaDesktop.Fakes.StubApp.OnSessionEnding(System.Windows.SessionEndingCancelEventArgs)">
+            <summary>Sets the stub of Application.OnSessionEnding(SessionEndingCancelEventArgs e)</summary>
+        </member>
+        <member name="F:MegaDesktop.Fakes.StubApp.OnSessionEndingSessionEndingCancelEventArgs">
+            <summary>Sets the stub of Application.OnSessionEnding(SessionEndingCancelEventArgs e)</summary>
+        </member>
+        <member name="M:MegaDesktop.Fakes.StubApp.OnStartup(System.Windows.StartupEventArgs)">
+            <summary>Sets the stub of Application.OnStartup(StartupEventArgs e)</summary>
+        </member>
+        <member name="F:MegaDesktop.Fakes.StubApp.OnStartupStartupEventArgs">
+            <summary>Sets the stub of Application.OnStartup(StartupEventArgs e)</summary>
+        </member>
         <member name="P:MegaDesktop.Fakes.StubApp.CallBase">
             <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
         </member>
@@ -1230,882 +1242,6 @@
         </member>
         <member name="P:MegaDesktop.Fakes.StubApp.InstanceObserver">
             <summary>Gets or sets the instance observer.</summary>
-        </member>
-        <member name="T:MegaDesktop.Fakes.StubGapToMarginConverter">
-            <summary>Stub type of MegaDesktop.GapToMarginConverter</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubGapToMarginConverter.#ctor">
-            <summary>Initializes a new instance</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubGapToMarginConverter.InitializeStub">
-            <summary>Initializes a new instance of type StubGapToMarginConverter</summary>
-        </member>
-        <member name="P:MegaDesktop.Fakes.StubGapToMarginConverter.CallBase">
-            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
-        </member>
-        <member name="P:MegaDesktop.Fakes.StubGapToMarginConverter.InstanceBehavior">
-            <summary>Gets or sets the instance behavior.</summary>
-        </member>
-        <member name="P:MegaDesktop.Fakes.StubGapToMarginConverter.InstanceObserver">
-            <summary>Gets or sets the instance observer.</summary>
-        </member>
-        <member name="T:MegaDesktop.Fakes.StubTermsOfServiceWindow">
-            <summary>Stub type of MegaDesktop.TermsOfServiceWindow</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.#ctor">
-            <summary>Initializes a new instance</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.AddChild(System.Object)">
-            <summary>Sets the stub of ContentControl.AddChild(Object value)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.AddChildObject">
-            <summary>Sets the stub of ContentControl.AddChild(Object value)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.AddText(System.String)">
-            <summary>Sets the stub of ContentControl.AddText(String text)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.AddTextString">
-            <summary>Sets the stub of ContentControl.AddText(String text)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.ArrangeOverride(System.Windows.Size)">
-            <summary>Sets the stub of Window.ArrangeOverride(Size arrangeBounds)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.ArrangeOverrideSize">
-            <summary>Sets the stub of Window.ArrangeOverride(Size arrangeBounds)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.BeginInit">
-            <summary>Sets the stub of FrameworkElement.BeginInit()</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.BeginInit01">
-            <summary>Sets the stub of FrameworkElement.BeginInit()</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.EndInit">
-            <summary>Sets the stub of FrameworkElement.EndInit()</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.EndInit01">
-            <summary>Sets the stub of FrameworkElement.EndInit()</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.GetLayoutClip(System.Windows.Size)">
-            <summary>Sets the stub of FrameworkElement.GetLayoutClip(Size layoutSlotSize)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.GetLayoutClipSize">
-            <summary>Sets the stub of FrameworkElement.GetLayoutClip(Size layoutSlotSize)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.GetUIParentCore">
-            <summary>Sets the stub of FrameworkElement.GetUIParentCore()</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.GetUIParentCore01">
-            <summary>Sets the stub of FrameworkElement.GetUIParentCore()</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.GetVisualChild(System.Int32)">
-            <summary>Sets the stub of FrameworkElement.GetVisualChild(Int32 index)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.GetVisualChildInt32">
-            <summary>Sets the stub of FrameworkElement.GetVisualChild(Int32 index)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.HandlesScrollingGet">
-            <summary>Sets the stub of Control.get_HandlesScrolling()</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.HasEffectiveKeyboardFocusGet">
-            <summary>Sets the stub of UIElement.get_HasEffectiveKeyboardFocus()</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.HitTestCore(System.Windows.Media.GeometryHitTestParameters)">
-            <summary>Sets the stub of UIElement.HitTestCore(GeometryHitTestParameters hitTestParameters)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.HitTestCore(System.Windows.Media.PointHitTestParameters)">
-            <summary>Sets the stub of UIElement.HitTestCore(PointHitTestParameters hitTestParameters)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.HitTestCoreGeometryHitTestParameters">
-            <summary>Sets the stub of UIElement.HitTestCore(GeometryHitTestParameters hitTestParameters)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.HitTestCorePointHitTestParameters">
-            <summary>Sets the stub of UIElement.HitTestCore(PointHitTestParameters hitTestParameters)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.InitializeStub">
-            <summary>Initializes a new instance of type StubTermsOfServiceWindow</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.IsEnabledCoreGet">
-            <summary>Sets the stub of UIElement.get_IsEnabledCore()</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.LogicalChildrenGet">
-            <summary>Sets the stub of Window.get_LogicalChildren()</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.MeasureOverride(System.Windows.Size)">
-            <summary>Sets the stub of Window.MeasureOverride(Size availableSize)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.MeasureOverrideSize">
-            <summary>Sets the stub of Window.MeasureOverride(Size availableSize)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnAccessKey(System.Windows.Input.AccessKeyEventArgs)">
-            <summary>Sets the stub of UIElement.OnAccessKey(AccessKeyEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnAccessKeyAccessKeyEventArgs">
-            <summary>Sets the stub of UIElement.OnAccessKey(AccessKeyEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnActivated(System.EventArgs)">
-            <summary>Sets the stub of Window.OnActivated(EventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnActivatedEventArgs">
-            <summary>Sets the stub of Window.OnActivated(EventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnApplyTemplate">
-            <summary>Sets the stub of FrameworkElement.OnApplyTemplate()</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnApplyTemplate01">
-            <summary>Sets the stub of FrameworkElement.OnApplyTemplate()</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnChildDesiredSizeChanged(System.Windows.UIElement)">
-            <summary>Sets the stub of UIElement.OnChildDesiredSizeChanged(UIElement child)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnChildDesiredSizeChangedUIElement">
-            <summary>Sets the stub of UIElement.OnChildDesiredSizeChanged(UIElement child)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnClosed(System.EventArgs)">
-            <summary>Sets the stub of Window.OnClosed(EventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnClosedEventArgs">
-            <summary>Sets the stub of Window.OnClosed(EventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnClosing(System.ComponentModel.CancelEventArgs)">
-            <summary>Sets the stub of Window.OnClosing(CancelEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnClosingCancelEventArgs">
-            <summary>Sets the stub of Window.OnClosing(CancelEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnContentChanged(System.Object,System.Object)">
-            <summary>Sets the stub of Window.OnContentChanged(Object oldContent, Object newContent)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnContentChangedObjectObject">
-            <summary>Sets the stub of Window.OnContentChanged(Object oldContent, Object newContent)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnContentRendered(System.EventArgs)">
-            <summary>Sets the stub of Window.OnContentRendered(EventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnContentRenderedEventArgs">
-            <summary>Sets the stub of Window.OnContentRendered(EventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnContentStringFormatChanged(System.String,System.String)">
-            <summary>Sets the stub of ContentControl.OnContentStringFormatChanged(String oldContentStringFormat, String newContentStringFormat)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnContentStringFormatChangedStringString">
-            <summary>Sets the stub of ContentControl.OnContentStringFormatChanged(String oldContentStringFormat, String newContentStringFormat)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnContentTemplateChanged(System.Windows.DataTemplate,System.Windows.DataTemplate)">
-            <summary>Sets the stub of ContentControl.OnContentTemplateChanged(DataTemplate oldContentTemplate, DataTemplate newContentTemplate)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnContentTemplateChangedDataTemplateDataTemplate">
-            <summary>Sets the stub of ContentControl.OnContentTemplateChanged(DataTemplate oldContentTemplate, DataTemplate newContentTemplate)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnContentTemplateSelectorChanged(System.Windows.Controls.DataTemplateSelector,System.Windows.Controls.DataTemplateSelector)">
-            <summary>Sets the stub of ContentControl.OnContentTemplateSelectorChanged(DataTemplateSelector oldContentTemplateSelector, DataTemplateSelector newContentTemplateSelector)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnContentTemplateSelectorChangedDataTemplateSelectorDataTemplateSelector">
-            <summary>Sets the stub of ContentControl.OnContentTemplateSelectorChanged(DataTemplateSelector oldContentTemplateSelector, DataTemplateSelector newContentTemplateSelector)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnContextMenuClosing(System.Windows.Controls.ContextMenuEventArgs)">
-            <summary>Sets the stub of FrameworkElement.OnContextMenuClosing(ContextMenuEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnContextMenuClosingContextMenuEventArgs">
-            <summary>Sets the stub of FrameworkElement.OnContextMenuClosing(ContextMenuEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnContextMenuOpening(System.Windows.Controls.ContextMenuEventArgs)">
-            <summary>Sets the stub of FrameworkElement.OnContextMenuOpening(ContextMenuEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnContextMenuOpeningContextMenuEventArgs">
-            <summary>Sets the stub of FrameworkElement.OnContextMenuOpening(ContextMenuEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnCreateAutomationPeer">
-            <summary>Sets the stub of Window.OnCreateAutomationPeer()</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnCreateAutomationPeer01">
-            <summary>Sets the stub of Window.OnCreateAutomationPeer()</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnDeactivated(System.EventArgs)">
-            <summary>Sets the stub of Window.OnDeactivated(EventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnDeactivatedEventArgs">
-            <summary>Sets the stub of Window.OnDeactivated(EventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnDragEnter(System.Windows.DragEventArgs)">
-            <summary>Sets the stub of UIElement.OnDragEnter(DragEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnDragEnterDragEventArgs">
-            <summary>Sets the stub of UIElement.OnDragEnter(DragEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnDragLeave(System.Windows.DragEventArgs)">
-            <summary>Sets the stub of UIElement.OnDragLeave(DragEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnDragLeaveDragEventArgs">
-            <summary>Sets the stub of UIElement.OnDragLeave(DragEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnDragOver(System.Windows.DragEventArgs)">
-            <summary>Sets the stub of UIElement.OnDragOver(DragEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnDragOverDragEventArgs">
-            <summary>Sets the stub of UIElement.OnDragOver(DragEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnDrop(System.Windows.DragEventArgs)">
-            <summary>Sets the stub of UIElement.OnDrop(DragEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnDropDragEventArgs">
-            <summary>Sets the stub of UIElement.OnDrop(DragEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnGiveFeedback(System.Windows.GiveFeedbackEventArgs)">
-            <summary>Sets the stub of UIElement.OnGiveFeedback(GiveFeedbackEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnGiveFeedbackGiveFeedbackEventArgs">
-            <summary>Sets the stub of UIElement.OnGiveFeedback(GiveFeedbackEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnGotFocus(System.Windows.RoutedEventArgs)">
-            <summary>Sets the stub of FrameworkElement.OnGotFocus(RoutedEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnGotFocusRoutedEventArgs">
-            <summary>Sets the stub of FrameworkElement.OnGotFocus(RoutedEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnGotKeyboardFocus(System.Windows.Input.KeyboardFocusChangedEventArgs)">
-            <summary>Sets the stub of UIElement.OnGotKeyboardFocus(KeyboardFocusChangedEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnGotKeyboardFocusKeyboardFocusChangedEventArgs">
-            <summary>Sets the stub of UIElement.OnGotKeyboardFocus(KeyboardFocusChangedEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnGotMouseCapture(System.Windows.Input.MouseEventArgs)">
-            <summary>Sets the stub of UIElement.OnGotMouseCapture(MouseEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnGotMouseCaptureMouseEventArgs">
-            <summary>Sets the stub of UIElement.OnGotMouseCapture(MouseEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnGotStylusCapture(System.Windows.Input.StylusEventArgs)">
-            <summary>Sets the stub of UIElement.OnGotStylusCapture(StylusEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnGotStylusCaptureStylusEventArgs">
-            <summary>Sets the stub of UIElement.OnGotStylusCapture(StylusEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnGotTouchCapture(System.Windows.Input.TouchEventArgs)">
-            <summary>Sets the stub of UIElement.OnGotTouchCapture(TouchEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnGotTouchCaptureTouchEventArgs">
-            <summary>Sets the stub of UIElement.OnGotTouchCapture(TouchEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnInitialized(System.EventArgs)">
-            <summary>Sets the stub of FrameworkElement.OnInitialized(EventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnInitializedEventArgs">
-            <summary>Sets the stub of FrameworkElement.OnInitialized(EventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnIsKeyboardFocusWithinChanged(System.Windows.DependencyPropertyChangedEventArgs)">
-            <summary>Sets the stub of UIElement.OnIsKeyboardFocusWithinChanged(DependencyPropertyChangedEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnIsKeyboardFocusWithinChangedDependencyPropertyChangedEventArgs">
-            <summary>Sets the stub of UIElement.OnIsKeyboardFocusWithinChanged(DependencyPropertyChangedEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnIsKeyboardFocusedChanged(System.Windows.DependencyPropertyChangedEventArgs)">
-            <summary>Sets the stub of UIElement.OnIsKeyboardFocusedChanged(DependencyPropertyChangedEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnIsKeyboardFocusedChangedDependencyPropertyChangedEventArgs">
-            <summary>Sets the stub of UIElement.OnIsKeyboardFocusedChanged(DependencyPropertyChangedEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnIsMouseCaptureWithinChanged(System.Windows.DependencyPropertyChangedEventArgs)">
-            <summary>Sets the stub of UIElement.OnIsMouseCaptureWithinChanged(DependencyPropertyChangedEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnIsMouseCaptureWithinChangedDependencyPropertyChangedEventArgs">
-            <summary>Sets the stub of UIElement.OnIsMouseCaptureWithinChanged(DependencyPropertyChangedEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnIsMouseCapturedChanged(System.Windows.DependencyPropertyChangedEventArgs)">
-            <summary>Sets the stub of UIElement.OnIsMouseCapturedChanged(DependencyPropertyChangedEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnIsMouseCapturedChangedDependencyPropertyChangedEventArgs">
-            <summary>Sets the stub of UIElement.OnIsMouseCapturedChanged(DependencyPropertyChangedEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnIsMouseDirectlyOverChanged(System.Windows.DependencyPropertyChangedEventArgs)">
-            <summary>Sets the stub of UIElement.OnIsMouseDirectlyOverChanged(DependencyPropertyChangedEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnIsMouseDirectlyOverChangedDependencyPropertyChangedEventArgs">
-            <summary>Sets the stub of UIElement.OnIsMouseDirectlyOverChanged(DependencyPropertyChangedEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnIsStylusCaptureWithinChanged(System.Windows.DependencyPropertyChangedEventArgs)">
-            <summary>Sets the stub of UIElement.OnIsStylusCaptureWithinChanged(DependencyPropertyChangedEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnIsStylusCaptureWithinChangedDependencyPropertyChangedEventArgs">
-            <summary>Sets the stub of UIElement.OnIsStylusCaptureWithinChanged(DependencyPropertyChangedEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnIsStylusCapturedChanged(System.Windows.DependencyPropertyChangedEventArgs)">
-            <summary>Sets the stub of UIElement.OnIsStylusCapturedChanged(DependencyPropertyChangedEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnIsStylusCapturedChangedDependencyPropertyChangedEventArgs">
-            <summary>Sets the stub of UIElement.OnIsStylusCapturedChanged(DependencyPropertyChangedEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnIsStylusDirectlyOverChanged(System.Windows.DependencyPropertyChangedEventArgs)">
-            <summary>Sets the stub of UIElement.OnIsStylusDirectlyOverChanged(DependencyPropertyChangedEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnIsStylusDirectlyOverChangedDependencyPropertyChangedEventArgs">
-            <summary>Sets the stub of UIElement.OnIsStylusDirectlyOverChanged(DependencyPropertyChangedEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnKeyDown(System.Windows.Input.KeyEventArgs)">
-            <summary>Sets the stub of UIElement.OnKeyDown(KeyEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnKeyDownKeyEventArgs">
-            <summary>Sets the stub of UIElement.OnKeyDown(KeyEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnKeyUp(System.Windows.Input.KeyEventArgs)">
-            <summary>Sets the stub of UIElement.OnKeyUp(KeyEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnKeyUpKeyEventArgs">
-            <summary>Sets the stub of UIElement.OnKeyUp(KeyEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnLocationChanged(System.EventArgs)">
-            <summary>Sets the stub of Window.OnLocationChanged(EventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnLocationChangedEventArgs">
-            <summary>Sets the stub of Window.OnLocationChanged(EventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnLostFocus(System.Windows.RoutedEventArgs)">
-            <summary>Sets the stub of UIElement.OnLostFocus(RoutedEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnLostFocusRoutedEventArgs">
-            <summary>Sets the stub of UIElement.OnLostFocus(RoutedEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnLostKeyboardFocus(System.Windows.Input.KeyboardFocusChangedEventArgs)">
-            <summary>Sets the stub of UIElement.OnLostKeyboardFocus(KeyboardFocusChangedEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnLostKeyboardFocusKeyboardFocusChangedEventArgs">
-            <summary>Sets the stub of UIElement.OnLostKeyboardFocus(KeyboardFocusChangedEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnLostMouseCapture(System.Windows.Input.MouseEventArgs)">
-            <summary>Sets the stub of UIElement.OnLostMouseCapture(MouseEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnLostMouseCaptureMouseEventArgs">
-            <summary>Sets the stub of UIElement.OnLostMouseCapture(MouseEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnLostStylusCapture(System.Windows.Input.StylusEventArgs)">
-            <summary>Sets the stub of UIElement.OnLostStylusCapture(StylusEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnLostStylusCaptureStylusEventArgs">
-            <summary>Sets the stub of UIElement.OnLostStylusCapture(StylusEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnLostTouchCapture(System.Windows.Input.TouchEventArgs)">
-            <summary>Sets the stub of UIElement.OnLostTouchCapture(TouchEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnLostTouchCaptureTouchEventArgs">
-            <summary>Sets the stub of UIElement.OnLostTouchCapture(TouchEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnManipulationBoundaryFeedback(System.Windows.Input.ManipulationBoundaryFeedbackEventArgs)">
-            <summary>Sets the stub of Window.OnManipulationBoundaryFeedback(ManipulationBoundaryFeedbackEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnManipulationBoundaryFeedbackManipulationBoundaryFeedbackEventArgs">
-            <summary>Sets the stub of Window.OnManipulationBoundaryFeedback(ManipulationBoundaryFeedbackEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnManipulationCompleted(System.Windows.Input.ManipulationCompletedEventArgs)">
-            <summary>Sets the stub of UIElement.OnManipulationCompleted(ManipulationCompletedEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnManipulationCompletedManipulationCompletedEventArgs">
-            <summary>Sets the stub of UIElement.OnManipulationCompleted(ManipulationCompletedEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnManipulationDelta(System.Windows.Input.ManipulationDeltaEventArgs)">
-            <summary>Sets the stub of UIElement.OnManipulationDelta(ManipulationDeltaEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnManipulationDeltaManipulationDeltaEventArgs">
-            <summary>Sets the stub of UIElement.OnManipulationDelta(ManipulationDeltaEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnManipulationInertiaStarting(System.Windows.Input.ManipulationInertiaStartingEventArgs)">
-            <summary>Sets the stub of UIElement.OnManipulationInertiaStarting(ManipulationInertiaStartingEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnManipulationInertiaStartingManipulationInertiaStartingEventArgs">
-            <summary>Sets the stub of UIElement.OnManipulationInertiaStarting(ManipulationInertiaStartingEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnManipulationStarted(System.Windows.Input.ManipulationStartedEventArgs)">
-            <summary>Sets the stub of UIElement.OnManipulationStarted(ManipulationStartedEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnManipulationStartedManipulationStartedEventArgs">
-            <summary>Sets the stub of UIElement.OnManipulationStarted(ManipulationStartedEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnManipulationStarting(System.Windows.Input.ManipulationStartingEventArgs)">
-            <summary>Sets the stub of UIElement.OnManipulationStarting(ManipulationStartingEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnManipulationStartingManipulationStartingEventArgs">
-            <summary>Sets the stub of UIElement.OnManipulationStarting(ManipulationStartingEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnMouseDoubleClick(System.Windows.Input.MouseButtonEventArgs)">
-            <summary>Sets the stub of Control.OnMouseDoubleClick(MouseButtonEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnMouseDoubleClickMouseButtonEventArgs">
-            <summary>Sets the stub of Control.OnMouseDoubleClick(MouseButtonEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnMouseDown(System.Windows.Input.MouseButtonEventArgs)">
-            <summary>Sets the stub of UIElement.OnMouseDown(MouseButtonEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnMouseDownMouseButtonEventArgs">
-            <summary>Sets the stub of UIElement.OnMouseDown(MouseButtonEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnMouseEnter(System.Windows.Input.MouseEventArgs)">
-            <summary>Sets the stub of UIElement.OnMouseEnter(MouseEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnMouseEnterMouseEventArgs">
-            <summary>Sets the stub of UIElement.OnMouseEnter(MouseEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnMouseLeave(System.Windows.Input.MouseEventArgs)">
-            <summary>Sets the stub of UIElement.OnMouseLeave(MouseEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnMouseLeaveMouseEventArgs">
-            <summary>Sets the stub of UIElement.OnMouseLeave(MouseEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnMouseLeftButtonDown(System.Windows.Input.MouseButtonEventArgs)">
-            <summary>Sets the stub of UIElement.OnMouseLeftButtonDown(MouseButtonEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnMouseLeftButtonDownMouseButtonEventArgs">
-            <summary>Sets the stub of UIElement.OnMouseLeftButtonDown(MouseButtonEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnMouseLeftButtonUp(System.Windows.Input.MouseButtonEventArgs)">
-            <summary>Sets the stub of UIElement.OnMouseLeftButtonUp(MouseButtonEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnMouseLeftButtonUpMouseButtonEventArgs">
-            <summary>Sets the stub of UIElement.OnMouseLeftButtonUp(MouseButtonEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnMouseMove(System.Windows.Input.MouseEventArgs)">
-            <summary>Sets the stub of UIElement.OnMouseMove(MouseEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnMouseMoveMouseEventArgs">
-            <summary>Sets the stub of UIElement.OnMouseMove(MouseEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnMouseRightButtonDown(System.Windows.Input.MouseButtonEventArgs)">
-            <summary>Sets the stub of UIElement.OnMouseRightButtonDown(MouseButtonEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnMouseRightButtonDownMouseButtonEventArgs">
-            <summary>Sets the stub of UIElement.OnMouseRightButtonDown(MouseButtonEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnMouseRightButtonUp(System.Windows.Input.MouseButtonEventArgs)">
-            <summary>Sets the stub of UIElement.OnMouseRightButtonUp(MouseButtonEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnMouseRightButtonUpMouseButtonEventArgs">
-            <summary>Sets the stub of UIElement.OnMouseRightButtonUp(MouseButtonEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnMouseUp(System.Windows.Input.MouseButtonEventArgs)">
-            <summary>Sets the stub of UIElement.OnMouseUp(MouseButtonEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnMouseUpMouseButtonEventArgs">
-            <summary>Sets the stub of UIElement.OnMouseUp(MouseButtonEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnMouseWheel(System.Windows.Input.MouseWheelEventArgs)">
-            <summary>Sets the stub of UIElement.OnMouseWheel(MouseWheelEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnMouseWheelMouseWheelEventArgs">
-            <summary>Sets the stub of UIElement.OnMouseWheel(MouseWheelEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewDragEnter(System.Windows.DragEventArgs)">
-            <summary>Sets the stub of UIElement.OnPreviewDragEnter(DragEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewDragEnterDragEventArgs">
-            <summary>Sets the stub of UIElement.OnPreviewDragEnter(DragEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewDragLeave(System.Windows.DragEventArgs)">
-            <summary>Sets the stub of UIElement.OnPreviewDragLeave(DragEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewDragLeaveDragEventArgs">
-            <summary>Sets the stub of UIElement.OnPreviewDragLeave(DragEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewDragOver(System.Windows.DragEventArgs)">
-            <summary>Sets the stub of UIElement.OnPreviewDragOver(DragEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewDragOverDragEventArgs">
-            <summary>Sets the stub of UIElement.OnPreviewDragOver(DragEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewDrop(System.Windows.DragEventArgs)">
-            <summary>Sets the stub of UIElement.OnPreviewDrop(DragEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewDropDragEventArgs">
-            <summary>Sets the stub of UIElement.OnPreviewDrop(DragEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewGiveFeedback(System.Windows.GiveFeedbackEventArgs)">
-            <summary>Sets the stub of UIElement.OnPreviewGiveFeedback(GiveFeedbackEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewGiveFeedbackGiveFeedbackEventArgs">
-            <summary>Sets the stub of UIElement.OnPreviewGiveFeedback(GiveFeedbackEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewGotKeyboardFocus(System.Windows.Input.KeyboardFocusChangedEventArgs)">
-            <summary>Sets the stub of UIElement.OnPreviewGotKeyboardFocus(KeyboardFocusChangedEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewGotKeyboardFocusKeyboardFocusChangedEventArgs">
-            <summary>Sets the stub of UIElement.OnPreviewGotKeyboardFocus(KeyboardFocusChangedEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewKeyDown(System.Windows.Input.KeyEventArgs)">
-            <summary>Sets the stub of UIElement.OnPreviewKeyDown(KeyEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewKeyDownKeyEventArgs">
-            <summary>Sets the stub of UIElement.OnPreviewKeyDown(KeyEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewKeyUp(System.Windows.Input.KeyEventArgs)">
-            <summary>Sets the stub of UIElement.OnPreviewKeyUp(KeyEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewKeyUpKeyEventArgs">
-            <summary>Sets the stub of UIElement.OnPreviewKeyUp(KeyEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewLostKeyboardFocus(System.Windows.Input.KeyboardFocusChangedEventArgs)">
-            <summary>Sets the stub of UIElement.OnPreviewLostKeyboardFocus(KeyboardFocusChangedEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewLostKeyboardFocusKeyboardFocusChangedEventArgs">
-            <summary>Sets the stub of UIElement.OnPreviewLostKeyboardFocus(KeyboardFocusChangedEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewMouseDoubleClick(System.Windows.Input.MouseButtonEventArgs)">
-            <summary>Sets the stub of Control.OnPreviewMouseDoubleClick(MouseButtonEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewMouseDoubleClickMouseButtonEventArgs">
-            <summary>Sets the stub of Control.OnPreviewMouseDoubleClick(MouseButtonEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewMouseDown(System.Windows.Input.MouseButtonEventArgs)">
-            <summary>Sets the stub of UIElement.OnPreviewMouseDown(MouseButtonEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewMouseDownMouseButtonEventArgs">
-            <summary>Sets the stub of UIElement.OnPreviewMouseDown(MouseButtonEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewMouseLeftButtonDown(System.Windows.Input.MouseButtonEventArgs)">
-            <summary>Sets the stub of UIElement.OnPreviewMouseLeftButtonDown(MouseButtonEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewMouseLeftButtonDownMouseButtonEventArgs">
-            <summary>Sets the stub of UIElement.OnPreviewMouseLeftButtonDown(MouseButtonEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewMouseLeftButtonUp(System.Windows.Input.MouseButtonEventArgs)">
-            <summary>Sets the stub of UIElement.OnPreviewMouseLeftButtonUp(MouseButtonEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewMouseLeftButtonUpMouseButtonEventArgs">
-            <summary>Sets the stub of UIElement.OnPreviewMouseLeftButtonUp(MouseButtonEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewMouseMove(System.Windows.Input.MouseEventArgs)">
-            <summary>Sets the stub of UIElement.OnPreviewMouseMove(MouseEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewMouseMoveMouseEventArgs">
-            <summary>Sets the stub of UIElement.OnPreviewMouseMove(MouseEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewMouseRightButtonDown(System.Windows.Input.MouseButtonEventArgs)">
-            <summary>Sets the stub of UIElement.OnPreviewMouseRightButtonDown(MouseButtonEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewMouseRightButtonDownMouseButtonEventArgs">
-            <summary>Sets the stub of UIElement.OnPreviewMouseRightButtonDown(MouseButtonEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewMouseRightButtonUp(System.Windows.Input.MouseButtonEventArgs)">
-            <summary>Sets the stub of UIElement.OnPreviewMouseRightButtonUp(MouseButtonEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewMouseRightButtonUpMouseButtonEventArgs">
-            <summary>Sets the stub of UIElement.OnPreviewMouseRightButtonUp(MouseButtonEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewMouseUp(System.Windows.Input.MouseButtonEventArgs)">
-            <summary>Sets the stub of UIElement.OnPreviewMouseUp(MouseButtonEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewMouseUpMouseButtonEventArgs">
-            <summary>Sets the stub of UIElement.OnPreviewMouseUp(MouseButtonEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewMouseWheel(System.Windows.Input.MouseWheelEventArgs)">
-            <summary>Sets the stub of UIElement.OnPreviewMouseWheel(MouseWheelEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewMouseWheelMouseWheelEventArgs">
-            <summary>Sets the stub of UIElement.OnPreviewMouseWheel(MouseWheelEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewQueryContinueDrag(System.Windows.QueryContinueDragEventArgs)">
-            <summary>Sets the stub of UIElement.OnPreviewQueryContinueDrag(QueryContinueDragEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewQueryContinueDragQueryContinueDragEventArgs">
-            <summary>Sets the stub of UIElement.OnPreviewQueryContinueDrag(QueryContinueDragEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewStylusButtonDown(System.Windows.Input.StylusButtonEventArgs)">
-            <summary>Sets the stub of UIElement.OnPreviewStylusButtonDown(StylusButtonEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewStylusButtonDownStylusButtonEventArgs">
-            <summary>Sets the stub of UIElement.OnPreviewStylusButtonDown(StylusButtonEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewStylusButtonUp(System.Windows.Input.StylusButtonEventArgs)">
-            <summary>Sets the stub of UIElement.OnPreviewStylusButtonUp(StylusButtonEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewStylusButtonUpStylusButtonEventArgs">
-            <summary>Sets the stub of UIElement.OnPreviewStylusButtonUp(StylusButtonEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewStylusDown(System.Windows.Input.StylusDownEventArgs)">
-            <summary>Sets the stub of UIElement.OnPreviewStylusDown(StylusDownEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewStylusDownStylusDownEventArgs">
-            <summary>Sets the stub of UIElement.OnPreviewStylusDown(StylusDownEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewStylusInAirMove(System.Windows.Input.StylusEventArgs)">
-            <summary>Sets the stub of UIElement.OnPreviewStylusInAirMove(StylusEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewStylusInAirMoveStylusEventArgs">
-            <summary>Sets the stub of UIElement.OnPreviewStylusInAirMove(StylusEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewStylusInRange(System.Windows.Input.StylusEventArgs)">
-            <summary>Sets the stub of UIElement.OnPreviewStylusInRange(StylusEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewStylusInRangeStylusEventArgs">
-            <summary>Sets the stub of UIElement.OnPreviewStylusInRange(StylusEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewStylusMove(System.Windows.Input.StylusEventArgs)">
-            <summary>Sets the stub of UIElement.OnPreviewStylusMove(StylusEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewStylusMoveStylusEventArgs">
-            <summary>Sets the stub of UIElement.OnPreviewStylusMove(StylusEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewStylusOutOfRange(System.Windows.Input.StylusEventArgs)">
-            <summary>Sets the stub of UIElement.OnPreviewStylusOutOfRange(StylusEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewStylusOutOfRangeStylusEventArgs">
-            <summary>Sets the stub of UIElement.OnPreviewStylusOutOfRange(StylusEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewStylusSystemGesture(System.Windows.Input.StylusSystemGestureEventArgs)">
-            <summary>Sets the stub of UIElement.OnPreviewStylusSystemGesture(StylusSystemGestureEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewStylusSystemGestureStylusSystemGestureEventArgs">
-            <summary>Sets the stub of UIElement.OnPreviewStylusSystemGesture(StylusSystemGestureEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewStylusUp(System.Windows.Input.StylusEventArgs)">
-            <summary>Sets the stub of UIElement.OnPreviewStylusUp(StylusEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewStylusUpStylusEventArgs">
-            <summary>Sets the stub of UIElement.OnPreviewStylusUp(StylusEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewTextInput(System.Windows.Input.TextCompositionEventArgs)">
-            <summary>Sets the stub of UIElement.OnPreviewTextInput(TextCompositionEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewTextInputTextCompositionEventArgs">
-            <summary>Sets the stub of UIElement.OnPreviewTextInput(TextCompositionEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewTouchDown(System.Windows.Input.TouchEventArgs)">
-            <summary>Sets the stub of UIElement.OnPreviewTouchDown(TouchEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewTouchDownTouchEventArgs">
-            <summary>Sets the stub of UIElement.OnPreviewTouchDown(TouchEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewTouchMove(System.Windows.Input.TouchEventArgs)">
-            <summary>Sets the stub of UIElement.OnPreviewTouchMove(TouchEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewTouchMoveTouchEventArgs">
-            <summary>Sets the stub of UIElement.OnPreviewTouchMove(TouchEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewTouchUp(System.Windows.Input.TouchEventArgs)">
-            <summary>Sets the stub of UIElement.OnPreviewTouchUp(TouchEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPreviewTouchUpTouchEventArgs">
-            <summary>Sets the stub of UIElement.OnPreviewTouchUp(TouchEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPropertyChanged(System.Windows.DependencyPropertyChangedEventArgs)">
-            <summary>Sets the stub of FrameworkElement.OnPropertyChanged(DependencyPropertyChangedEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnPropertyChangedDependencyPropertyChangedEventArgs">
-            <summary>Sets the stub of FrameworkElement.OnPropertyChanged(DependencyPropertyChangedEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnQueryContinueDrag(System.Windows.QueryContinueDragEventArgs)">
-            <summary>Sets the stub of UIElement.OnQueryContinueDrag(QueryContinueDragEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnQueryContinueDragQueryContinueDragEventArgs">
-            <summary>Sets the stub of UIElement.OnQueryContinueDrag(QueryContinueDragEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnQueryCursor(System.Windows.Input.QueryCursorEventArgs)">
-            <summary>Sets the stub of UIElement.OnQueryCursor(QueryCursorEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnQueryCursorQueryCursorEventArgs">
-            <summary>Sets the stub of UIElement.OnQueryCursor(QueryCursorEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnRender(System.Windows.Media.DrawingContext)">
-            <summary>Sets the stub of UIElement.OnRender(DrawingContext drawingContext)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnRenderDrawingContext">
-            <summary>Sets the stub of UIElement.OnRender(DrawingContext drawingContext)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnRenderSizeChanged(System.Windows.SizeChangedInfo)">
-            <summary>Sets the stub of FrameworkElement.OnRenderSizeChanged(SizeChangedInfo sizeInfo)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnRenderSizeChangedSizeChangedInfo">
-            <summary>Sets the stub of FrameworkElement.OnRenderSizeChanged(SizeChangedInfo sizeInfo)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnSourceInitialized(System.EventArgs)">
-            <summary>Sets the stub of Window.OnSourceInitialized(EventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnSourceInitializedEventArgs">
-            <summary>Sets the stub of Window.OnSourceInitialized(EventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnStateChanged(System.EventArgs)">
-            <summary>Sets the stub of Window.OnStateChanged(EventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnStateChangedEventArgs">
-            <summary>Sets the stub of Window.OnStateChanged(EventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnStyleChanged(System.Windows.Style,System.Windows.Style)">
-            <summary>Sets the stub of FrameworkElement.OnStyleChanged(Style oldStyle, Style newStyle)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnStyleChangedStyleStyle">
-            <summary>Sets the stub of FrameworkElement.OnStyleChanged(Style oldStyle, Style newStyle)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnStylusButtonDown(System.Windows.Input.StylusButtonEventArgs)">
-            <summary>Sets the stub of UIElement.OnStylusButtonDown(StylusButtonEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnStylusButtonDownStylusButtonEventArgs">
-            <summary>Sets the stub of UIElement.OnStylusButtonDown(StylusButtonEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnStylusButtonUp(System.Windows.Input.StylusButtonEventArgs)">
-            <summary>Sets the stub of UIElement.OnStylusButtonUp(StylusButtonEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnStylusButtonUpStylusButtonEventArgs">
-            <summary>Sets the stub of UIElement.OnStylusButtonUp(StylusButtonEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnStylusDown(System.Windows.Input.StylusDownEventArgs)">
-            <summary>Sets the stub of UIElement.OnStylusDown(StylusDownEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnStylusDownStylusDownEventArgs">
-            <summary>Sets the stub of UIElement.OnStylusDown(StylusDownEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnStylusEnter(System.Windows.Input.StylusEventArgs)">
-            <summary>Sets the stub of UIElement.OnStylusEnter(StylusEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnStylusEnterStylusEventArgs">
-            <summary>Sets the stub of UIElement.OnStylusEnter(StylusEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnStylusInAirMove(System.Windows.Input.StylusEventArgs)">
-            <summary>Sets the stub of UIElement.OnStylusInAirMove(StylusEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnStylusInAirMoveStylusEventArgs">
-            <summary>Sets the stub of UIElement.OnStylusInAirMove(StylusEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnStylusInRange(System.Windows.Input.StylusEventArgs)">
-            <summary>Sets the stub of UIElement.OnStylusInRange(StylusEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnStylusInRangeStylusEventArgs">
-            <summary>Sets the stub of UIElement.OnStylusInRange(StylusEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnStylusLeave(System.Windows.Input.StylusEventArgs)">
-            <summary>Sets the stub of UIElement.OnStylusLeave(StylusEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnStylusLeaveStylusEventArgs">
-            <summary>Sets the stub of UIElement.OnStylusLeave(StylusEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnStylusMove(System.Windows.Input.StylusEventArgs)">
-            <summary>Sets the stub of UIElement.OnStylusMove(StylusEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnStylusMoveStylusEventArgs">
-            <summary>Sets the stub of UIElement.OnStylusMove(StylusEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnStylusOutOfRange(System.Windows.Input.StylusEventArgs)">
-            <summary>Sets the stub of UIElement.OnStylusOutOfRange(StylusEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnStylusOutOfRangeStylusEventArgs">
-            <summary>Sets the stub of UIElement.OnStylusOutOfRange(StylusEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnStylusSystemGesture(System.Windows.Input.StylusSystemGestureEventArgs)">
-            <summary>Sets the stub of UIElement.OnStylusSystemGesture(StylusSystemGestureEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnStylusSystemGestureStylusSystemGestureEventArgs">
-            <summary>Sets the stub of UIElement.OnStylusSystemGesture(StylusSystemGestureEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnStylusUp(System.Windows.Input.StylusEventArgs)">
-            <summary>Sets the stub of UIElement.OnStylusUp(StylusEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnStylusUpStylusEventArgs">
-            <summary>Sets the stub of UIElement.OnStylusUp(StylusEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnTemplateChanged(System.Windows.Controls.ControlTemplate,System.Windows.Controls.ControlTemplate)">
-            <summary>Sets the stub of Control.OnTemplateChanged(ControlTemplate oldTemplate, ControlTemplate newTemplate)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnTemplateChangedControlTemplateControlTemplate">
-            <summary>Sets the stub of Control.OnTemplateChanged(ControlTemplate oldTemplate, ControlTemplate newTemplate)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnTextInput(System.Windows.Input.TextCompositionEventArgs)">
-            <summary>Sets the stub of UIElement.OnTextInput(TextCompositionEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnTextInputTextCompositionEventArgs">
-            <summary>Sets the stub of UIElement.OnTextInput(TextCompositionEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnToolTipClosing(System.Windows.Controls.ToolTipEventArgs)">
-            <summary>Sets the stub of FrameworkElement.OnToolTipClosing(ToolTipEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnToolTipClosingToolTipEventArgs">
-            <summary>Sets the stub of FrameworkElement.OnToolTipClosing(ToolTipEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnToolTipOpening(System.Windows.Controls.ToolTipEventArgs)">
-            <summary>Sets the stub of FrameworkElement.OnToolTipOpening(ToolTipEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnToolTipOpeningToolTipEventArgs">
-            <summary>Sets the stub of FrameworkElement.OnToolTipOpening(ToolTipEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnTouchDown(System.Windows.Input.TouchEventArgs)">
-            <summary>Sets the stub of UIElement.OnTouchDown(TouchEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnTouchDownTouchEventArgs">
-            <summary>Sets the stub of UIElement.OnTouchDown(TouchEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnTouchEnter(System.Windows.Input.TouchEventArgs)">
-            <summary>Sets the stub of UIElement.OnTouchEnter(TouchEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnTouchEnterTouchEventArgs">
-            <summary>Sets the stub of UIElement.OnTouchEnter(TouchEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnTouchLeave(System.Windows.Input.TouchEventArgs)">
-            <summary>Sets the stub of UIElement.OnTouchLeave(TouchEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnTouchLeaveTouchEventArgs">
-            <summary>Sets the stub of UIElement.OnTouchLeave(TouchEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnTouchMove(System.Windows.Input.TouchEventArgs)">
-            <summary>Sets the stub of UIElement.OnTouchMove(TouchEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnTouchMoveTouchEventArgs">
-            <summary>Sets the stub of UIElement.OnTouchMove(TouchEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnTouchUp(System.Windows.Input.TouchEventArgs)">
-            <summary>Sets the stub of UIElement.OnTouchUp(TouchEventArgs e)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnTouchUpTouchEventArgs">
-            <summary>Sets the stub of UIElement.OnTouchUp(TouchEventArgs e)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnVisualChildrenChanged(System.Windows.DependencyObject,System.Windows.DependencyObject)">
-            <summary>Sets the stub of Visual.OnVisualChildrenChanged(DependencyObject visualAdded, DependencyObject visualRemoved)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.OnVisualChildrenChangedDependencyObjectDependencyObject">
-            <summary>Sets the stub of Visual.OnVisualChildrenChanged(DependencyObject visualAdded, DependencyObject visualRemoved)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.ParentLayoutInvalidated(System.Windows.UIElement)">
-            <summary>Sets the stub of FrameworkElement.ParentLayoutInvalidated(UIElement child)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.ParentLayoutInvalidatedUIElement">
-            <summary>Sets the stub of FrameworkElement.ParentLayoutInvalidated(UIElement child)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.ShouldSerializeContent">
-            <summary>Sets the stub of ContentControl.ShouldSerializeContent()</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.ShouldSerializeContent01">
-            <summary>Sets the stub of ContentControl.ShouldSerializeContent()</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.ShouldSerializeProperty(System.Windows.DependencyProperty)">
-            <summary>Sets the stub of DependencyObject.ShouldSerializeProperty(DependencyProperty dp)</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.ShouldSerializePropertyDependencyProperty">
-            <summary>Sets the stub of DependencyObject.ShouldSerializeProperty(DependencyProperty dp)</summary>
-        </member>
-        <member name="M:MegaDesktop.Fakes.StubTermsOfServiceWindow.ToString">
-            <summary>Sets the stub of Control.ToString()</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.ToString01">
-            <summary>Sets the stub of Control.ToString()</summary>
-        </member>
-        <member name="F:MegaDesktop.Fakes.StubTermsOfServiceWindow.VisualChildrenCountGet">
-            <summary>Sets the stub of FrameworkElement.get_VisualChildrenCount()</summary>
-        </member>
-        <member name="P:MegaDesktop.Fakes.StubTermsOfServiceWindow.CallBase">
-            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
-        </member>
-        <member name="P:MegaDesktop.Fakes.StubTermsOfServiceWindow.HandlesScrolling">
-            <summary>Sets the stub of Control.get_HandlesScrolling()</summary>
-        </member>
-        <member name="P:MegaDesktop.Fakes.StubTermsOfServiceWindow.HasEffectiveKeyboardFocus">
-            <summary>Sets the stub of UIElement.get_HasEffectiveKeyboardFocus()</summary>
-        </member>
-        <member name="P:MegaDesktop.Fakes.StubTermsOfServiceWindow.InstanceBehavior">
-            <summary>Gets or sets the instance behavior.</summary>
-        </member>
-        <member name="P:MegaDesktop.Fakes.StubTermsOfServiceWindow.InstanceObserver">
-            <summary>Gets or sets the instance observer.</summary>
-        </member>
-        <member name="P:MegaDesktop.Fakes.StubTermsOfServiceWindow.IsEnabledCore">
-            <summary>Sets the stub of UIElement.get_IsEnabledCore()</summary>
-        </member>
-        <member name="P:MegaDesktop.Fakes.StubTermsOfServiceWindow.LogicalChildren">
-            <summary>Sets the stub of Window.get_LogicalChildren()</summary>
-        </member>
-        <member name="P:MegaDesktop.Fakes.StubTermsOfServiceWindow.VisualChildrenCount">
-            <summary>Sets the stub of FrameworkElement.get_VisualChildrenCount()</summary>
         </member>
         <member name="T:MegaDesktop.Fakes.StubWindowLogin">
             <summary>Stub type of MegaDesktop.WindowLogin</summary>
@@ -3658,6 +2794,45 @@
         <member name="T:MegaDesktop.Ui.Fakes.ShimDataGridHelper.AllInstances">
             <summary>Define shims for all instances members</summary>
         </member>
+        <member name="T:MegaDesktop.Ui.Fakes.ShimGapToMarginConverter">
+            <summary>Shim type of MegaDesktop.Ui.GapToMarginConverter</summary>
+        </member>
+        <member name="M:MegaDesktop.Ui.Fakes.ShimGapToMarginConverter.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:MegaDesktop.Ui.Fakes.ShimGapToMarginConverter.#ctor(MegaDesktop.Ui.GapToMarginConverter)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:MegaDesktop.Ui.Fakes.ShimGapToMarginConverter.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:MegaDesktop.Ui.Fakes.ShimGapToMarginConverter.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:MegaDesktop.Ui.Fakes.ShimGapToMarginConverter.Bind(System.Windows.Data.IValueConverter)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:MegaDesktop.Ui.Fakes.ShimGapToMarginConverter.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:MegaDesktop.Ui.Fakes.ShimGapToMarginConverter.Constructor">
+            <summary>Sets the shim of GapToMarginConverter.GapToMarginConverter()</summary>
+        </member>
+        <member name="P:MegaDesktop.Ui.Fakes.ShimGapToMarginConverter.ConvertBackObjectTypeObjectCultureInfo">
+            <summary>Sets the shim of GapToMarginConverter.ConvertBack(Object value, Type targetType, Object parameter, CultureInfo culture)</summary>
+        </member>
+        <member name="P:MegaDesktop.Ui.Fakes.ShimGapToMarginConverter.ConvertObjectTypeObjectCultureInfo">
+            <summary>Sets the shim of GapToMarginConverter.Convert(Object value, Type targetType, Object parameter, CultureInfo culture)</summary>
+        </member>
+        <member name="T:MegaDesktop.Ui.Fakes.ShimGapToMarginConverter.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:MegaDesktop.Ui.Fakes.ShimGapToMarginConverter.AllInstances.ConvertBackObjectTypeObjectCultureInfo">
+            <summary>Sets the shim of GapToMarginConverter.ConvertBack(Object value, Type targetType, Object parameter, CultureInfo culture)</summary>
+        </member>
+        <member name="P:MegaDesktop.Ui.Fakes.ShimGapToMarginConverter.AllInstances.ConvertObjectTypeObjectCultureInfo">
+            <summary>Sets the shim of GapToMarginConverter.Convert(Object value, Type targetType, Object parameter, CultureInfo culture)</summary>
+        </member>
         <member name="T:MegaDesktop.Ui.Fakes.ShimTypeToImageConverter">
             <summary>Shim type of MegaDesktop.Ui.TypeToImageConverter</summary>
         </member>
@@ -3809,6 +2984,24 @@
             <summary>Gets or sets the instance behavior.</summary>
         </member>
         <member name="P:MegaDesktop.Ui.Fakes.StubDataGridHelper.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:MegaDesktop.Ui.Fakes.StubGapToMarginConverter">
+            <summary>Stub type of MegaDesktop.Ui.GapToMarginConverter</summary>
+        </member>
+        <member name="M:MegaDesktop.Ui.Fakes.StubGapToMarginConverter.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:MegaDesktop.Ui.Fakes.StubGapToMarginConverter.InitializeStub">
+            <summary>Initializes a new instance of type StubGapToMarginConverter</summary>
+        </member>
+        <member name="P:MegaDesktop.Ui.Fakes.StubGapToMarginConverter.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:MegaDesktop.Ui.Fakes.StubGapToMarginConverter.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:MegaDesktop.Ui.Fakes.StubGapToMarginConverter.InstanceObserver">
             <summary>Gets or sets the instance observer.</summary>
         </member>
         <member name="T:MegaDesktop.Ui.Fakes.StubTypeToImageConverter">
@@ -4744,9 +3937,6 @@
         <member name="P:MegaDesktop.Views.Fakes.ShimMainWindow.Behavior">
             <summary>Assigns the behavior for all methods of the shimmed type</summary>
         </member>
-        <member name="P:MegaDesktop.Views.Fakes.ShimMainWindow.CheckTos">
-            <summary>Sets the shim of MainWindow.CheckTos()</summary>
-        </member>
         <member name="P:MegaDesktop.Views.Fakes.ShimMainWindow.Constructor">
             <summary>Sets the shim of MainWindow.MainWindow()</summary>
         </member>
@@ -4770,21 +3960,6 @@
         </member>
         <member name="P:MegaDesktop.Views.Fakes.ShimMainWindow._CreateDelegateTypeString">
             <summary>Sets the shim of MainWindow._CreateDelegate(Type delegateType, String handler)</summary>
-        </member>
-        <member name="P:MegaDesktop.Views.Fakes.ShimMainWindow._ctorb__0IFromSyntax">
-            <summary>Sets the shim of MainWindow.&lt;.ctor&gt;b__0(IFromSyntax x)</summary>
-        </member>
-        <member name="P:MegaDesktop.Views.Fakes.ShimMainWindow._ctorb__1IBindingWhenInNamedWithOrOnSyntaxOfObject">
-            <summary>Sets the shim of MainWindow.&lt;.ctor&gt;b__1(IBindingWhenInNamedWithOrOnSyntax`1&lt;Object&gt; y)</summary>
-        </member>
-        <member name="P:MegaDesktop.Views.Fakes.ShimMainWindow._ctorb__2IFromSyntax">
-            <summary>Sets the shim of MainWindow.&lt;.ctor&gt;b__2(IFromSyntax x)</summary>
-        </member>
-        <member name="P:MegaDesktop.Views.Fakes.ShimMainWindow._ctorb__3IBindingWhenInNamedWithOrOnSyntaxOfObject">
-            <summary>Sets the shim of MainWindow.&lt;.ctor&gt;b__3(IBindingWhenInNamedWithOrOnSyntax`1&lt;Object&gt; y)</summary>
-        </member>
-        <member name="P:MegaDesktop.Views.Fakes.ShimMainWindow._ctorb__4Task">
-            <summary>Sets the shim of MainWindow.&lt;.ctor&gt;b__4(Task x)</summary>
         </member>
         <member name="T:MegaDesktop.Views.Fakes.ShimMainWindow.AllInstances">
             <summary>Define shims for all instances members</summary>
@@ -9981,132 +9156,6 @@
         </member>
         <member name="P:MegaDesktop.Views.Fakes.StubTreeView.VisualChildrenCount">
             <summary>Sets the stub of FrameworkElement.get_VisualChildrenCount()</summary>
-        </member>
-        <member name="T:MegaWpf.Fakes.ShimApp">
-            <summary>Shim type of MegaWpf.App</summary>
-        </member>
-        <member name="M:MegaWpf.Fakes.ShimApp.#ctor">
-            <summary>Initializes a new shim instance</summary>
-        </member>
-        <member name="M:MegaWpf.Fakes.ShimApp.#ctor(MegaWpf.App)">
-            <summary>Initializes a new shim for the given instance</summary>
-        </member>
-        <member name="M:MegaWpf.Fakes.ShimApp.BehaveAsCurrent">
-            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
-        </member>
-        <member name="M:MegaWpf.Fakes.ShimApp.BehaveAsNotImplemented">
-            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
-        </member>
-        <member name="M:MegaWpf.Fakes.ShimApp.Bind(System.Windows.Markup.IQueryAmbient)">
-            <summary>Binds the members of the interface to the shim.</summary>
-        </member>
-        <member name="P:MegaWpf.Fakes.ShimApp.Behavior">
-            <summary>Assigns the behavior for all methods of the shimmed type</summary>
-        </member>
-        <member name="P:MegaWpf.Fakes.ShimApp.Constructor">
-            <summary>Sets the shim of App.App()</summary>
-        </member>
-        <member name="P:MegaWpf.Fakes.ShimApp.InitializeComponent">
-            <summary>Sets the shim of App.InitializeComponent()</summary>
-        </member>
-        <member name="P:MegaWpf.Fakes.ShimApp.Main">
-            <summary>Sets the shim of App.Main()</summary>
-        </member>
-        <member name="T:MegaWpf.Fakes.ShimApp.AllInstances">
-            <summary>Define shims for all instances members</summary>
-        </member>
-        <member name="P:MegaWpf.Fakes.ShimApp.AllInstances.InitializeComponent">
-            <summary>Sets the shim of App.InitializeComponent()</summary>
-        </member>
-        <member name="T:MegaWpf.Fakes.StubApp">
-            <summary>Stub type of MegaWpf.App</summary>
-        </member>
-        <member name="M:MegaWpf.Fakes.StubApp.#ctor">
-            <summary>Initializes a new instance</summary>
-        </member>
-        <member name="M:MegaWpf.Fakes.StubApp.InitializeStub">
-            <summary>Initializes a new instance of type StubApp</summary>
-        </member>
-        <member name="M:MegaWpf.Fakes.StubApp.OnActivated(System.EventArgs)">
-            <summary>Sets the stub of Application.OnActivated(EventArgs e)</summary>
-        </member>
-        <member name="F:MegaWpf.Fakes.StubApp.OnActivatedEventArgs">
-            <summary>Sets the stub of Application.OnActivated(EventArgs e)</summary>
-        </member>
-        <member name="M:MegaWpf.Fakes.StubApp.OnDeactivated(System.EventArgs)">
-            <summary>Sets the stub of Application.OnDeactivated(EventArgs e)</summary>
-        </member>
-        <member name="F:MegaWpf.Fakes.StubApp.OnDeactivatedEventArgs">
-            <summary>Sets the stub of Application.OnDeactivated(EventArgs e)</summary>
-        </member>
-        <member name="M:MegaWpf.Fakes.StubApp.OnExit(System.Windows.ExitEventArgs)">
-            <summary>Sets the stub of Application.OnExit(ExitEventArgs e)</summary>
-        </member>
-        <member name="F:MegaWpf.Fakes.StubApp.OnExitExitEventArgs">
-            <summary>Sets the stub of Application.OnExit(ExitEventArgs e)</summary>
-        </member>
-        <member name="M:MegaWpf.Fakes.StubApp.OnFragmentNavigation(System.Windows.Navigation.FragmentNavigationEventArgs)">
-            <summary>Sets the stub of Application.OnFragmentNavigation(FragmentNavigationEventArgs e)</summary>
-        </member>
-        <member name="F:MegaWpf.Fakes.StubApp.OnFragmentNavigationFragmentNavigationEventArgs">
-            <summary>Sets the stub of Application.OnFragmentNavigation(FragmentNavigationEventArgs e)</summary>
-        </member>
-        <member name="M:MegaWpf.Fakes.StubApp.OnLoadCompleted(System.Windows.Navigation.NavigationEventArgs)">
-            <summary>Sets the stub of Application.OnLoadCompleted(NavigationEventArgs e)</summary>
-        </member>
-        <member name="F:MegaWpf.Fakes.StubApp.OnLoadCompletedNavigationEventArgs">
-            <summary>Sets the stub of Application.OnLoadCompleted(NavigationEventArgs e)</summary>
-        </member>
-        <member name="M:MegaWpf.Fakes.StubApp.OnNavigated(System.Windows.Navigation.NavigationEventArgs)">
-            <summary>Sets the stub of Application.OnNavigated(NavigationEventArgs e)</summary>
-        </member>
-        <member name="F:MegaWpf.Fakes.StubApp.OnNavigatedNavigationEventArgs">
-            <summary>Sets the stub of Application.OnNavigated(NavigationEventArgs e)</summary>
-        </member>
-        <member name="M:MegaWpf.Fakes.StubApp.OnNavigating(System.Windows.Navigation.NavigatingCancelEventArgs)">
-            <summary>Sets the stub of Application.OnNavigating(NavigatingCancelEventArgs e)</summary>
-        </member>
-        <member name="F:MegaWpf.Fakes.StubApp.OnNavigatingNavigatingCancelEventArgs">
-            <summary>Sets the stub of Application.OnNavigating(NavigatingCancelEventArgs e)</summary>
-        </member>
-        <member name="M:MegaWpf.Fakes.StubApp.OnNavigationFailed(System.Windows.Navigation.NavigationFailedEventArgs)">
-            <summary>Sets the stub of Application.OnNavigationFailed(NavigationFailedEventArgs e)</summary>
-        </member>
-        <member name="F:MegaWpf.Fakes.StubApp.OnNavigationFailedNavigationFailedEventArgs">
-            <summary>Sets the stub of Application.OnNavigationFailed(NavigationFailedEventArgs e)</summary>
-        </member>
-        <member name="M:MegaWpf.Fakes.StubApp.OnNavigationProgress(System.Windows.Navigation.NavigationProgressEventArgs)">
-            <summary>Sets the stub of Application.OnNavigationProgress(NavigationProgressEventArgs e)</summary>
-        </member>
-        <member name="F:MegaWpf.Fakes.StubApp.OnNavigationProgressNavigationProgressEventArgs">
-            <summary>Sets the stub of Application.OnNavigationProgress(NavigationProgressEventArgs e)</summary>
-        </member>
-        <member name="M:MegaWpf.Fakes.StubApp.OnNavigationStopped(System.Windows.Navigation.NavigationEventArgs)">
-            <summary>Sets the stub of Application.OnNavigationStopped(NavigationEventArgs e)</summary>
-        </member>
-        <member name="F:MegaWpf.Fakes.StubApp.OnNavigationStoppedNavigationEventArgs">
-            <summary>Sets the stub of Application.OnNavigationStopped(NavigationEventArgs e)</summary>
-        </member>
-        <member name="M:MegaWpf.Fakes.StubApp.OnSessionEnding(System.Windows.SessionEndingCancelEventArgs)">
-            <summary>Sets the stub of Application.OnSessionEnding(SessionEndingCancelEventArgs e)</summary>
-        </member>
-        <member name="F:MegaWpf.Fakes.StubApp.OnSessionEndingSessionEndingCancelEventArgs">
-            <summary>Sets the stub of Application.OnSessionEnding(SessionEndingCancelEventArgs e)</summary>
-        </member>
-        <member name="M:MegaWpf.Fakes.StubApp.OnStartup(System.Windows.StartupEventArgs)">
-            <summary>Sets the stub of Application.OnStartup(StartupEventArgs e)</summary>
-        </member>
-        <member name="F:MegaWpf.Fakes.StubApp.OnStartupStartupEventArgs">
-            <summary>Sets the stub of Application.OnStartup(StartupEventArgs e)</summary>
-        </member>
-        <member name="P:MegaWpf.Fakes.StubApp.CallBase">
-            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
-        </member>
-        <member name="P:MegaWpf.Fakes.StubApp.InstanceBehavior">
-            <summary>Gets or sets the instance behavior.</summary>
-        </member>
-        <member name="P:MegaWpf.Fakes.StubApp.InstanceObserver">
-            <summary>Gets or sets the instance observer.</summary>
         </member>
     </members>
 </doc>

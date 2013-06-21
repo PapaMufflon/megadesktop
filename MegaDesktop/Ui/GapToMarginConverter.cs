@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
 
-namespace MegaDesktop
+namespace MegaDesktop.Ui
 {
     public class GapToMarginConverter : IValueConverter
     {

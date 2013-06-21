@@ -40,10 +40,11 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject />
+    <StartupObject>
+    </StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>m.ico</ApplicationIcon>
+    <ApplicationIcon>mega.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
@@ -100,7 +101,6 @@
     <Compile Include="Commands\RefreshCommand.cs" />
     <Compile Include="Commands\UploadCommand.cs" />
     <Compile Include="Commands\UploadFolderCommand.cs" />
-    <Compile Include="GapToMarginConverter.cs" />
     <Compile Include="Resource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -116,11 +116,9 @@
     <Compile Include="Services\Status.cs" />
     <Compile Include="Services\TransferManager.cs" />
     <Compile Include="Services\UserAccount.cs" />
-    <Compile Include="TermsOfServiceWindow.xaml.cs">
-      <DependentUpon>TermsOfServiceWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Ui\BindableSelectedItemBehavior.cs" />
     <Compile Include="Ui\DataGridHelper.cs" />
+    <Compile Include="Ui\GapToMarginConverter.cs" />
     <Compile Include="Ui\TypeToImageConverter.cs" />
     <Compile Include="Util\AssertObjectIsNotNull.cs" />
     <Compile Include="Util\EnumerableForEach.cs" />
@@ -158,10 +156,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="TermsOfServiceWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\HeaderView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -235,7 +229,7 @@
     <Resource Include="Resources\bug.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="m.ico" />
+    <Resource Include="mega.ico" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MegaApi\MegaApi.csproj">
