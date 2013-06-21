@@ -30,11 +30,11 @@ namespace MegaDesktop
             _kernel.Bind(x => x.FromThisAssembly()
                               .SelectAllClasses()
                               .BindToSelf()
-                              .Configure(y => y.InTransientScope()));
+                              .Configure(y => y.InSingletonScope()));
             _kernel.Bind(x => x.FromThisAssembly().IncludingNonePublicTypes()
                               .SelectAllClasses()
                               .BindAllInterfaces()
-                              .Configure(y => y.InTransientScope()));
+                              .Configure(y => y.InSingletonScope()));
 
             _kernel.Rebind<IDispatcher>().ToConstant(new Dispatcher(Dispatcher));
             _kernel.Rebind<MegaApiWrapper>().ToSelf().InSingletonScope();

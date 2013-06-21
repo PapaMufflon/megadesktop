@@ -13,13 +13,18 @@ namespace MegaDesktop.Commands
     {
         private readonly MegaApiWrapper _megaApiWrapper;
         private readonly RefreshService _refresh;
+        private readonly IDispatcher _dispatcher;
         private readonly StatusViewModel _status;
 
-        public DeleteCommand(MegaApiWrapper megaApiWrapper, StatusViewModel status, RefreshService refresh)
+        public DeleteCommand(MegaApiWrapper megaApiWrapper,
+                             StatusViewModel status,
+                             RefreshService refresh,
+                             IDispatcher dispatcher)
         {
             _megaApiWrapper = megaApiWrapper;
             _status = status;
             _refresh = refresh;
+            _dispatcher = dispatcher;
         }
 
         public event EventHandler CanExecuteChanged;
@@ -58,8 +63,10 @@ namespace MegaDesktop.Commands
 
         public virtual void OnCanExecuteChanged()
         {
-            EventHandler handler = CanExecuteChanged;
-            if (handler != null) handler(this, EventArgs.Empty);
+            var handler = CanExecuteChanged;
+
+            if (handler != null)
+                _dispatcher.InvokeOnUiThread(() => handler(this, EventArgs.Empty));
         }
 
         public int Position { get { return 3; } }

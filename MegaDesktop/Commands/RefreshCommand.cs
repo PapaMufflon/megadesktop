@@ -7,17 +7,21 @@ namespace MegaDesktop.Commands
     internal class RefreshCommand : ICommand, IToolBarCommand
     {
         private readonly RefreshService _refresh;
+        private readonly IDispatcher _dispatcher;
+        private readonly MegaApiWrapper _megaApiWrapper;
 
-        public RefreshCommand(RefreshService refresh)
+        public RefreshCommand(RefreshService refresh, IDispatcher dispatcher, MegaApiWrapper megaApiWrapper)
         {
             _refresh = refresh;
+            _dispatcher = dispatcher;
+            _megaApiWrapper = megaApiWrapper;
         }
 
         public event EventHandler CanExecuteChanged;
 
         public bool CanExecute(object parameter)
         {
-            return true;
+            return _megaApiWrapper.User != null;
         }
 
         public void Execute(object parameter)
@@ -27,8 +31,10 @@ namespace MegaDesktop.Commands
 
         public virtual void OnCanExecuteChanged()
         {
-            EventHandler handler = CanExecuteChanged;
-            if (handler != null) handler(this, EventArgs.Empty);
+            var handler = CanExecuteChanged;
+
+            if (handler != null)
+                _dispatcher.InvokeOnUiThread(() => handler(this, EventArgs.Empty));
         }
 
         public int Position { get { return 4; } }

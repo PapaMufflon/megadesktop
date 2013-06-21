@@ -119,7 +119,7 @@ namespace MegaDesktop.Commands
             var handler = CanExecuteChanged;
 
             if (handler != null)
-                handler(this, EventArgs.Empty);
+                _dispatcher.InvokeOnUiThread(() => handler(this, EventArgs.Empty));
         }
 
         public int Position { get { return 1; } }

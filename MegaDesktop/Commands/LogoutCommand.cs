@@ -44,6 +44,7 @@ namespace MegaDesktop.Commands
 
             _userAccount.DeleteCurrentAccount();
             _apiWrapper.Register(null);
+            _nodes.SelectedNode = null;
         }
 
         protected virtual void OnCanExecuteChanged()

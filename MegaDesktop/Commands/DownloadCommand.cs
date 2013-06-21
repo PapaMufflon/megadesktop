@@ -13,12 +13,17 @@ namespace MegaDesktop.Commands
         private readonly MegaApiWrapper _megaApiWrapper;
         private readonly StatusViewModel _status;
         private readonly TransferManager _transfers;
+        private readonly IDispatcher _dispatcher;
 
-        public DownloadCommand(MegaApiWrapper megaApiWrapper, StatusViewModel status, TransferManager transfers)
+        public DownloadCommand(MegaApiWrapper megaApiWrapper,
+                               StatusViewModel status,
+                               TransferManager transfers,
+                               IDispatcher dispatcher)
         {
             _megaApiWrapper = megaApiWrapper;
             _status = status;
             _transfers = transfers;
+            _dispatcher = dispatcher;
         }
 
         public event EventHandler CanExecuteChanged;
@@ -77,7 +82,7 @@ namespace MegaDesktop.Commands
             var handler = CanExecuteChanged;
 
             if (handler != null)
-                handler(this, EventArgs.Empty);
+                _dispatcher.InvokeOnUiThread(() => handler(this, EventArgs.Empty));
         }
 
         public int Position { get { return 2; } }

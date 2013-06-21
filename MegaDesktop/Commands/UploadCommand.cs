@@ -82,8 +82,10 @@ namespace MegaDesktop.Commands
 
         public virtual void OnCanExecuteChanged()
         {
-            EventHandler handler = CanExecuteChanged;
-            if (handler != null) handler(this, EventArgs.Empty);
+            var handler = CanExecuteChanged;
+
+            if (handler != null)
+                _dispatcher.InvokeOnUiThread(() => handler(this, EventArgs.Empty));
         }
 
         public int Position { get { return 0; } }
