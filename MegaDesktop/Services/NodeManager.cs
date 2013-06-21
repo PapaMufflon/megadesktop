@@ -1,9 +1,11 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using MegaDesktop.ViewModels;
 
 namespace MegaDesktop.Services
 {
-    internal class NodeManager
+    internal class NodeManager : INotifyPropertyChanged
     {
         public event EventHandler<EventArgs> SelectedNodeChanged;
 
@@ -25,6 +27,7 @@ namespace MegaDesktop.Services
             {
                 _selectedNode = value;
                 OnSelectedNodeChanged();
+                OnPropertyChanged();
             }
         }
 
@@ -35,6 +38,7 @@ namespace MegaDesktop.Services
             {
                 _selectedTreeNode = value;
                 SelectedNode = SelectedTreeNode;
+                OnPropertyChanged();
             }
         }
 
@@ -45,13 +49,26 @@ namespace MegaDesktop.Services
             {
                 _selectedListNode = value;
                 SelectedNode = SelectedListNode;
+                OnPropertyChanged();
             }
         }
 
         protected virtual void OnSelectedNodeChanged()
         {
             var handler = SelectedNodeChanged;
-            if (handler != null) handler(this, EventArgs.Empty);
+
+            if (handler != null)
+                handler(this, EventArgs.Empty);
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            var handler = PropertyChanged;
+
+            if (handler != null)
+                handler(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

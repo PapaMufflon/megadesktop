@@ -16,11 +16,12 @@ namespace MegaDesktop.Tests
         {
             _shimContext = ShimsContext.Create();
             
-            _status = new ShimStatusViewModel();
             _nodeManager = new ShimNodeManager();
             _transfersViewModel = new ShimTransfersViewModel();
+            _toolBarViewModel = new ShimToolBarViewModel();
+            _headerViewModel = new ShimHeaderViewModel();
 
-            _target = new MainViewModel(_nodeManager, _transfersViewModel);
+            _target = new MainViewModel(_nodeManager, _transfersViewModel, _toolBarViewModel, _headerViewModel);
         }
 
         [TearDown]
@@ -30,33 +31,19 @@ namespace MegaDesktop.Tests
         }
 
         private MainViewModel _target;
-        private StatusViewModel _status;
         private NodeManager _nodeManager;
         private IDisposable _shimContext;
         private TransfersViewModel _transfersViewModel;
+        private ToolBarViewModel _toolBarViewModel;
+        private HeaderViewModel _headerViewModel;
 
         [Test]
         public void Ctor_arguments_should_not_be_null()
         {
-            Assert.Throws<ArgumentNullException>(() => new MainViewModel(_nodeManager, _transfersViewModel));
-            Assert.Throws<ArgumentNullException>(() => new MainViewModel(null, _transfersViewModel));
-            Assert.Throws<ArgumentNullException>(() => new MainViewModel(_nodeManager, null));
-        }
-
-        [Test]
-        public void Selecting_a_node_in_the_list_sets_this_node_as_the_selected_node()
-        {
-            _target.SelectedListNode = new NodeViewModel(new TestDispatcher());
-
-            Assert.That(_target.SelectedNode, Is.EqualTo(_target.SelectedListNode));
-        }
-
-        [Test]
-        public void Selecting_a_node_in_the_tree_sets_this_node_as_the_selected_node()
-        {
-            _target.SelectedTreeNode = new NodeViewModel(new TestDispatcher());
-
-            Assert.That(_target.SelectedNode, Is.EqualTo(_target.SelectedTreeNode));
+            Assert.Throws<ArgumentNullException>(() => new MainViewModel(null, _transfersViewModel, _toolBarViewModel, _headerViewModel));
+            Assert.Throws<ArgumentNullException>(() => new MainViewModel(_nodeManager, null, _toolBarViewModel, _headerViewModel));
+            Assert.Throws<ArgumentNullException>(() => new MainViewModel(_nodeManager, _transfersViewModel, null, _headerViewModel));
+            Assert.Throws<ArgumentNullException>(() => new MainViewModel(_nodeManager, _transfersViewModel, _toolBarViewModel, null));
         }
     }
 }

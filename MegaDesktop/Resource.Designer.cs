@@ -97,6 +97,15 @@ namespace MegaDesktop {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to File manager.
+        /// </summary>
+        public static string FileManager {
+            get {
+                return ResourceManager.GetString("FileManager", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Messages.
         /// </summary>
         public static string Inbox {

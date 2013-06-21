@@ -16,25 +16,17 @@ namespace MegaDesktop.ViewModels
             TransfersViewModel = transfersViewModel;
             ToolBarViewModel = toolBarViewModel;
             HeaderViewModel = headerViewModel;
+            NodeManager = nodeManager;
 
             _nodeManager.SelectedNodeChanged += (s, e) => OnPropertyChanged("SelectedNode");
         }
 
+        public NodeManager NodeManager { get; private set; }
         public TransfersViewModel TransfersViewModel { get; private set; }
         public ToolBarViewModel ToolBarViewModel { get; private set; }
         public HeaderViewModel HeaderViewModel { get; private set; }
 
         [Inject] public SelectedListNodeActionCommand SelectedListNodeActionCommand { get; set; }
-
-        public NodeViewModel SelectedNode
-        {
-            get { return _nodeManager.SelectedNode; }
-            set
-            {
-                _nodeManager.SelectedNode = value;
-                OnPropertyChanged();
-            }
-        }
 
         public NodeViewModel SelectedTreeNode
         {
@@ -54,11 +46,6 @@ namespace MegaDesktop.ViewModels
                 _nodeManager.SelectedListNode = value;
                 OnPropertyChanged();
             }
-        }
-
-        public NodeViewModel RootNode
-        {
-            get { return _nodeManager.RootNode; }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

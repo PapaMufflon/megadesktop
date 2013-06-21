@@ -129,6 +129,9 @@
   <data name="Exit" xml:space="preserve">
     <value>Exit</value>
   </data>
+  <data name="FileManager" xml:space="preserve">
+    <value>File manager</value>
+  </data>
   <data name="Inbox" xml:space="preserve">
     <value>Messages</value>
   </data>

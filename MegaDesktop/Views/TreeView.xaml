@@ -4,7 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:e="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
-             xmlns:behaviours="clr-namespace:MegaDesktop.Ui" xmlns:megaDesktop="clr-namespace:MegaDesktop"
+             xmlns:behaviours="clr-namespace:MegaDesktop.Ui"
+             xmlns:megaDesktop="clr-namespace:MegaDesktop"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="200">
     <UserControl.Resources>
@@ -30,7 +31,7 @@
                    HorizontalAlignment="Center"
                    Grid.Column="0" />
             
-            <TextBlock Text="File manager"
+            <TextBlock Text="{x:Static megaDesktop:Resource.FileManager}"
                        Foreground="White"
                        FontSize="15"
                        VerticalAlignment="Center"

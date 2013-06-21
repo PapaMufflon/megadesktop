@@ -30,7 +30,7 @@
                 <ui:TreeView Grid.Row="1"
                              Grid.RowSpan="2"
                              Grid.Column="0"
-                             DataContext="{Binding}" />
+                             DataContext="{Binding NodeManager}" />
 
                 <ui:ToolBarView Grid.Row="1"
                                 Grid.Column="1"
@@ -38,7 +38,7 @@
 
                 <ui:NodesView Grid.Column="1"
                               Grid.Row="2"
-                              DataContext="{Binding}" />
+                              DataContext="{Binding NodeManager}" />
             </Grid>
         </DockPanel>
     </Border>

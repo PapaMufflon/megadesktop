@@ -3898,6 +3898,78 @@
         <member name="P:MegaDesktop.Ui.Fakes.StubDataGridHelper.InstanceObserver">
             <summary>Gets or sets the instance observer.</summary>
         </member>
+        <member name="T:MegaDesktop.ViewModels.Fakes.ShimHeaderViewModel">
+            <summary>Shim type of MegaDesktop.ViewModels.HeaderViewModel</summary>
+        </member>
+        <member name="M:MegaDesktop.ViewModels.Fakes.ShimHeaderViewModel.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:MegaDesktop.ViewModels.Fakes.ShimHeaderViewModel.#ctor(MegaDesktop.ViewModels.HeaderViewModel)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:MegaDesktop.ViewModels.Fakes.ShimHeaderViewModel.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:MegaDesktop.ViewModels.Fakes.ShimHeaderViewModel.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimHeaderViewModel.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimHeaderViewModel.ConstructorStatusViewModelLoginCommandLogoutCommandExitCommand">
+            <summary>Sets the shim of HeaderViewModel.HeaderViewModel(StatusViewModel statusViewModel, LoginCommand loginCommand, LogoutCommand logoutCommand, ExitCommand exitCommand)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimHeaderViewModel.ExitCommandGet">
+            <summary>Sets the shim of HeaderViewModel.get_ExitCommand()</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimHeaderViewModel.ExitCommandSetExitCommand">
+            <summary>Sets the shim of HeaderViewModel.set_ExitCommand(ExitCommand value)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimHeaderViewModel.LoginCommandGet">
+            <summary>Sets the shim of HeaderViewModel.get_LoginCommand()</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimHeaderViewModel.LoginCommandSetLoginCommand">
+            <summary>Sets the shim of HeaderViewModel.set_LoginCommand(LoginCommand value)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimHeaderViewModel.LogoutCommandGet">
+            <summary>Sets the shim of HeaderViewModel.get_LogoutCommand()</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimHeaderViewModel.LogoutCommandSetLogoutCommand">
+            <summary>Sets the shim of HeaderViewModel.set_LogoutCommand(LogoutCommand value)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimHeaderViewModel.StatusGet">
+            <summary>Sets the shim of HeaderViewModel.get_Status()</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimHeaderViewModel.StatusSetStatusViewModel">
+            <summary>Sets the shim of HeaderViewModel.set_Status(StatusViewModel value)</summary>
+        </member>
+        <member name="T:MegaDesktop.ViewModels.Fakes.ShimHeaderViewModel.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimHeaderViewModel.AllInstances.ExitCommandGet">
+            <summary>Sets the shim of HeaderViewModel.get_ExitCommand()</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimHeaderViewModel.AllInstances.ExitCommandSetExitCommand">
+            <summary>Sets the shim of HeaderViewModel.set_ExitCommand(ExitCommand value)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimHeaderViewModel.AllInstances.LoginCommandGet">
+            <summary>Sets the shim of HeaderViewModel.get_LoginCommand()</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimHeaderViewModel.AllInstances.LoginCommandSetLoginCommand">
+            <summary>Sets the shim of HeaderViewModel.set_LoginCommand(LoginCommand value)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimHeaderViewModel.AllInstances.LogoutCommandGet">
+            <summary>Sets the shim of HeaderViewModel.get_LogoutCommand()</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimHeaderViewModel.AllInstances.LogoutCommandSetLogoutCommand">
+            <summary>Sets the shim of HeaderViewModel.set_LogoutCommand(LogoutCommand value)</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimHeaderViewModel.AllInstances.StatusGet">
+            <summary>Sets the shim of HeaderViewModel.get_Status()</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimHeaderViewModel.AllInstances.StatusSetStatusViewModel">
+            <summary>Sets the shim of HeaderViewModel.set_Status(StatusViewModel value)</summary>
+        </member>
         <member name="T:MegaDesktop.ViewModels.Fakes.ShimMainViewModel">
             <summary>Shim type of MegaDesktop.ViewModels.MainViewModel</summary>
         </member>
@@ -3919,26 +3991,20 @@
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.Behavior">
             <summary>Assigns the behavior for all methods of the shimmed type</summary>
         </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.ConstructorStatusViewModelNodeManagerTransfersViewModel">
-            <summary>Sets the shim of MainViewModel.MainViewModel(StatusViewModel status, NodeManager nodeManager, TransfersViewModel transfersViewModel)</summary>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.ConstructorNodeManagerTransfersViewModelToolBarViewModelHeaderViewModel">
+            <summary>Sets the shim of MainViewModel.MainViewModel(NodeManager nodeManager, TransfersViewModel transfersViewModel, ToolBarViewModel toolBarViewModel, HeaderViewModel headerViewModel)</summary>
         </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.ExitCommandGet">
-            <summary>Sets the shim of MainViewModel.get_ExitCommand()</summary>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.HeaderViewModelGet">
+            <summary>Sets the shim of MainViewModel.get_HeaderViewModel()</summary>
         </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.ExitCommandSetExitCommand">
-            <summary>Sets the shim of MainViewModel.set_ExitCommand(ExitCommand value)</summary>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.HeaderViewModelSetHeaderViewModel">
+            <summary>Sets the shim of MainViewModel.set_HeaderViewModel(HeaderViewModel value)</summary>
         </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.LoginCommandGet">
-            <summary>Sets the shim of MainViewModel.get_LoginCommand()</summary>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.NodeManagerGet">
+            <summary>Sets the shim of MainViewModel.get_NodeManager()</summary>
         </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.LoginCommandSetLoginCommand">
-            <summary>Sets the shim of MainViewModel.set_LoginCommand(LoginCommand value)</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.LogoutCommandGet">
-            <summary>Sets the shim of MainViewModel.get_LogoutCommand()</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.LogoutCommandSetLogoutCommand">
-            <summary>Sets the shim of MainViewModel.set_LogoutCommand(LogoutCommand value)</summary>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.NodeManagerSetNodeManager">
+            <summary>Sets the shim of MainViewModel.set_NodeManager(NodeManager value)</summary>
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.OnPropertyChangedString">
             <summary>Sets the shim of MainViewModel.OnPropertyChanged(String propertyName)</summary>
@@ -3948,9 +4014,6 @@
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.PropertyChangedRemovePropertyChangedEventHandler">
             <summary>Sets the shim of MainViewModel.remove_PropertyChanged(PropertyChangedEventHandler value)</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.RootNodeGet">
-            <summary>Sets the shim of MainViewModel.get_RootNode()</summary>
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.SelectedListNodeActionCommandGet">
             <summary>Sets the shim of MainViewModel.get_SelectedListNodeActionCommand()</summary>
@@ -3964,23 +4027,17 @@
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.SelectedListNodeSetNodeViewModel">
             <summary>Sets the shim of MainViewModel.set_SelectedListNode(NodeViewModel value)</summary>
         </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.SelectedNodeGet">
-            <summary>Sets the shim of MainViewModel.get_SelectedNode()</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.SelectedNodeSetNodeViewModel">
-            <summary>Sets the shim of MainViewModel.set_SelectedNode(NodeViewModel value)</summary>
-        </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.SelectedTreeNodeGet">
             <summary>Sets the shim of MainViewModel.get_SelectedTreeNode()</summary>
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.SelectedTreeNodeSetNodeViewModel">
             <summary>Sets the shim of MainViewModel.set_SelectedTreeNode(NodeViewModel value)</summary>
         </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.StatusGet">
-            <summary>Sets the shim of MainViewModel.get_Status()</summary>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.ToolBarViewModelGet">
+            <summary>Sets the shim of MainViewModel.get_ToolBarViewModel()</summary>
         </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.StatusSetStatusViewModel">
-            <summary>Sets the shim of MainViewModel.set_Status(StatusViewModel value)</summary>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.ToolBarViewModelSetToolBarViewModel">
+            <summary>Sets the shim of MainViewModel.set_ToolBarViewModel(ToolBarViewModel value)</summary>
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.TransfersViewModelGet">
             <summary>Sets the shim of MainViewModel.get_TransfersViewModel()</summary>
@@ -3994,23 +4051,17 @@
         <member name="T:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances">
             <summary>Define shims for all instances members</summary>
         </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.ExitCommandGet">
-            <summary>Sets the shim of MainViewModel.get_ExitCommand()</summary>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.HeaderViewModelGet">
+            <summary>Sets the shim of MainViewModel.get_HeaderViewModel()</summary>
         </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.ExitCommandSetExitCommand">
-            <summary>Sets the shim of MainViewModel.set_ExitCommand(ExitCommand value)</summary>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.HeaderViewModelSetHeaderViewModel">
+            <summary>Sets the shim of MainViewModel.set_HeaderViewModel(HeaderViewModel value)</summary>
         </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.LoginCommandGet">
-            <summary>Sets the shim of MainViewModel.get_LoginCommand()</summary>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.NodeManagerGet">
+            <summary>Sets the shim of MainViewModel.get_NodeManager()</summary>
         </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.LoginCommandSetLoginCommand">
-            <summary>Sets the shim of MainViewModel.set_LoginCommand(LoginCommand value)</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.LogoutCommandGet">
-            <summary>Sets the shim of MainViewModel.get_LogoutCommand()</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.LogoutCommandSetLogoutCommand">
-            <summary>Sets the shim of MainViewModel.set_LogoutCommand(LogoutCommand value)</summary>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.NodeManagerSetNodeManager">
+            <summary>Sets the shim of MainViewModel.set_NodeManager(NodeManager value)</summary>
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.OnPropertyChangedString">
             <summary>Sets the shim of MainViewModel.OnPropertyChanged(String propertyName)</summary>
@@ -4020,9 +4071,6 @@
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.PropertyChangedRemovePropertyChangedEventHandler">
             <summary>Sets the shim of MainViewModel.remove_PropertyChanged(PropertyChangedEventHandler value)</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.RootNodeGet">
-            <summary>Sets the shim of MainViewModel.get_RootNode()</summary>
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.SelectedListNodeActionCommandGet">
             <summary>Sets the shim of MainViewModel.get_SelectedListNodeActionCommand()</summary>
@@ -4036,23 +4084,17 @@
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.SelectedListNodeSetNodeViewModel">
             <summary>Sets the shim of MainViewModel.set_SelectedListNode(NodeViewModel value)</summary>
         </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.SelectedNodeGet">
-            <summary>Sets the shim of MainViewModel.get_SelectedNode()</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.SelectedNodeSetNodeViewModel">
-            <summary>Sets the shim of MainViewModel.set_SelectedNode(NodeViewModel value)</summary>
-        </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.SelectedTreeNodeGet">
             <summary>Sets the shim of MainViewModel.get_SelectedTreeNode()</summary>
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.SelectedTreeNodeSetNodeViewModel">
             <summary>Sets the shim of MainViewModel.set_SelectedTreeNode(NodeViewModel value)</summary>
         </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.StatusGet">
-            <summary>Sets the shim of MainViewModel.get_Status()</summary>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.ToolBarViewModelGet">
+            <summary>Sets the shim of MainViewModel.get_ToolBarViewModel()</summary>
         </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.StatusSetStatusViewModel">
-            <summary>Sets the shim of MainViewModel.set_Status(StatusViewModel value)</summary>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.ToolBarViewModelSetToolBarViewModel">
+            <summary>Sets the shim of MainViewModel.set_ToolBarViewModel(ToolBarViewModel value)</summary>
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimMainViewModel.AllInstances.TransfersViewModelGet">
             <summary>Sets the shim of MainViewModel.get_TransfersViewModel()</summary>
@@ -4330,18 +4372,6 @@
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.ConstructorNodeManagerIEnumerableOfIToolBarCommand">
             <summary>Sets the shim of ToolBarViewModel.ToolBarViewModel(NodeManager nodeManager, IEnumerable`1&lt;IToolBarCommand&gt; toolBarCommands)</summary>
         </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.DeleteCommandGet">
-            <summary>Sets the shim of ToolBarViewModel.get_DeleteCommand()</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.DeleteCommandSetDeleteCommand">
-            <summary>Sets the shim of ToolBarViewModel.set_DeleteCommand(DeleteCommand value)</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.DownloadCommandGet">
-            <summary>Sets the shim of ToolBarViewModel.get_DownloadCommand()</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.DownloadCommandSetDownloadCommand">
-            <summary>Sets the shim of ToolBarViewModel.set_DownloadCommand(DownloadCommand value)</summary>
-        </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.OnPropertyChangedString">
             <summary>Sets the shim of ToolBarViewModel.OnPropertyChanged(String propertyName)</summary>
         </member>
@@ -4351,32 +4381,14 @@
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.PropertyChangedRemovePropertyChangedEventHandler">
             <summary>Sets the shim of ToolBarViewModel.remove_PropertyChanged(PropertyChangedEventHandler value)</summary>
         </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.RefreshCommandGet">
-            <summary>Sets the shim of ToolBarViewModel.get_RefreshCommand()</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.RefreshCommandSetRefreshCommand">
-            <summary>Sets the shim of ToolBarViewModel.set_RefreshCommand(RefreshCommand value)</summary>
-        </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.SelectedNodeGet">
             <summary>Sets the shim of ToolBarViewModel.get_SelectedNode()</summary>
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.SelectedNodeSetNodeViewModel">
             <summary>Sets the shim of ToolBarViewModel.set_SelectedNode(NodeViewModel value)</summary>
         </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.UploadCommandGet">
-            <summary>Sets the shim of ToolBarViewModel.get_UploadCommand()</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.UploadCommandSetUploadCommand">
-            <summary>Sets the shim of ToolBarViewModel.set_UploadCommand(UploadCommand value)</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.UploadFolderCommandGet">
-            <summary>Sets the shim of ToolBarViewModel.get_UploadFolderCommand()</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.UploadFolderCommandSetUploadFolderCommand">
-            <summary>Sets the shim of ToolBarViewModel.set_UploadFolderCommand(UploadFolderCommand value)</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel._ctorb__0IToolBarCommand">
-            <summary>Sets the shim of ToolBarViewModel.&lt;.ctor&gt;b__0(IToolBarCommand x)</summary>
+        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel._ctorb__1IToolBarCommand">
+            <summary>Sets the shim of ToolBarViewModel.&lt;.ctor&gt;b__1(IToolBarCommand x)</summary>
         </member>
         <member name="T:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.AllInstances">
             <summary>Define shims for all instances members</summary>
@@ -4387,18 +4399,6 @@
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.AllInstances.CommandsSetIEnumerableOfIToolBarCommand">
             <summary>Sets the shim of ToolBarViewModel.set_Commands(IEnumerable`1&lt;IToolBarCommand&gt; value)</summary>
         </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.AllInstances.DeleteCommandGet">
-            <summary>Sets the shim of ToolBarViewModel.get_DeleteCommand()</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.AllInstances.DeleteCommandSetDeleteCommand">
-            <summary>Sets the shim of ToolBarViewModel.set_DeleteCommand(DeleteCommand value)</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.AllInstances.DownloadCommandGet">
-            <summary>Sets the shim of ToolBarViewModel.get_DownloadCommand()</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.AllInstances.DownloadCommandSetDownloadCommand">
-            <summary>Sets the shim of ToolBarViewModel.set_DownloadCommand(DownloadCommand value)</summary>
-        </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.AllInstances.OnPropertyChangedString">
             <summary>Sets the shim of ToolBarViewModel.OnPropertyChanged(String propertyName)</summary>
         </member>
@@ -4408,29 +4408,11 @@
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.AllInstances.PropertyChangedRemovePropertyChangedEventHandler">
             <summary>Sets the shim of ToolBarViewModel.remove_PropertyChanged(PropertyChangedEventHandler value)</summary>
         </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.AllInstances.RefreshCommandGet">
-            <summary>Sets the shim of ToolBarViewModel.get_RefreshCommand()</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.AllInstances.RefreshCommandSetRefreshCommand">
-            <summary>Sets the shim of ToolBarViewModel.set_RefreshCommand(RefreshCommand value)</summary>
-        </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.AllInstances.SelectedNodeGet">
             <summary>Sets the shim of ToolBarViewModel.get_SelectedNode()</summary>
         </member>
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.AllInstances.SelectedNodeSetNodeViewModel">
             <summary>Sets the shim of ToolBarViewModel.set_SelectedNode(NodeViewModel value)</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.AllInstances.UploadCommandGet">
-            <summary>Sets the shim of ToolBarViewModel.get_UploadCommand()</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.AllInstances.UploadCommandSetUploadCommand">
-            <summary>Sets the shim of ToolBarViewModel.set_UploadCommand(UploadCommand value)</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.AllInstances.UploadFolderCommandGet">
-            <summary>Sets the shim of ToolBarViewModel.get_UploadFolderCommand()</summary>
-        </member>
-        <member name="P:MegaDesktop.ViewModels.Fakes.ShimToolBarViewModel.AllInstances.UploadFolderCommandSetUploadFolderCommand">
-            <summary>Sets the shim of ToolBarViewModel.set_UploadFolderCommand(UploadFolderCommand value)</summary>
         </member>
         <member name="T:MegaDesktop.ViewModels.Fakes.ShimTransferHandleViewModel">
             <summary>Shim type of MegaDesktop.ViewModels.TransferHandleViewModel</summary>
@@ -4585,10 +4567,28 @@
         <member name="P:MegaDesktop.ViewModels.Fakes.ShimTransfersViewModel.AllInstances.TransfersGet">
             <summary>Sets the shim of TransfersViewModel.get_Transfers()</summary>
         </member>
+        <member name="T:MegaDesktop.ViewModels.Fakes.StubHeaderViewModel">
+            <summary>Stub type of MegaDesktop.ViewModels.HeaderViewModel</summary>
+        </member>
+        <member name="M:MegaDesktop.ViewModels.Fakes.StubHeaderViewModel.#ctor(MegaDesktop.ViewModels.StatusViewModel,MegaDesktop.Commands.LoginCommand,MegaDesktop.Commands.LogoutCommand,MegaDesktop.Commands.ExitCommand)">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:MegaDesktop.ViewModels.Fakes.StubHeaderViewModel.InitializeStub">
+            <summary>Initializes a new instance of type StubHeaderViewModel</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.StubHeaderViewModel.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.StubHeaderViewModel.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:MegaDesktop.ViewModels.Fakes.StubHeaderViewModel.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
         <member name="T:MegaDesktop.ViewModels.Fakes.StubMainViewModel">
             <summary>Stub type of MegaDesktop.ViewModels.MainViewModel</summary>
         </member>
-        <member name="M:MegaDesktop.ViewModels.Fakes.StubMainViewModel.#ctor(MegaDesktop.ViewModels.StatusViewModel,MegaDesktop.Services.NodeManager,MegaDesktop.ViewModels.TransfersViewModel)">
+        <member name="M:MegaDesktop.ViewModels.Fakes.StubMainViewModel.#ctor(MegaDesktop.Services.NodeManager,MegaDesktop.ViewModels.TransfersViewModel,MegaDesktop.ViewModels.ToolBarViewModel,MegaDesktop.ViewModels.HeaderViewModel)">
             <summary>Initializes a new instance</summary>
         </member>
         <member name="M:MegaDesktop.ViewModels.Fakes.StubMainViewModel.InitializeStub">
